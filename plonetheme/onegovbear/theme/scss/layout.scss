@@ -30,3 +30,8 @@ body {
 #content {
   clear: both;
 }
+
+#bottom-actions {
+    width: $page-wrapper-width;
+    margin: 0 auto;
+}

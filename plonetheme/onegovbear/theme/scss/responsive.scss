@@ -14,9 +14,6 @@ img {
 
 @media screen and (max-width: $page-fixed-width) {
 
-  .fixedWidth {
-    width: 95%;
-  }
   .sl-img-wrapper img {
     height: auto !important;
   }
@@ -65,9 +62,6 @@ img {
 
 @media screen and (max-width: $screen-tablet) {
 
-  .fixedWidth {
-    width: 96%;
-  }
   #content-core .subsiteColumns .column {
     width: 49%;
     margin: 0;
