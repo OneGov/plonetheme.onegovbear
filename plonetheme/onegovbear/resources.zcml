@@ -17,20 +17,12 @@
         <theme:scss file="theme/scss/form.scss" />
         <theme:scss file="theme/scss/search.scss" />
         <theme:scss file="theme/scss/filter.scss" />
-        <theme:scss file="theme/scss/blog.scss" />
-        <theme:scss file="theme/scss/book.scss" />
         <theme:scss file="theme/scss/overlays.scss" />
         <theme:scss file="theme/scss/menues.scss" />
         <theme:scss file="theme/scss/messages.scss" />
         <theme:scss file="theme/scss/tables.scss" />
         <theme:scss file="theme/scss/batching.scss" />
         <theme:scss file="theme/scss/responsive.scss" />
-        <theme:scss file="theme/scss/recurrencewidget.scss" />
-        <theme:scss file="theme/scss/people.scss" />
-        <theme:scss file="theme/scss/directory.scss" />
-        <theme:scss file="theme/scss/events.scss" />
-        <theme:scss file="theme/scss/facility.scss" />
-        <theme:scss file="theme/scss/reservation.scss" />
         <theme:scss file="theme/scss/accessibility.scss" />
         <theme:scss file="theme/scss/overrides.scss" />
     </theme:resources>
