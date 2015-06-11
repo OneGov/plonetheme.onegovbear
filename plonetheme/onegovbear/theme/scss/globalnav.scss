@@ -1,0 +1,46 @@
+$globalnav-background-color: $gray-light;
+$globalnav-background-color-hover: $gray-darker;
+$globalnav-link-color: $gray-lighter;
+$globalnav-link-color-hover: $globalnav-link-color;
+$globalnav-separator-color: $gray-darker;
+$globalnav-separator-width: 1px;
+
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                globalnav-background-color,
+                                globalnav-background-color-hover,
+                                globalnav-link-color,
+                                globalnav-link-color-hover,
+                                globalnav-separator-color);
+
+  ?: register-theming-variables(width,
+                                globalnav-separator-width);
+}
+
+#portal-globalnav {
+  @include ul($style: 'inline');
+  clear: both;
+  background-color: $globalnav-background-color;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    a {
+      color: $globalnav-link-color;
+      display: inline-block;
+      padding: 1em;
+      margin: 0;
+      border-right: $globalnav-separator-width solid $globalnav-separator-color;
+      text-transform: uppercase;
+    }
+
+    &:hover, &.selected {
+      a {
+        background-color: $globalnav-background-color-hover;
+        color: $globalnav-link-color-hover;
+        text-decoration: none;
+      }
+    }
+  }
+}

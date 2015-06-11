@@ -268,58 +268,6 @@ a,
 
 /* @end */
 
-/* @group global navigation */
-
-#portal-globalnav {
-  @include ul($style: 'inline');
-  padding-top: 0.75em;
-  & > li {
-    float: left;
-    & .wrapper {
-      white-space: nowrap;
-      padding: 1em 1em 0.7em 1em;
-      margin: 1px;
-      margin-bottom: 0;
-    }
-    & > .wrapper a {
-      color: $global-navigation-color;
-      font-size: $global-navigation-fontsize;
-      text-decoration: none;
-      &:hover {
-        color: $global-navigation-color-hover;
-      }
-      &:active {}
-      &:focus {}
-    }
-  }
-  & li:first-child {
-    margin-left: 0;
-    & .wrapper {
-      padding-left: 0;
-    }
-    &.flyoutActive {
-      margin-left: -1em;
-      & .wrapper {
-        padding-left: 1em;
-      }
-    }
-  }
-}
-#portal-globalnav li.selected {
-  padding-bottom: 1em;
-  /* there should not be a border for now, let this as hint if you like to enable this. */
-  /* border-bottom: 5px solid $global-navigation-border-color-active; */
-  margin-bottom: -5px;
-  & > .wrapper > a{
-    color: $global-navigation-color-selected;
-    &:after {
-      color: $global-navigation-color-selected;
-    }
-  }
-}
-
-/* @end */
-
 /* @group left navigation */
 
 #column-navigation .portletContextNavigation {

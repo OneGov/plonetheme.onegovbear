@@ -13,6 +13,7 @@
 
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/base.scss" />
+        <theme:scss file="theme/scss/globalnav.scss" />
         <theme:scss file="theme/scss/icons.scss" />
         <theme:scss file="theme/scss/form.scss" />
         <theme:scss file="theme/scss/search.scss" />
