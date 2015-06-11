@@ -2,7 +2,6 @@ $editbar-bg-color: $gray-lighter;
 $editbar-link-color: $link-color;
 $editbar-link-active-color: $link-color;
 $editbar-link-hover-color: $link-hover-color;
-$editbar-link-hover-color: red;
 
 @if function-exists(register-theming-variables) {
   ?: register-theming-variables(color,
