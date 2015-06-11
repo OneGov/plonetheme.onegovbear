@@ -3,6 +3,12 @@ import os
 
 version = '1.0.0.dev0'
 
+tests_require = [
+    'ftw.builder',
+    'ftw.testbrowser',
+    'plone.app.testing',
+    ]
+
 setup(name='plonetheme.onegovbear',
       version=version,
       description='OneGov Plone theme sponsered by the city of Bern.',
@@ -35,6 +41,9 @@ setup(name='plonetheme.onegovbear',
         'plone.app.theming',
         'setuptools',
         ],
+
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
 
       entry_points='''
       # -*- Entry points: -*-
