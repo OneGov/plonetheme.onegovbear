@@ -21,6 +21,8 @@ $font-size: 13px;
 $heading-font-family: $body-font-family;
 $heading-line-height: $body-line-height;
 $heading-font-size: 32px;
+$font-size-36: $heading-font-size;
+$font-size-18: ($heading-font-size/2);
 
 $page-fixed-width: 1200px;
 $page-background: #fcfcfc;
@@ -55,6 +57,9 @@ $button-color-dark: #000;
 
 $input-standalone-base: #7f7f7f;
 $input-destructive-base: #e61f18;
+
+$input-context-base: $global-navigation-border-color;
+$input-context-color: contrast($input-context-base, $button-color-light, $button-color-dark);
 
 $navigation-gradient-from: #fcfcfc;
 $navigation-gradient-to: #f6f6f5;

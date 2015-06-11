@@ -7,7 +7,6 @@
 
     <theme:resources profile="plonetheme.onegovbear:default" slot="theme">
         <theme:scss file="theme/scss/variables.scss" />
-        <theme:scss file="theme/scss/post_variables.scss" />
         <theme:scss file="theme/scss/mixins.scss" />
         <theme:scss file="theme/scss/helper.scss" />
 
