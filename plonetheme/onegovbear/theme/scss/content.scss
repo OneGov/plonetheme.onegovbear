@@ -1,4 +1,10 @@
-/* @group headings */
+$text-color-light: desaturate(lighten($text-color, 25%), 100%);
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                text-color-light);
+}
+
 
 h1 {
   font-size: $font-size-h1;
@@ -33,11 +39,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* @end */
-
-
-/* @group links */
-
 a,
 :link,
 :visited {
@@ -49,4 +50,37 @@ a,
   }
 }
 
-/* @end */
+fieldset {
+  margin: 1em 0;
+  border-width: 0 0 1px 0;
+}
+
+#content {
+  p {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    @include ul();
+    &.listTypePlain {
+      @include ul($style:'plain');
+    }
+  }
+
+  ol {
+    @include ul();
+    list-style: decimal;
+  }
+
+  dl {
+    & dt {
+      font-weight: bold;
+    }
+    & dd {
+      margin-bottom: 1em;
+    }
+  }
+  .discreet {
+    color: $text-color-light;
+  }
+}

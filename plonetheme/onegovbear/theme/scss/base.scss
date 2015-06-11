@@ -521,35 +521,6 @@ $dashboard-color: contrast($dashboard-bg, $page-background, $text-color);
 
 /* @end */
 
-/* @group text / content */
-
-p {
-  margin-bottom: 1em;
-}
-ul {
-  @include ul();
-  &.listTypePlain {
-    @include ul($style:'plain');
-  }
-}
-ol {
-  @include ul();
-  list-style: decimal;
-}
-#column-content dl {
-  & dt {
-    font-weight: bold;
-  }
-  & dd {
-    margin-bottom: 1em;
-  }
-}
-.discreet {
-  color: $text-color-light;
-}
-
-/* @end */
-
 /* @group below-content viewlet */
 
 #viewlet-below-content {
@@ -571,15 +542,6 @@ ol {
   &:hover {
     color: $page-background;
   }
-}
-
-/* @end */
-
-/* @group fieldsets */
-
-fieldset {
-  margin: 1em 0;
-  border-width: 0 0 1px 0;
 }
 
 /* @end */
