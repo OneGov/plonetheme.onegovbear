@@ -1,27 +1,5 @@
 // mobile navi starts at (max-width: 769px)
 
-/* @group general responsive */
-
-.sl-img-wrapper,
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* @end */
-
-/* @group smaller than fixedWidth */
-
-@media screen and (max-width: $page-fixed-width) {
-
-  .sl-img-wrapper img {
-    height: auto !important;
-  }
-
-}
-
-/* @end */
-
 /* @group tablet landscape */
 
 @media screen and (max-width: $screen-tablet-landscape) {
@@ -62,14 +40,6 @@ img {
 
 @media screen and (max-width: $screen-tablet) {
 
-  #content-core .subsiteColumns .column {
-    width: 49%;
-    margin: 0;
-  }
-  #content-core #subsite-column-2,
-  #content-core #subsite-column-4 {
-    padding-right: 0;
-  }
   #header .searchBoxWrapper,
   #columns #column-content,
   #columns #column-sidebar {
@@ -81,21 +51,16 @@ img {
   #column-navigation {
     display: none;
   }
-  #subsite-column-1,
-  #subsite-column-3,
   #footer-column-1,
   #footer-column-3 {
     @include position0();
     @include width8();
   }
-  #subsite-column-2,
-  #subsite-column-4,
   #footer-column-2,
   #footer-column-4 {
     @include position8();
     @include width8();
   }
-  #subsite-column-3,
   #footer-column-3 {
     clear: both;
   }
@@ -210,10 +175,6 @@ img {
 
 @media screen and (max-width: $screen-mobile) {
 
-  #subsite-column-1,
-  #subsite-column-2,
-  #subsite-column-3,
-  #subsite-column-4,
   #footer .cell {
     @include position0();
     @include width16();
@@ -224,10 +185,6 @@ img {
     border: none;
     border-top: 1px solid $footer-border-color;
     padding-left: 1em;
-  }
-  #content-core .subsiteColumns .column {
-    width: 100%;
-    padding: 0;
   }
 
 }

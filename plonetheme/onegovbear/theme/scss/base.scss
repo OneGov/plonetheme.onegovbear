@@ -340,25 +340,6 @@ div.slideNavi .globalnav li a {
   background-color: $lightgray;
   padding: 1em;
   margin-bottom: 1em;
-  &.simplelayoutDropZonePortlet {
-    padding: 0;
-    background-color: transparent;
-    h1,h2,h3 {
-      margin-top: 0;
-    }
-    dd.portletItem {
-      padding: 0;
-      .BlockOverallWrapper {
-        padding: 1em;
-        margin-bottom: 1em;
-        background-color: $lightgray;
-        &.blockHighlight {
-          border-bottom: 0;
-          background: #dde7ec;
-        }
-      }
-    }
-  }
   & dt.portletHeader {
     margin-bottom: 0.75em;
   }
@@ -438,9 +419,6 @@ dl.portlet {
 dl.teaser_portlet .portletHeader img {
   display: block;
   margin-bottom: 0.5em;
-}
-.simplelayoutDropZonePortlet h2 {
-  font-weight: normal;
 }
 
 .managedPortlet {
@@ -653,83 +631,6 @@ ol {
 fieldset {
   margin: 1em 0;
   border-width: 0 0 1px 0;
-}
-
-/* @end */
-
-/* @group linkList */
-
-.linkList,
-.subelements-listing,
-.topic_listing {
-  @include linklist();
-}
-
-/* @end */
-
-/* @group subsite */
-
-body.template-subsite_view h1.documentFirstHeading {
-  display: none;
-}
-#content-core .subsiteColumns .column {
-  min-height: 1px;
-}
-.template-subsite_view #page-wrapper #columns .column .portletStaticText .portletItem ul {
-  @include linklist();
-}
-
-/* @end */
-
-/* @group topic listing
-
-.topic_listing {
-@include linklist();
-}
-
-/* @end */
-
-/* @group news listing */
-
-.newsListing .tileItem {
-  border-bottom: 1px solid $lightgray;
-}
-.newsListing .documentByLine .dtstart {
-  color: $text-color;
-  font-weight: bold;
-}
-
-/* @end */
-
-/* @group simplelayout */
-
-div.sl-controls {
-  padding-top: 0;
-}
-/* padding changes slot-width */
-.simplelayout-content div[id*="slot"] {
-  padding: 0;
-}
-.sl-img-small .sl-img-wrapper,
-.sl-img-middle .sl-img-wrapper {
-  margin-right: 2em;
-}
-div.ListingBlock div.gallery .sl-img-wrapper img {
-  display: block;
-  margin: auto;
-}
-
-/* @end */
-
-/* @group to_top link */
-
-.to_top {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 0.25em 0.5em;
-  background-color: $lightgray;
-  @include borderradius($border-radius $border-radius 0 0);
 }
 
 /* @end */
