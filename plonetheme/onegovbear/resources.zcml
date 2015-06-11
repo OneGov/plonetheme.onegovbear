@@ -12,13 +12,14 @@
 
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/base.scss" />
+        <theme:scss file="theme/scss/menues.scss" />
+        <theme:scss file="theme/scss/editbar.scss" />
         <theme:scss file="theme/scss/globalnav.scss" />
         <theme:scss file="theme/scss/icons.scss" />
         <theme:scss file="theme/scss/form.scss" />
         <theme:scss file="theme/scss/search.scss" />
         <theme:scss file="theme/scss/filter.scss" />
         <theme:scss file="theme/scss/overlays.scss" />
-        <theme:scss file="theme/scss/menues.scss" />
         <theme:scss file="theme/scss/messages.scss" />
         <theme:scss file="theme/scss/tables.scss" />
         <theme:scss file="theme/scss/batching.scss" />

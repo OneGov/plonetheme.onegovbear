@@ -1,0 +1,69 @@
+$editbar-bg-color: $gray-lighter;
+$editbar-link-color: $link-color;
+$editbar-link-active-color: $link-color;
+$editbar-link-hover-color: $link-hover-color;
+$editbar-link-hover-color: red;
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                editbar-bg-color,
+                                editbar-link-color,
+                                editbar-link-active-color,
+                                editbar-link-hover-color);
+}
+
+
+#edit-bar {
+  background-color: $editbar-bg-color;
+  border: 0.25em solid $editbar-bg-color;
+  min-height: 2em;
+  margin: 0;
+  margin-bottom: 1em;
+  display: block;
+  @include borderradius(0.5em 0.5em 0 0);
+
+  ul {
+    @include ul('inline');
+  }
+
+  #content-views {
+    float: left;
+    display: block;
+
+    a {
+      line-height: 2.25em;
+      padding: 0.5em;
+      color: $editbar-link-color;
+    }
+
+    .selected a, a:hover {
+      text-decoration: none;
+    }
+    .selected a {
+      background-color: $content-bg-color;
+      @include borderradius(5px 5px 0 0);
+      color: $editbar-link-active-color;
+    }
+    a:hover {
+      color: $editbar-link-hover-color;
+    }
+  }
+
+  .contentActions {
+    > #contentActionMenus dd.actionMenuContent {
+      border-top-width: 0;
+    }
+
+    > #contentActionMenus > li {
+      float: right;
+      dt.actionMenuHeader a {
+        line-height: 2.25em;
+        padding: 0.5em;
+        color: $editbar-link-color;
+        &:hover {
+          color: $editbar-link-hover-color;
+        }
+      }
+    }
+  }
+}
