@@ -1,0 +1,17 @@
+#portal-personaltools-wrapper {
+  float: right;
+
+  /* Anonymous: list actions by floating */
+  ul {
+    @include ul('inline');
+
+    a {
+      &:after {
+        content: ' | ';
+      }
+      &:last-child:after {
+        content: '';
+      }
+    }
+  }
+}

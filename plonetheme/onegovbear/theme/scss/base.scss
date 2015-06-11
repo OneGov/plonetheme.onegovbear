@@ -127,25 +127,6 @@ a,
 
 /* @end */
 
-/* @group personal tools */
-
-#portal-personaltools-wrapper {
-  float: right;
-}
-#anon-personalbar > a {
-  display: inline;
-  border-left: 1px solid $text-color;
-  margin-left: 0.25em;
-  padding-left: 0.5em;
-}
-#anon-personalbar > a:first-child {
-  margin-left: 0;
-  padding-left: 0;
-  border-left: none;
-}
-
-/* @end */
-
 /* @group flyout breadcrumbs */
 
 #portal-breadcrumbs .flyoutBreadcrumbs {
