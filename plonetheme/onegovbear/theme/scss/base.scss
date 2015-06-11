@@ -305,10 +305,6 @@ dl.portlet {
     margin-bottom: 1em;
   }
 }
-dl.teaser_portlet .portletHeader img {
-  display: block;
-  margin-bottom: 0.5em;
-}
 
 .managedPortlet {
   border: 1px solid $lightgray2;
@@ -350,107 +346,6 @@ dl.teaser_portlet .portletHeader img {
 
 /* @end */
 
-/* @group post it portlet */
-
-#dashboard dl.portlet.postit.portletPostIt {
-  $postit-bg: #DCC126;
-  dt {
-    background-color: $postit-bg;
-    color: #000;
-    .portletActionsWrapper {
-      background: lighten(desaturate($postit-bg, 20%), 20%);
-    }
-  }
-  dd {
-    background: lighten($postit-bg, 40%);
-    &.even {
-      background: lighten($postit-bg, 35%);
-    }
-  }
-}
-
-/* @end */
-
-/* @group dashboard */
-
-$dashboard-bg: $global-navigation-border-color;
-$dashboard-color: contrast($dashboard-bg, $page-background, $text-color);
-
-#dashboard {
-  div.portletwrapper {
-    margin: 0.5em;
-    padding: 0;
-    background: transparent;
-  }
-
-  dl.portlet {
-    border: 1px solid $darkgray;
-    @include boxshadow(0.1em 0.1em 0.25em $lightgray3);
-    dt {
-      background: $dashboard-bg;
-      color: $dashboard-color;
-      border-bottom: 1px solid $darkgray;
-      overflow: hidden;
-      font-size: $font-size;
-      a {
-        color: $dashboard-color;
-      }
-    }
-    dd {
-      background-color: $page-background;
-    }
-    dt, dd {
-      margin-bottom: 0;
-      padding: 0.5em;
-    }
-    .portletActionsWrapper {
-      padding: 0.5em;
-      background: lighten(desaturate($dashboard-bg, 20%), 20%);
-      border-left: 1px solid $darkgray;
-      a:hover { text-decoration: none; }
-    }
-  }
-
-  .folded dl.portlet { border-bottom-width: 0; }
-}
-
-#page-wrapper #dashboard #dashboard-add-portlet {
-  padding-top: 0;
-  form {
-    margin-bottom: 1em;
-  }
-}
-
-#dashboard .portletPostIt {
-  dt.portletHeader {
-    background: $dashboard-bg;
-    border-bottom: 1px solid $darkgray;
-  }
-  dd.portletItem {
-    border: none;
-    span {
-      line-height: $body-line-height;
-      padding: 0;
-    }
-  }
-  form input.text {
-    width: 55%;
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-  form.postIt_addNote_form input.submit {
-    margin: 0;
-  }
-  dd.portletItem.postIt_addNote {
-    background: $lightgray;
-  }
-}
-
-#dashboard .portletWatcher ul {
-  @include ul($style: 'plain');
-}
-
-/* @end */
 
 /* @group byline */
 
