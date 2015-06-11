@@ -10,7 +10,7 @@
 
     <include file="resources.zcml" />
 
-    <plone:static directory="theme" name="onegovbear" type="theme" />
+    <plone:static type="theme" directory="theme" />
 
     <genericsetup:registerProfile
         name="default"
