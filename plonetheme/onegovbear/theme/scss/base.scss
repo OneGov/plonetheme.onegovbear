@@ -1,20 +1,5 @@
 
 
-/* @group links */
-
-a,
-:link,
-:visited {
-  color: $link-color;
-  text-decoration: $link-textdecoration;
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: $link-textdecoration-hover;
-  }
-}
-
-/* @end */
-
 /* @group banner-image */
 
 #banner-image {

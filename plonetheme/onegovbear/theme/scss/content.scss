@@ -34,3 +34,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* @end */
+
+
+/* @group links */
+
+a,
+:link,
+:visited {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+/* @end */
