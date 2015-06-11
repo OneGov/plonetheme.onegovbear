@@ -193,13 +193,9 @@ dl.portletNavigationTree img {
 }
 
 a[target="_blank"],
-#portal-topactions ul a[target="_blank"],
 span.link-external a,
 a.external-link {
   @include icon("j ");
-}
-#portal-topactions ul a[target="_blank"]:before {
-  color: $link-color;
 }
 
 .to_top a {

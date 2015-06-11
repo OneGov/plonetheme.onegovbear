@@ -48,8 +48,6 @@
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
     <replace css:content="#portal-languageselector" css:theme="#portal-languageselector" />
 
-    <replace css:content-children="#portal-topactions" css:theme-children="#portal-topactions" />
-
     <replace css:content="ul.mobileButtons" css:theme="ul.mobileButtons" />
 
     <replace css:content-children="#portal-breadcrumbs" css:theme-children="#portal-breadcrumbs" />
