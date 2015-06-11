@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+
+    <layer name="plonetheme.onegovbear"
+           interface="plonetheme.onegovbear.interfaces.IOneGovBearLayer" />
+
+</layers>
