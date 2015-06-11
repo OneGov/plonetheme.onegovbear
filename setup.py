@@ -11,7 +11,7 @@ tests_require = [
 
 setup(name='plonetheme.onegovbear',
       version=version,
-      description='OneGov Plone theme sponsered by the city of Bern.',
+      description='OneGov Plone theme sponsored by the city of Bern.',
       long_description=(open('README.rst').read() + '\n' +
                         open(os.path.join('docs', 'HISTORY.txt')).read()),
 
