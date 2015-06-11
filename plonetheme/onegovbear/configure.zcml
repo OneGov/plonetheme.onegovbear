@@ -6,6 +6,11 @@
     i18n_domain="plonetheme.onegovbear">
 
     <include package="ftw.upgrade" file="meta.zcml" />
+    <include package="plone.app.theming" />
+
+    <include file="resources.zcml" />
+
+    <plone:static directory="theme" name="onegovbear" type="theme" />
 
     <genericsetup:registerProfile
         name="default"

@@ -1,3 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
+    <dependencies>
+        <dependency>profile-ftw.theming:default</dependency>
+    </dependencies>
 </metadata>

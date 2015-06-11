@@ -30,6 +30,7 @@ setup(name='plonetheme.onegovbear',
       zip_safe=False,
 
       install_requires=[
+        'ftw.theming',
         'ftw.upgrade',
         'plone.app.theming',
         'setuptools',
