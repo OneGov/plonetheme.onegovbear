@@ -1,19 +1,6 @@
 /* @group layout */
 
-body {
-  background: $body-background;
-  font-family: $body-font-family;
-  font-size: $font-size;
-  line-height: $body-line-height;
-  color: $text-color;
-}
 
-#page-wrapper {
-  background-color: $page-background;
-  border: 1px solid $page-bordercolor;
-  @include boxshadow(0 0 5px $page-bordercolor);
-  position: relative;
-}
 #content {
   clear: both;
 }

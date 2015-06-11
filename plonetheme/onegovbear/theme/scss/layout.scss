@@ -1,0 +1,15 @@
+body {
+  background: $page-bg-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+}
+
+#container {
+    width: 100%;
+}
+
+#page-wrapper {
+  position: relative;
+}
