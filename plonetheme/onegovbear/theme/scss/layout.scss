@@ -1,3 +1,12 @@
+$page-wrapper-width: 1200px;
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(width,
+                                page-wrapper-width);
+}
+
+
+
 body {
   background: $page-bg-color;
   font-family: $font-family-base;
@@ -13,4 +22,11 @@ body {
 #page-wrapper {
   position: relative;
   background-color: $content-bg-color;
+  width: $page-wrapper-width;
+  margin: 0 auto;
+}
+
+
+#content {
+  clear: both;
 }
