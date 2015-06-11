@@ -296,66 +296,6 @@ div.slideNavi .globalnav li a {
 
 /* @end */
 
-/* @group meeting */
-
-.MeetingItemBody > table.listing {
-  width: 100%;
-}
-
-/* @end */
-
-/* @group news portlet */
-
-.portlet.portletCollection.newsTemplate {
-
-  dd ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  .portletItemTitle {
-    margin: 0.25em 0 0.25em 0;
-    font-weight: bold;
-  }
-  .portletFooter,
-  .portletItem {
-    border-top: 1px solid $lightgray2;
-    padding-top: 1em;
-    margin-top: 1em;
-  }
-  .portletItemMore {
-    margin-top: 0.25em;
-    display: block;
-  }
-  .portletItemDate {
-    color: $darkgray;
-  }
-  .portletItem:hover {
-    .portletItemDate {
-      color: $text-color;
-    }
-  }
-}
-
-/* @end */
-
-/* @group news archive portlet */
-
-dl.portletArchiveListing {
-  ul {
-    padding-left: 0;
-  }
-}
-
-/* @end */
-
-/* @group address block */
-
-.AddressBlock ul {
-  @include ul($style: 'plain');
-}
-
-/* @end */
-
 /* @group portlets */
 
 dl.portlet {
