@@ -1,27 +1,4 @@
-/* @group layout */
 
-
-
-/* @end */
-
-/* @group headings */
-
-h1 {
-  font-size: $font-size-36;
-}
-h2 {
-  font-size: $font-size-18;
-}
-h1, h2, h3 {
-  margin: 1.5em 0 1em 0;
-  font-family: $heading-font-family;
-  line-height: $heading-line-height;
-  &.documentFirstHeading {
-    margin: 0;
-  }
-}
-
-/* @end */
 
 /* @group links */
 
