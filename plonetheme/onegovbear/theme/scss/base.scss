@@ -1,0 +1,1202 @@
+/* @group layout */
+
+body {
+  background: $body-background;
+  font-family: $body-font-family;
+  font-size: $font-size;
+  line-height: $body-line-height;
+  color: $text-color;
+}
+
+#page-wrapper {
+  background-color: $page-background;
+  border: 1px solid $page-bordercolor;
+  @include boxshadow(0 0 5px $page-bordercolor);
+  position: relative;
+}
+#content {
+  clear: both;
+}
+.belowContent {
+  margin-top: 3em;
+}
+
+.fixedWidth {
+  width: $page-fixed-width;
+  margin: 0 auto;
+}
+
+/* @end */
+
+/* @group headings */
+
+h1 {
+  font-size: $font-size-36;
+}
+h2 {
+  font-size: $font-size-18;
+}
+h1, h2, h3 {
+  margin: 1.5em 0 1em 0;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  &.documentFirstHeading {
+    margin: 0;
+  }
+}
+
+/* @end */
+
+/* @group links */
+
+a,
+:link,
+:visited {
+  color: $link-color;
+  text-decoration: $link-textdecoration;
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: $link-textdecoration-hover;
+  }
+}
+
+/* @end */
+
+/* @group top actions */
+
+#portal-topactions {
+  min-height: 2em;
+}
+#portal-topactions ul {
+  @include ul($style: 'inline');
+  padding: 0.75em 0;
+}
+#portal-topactions li {
+  border-right: 1px solid $text-color;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+  &.lastItem {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
+#portal-topactions ul a {
+  color: $text-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* @end */
+
+/* @group banner-image */
+
+#banner-image {
+  margin-bottom: 1em;
+}
+#banner-image img {
+  height: auto;
+  width: 100%;
+}
+
+/* @end */
+
+/* @group header */
+
+#header {
+  position: relative;
+  z-index: 3;
+}
+.logoRow {
+  min-height: 6em;
+}
+#header-delimiter {
+  border-top: 5px solid $global-navigation-border-color;
+}
+#portal-logo {
+  margin: 1.5em 0;
+  height: $logo-height;
+  display: block;
+  float: left;
+  img {
+    max-height: 100%;
+  }
+}
+
+/* @end */
+
+/* @group personal tools */
+
+#portal-personaltools-wrapper {
+  float: right;
+}
+#anon-personalbar > a {
+  display: inline;
+  border-left: 1px solid $text-color;
+  margin-left: 0.25em;
+  padding-left: 0.5em;
+}
+#anon-personalbar > a:first-child {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+
+/* @end */
+
+/* @group flyout breadcrumbs */
+
+#portal-breadcrumbs .flyoutBreadcrumbs {
+  .crumb {
+    display: block;
+    float: left;
+    margin-bottom: 0.25em;
+    position: relative;
+    a.crumbLink {
+      border: 1px solid $breadcrumbs-border;
+      border-width: 1px 0;
+      background: url(#{$portal-url}/++theme++plonetheme.onegovbear/images/breadcrumb-separator.png) no-repeat right -1px $breadcrumbs-background;
+      font-size: 12px;
+      height: 21px;
+      line-height: 21px;
+      padding: 0 0.5em;
+      padding-right: 36px;
+      float: left;
+      &.noChildren {
+        padding-right: 20px;
+      }
+    }
+    &.first a.crumbLink {
+      border-left-width: 1px;
+    }
+    &.last a.crumbLink,
+    &.last.active a.crumbLink {
+      background-image: none;
+      padding-right: 21px;
+      border-right-width: 0;
+      &.noChildren {
+        padding-right: 6px;
+      }
+    }
+    &.last a.loadChildren {
+      margin-left: -21px;
+    }
+    a.loadChildren {
+      display: block;
+      height: 21px;
+      width: 21px;
+      line-height: 21px;
+      font-size: 9px;
+      float: left;
+      margin-left: -33px;
+      margin-top: 1px;
+      text-align: center;
+      background: $page-background;
+      &:hover {text-decoration: none;}
+    }
+    &.active {
+      a.crumbLink {
+        position: relative;
+        /* background-color: #/\* FFF *\/; */
+        z-index: 6;
+        border-bottom-color: $breadcrumbs-background;
+        border-right-width: 1px;
+        padding-right: 35px;
+        background-image: none;
+      }
+      a.loadChildren {
+        position: relative;
+        z-index: 6;
+      }
+    }
+    > ul {
+      width: 200px;
+      min-width: 100%;
+      display: none;
+      border: 1px solid $breadcrumbs-border;
+      background: $breadcrumbs-background;
+      @include boxshadow(0 0.25em 0.5em -0.25em $darkgray);
+      position: absolute;
+      left: 0;
+      top: 22px;
+      z-index: 5;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0em;
+        a {
+          font-size: 12px;
+          padding: 0.5em;
+          display: block;
+        }
+      }
+    }
+  }
+}
+#portal-breadcrumbs .flyoutBreadcrumbs .lastCrumbSeparator {
+  background: url(#{$portal-url}/++theme++plonetheme.onegovbear/images/breadcrumb-separator.png) no-repeat right -46px $breadcrumbs-background;
+  display: block;
+  float: left;
+  height: 23px;
+  width: 12px;
+}
+
+/* @end */
+
+/* @group breadcrumbs  */
+
+#breadcrumbs-wrapper {
+  margin-bottom: 0.5em;
+}
+
+/* @end */
+
+/* @group document actions */
+
+#document-actions ul {
+  @include ul($style: 'inline');
+  float: right;
+  & li a {
+    font-size: 1.5em;
+    margin-left: 0.25em;
+    text-decoration: none;
+  }
+}
+
+/* @end */
+
+/* @group global navigation */
+
+#portal-globalnav {
+  @include ul($style: 'inline');
+  padding-top: 0.75em;
+  & > li {
+    float: left;
+    & .wrapper {
+      white-space: nowrap;
+      padding: 1em 1em 0.7em 1em;
+      margin: 1px;
+      margin-bottom: 0;
+    }
+    & > .wrapper a {
+      color: $global-navigation-color;
+      font-size: $global-navigation-fontsize;
+      text-decoration: none;
+      &:hover {
+        color: $global-navigation-color-hover;
+      }
+      &:active {}
+      &:focus {}
+    }
+  }
+  & li:first-child {
+    margin-left: 0;
+    & .wrapper {
+      padding-left: 0;
+    }
+    &.flyoutActive {
+      margin-left: -1em;
+      & .wrapper {
+        padding-left: 1em;
+      }
+    }
+  }
+}
+#portal-globalnav li.selected {
+  padding-bottom: 1em;
+  /* there should not be a border for now, let this as hint if you like to enable this. */
+  /* border-bottom: 5px solid $global-navigation-border-color-active; */
+  margin-bottom: -5px;
+  & > .wrapper > a{
+    color: $global-navigation-color-selected;
+    &:after {
+      color: $global-navigation-color-selected;
+    }
+  }
+}
+
+/* @end */
+
+/* @group left navigation */
+
+#column-navigation .portletContextNavigation {
+  border: 1px solid $lightgray2;
+  border-width: 1px 0;
+  & ul {
+    @include ul($style: 'plain');
+    line-height: 1.25em;
+    & li {
+      margin-bottom: 0;
+      padding: 0;
+      display: block;
+      & a {
+        padding: 0.4em 1em;
+        display: block;
+        text-decoration: none;
+        padding-left: 1.5em;
+      }
+    }
+  }
+  & .current {
+    padding: 0.5em 0.5em;
+    @include gradient($navigation-gradient-from, $navigation-gradient-to);
+    font-weight: bold;
+    + li.child {
+      border-top: 1px solid $lightgray2;
+    }
+  }
+  & .parent, & .sibling {
+    border-bottom: 1px solid $lightgray2;
+    & a {
+      padding-left: 0.5em;
+    }
+    &.sibling {
+      background-color: $navigation-sibling-background;
+      &.beforeContext {
+        border-top: none;
+        border-bottom: 1px solid $lightgray2;
+      }
+      &.afterContext {
+        border-top: 1px solid $lightgray2;
+        border-bottom: none;
+      }
+      &:hover {
+        @include gradient($navigation-gradient-from, $navigation-gradient-to);
+      }
+    }
+  }
+}
+
+/* @end */
+
+/* @group mobile navigation */
+
+.mobileButtons,
+.mobileButtons a {
+  background: transparent;
+}
+.mobileButtons a {
+  /* TODO move to variables */
+  border: 1px solid #a0babd;
+  padding: 0.25em 0.75em;
+  margin: 0.25em;
+  width: auto;
+  height: auto;
+  font-size: 1.25em;
+  &.selected {
+    background: $global-navigation-color;
+    border-color: $global-navigation-color;
+    color: $page-background;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+#slider-container .iconFont {
+  font-family: 'icomoon';
+  background-color: $lightgray;
+  padding: 1em;
+}
+#slider-container .mobileNavigation li a {
+  background-color: $page-background;
+  padding: 1em;
+  margin: 0;
+}
+#slider-container .globalnav a.slide,
+#slider-container .globalnav a.slideBack {
+  background-image: none;
+  height: auto;
+  width: auto;
+  min-width: 0;
+}
+#slider-container .globalnav a.slideBack {
+  background: $page-background;
+}
+#slider-container .globalnav a.current {
+  border-top: none;
+}
+#slider-container .globalnav a.slide {
+  padding: 1em 0.75em;
+  background-color: $lightgray;
+}
+#slider-container .globalnav a.slideBack {
+  padding: 0;
+  & > span {
+    padding: 1em 0.75em;
+    display: block;
+    float: left;
+  }
+}
+#slider-container .slideNavi {
+  font-size: $font-size-18;
+  width: 90%;
+  left: 5%;
+  top: 1em;
+}
+div.slideNavi.loading {
+  background-color: $page-background;
+}
+div.slideNavi .globalnav {
+  border: 1px solid $mobile-navigation-bordercolor;
+  @include boxshadow(0 0 1em $darkgray);
+}
+div.slideNavi .globalnav li a {
+  border: none;
+  border-top: 1px solid $lightgray2;
+}
+#slider-container .globalnav a.slideBack {
+  border: none;
+}
+.globalnav a:hover {
+  color: $link-color-hover;
+}
+
+/* @end */
+
+/* @group side portlets */
+
+#column-sidebar dl.portlet {
+  background-color: $lightgray;
+  padding: 1em;
+  margin-bottom: 1em;
+  &.simplelayoutDropZonePortlet {
+    padding: 0;
+    background-color: transparent;
+    h1,h2,h3 {
+      margin-top: 0;
+    }
+    dd.portletItem {
+      padding: 0;
+      .BlockOverallWrapper {
+        padding: 1em;
+        margin-bottom: 1em;
+        background-color: $lightgray;
+        &.blockHighlight {
+          border-bottom: 0;
+          background: #dde7ec;
+        }
+      }
+    }
+  }
+  & dt.portletHeader {
+    margin-bottom: 0.75em;
+  }
+}
+
+/* @end */
+
+/* @group meeting */
+
+.MeetingItemBody > table.listing {
+  width: 100%;
+}
+
+/* @end */
+
+/* @group news portlet */
+
+.portlet.portletCollection.newsTemplate {
+
+  dd ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .portletItemTitle {
+    margin: 0.25em 0 0.25em 0;
+    font-weight: bold;
+  }
+  .portletFooter,
+  .portletItem {
+    border-top: 1px solid $lightgray2;
+    padding-top: 1em;
+    margin-top: 1em;
+  }
+  .portletItemMore {
+    margin-top: 0.25em;
+    display: block;
+  }
+  .portletItemDate {
+    color: $darkgray;
+  }
+  .portletItem:hover {
+    .portletItemDate {
+      color: $text-color;
+    }
+  }
+}
+
+/* @end */
+
+/* @group news archive portlet */
+
+dl.portletArchiveListing {
+  ul {
+    padding-left: 0;
+  }
+}
+
+/* @end */
+
+/* @group address block */
+
+.AddressBlock ul {
+  @include ul($style: 'plain');
+}
+
+/* @end */
+
+/* @group portlets */
+
+dl.portlet {
+  & dt.portletHeader {
+    cursor: default;
+    font-size: $font-size-18;
+    margin-bottom: 1em;
+  }
+}
+dl.teaser_portlet .portletHeader img {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.simplelayoutDropZonePortlet h2 {
+  font-weight: normal;
+}
+
+.managedPortlet {
+  border: 1px solid $lightgray2;
+  background-color: $lightgray;
+  margin: 1em 0;
+  @include borderradius();
+  overflow: hidden;
+}
+.managedPortletActions > a,
+.portlet-action {
+  float: left;
+  padding: 0.5em;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.managedPortlet .portletHeader > a {
+  display: block;
+  clear: both;
+  padding: 0.5em;
+  background-color: $page-background;
+  border-top: 1px solid $lightgray2;
+}
+.portlet-action button {
+  border: none;
+  background: transparent;
+}
+.portlet-action.delete {
+  float: right;
+}
+.managedPortletActions > a.delete {
+  float: right;
+}
+.managedPortletActions > a.delete,
+.portlet-action.delete button {
+  color: #F00;
+}
+
+/* @end */
+
+/* @group post it portlet */
+
+#dashboard dl.portlet.postit.portletPostIt {
+  $postit-bg: #DCC126;
+  dt {
+    background-color: $postit-bg;
+    color: #000;
+    .portletActionsWrapper {
+      background: lighten(desaturate($postit-bg, 20%), 20%);
+    }
+  }
+  dd {
+    background: lighten($postit-bg, 40%);
+    &.even {
+      background: lighten($postit-bg, 35%);
+    }
+  }
+}
+
+/* @end */
+
+/* @group dashboard */
+
+$dashboard-bg: $global-navigation-border-color;
+$dashboard-color: contrast($dashboard-bg, $page-background, $text-color);
+
+#dashboard {
+  div.portletwrapper {
+    margin: 0.5em;
+    padding: 0;
+    background: transparent;
+  }
+
+  dl.portlet {
+    border: 1px solid $darkgray;
+    @include boxshadow(0.1em 0.1em 0.25em $lightgray3);
+    dt {
+      background: $dashboard-bg;
+      color: $dashboard-color;
+      border-bottom: 1px solid $darkgray;
+      overflow: hidden;
+      font-size: $font-size;
+      a {
+        color: $dashboard-color;
+      }
+    }
+    dd {
+      background-color: $page-background;
+    }
+    dt, dd {
+      margin-bottom: 0;
+      padding: 0.5em;
+    }
+    .portletActionsWrapper {
+      padding: 0.5em;
+      background: lighten(desaturate($dashboard-bg, 20%), 20%);
+      border-left: 1px solid $darkgray;
+      a:hover { text-decoration: none; }
+    }
+  }
+
+  .folded dl.portlet { border-bottom-width: 0; }
+}
+
+#page-wrapper #dashboard #dashboard-add-portlet {
+  padding-top: 0;
+  form {
+    margin-bottom: 1em;
+  }
+}
+
+#dashboard .portletPostIt {
+  dt.portletHeader {
+    background: $dashboard-bg;
+    border-bottom: 1px solid $darkgray;
+  }
+  dd.portletItem {
+    border: none;
+    span {
+      line-height: $body-line-height;
+      padding: 0;
+    }
+  }
+  form input.text {
+    width: 55%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  form.postIt_addNote_form input.submit {
+    margin: 0;
+  }
+  dd.portletItem.postIt_addNote {
+    background: $lightgray;
+  }
+}
+
+#dashboard .portletWatcher ul {
+  @include ul($style: 'plain');
+}
+
+/* @end */
+
+/* @group byline */
+
+.documentByLine {
+  color: $text-color-light;
+  margin-bottom: 1em;
+}
+
+/* @end */
+
+/* @group text / content */
+
+p {
+  margin-bottom: 1em;
+}
+ul {
+  @include ul();
+  &.listTypePlain {
+    @include ul($style:'plain');
+  }
+}
+ol {
+  @include ul();
+  list-style: decimal;
+}
+#column-content dl {
+  & dt {
+    font-weight: bold;
+  }
+  & dd {
+    margin-bottom: 1em;
+  }
+}
+.discreet {
+  color: $text-color-light;
+}
+
+/* @end */
+
+/* @group below-content viewlet */
+
+#viewlet-below-content {
+  margin-top: 2em;
+}
+
+/* @end */
+
+/* @group category tags */
+
+#category.documentByLine .separator {
+  display: none;
+}
+#category.documentByLine a {
+  @include borderradius();
+  background-color: $global-navigation-color;
+  color: $page-background;
+  padding: 0.25em 0.5em;
+  &:hover {
+    color: $page-background;
+  }
+}
+
+/* @end */
+
+/* @group fieldsets */
+
+fieldset {
+  margin: 1em 0;
+  border-width: 0 0 1px 0;
+}
+
+/* @end */
+
+/* @group linkList */
+
+.linkList,
+.subelements-listing,
+.topic_listing {
+  @include linklist();
+}
+
+/* @end */
+
+/* @group subsite */
+
+body.template-subsite_view h1.documentFirstHeading {
+  display: none;
+}
+#content-core .subsiteColumns .column {
+  min-height: 1px;
+}
+.template-subsite_view #page-wrapper #columns .column .portletStaticText .portletItem ul {
+  @include linklist();
+}
+
+/* @end */
+
+/* @group topic listing
+
+.topic_listing {
+@include linklist();
+}
+
+/* @end */
+
+/* @group news listing */
+
+.newsListing .tileItem {
+  border-bottom: 1px solid $lightgray;
+}
+.newsListing .documentByLine .dtstart {
+  color: $text-color;
+  font-weight: bold;
+}
+
+/* @end */
+
+/* @group simplelayout */
+
+div.sl-controls {
+  padding-top: 0;
+}
+/* padding changes slot-width */
+.simplelayout-content div[id*="slot"] {
+  padding: 0;
+}
+.sl-img-small .sl-img-wrapper,
+.sl-img-middle .sl-img-wrapper {
+  margin-right: 2em;
+}
+div.ListingBlock div.gallery .sl-img-wrapper img {
+  display: block;
+  margin: auto;
+}
+
+/* @end */
+
+/* @group to_top link */
+
+.to_top {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.25em 0.5em;
+  background-color: $lightgray;
+  @include borderradius($border-radius $border-radius 0 0);
+}
+
+/* @end */
+
+/* @group footer */
+
+#footer {
+  background-color: $footer-background;
+  color: $footer-color;
+  & a {
+    color: $footer-color;
+  }
+  & ul {
+    @include ul($style: 'plain');
+  }
+  & .portlet {
+    padding-left: 3em;
+    margin: 2em 0;
+    border-left: 1px solid $footer-border-color;
+    & li {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+  }
+  & .cell:first-child .portlet {
+    border-left: none;
+  }
+}
+#bottom-actions {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+/* @end */
+
+/* @group site-actions */
+
+#portal-siteactions {
+  @include ul($style: 'inline');
+  & a {
+    color: $darkgray;
+  }
+  & li {
+    border-left: 1px solid $darkgray;
+    padding-left: 0.5em;
+    margin-left: 0.5em;
+  }
+  & li:first-child {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+/* @end */
+
+/* @group login */
+
+#login-form {
+  margin: 2em 0;
+}
+
+#login-form label {
+  min-width: 8em;
+  display: inline-block;
+}
+
+/* @end */
+
+/* @group collapsible */
+
+dl.collapsible {
+  dt {
+    cursor: pointer;
+  }
+  dd {
+    display: none;
+  }
+  &.expandedBlockCollapsible dd {
+    display: block;
+  }
+}
+
+/* @end */
+
+/* @group sitemap */
+
+.template-sitemap #content {
+  padding-left: 2em;
+  ul#portal-sitemap {
+    & li {
+      display: list-item;
+      list-style: disc;
+      margin-bottom: 0em;
+      & a:before {
+        /* no content type icons */
+        display: none;
+      }
+    }
+  }
+}
+
+/* @end */
+
+/* @group calendar portlet */
+
+$calendar-portlet-background: #EEEEEE;
+
+.portletCalendar {
+  width: auto;
+  margin: 1px 0 1em 0;
+  dt {
+    background-color: $calendar-portlet-background;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6em;
+    border-bottom: none;
+    #calendar-previous {
+      float: left;
+      padding: 0 1em;
+      margin: 0 -.5em;
+    }
+    #calendar-next {
+      float: right;
+      padding: 0 1em;
+      margin: 0 -.5em;
+    }
+  }
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  a:focus,
+  a:hover,
+  .ploneCalendar a {
+    text-decoration: none;
+  }
+  .ploneCalendar {
+    border-spacing: 0;
+    width:100%;
+    td {
+      background-color: transparent;
+      width: 14%;
+      text-align: center;
+      padding: 2px;
+      border: 2px solid $calendar-portlet-background;
+      background-color: $calendar-portlet-background;
+    }
+    .weekdays th {
+      background-color: $calendar-portlet-background;
+      text-align: center;
+      padding: 2px;
+    }
+    .event {
+      background-color: $calendar-portlet-background;
+    }
+    .todayevent {
+      background-color: $calendar-portlet-background;
+      border: 2px solid $text-color;
+    }
+    .todaynoevent {
+      border: 2px solid $text-color;
+    }
+    /* additional to sunburst */
+    td.today,
+    td.todaynoevent{
+      background-color: #FFF;
+      border-color: $text-color;
+    }
+    td:hover { background-color: #FFF; }
+    td a {
+      display:inline-block;
+      width: 100%;
+      height: 100%;
+    }
+    /* grey out prev/next month incl. links and background */
+    td:empty,
+    td.cal_prev_month,
+    td.cal_next_month {
+      opacity:0.4;
+    }
+    td:empty:hover { background-color:transparent; }
+  }
+
+}
+
+/* @end */
+
+/* @group tooltips */
+
+.tooltip {
+  background-color: $page-background;
+  border-color: $darkgray;
+  @include boxshadow(0 0 1em $darkgray);
+  color: $text-color;
+}
+
+/* @end */
+
+/* @group ticketbox */
+
+table.ticketbox-overview {
+  h2 {
+    margin-top: 0;
+  }
+  ul {
+    @include ul($style:'plain');
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+#addResponse.expandedBlockCollapsible {
+  dd {
+    border: 1px solid $lightgray3;
+    @include boxshadow(0 0 0.25em $lightgray2 inset);
+    padding: 1em;
+  }
+}
+div.add_response.button{
+  &:after {
+    content:' ▼';
+  }
+}
+.expandedBlockCollapsible div.add_response.button{
+  &:after {
+    content:' ▲';
+  }
+}
+
+/* @end */
+
+/* @group colorbox / album view */
+
+  .photoAlbumEntry {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    height: 185px;
+    width: 143px;
+    margin: 0.25em;
+    padding: 0px 6px 0px 9px;
+    text-align: center;
+    background-image: url('polaroid-single.png');
+    background-repeat: no-repeat;
+  }
+  .photoAlbumEntry img {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+  }
+  .photoAlbumEntryWrapper {
+    height: 130px;
+    width: 128px;
+    margin-bottom: 7px;
+  }
+  .photoAlbumEntry a {
+    display: block;
+    text-decoration: none;
+    font-size: 90%;
+    height: 169px;
+    width: 130px;
+    margin: 16px auto 0px;
+    &:hover {
+      color: $link-color-hover;
+    }
+  }
+  .photoAlbumFolder {
+    background-image: url('polaroid-multi.png');
+    background-repeat: no-repeat;
+  }
+  .photoAlbumEntryTitle {
+    display: block;
+    width: 128px;
+    height: 3.6em;
+  }
+
+/* @end */
+
+/* @group ftw.billboard */
+
+div.billboardCategoryListing,
+dl.portletBillboardActions {
+  ul {
+    @include ul($style: 'plain');
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+div.billboardAdDetail {
+  margin-top: 1em;
+}
+
+/* @end */
+
+/* @group permission manager */
+
+.template-import_export_permissions hr {
+  margin: 1em 0;
+}
+
+/* @end */
+
+/* @group notification form */
+
+.template-notification_form {
+  #sendto_form > label {
+    display: block;
+  }
+  fieldset {
+    padding: 0;
+  }
+}
+
+/* @end */
+
+/* @group Invisibles */
+
+* {
+  outline: none;
+}
+.hiddenStructure {
+  display: block;
+  background: transparent;
+  background-image: none; /* safari bug */
+  border: none;
+  height: 0.1em;
+  overflow: hidden;
+  padding: 0;
+  margin: -0.1em 0 0 -0.1em !important;
+  width: 1px;
+}
+#content .visualNoMarker {
+  list-style:none;
+  margin-left: 0;
+}
+.visualClear {
+  clear: both;
+}
+.clearfix {
+  @include clearfix();
+}
+
+/* @end */

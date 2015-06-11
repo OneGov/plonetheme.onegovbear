@@ -1,0 +1,241 @@
+// mobile navi starts at (max-width: 769px)
+
+/* @group general responsive */
+
+.sl-img-wrapper,
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* @end */
+
+/* @group smaller than fixedWidth */
+
+@media screen and (max-width: $page-fixed-width) {
+
+  .fixedWidth {
+    width: 95%;
+  }
+  .sl-img-wrapper img {
+    height: auto !important;
+  }
+
+}
+
+/* @end */
+
+/* @group tablet landscape */
+
+@media screen and (max-width: $screen-tablet-landscape) {
+
+  #column-navigation {
+    @include position0();
+    @include width5();
+  }
+  #column-content {
+    &.position-3 {
+      @include position5();
+      @include width11();
+    }
+    &.position-0 {
+      @include width16();
+    }
+  }
+  #column-sidebar {
+    @include position5();
+    @include width11();
+  }
+  #column-sidebar {
+    clear: both;
+  }
+  #footer .portlet {
+    padding-left: 2em;
+  }
+  #column-navigation .portletContextNavigation ul li a {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+}
+
+/* @end */
+
+/* @group tablet */
+
+@media screen and (max-width: $screen-tablet) {
+
+  .fixedWidth {
+    width: 96%;
+  }
+  #content-core .subsiteColumns .column {
+    width: 49%;
+    margin: 0;
+  }
+  #content-core #subsite-column-2,
+  #content-core #subsite-column-4 {
+    padding-right: 0;
+  }
+  #header .searchBoxWrapper,
+  #columns #column-content,
+  #columns #column-sidebar {
+    @include position0();
+    @include width16();
+    clear: both;
+  }
+  #header-actions,
+  #column-navigation {
+    display: none;
+  }
+  #subsite-column-1,
+  #subsite-column-3,
+  #footer-column-1,
+  #footer-column-3 {
+    @include position0();
+    @include width8();
+  }
+  #subsite-column-2,
+  #subsite-column-4,
+  #footer-column-2,
+  #footer-column-4 {
+    @include position8();
+    @include width8();
+  }
+  #subsite-column-3,
+  #footer-column-3 {
+    clear: both;
+  }
+  #footer-column-3,
+  #footer-column-4 {
+    border-top: 1px solid $footer-border-color;
+  }
+  #footer .portlet {
+    border: none;
+    padding-left: 1em;
+    padding: 1em 0;
+    margin: 1em 0;
+  }
+  /* header */
+  .headerDelimiterWrapper {
+    margin-top: 1em;
+  }
+  /* searchbox */
+  #portal-searchbox {
+    border: 1px solid $mobile-navigation-bordercolor;
+    @include boxshadow(0 0 1em $darkgray);
+    background-color: $page-background;
+    width: 80%;
+    padding: 1.5em 5%;
+    margin: 0 auto;
+    position: absolute;
+    right: 5%;
+  }
+  .LSBox:before {
+    top: 1.8em;
+    right: 7%;
+  }
+  #LSResult {
+    left: 0;
+    top: 6em;
+    border-top: 1px solid $input-bordercolor;
+  }
+  /* user menu */
+  #portal-languageselector-wrapper,
+  #portal-personaltools-wrapper {
+    float: none;
+  }
+  #portal-personaltools.anon-personalbar {
+    margin-top: 52px;
+    direction: rtl;
+    a {
+      font-size: 100%;
+    }
+    li {
+        float:none;
+        display: inline;
+    }
+  }
+  #portal-languageselector,
+  #portal-personaltools {
+    width: 100%;
+    & .actionMenuContent {
+      border: 1px solid $mobile-navigation-bordercolor;
+      @include boxshadow(0 0 1em $darkgray);
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      & a {
+        font-size: 150%;
+        padding: 0.5em;
+      }
+    }
+  }
+  #portal-languageselector dt {
+    display: none;
+  }
+  #portal-languageselector dd,
+  #portal-personaltools-wrapper dd {
+    position: absolute;
+    margin-top: 52px;
+  }
+
+
+  /* invisible banner */
+  #banner-image {
+    display: none;
+  }
+
+  /* search facets */
+  #portal-searchfacets {
+    display: none;
+  }
+  #search-results,
+  #portal-searchfacets {
+    margin: 0;
+    float: none;
+    width: auto;
+  }
+
+  #portal-breadcrumbs {
+    display: none;
+  }
+
+}
+
+/* @end */
+
+/* @group mobile landscape */
+
+@media screen and (max-width: $screen-mobile-landscape) {
+/* ? */
+}
+
+/* @end */
+
+/* @group mobile */
+
+@media screen and (max-width: $screen-mobile) {
+
+  #subsite-column-1,
+  #subsite-column-2,
+  #subsite-column-3,
+  #subsite-column-4,
+  #footer .cell {
+    @include position0();
+    @include width16();
+    clear: both;
+    border-top: none;
+  }
+  #footer .portlet {
+    border: none;
+    border-top: 1px solid $footer-border-color;
+    padding-left: 1em;
+  }
+  #content-core .subsiteColumns .column {
+    width: 100%;
+    padding: 0;
+  }
+
+}
+
+/* @end */

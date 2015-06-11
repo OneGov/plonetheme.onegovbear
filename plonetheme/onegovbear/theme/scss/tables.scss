@@ -1,0 +1,237 @@
+/* @group Data tables */
+caption {
+  text-align: left;
+}
+#column-content table {
+  margin-bottom: 1em;
+}
+// excempt the fullcalendar table from this
+#column-content .fc-content table {
+    margin-bottom: 0;
+}
+table.listing,
+table.plain {
+  max-width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.listing,
+table.grid {
+  border: 1px solid $table-bordercolor;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+  background-color: $page-background;
+}
+table.listing th,
+table.listing td,
+table.grid th,
+table.grid td,
+table.plain th,
+table.plain td,
+table.invisible th,
+table.invisible td {
+  padding: 0.5em 0.75em;
+  text-align: left;
+  vertical-align: top;
+}
+table.grid th,
+table.grid td,
+table.plain th,
+table.plain td,
+table.vertical th,
+table.vertical td,
+table.listing th,
+table.listing td {
+  border-top: 1px solid $table-bordercolor;
+}
+table.listing.grid th,
+table.listing.vertical th {
+  border-bottom: none;
+}
+
+table.listing thead th,
+table.grid thead th,
+table.plain thead th,
+table.invisible thead th {
+  vertical-align: bottom;
+}
+table.plain thead tr th,
+table.plain thead tr td {
+  border-top: 0;
+}
+table.listing th + th,
+table.listing td + td,
+table.listing th + td,
+table.listing td + th,
+table.grid th + th,
+table.grid td + td,
+table.grid th + td,
+table.grid td + th {
+  border-left: 1px solid $table-bordercolor;
+}
+table.listing thead tr:first-child th,
+table.listing tbody tr:first-child th,
+table.listing tbody tr:first-child td,
+table.grid thead tr:first-child th,
+table.grid tbody tr:first-child th,
+table.grid tbody tr:first-child td  {
+  border-top: 0;
+}
+
+table.listing th {
+  color: $table-heading-color;
+  background-color: $table-heading-background;
+}
+table.vertical th {
+  background-image: none;
+  text-align: right;
+}
+.dragindicator {
+  outline: 2px solid #FFD700;
+}
+
+#foldercontents-order-column {
+  padding: 0;
+}
+
+div.listingBar {
+  font-size: 91.6667%;
+  margin: 1em 0;
+}
+div.listingBar .next {
+  display: inline-block;
+  float: right;
+}
+div.listingBar .previous {
+  display: inline-block;
+}
+div.listingBar .current {
+  vertical-align: middle;
+  padding: 0 5px;
+}
+
+#listing-table {
+  margin-bottom: 1em;
+}
+
+/* @end */
+
+/* @group directories_view sorting */
+
+#tabbedview_form table.listing th.sortable {
+  cursor: pointer;
+  &.sort-selected:after {
+    content: ' ▲';
+    font-size: 10px;
+  }
+  &.sort-reverse:after {
+    content: ' ▼';
+    font-size: 10px;
+  }
+}
+
+/* @end */
+
+/* @group ext js */
+
+.x-menu-list {
+  padding-left: 0;
+}
+
+/* @end */
+
+/* @group tree table */
+
+table.treeTable {
+  border: 1px solid $table-bordercolor;
+  border-collapse: collapse;
+  td, th {
+    border: none;
+    border-bottom: 1px solid $lightgray;
+  }
+  th {
+    border-bottom: 1px solid $table-bordercolor;
+    background: $table-heading-background;
+  }
+  tr.odd {
+    background: $page-background;
+  }
+  tr:last-child td {
+    border-bottom-color: $table-bordercolor;
+  }
+}
+
+/* @end */
+
+/* @group responsive table */
+/*
+    Force tables to not be like tables anymore. Borrowed from this example:
+    http://elvery.net/demo/responsive-tables/#no-more-tables
+*/
+@media only screen and (max-width: $screen-tablet-landscape) {
+    table.responsive,
+    .responsive thead,
+    .responsive tbody,
+    .responsive th,
+    .responsive td,
+    .responsive tr {
+        display: block;
+        word-wrap: break-word;
+        line-height: 1em;
+    }
+
+    table.responsive {
+        border: none;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    /* Have spaces between the rows which look like business cards */
+    .responsive tbody tr:first-child {
+        margin-top: 0.5em;
+    }
+
+    .responsive tbody tr {
+        margin-bottom: 2em;
+    }
+
+    /* Behave like a "row" */
+    .responsive tbody tr td {
+        position: relative;
+        padding-left: 45%;
+        white-space: normal;
+        text-align: left;
+        border: 1px solid $lightgray2;
+        border-width: 0 1px 0 1px;
+        min-height: 1em;
+    }
+
+    table.responsive tbody tr td:first-child {
+        border-top: 1px solid $lightgray2;
+    }
+
+    table.responsive tbody tr td:last-child {
+        border-bottom: 1px solid $lightgray2;
+    }
+
+    /* Table header as label */
+    .responsive td:before {
+        position: absolute;
+        color: $darkgray;
+
+        top: 0.5em;
+        left: 0.5em;
+        width: 40%;
+        padding-right: 1em;
+        text-align:left;
+
+        content: attr(data-title);
+    }
+}
+/* @end */

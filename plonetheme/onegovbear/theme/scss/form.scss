@@ -1,0 +1,322 @@
+@mixin inputfield($full-width:false) {
+  font-size: $font-size;
+  font-family: $body-font-family;
+  display: inline-block;
+  line-height: 1em;
+  padding: 0.5em;
+  width: 20em;
+  border: 1px solid $input-bordercolor;
+  @include borderradius();
+  @if $full-width == true {
+    padding: 0.5em 3%;
+    width: 94%;
+  }
+  background: $input-background-color;
+  &:hover {
+
+  }
+  &:focus {
+    border-color: $global-navigation-color;
+  }
+}
+
+@mixin button($base-color, $disabled:false) {
+  $input-context-bg-start: $base-color;
+  $input-context-bg-end: darken($input-context-bg-start, 10%);
+  $input-context-border: darken($input-context-bg-end, 5%);
+  $input-context-color: contrast($base-color, $button-color-light, $button-color-dark);
+
+  $input-context-hover-border: $input-context-border;
+  $input-context-hover-bg-start: darken($input-context-bg-start, 10%);
+  $input-context-hover-bg-end: darken($input-context-bg-end, 10%);
+  $input-context-hover-color: $input-context-color;
+
+
+  border: 1px solid $input-context-border;
+  @include borderradius();
+  @include gradient($input-context-bg-start, $input-context-bg-end);
+  font-family: $body-font-family;
+  color: $input-context-color;
+  padding: 0.5em 1em;
+  margin: 0.5em 0.5em 0 0;
+  display: inline-block;
+  @include boxshadow(0 0.1em 0.3em -0.1em $darkgray);
+  /* no effects if disabled */
+  @if (not $disabled) {
+    &:hover, &:focus, &:active {
+      border: 1px solid $input-context-hover-border;
+      @include gradient($input-context-hover-bg-start, $input-context-hover-bg-end);
+      color: $input-context-hover-color;
+      text-decoration: none;
+    }
+    &:active {
+      @include boxshadow(0 0 0.25em $darkgray);
+    }
+  }
+}
+
+
+@mixin button_context() {
+  @include button($input-context-base);
+}
+
+@mixin button_standalone() {
+  @include button($input-standalone-base);
+}
+
+@mixin button_destructive() {
+  @include button($input-destructive-base);
+}
+
+@mixin button_disabled() {
+  @include button(transparentize($input-context-base, 0.7), $disabled:true);
+}
+
+/* @group formTabs */
+
+ul.formTabs {
+  @include ul($style: 'inline');
+  border-bottom: 1px solid $page-bordercolor;
+  width: 100%;
+  &:after {
+    clear: both;
+  }
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  & a {
+    border: 1px solid $page-bordercolor;
+    background-color: $lightgray;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+    display: block;
+    float: left;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    &.selected,
+    &:hover {
+      color: $text-color;
+      text-decoration: none;
+      border-bottom-color: $page-background;
+      background-color: $page-background;
+    }
+  }
+}
+fieldset.formPanel {
+  border: none;
+}
+
+/* @end */
+
+/* @group input fields */
+
+input[type="text"],
+input[type="password"] {
+  @include inputfield();
+}
+
+/* @end */
+
+/* @group textarea */
+
+textarea {
+  @include inputfield();
+}
+.field textarea {
+  width: 99%;
+  padding: 0.5%;
+}
+
+/* @end */
+
+/* @group buttons */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button.context,
+a.button {
+  @include button_context();
+}
+a.button.standalone,
+input.standalone {
+  @include button_standalone();
+}
+a.button.destructive,
+input.destructive {
+  @include button_destructive();
+}
+a.button.disabled,
+input[type="button"][disabled],
+input[type="submit"][disabled],
+button[disabled] {
+  @include button_disabled();
+}
+/* TODO: inactive buttons */
+
+/* @end */
+
+/* @group labels */
+
+label,
+div.label {
+  font-weight:bold;
+}
+label .formHelp,
+div.label .formHelp {
+  color: $text-color-light;
+  display: block;
+  font-weight: normal;
+}
+#content optgroup {
+  font-style: normal;
+  font-weight: bold;
+  color: #999;
+  padding-left: 0.25em;
+}
+#content option {
+  color: black;
+}
+#content optgroup > option {
+  padding: 0 0.25em 0 1em;
+}
+dl.enableFormTabbing dd {
+  margin-left: 0;
+  padding-top: 2em;
+}
+.field {
+  clear: both;
+  margin-bottom: 1em;
+}
+.field input[type="text"][name$=".title"],
+input#title {
+  /* width: 100%; */
+  font-size: $font-size-18;
+}
+.field.error input[type="text"][name$=".title"],
+.error input#title {
+  /* width: 99%; */
+}
+.fieldRequired {
+  padding: 0 0 0 1em;
+  color: $page-background;
+}
+div.overlay .field label .required,
+#form .field label .required,
+.formQuestion .required {
+  font-size: 1px;
+  color: transparent;
+}
+div.overlay .field label .required:after,
+#form .field label .required:after,
+#sendto_form .fieldRequired:before,
+.formQuestion .required:after {
+  font-size: $font-size;
+  content: "■";
+  color: #FF0000;
+}
+#content li.formTab a.required span:after {
+  content: " ■";
+  color: #FF0000;
+}
+
+/* z3cform required implementation */
+#content li.formTab a.required span:after,
+#content-core li.formTab a.required span:after,
+  div.field span.required:after {
+  content: "■";
+  color: red;
+  padding-left: 0.2em;
+}
+
+/* no required mark for input fields */
+div.overlay .field label input.required,
+#form .field label input.required,
+.formQuestion input.required {
+  visibility: visible;
+  font-size: $font-size;
+}
+div.overlay .field label input.required:after,
+#form .field label input.required:after {
+  content: '';
+}
+.formHelp {
+  margin: 0 0 0.2em 0;
+}
+div.field.error {
+  background-color: #fdc;
+  border:  1px solid red;
+  padding: 0.5em;
+  margin:  1em 0;
+}
+.error .fieldRequired {
+  color: #d00;
+}
+div.error.warning {
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
+  padding: 0;
+}
+div.error.warning input {
+  border: 2px solid red;
+}
+
+/* @end */
+
+/* @group checkboxes and radio */
+
+input[type="checkbox"],
+input[type="radio"] {
+  &:hover {}
+  &:focus {
+    border-color: $global-navigation-color;
+  }
+}
+
+/* @end */
+
+/* @group listing bar */
+
+div.listingBar .next {
+  display: inline-block;
+  float: right;
+}
+div.listingBar .previous {
+  display: inline-block;
+}
+div.listingBar .current {
+  vertical-align: middle;
+}
+
+#content div.listingBar a,
+#content div.listingBar span.current,
+div.listingBar a {
+  padding: 0.5em 0.75em;
+  vertical-align: middle;
+}
+#content div.listingBar span.current {
+  @include borderradius();
+  background-color: #e7eff0;
+}
+
+/* @end */
+
+/* @group notification form */
+.template-notification_form #content form {
+    padding-right: 2px;
+}
+
+.template-notification_form #content form textarea{
+    width: 98%;
+    padding:1%;
+}
+/* @end */
+
+
+/* @group plone form gen */
+.qefield .field {
+    clear:none;
+}
+/* @end */

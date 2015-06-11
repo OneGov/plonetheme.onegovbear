@@ -1,12 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rules
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xi="http://www.w3.org/2001/XInclude">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <theme href="/++theme++plonetheme.onegovbear/index.html"/>
-    <notheme css:if-not-content="#visual-portal-wrapper" />
+  <!-- Rules applying to standard Plone pages -->
+  <rules css:if-content="#visual-portal-wrapper">
 
+    <theme href="index.html" />
+
+    <!-- Copy standard header tags, including base (very important for
+         Plone default pages to work correctly), meta, title and
+         style sheets/scripts, in the order they appear in the content.
+    -->
+    <drop theme="/html/head/meta" />
+    <drop theme="/html/head/title" />
+    <drop theme="/html/head/base" />
+    <drop theme="/html/head/style" />
+    <drop theme="/html/head/script" />
+    <drop theme="/html/head/link" />
+    <drop theme="/html/head/comment()" />
+
+    <after content="/html/head/meta" theme-children="/html/head" />
+    <after content="/html/head/title" theme-children="/html/head" />
+
+    <after
+        content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
+        theme-children="/html/head"
+        />
+
+    <!-- Copy html lang -->
+    <copy attributes="lang" content="/html" theme="/html" />
+    <!-- Copy body attributes -->
+    <copy attributes="class id dir" content="/html/body" theme="/html/body" />
+
+    <replace content="/html/head/meta[@name='viewport']">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+    </replace>
+
+    <after theme-children="/html/head" css:content="#portal-top script"/>
+    <after theme-children="/html/head" css:content="#portal-top style"/>
+    <after theme-children="/html/head" css:content="#portal-top link"/>
+
+    <replace css:content="#portal-logo" css:theme="#portal-logo" />
+    <replace css:content="#portal-globalnav-wrapper" css:theme="#portal-globalnav" />
+    <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
+    <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
+    <replace css:content="#portal-languageselector" css:theme="#portal-languageselector" />
+
+    <replace css:content-children="#portal-topactions" css:theme-children="#portal-topactions" />
+
+    <replace css:content="ul.mobileButtons" css:theme="ul.mobileButtons" />
+
+    <replace css:content-children="#portal-breadcrumbs" css:theme-children="#portal-breadcrumbs" />
+    <drop css:content="#portal-breadcrumbs" />
+
+    <replace css:content-children="div.documentActions" css:theme-children="#document-actions" />
+    <drop css:content="div.documentActions" />
+
+    <!-- copy missing accesskeys -->
+    <replace css:theme-children="#accesskeys" css:content="a[accesskey='2'], a[accesskey='6']" />
+
+    <!-- banner image -->
+    <replace css:content-children="#banner-image" css:theme-children="#banner-image" />
+
+    <replace css:content-children="#portal-column-one" css:theme-children="#column-navigation" />
+    <replace css:content-children="#portal-column-content" css:theme-children="#column-content" />
+    <replace css:content-children="#portal-column-two" css:theme-children="#column-sidebar" />
+
+    <replace css:content="div.to_top" css:theme="div.to_top" method="raw" />
+    <drop css:content="div.to_top" />
+
+    <!-- make content bigger if there is no navigation column -->
+    <rules if-content="not(//*[@id='portal-column-one'])">
+      <drop css:theme="#column-navigation" />
+      <before css:theme-children="#column-content">
+        <xsl:attribute name="class">cell width-12 position-0</xsl:attribute>
+      </before>
+    </rules>
+
+    <!-- make content bigger if there is no side column -->
+    <rules if-content="not(//*[@id='portal-column-two'])">
+      <drop css:theme="#column-sidebar" />
+      <before css:theme-children="#column-content">
+        <xsl:attribute name="class">cell width-13 position-3</xsl:attribute>
+      </before>
+      <!-- even bigger if neither navigation nor sidebar are here -->
+      <rules if-content="not(//*[@id='portal-column-one'])">
+        <drop css:theme="#column-navigation" />
+        <before css:theme-children="#column-content">
+          <xsl:attribute name="class">cell width-16 position-0</xsl:attribute>
+        </before>
+      </rules>
+    </rules>
+
+
+
+    <replace css:content="#viewlet-below-content" css:theme="#viewlet-below-content" />
+
+    <replace css:content="#ftw-footer" css:theme-children="#footer" />
+
+    <replace css:content="#portal-siteactions" css:theme="#portal-siteactions" />
+
+    <!-- Insert analytics js -->
+    <after content="//*[@id='portal-footer-wrapper']/div/script" css:theme="#container" />
+    <after content="//*[@id='portal-footer-wrapper']/div/noscript" css:theme="#container" />
+
+  </rules>
 </rules>

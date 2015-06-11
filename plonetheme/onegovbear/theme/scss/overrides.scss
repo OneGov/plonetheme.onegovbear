@@ -1,0 +1,267 @@
+/* @group checkbox and radio */
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.25em;
+}
+
+/* @end */
+
+/* @group plone control panel */
+
+ul.configlets {
+  @include ul($style:'plain');
+}
+
+/* @end */
+
+/* @group placeholder portlet */
+
+dl.portlet.portlet-static-hidden-placeholder {
+  display: none;
+}
+
+/* @end */
+
+/* @group tags widget */
+
+#content .existingTagsHelp,
+#content .newTagsHelp {
+  float: none;
+  clear: both;
+}
+div.existingTagsSection,
+dl.newTagsSection {
+  margin-left: 0;
+}
+.existingTags > label,
+.newTagsSection > label {
+  line-height: 1.5em;
+}
+#content .newTagsSection {
+  margin-top: 1em;
+  margin-left: 0;
+  width: 100%;
+  & textarea {
+    width: 100%;
+  }
+}
+
+/* @end */
+
+/* @group mobile buttons */
+
+ul.mobileButtons {
+  @include ul($style: 'inline');
+  & a {
+    text-decoration: none;
+    line-height: 1em;
+  }
+}
+ul.mobileNavigation {
+  padding-left: 0;
+  & li {
+    /* todo: move this into ul-mixing */
+    margin-bottom: 0;
+    & a,
+    & a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+/* @end */
+
+/* @group flyout navigation */
+
+#portal-globalnav > li {
+  position: relative;
+  z-index: 3;
+  &.flyoutActive {
+    z-index: 4;
+  }
+  &.flyoutActive > .wrapper {
+    margin: 0;
+    background-color: $page-background;
+    position: relative;
+    z-index: 5;
+    border: 1px solid $global-navigation-flyout-border;
+    border-bottom-width: 0;
+    @include borderradius($border-radius $border-radius 0 0);
+  }
+  &.flyoutActive > ul.flyoutActive {
+    z-index: 4;
+  }
+}
+#portal-globalnav ul.flyoutChildren {
+  @include ul($style: 'plain');
+  @include borderradius(0 $border-radius $border-radius $border-radius);
+  position: relative;
+  display: none;
+  z-index: 3;
+  border: 1px solid $global-navigation-flyout-border;
+  padding: 0.25em 1em 0 1em;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 2em;
+  width: 20em;
+  background: $page-background;
+  @include boxshadow(0.5em 0.5em 0.5em -0.5em $darkgray);
+  & li {
+    display: block;
+    padding: 0.5em 0;
+    margin: 0;
+  }
+  & li.directLink {
+    font-weight: bold;
+    + li {
+      border-top: 1px solid $lightgray2;
+    }
+  }
+  & a {
+    text-decoration: none;
+    display: block;
+  }
+}
+
+/* @end */
+
+/* @group book */
+
+.portletGoToParent {
+  display: none;
+}
+
+/* @end */
+
+/* @group tinymce */
+
+.mceActionPanel input, .plonebutton {
+  color: $input-context-color !important;
+}
+.mceActionPanel #cancel {
+  color: $text-color !important;
+}
+
+.col-row input {
+  width: auto;
+}
+
+/* @end */
+
+/* @group dialog */
+
+body#plonebrowser #content.dialog-wrapper {
+  font-size: 100%;
+}
+
+body #internallinkcontainer .list.item span,
+body #internallinkcontainer .list.item a {
+  position: static;
+}
+
+/* @end */
+
+/* @group overlays */
+
+#cboxOverlay,
+#exposeMask {
+  background: #000 !important;
+  opacity: 0.4;
+}
+
+/* @end */
+
+/* @group izug listing view */
+
+.template-izug_listing_view .itemDate {
+  font-weight: bold;
+}
+.template-izug_listing_view .CustomlistingItem {
+  margin-bottom: 2em;
+  border-bottom: 1px solid $lightgray;
+}
+
+/* @end */
+
+/* @group ftw.bridge watcher portlet */
+
+.portletWatcher dd {
+  margin-bottom: 0.75em;
+}
+
+/* @end */
+
+/* @group sharing table */
+
+#user-group-sharing th {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* @end */
+
+/* @group ajax spinner */
+
+#ajax-spinner {
+  display: none !important;
+}
+
+/* @end */
+
+/* @group customstyles */
+
+body.template-customstyles_form #slider-wrapper,
+body.template-customstyles_form #banner-image {
+  display: none;
+}
+body.template-customstyles_form label {
+  display: block;
+}
+#customform-help {
+  margin-top: 1em;
+  padding: 1em;
+  @include boxshadow(0.5em 0.5em 0.5em $darkgray);
+  border: 1px solid #aaa;
+  background: #eee no-repeat center center;
+}
+textarea#custom-scss {
+  font-family: Courier New;
+}
+#portal-siteactions li#siteaction-manage_styles {
+  border-left: none;
+  float: right;
+}
+
+/* @end */
+
+/* @group theming controlpanel */
+
+body.template-theming-controlpanel {
+
+  #visual-portal-wrapper {
+    @include clearfix();
+    width: $page-fixed-width;
+    margin: 0 auto;
+    background: #FFF;
+  }
+
+  #portal-column-one {
+    @include position0();
+    @include width4();
+  }
+  #portal-column-content {
+    @include position4();
+    @include width12();
+  }
+  #portal-logo { clear: both; }
+
+  #portal-topactions,
+  #portal-searchbox,
+  #portal-footer-wrapper {
+    display: none;
+  }
+}
+
+/* @end */

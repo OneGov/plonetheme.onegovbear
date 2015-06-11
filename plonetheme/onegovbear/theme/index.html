@@ -1,10 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Plone Theme</title>
-  </head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>OneGovBox</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
 
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/iefixes.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/4teamwork/ftw.mobilenavigation/master/ftw/mobilenavigation/browser/resources/navigation.css" />
+
+    <link rel="stylesheet" type="text/css" href="static/static.css" />
+  </head>
   <body>
-      <h1>Hello World</h1>
+    <p id="accesskeys" class="hiddenStructure" />
+    <div id="portal-top" />
+    <div id="container">
+      <div id="portal-topactions" class="fixedWidth">Top actions | ... | ...</div>
+      <div id="page-wrapper" class="fixedWidth clearfix">
+
+        <div id="header" class="clearfix">
+          <ul class="mobileButtons">
+            <li>
+              <a href="#" id="toggle_search" title=""></a>
+            </li>
+            <li>
+              <a href="#" id="toggle_slidenavi" title=""></a>
+            </li>
+            <li>
+              <a href="#" id="toggle_subsitelangs" title="">de</a>
+            </li>
+          </ul>
+
+          <div class="row logoRow">
+            <div class="cell position-0 width-8">
+              <a id="portal-logo" href="#"><img src="images/logo_onegov.png" alt="" /></a>
+            </div>
+            <div class="cell position-8 width-8">
+              <div id="portal-languageselector-wrapper">
+                <dl id="portal-languageselector" class="actionMenu deactivated">
+                  <dt class="actionMenuHeader">
+                    <a href="#">Deutsch <span style="font-size:10px;"> ▼</span></a>
+                  </dt>
+                  <dd class="actionMenuContent">
+                    <ul>
+                      <li class="language-en">
+                        <a href="#">English</a>
+                      </li>
+                      <li class="language-fr">
+                        <a href="#">Français</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+              <div id="portal-personaltools-wrapper">
+                <dl class="actionMenu deactivated" id="portal-personaltools"><dt id="anon-personalbar">
+                  <a href="#" id="personaltools-a">Kontakt</a>
+                  <a href="#" id="personaltools-b">Login</a>
+                </dt></dl>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="cell position-0 width-12">
+              <ul id="portal-globalnav">
+                <li class="">
+                  <span class="wrapper"><a title="" href="#">Private</a></span>
+                </li>
+                <li class="">
+                  <span class="wrapper"><a title="" href="#">Unternehmen</a></span>
+                </li>
+                <li class="plain">
+                  <span class="wrapper"><a title="" href="#">Portrait</a></span>
+                </li>
+                <li class="selected">
+                  <span class="wrapper"><a title="" href="#">Beh&ouml;rden</a></span>
+                </li>
+              </ul>
+
+            </div>
+            <div class="cell position-12 width-4 searchBoxWrapper">
+              <div id="portal-searchbox">
+
+                <form action="#search" id="livesearch0" name="searchform">
+                  <div class="LSBox">
+                    <input type="text" id="searchGadget" class="searchField inputLabel" placeholder="OneGovBox durchsuchen" />
+                    <input type="submit" value="Suche" class="searchButton" />
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+          <div class="row headerDelimiterWrapper">
+            <div class="cell position-0 width-16" id="header-delimiter">&nbsp;</div>
+          </div>
+          <!-- closes #header -->
+        </div>
+
+        <div id="columns" class="clearfix">
+
+          <div class="row">
+            <div class="cell position-0 width-16" id="breadcrumbs-wrapper">
+              <div id="portal-breadcrumbs">
+                <span id="breadcrumbs-you-are-here">Sie sind hier:</span>
+                <span id="breadcrumbs-home">
+                  <a href="http://www.zg.ch">Startseite</a>
+                </span>
+              </div>
+
+              <div id="document-actions">
+                <ul><li id="document-action-print">
+                  <a href="javascript:this.print();" title="Drucken">5</a>
+                </li></ul>
+              </div>
+
+              <div class="visualClear"><!-- --></div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="cell position-0 width-16" id="banner-image"></div>
+          </div>
+
+          <div class="row">
+
+            <div class="cell position-0 width-3" id="column-navigation">
+              <div>
+                <dl class="portlet portletContextNavigation">
+                  <dt class="portletHeader hiddenStructure">
+                    <span class="portletTopLeft"></span>
+                    <a class="tile" href="#sitemap">Navigation</a>
+                    <span class="portletTopRight"></span>
+                  </dt>
+                  <dd class="portletItem lastItem">
+                    <ul>
+                      <li class="parent"><a href="#">Beh&ouml;rden</a></li>
+                      <li class="current">Baudirektion</li>
+                      <li><a href="#">Abfallwirtschaft</a></li>
+                      <li><a href="#">Abwasser</a></li>
+                      <li><a href="#">Altlasten</a></li>
+                      <li><a href="#">Musikveranstaltungen</a></li>
+                      <li><a href="#">Neophyten / Elektrosmog</a></li>
+                      <li><a href="#">Oberfl&auml;chengew&auml;sser</a></li>
+                    </ul>
+                    <span class="portletBottomLeft"></span>
+                    <span class="portletBottomRight"></span>
+                  </dd>
+                </dl>
+              </div>
+
+              <!-- closes column-navigation -->
+            </div>
+
+
+            <div class="cell position-3 width-9" id="column-content">
+              <h1 class="documentFirstHeading">This is a heading 1</h1>
+              <p>Some content in a paragraph</p>
+              <h2>This is a heading 2</h2>
+              <p>Some content in a paragraph</p>
+              <div>
+                <input type="text" />
+                <input type="submit" name="submit" />
+              </div>
+              <h3>This is a heading 3</h3>
+              <p>Some content in a paragraph</p>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+              <ul class="linkList">
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+                <li><a href="#">Link in Auflistung</a></li>
+              </ul>
+              <p>Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.
+              </p>
+              <ul>
+                <li>Epsum factorial non deposit quid pro quo hic escorol</li>
+                <li>Something small</li>
+                <li>Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum.</li>
+                <li>Just a little more</li>
+              </ul>
+              <!-- closes column-content -->
+            </div>
+
+            <div class="cell position-12 width-4" id="column-sidebar">
+              <dl class="portlet portletStaticText portlet-static-aktuell">
+                <dt class="portletHeader">
+                  <span>Aktuell</span>
+                </dt>
+                <dd class="portletItem odd">
+                  <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></p>
+                </dd>
+              </dl>
+              <!-- closes column-sidebar -->
+            </div>
+          </div>
+
+
+          <div class="row belowContent">
+            <div class="cell position-0 width-16">
+              <div class="to_top"><a href="#">zum Seitenanfang</a></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="footer" class="clearfix">
+          <div class="row">
+            <div class="cell position-0 width-4">
+              <dl class="portlet">
+                <dt class="portletHeader">
+                  <span class="portletTopLeft"></span>
+                  <span>
+                    Private
+                  </span>
+                  <span class="portletTopRight"></span>
+                </dt>
+                <dd class="portletItem odd">
+                  <ul>
+                    <li><a href="#">Bildung</a></li>
+                    <li><a href="#">Gesundheit und Soziales</a></li>
+                    <li><a href="#">Kultur, Sport und Tour</a></li>
+                    <li><a href="#">Mobilit&auml;t</a></li>
+                    <li><a href="#">Pers&ouml;nliches</a></li>
+                  </ul>
+                  <span class="portletBottomLeft"></span>
+                  <span class="portletBottomRight"></span>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="cell position-4 width-4">
+              <dl class="portlet">
+                <dt class="portletHeader">
+                  <span class="portletTopLeft"></span>
+                  <span>
+                    Unternehmen
+                  </span>
+                  <span class="portletTopRight"></span>
+                </dt>
+                <dd class="portletItem odd">
+                  <ul>
+                    <li><a href="#">Bauen und Submissionen</a></li>
+                    <li><a href="#">Gründen, Umstrukturieren und Auflösen</a></li>
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Schutz und Sicherheit</a></li>
+                    <li><a href="#">Standort und Steuern</a></li>
+                  </ul>
+                  <span class="portletBottomLeft"></span>
+                  <span class="portletBottomRight"></span>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="cell position-8 width-4">
+              <dl class="portlet">
+                <dt class="portletHeader">
+                  <span class="portletTopLeft"></span>
+                  <span>
+                    Beh&ouml;rden
+                  </span>
+                  <span class="portletTopRight"></span>
+                </dt>
+                <dd class="portletItem odd">
+                  <ul>
+                    <li><a href="#">Kantonsrat</a></li>
+                    <li><a href="#">Regierungsrat</a></li>
+                    <li><a href="#">Verwaltungsrechtspflege</a></li>
+                    <li><a href="#">Zivil- und Strafrechtspflege</a></li>
+                    <li><a href="#">Baudirektion</a></li>
+                  </ul>
+                  <span class="portletBottomLeft"></span>
+                  <span class="portletBottomRight"></span>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="cell position-12 width-4">
+              <dl class="portlet">
+                <dt class="portletHeader">
+                  <span class="portletTopLeft"></span>
+                  <span>
+                    Portrait
+                  </span>
+                  <span class="portletTopRight"></span>
+                </dt>
+                <dd class="portletItem odd">
+                  <ul>
+                    <li><a href="#">Bildung</a></li>
+                    <li><a href="#">Gesundheit</a></li>
+                    <li><a href="#">Kultur</a></li>
+                    <li><a href="#">Leute</a></li>
+                    <li><a href="#">Natur und Freizeit</a></li>
+                  </ul>
+                  <span class="portletBottomLeft"></span>
+                  <span class="portletBottomRight"></span>
+                </dd>
+              </dl>
+            </div>
+
+            <!-- closes footer -->
+          </div>
+          <!-- closes #page-wrapper -->
+        </div>
+
+      </div>
+      <div id="bottom-actions" class="fixedWidth">
+        <ul id="portal-siteactions" />
+      </div>
+
+      <div class="bookReaderLastElement"></div>
+
+      <!-- closes #container -->
+    </div>
+
   </body>
 </html>
