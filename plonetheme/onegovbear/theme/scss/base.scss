@@ -625,31 +625,6 @@ $calendar-portlet-background: #EEEEEE;
 
 /* @end */
 
-/* @group ftw.billboard */
-
-div.billboardCategoryListing,
-dl.portletBillboardActions {
-  ul {
-    @include ul($style: 'plain');
-    li {
-      margin-bottom: 0.5em;
-    }
-  }
-}
-div.billboardAdDetail {
-  margin-top: 1em;
-}
-
-/* @end */
-
-/* @group permission manager */
-
-.template-import_export_permissions hr {
-  margin: 1em 0;
-}
-
-/* @end */
-
 /* @group notification form */
 
 .template-notification_form {
