@@ -1,5 +1,22 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     i18n_domain="plonetheme.onegovbear">
+
+    <include package="ftw.upgrade" file="meta.zcml" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="plonetheme.onegovbear"
+        directory="profiles/default"
+        description="A OneGov Plone Theme."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+    <upgrade-step:directory
+        profile="plonetheme.onegovbear:default"
+        directory="upgrades"
+        />
 
 </configure>
