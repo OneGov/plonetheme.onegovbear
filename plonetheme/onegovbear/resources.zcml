@@ -3,6 +3,8 @@
     xmlns:theme="http://namespaces.zope.org/ftw.theming"
     i18n_domain="plonetheme.onegovbear">
 
+    <include package="ftw.theming" file="meta.zcml" />
+
     <theme:resources profile="plonetheme.onegovbear:default" slot="theme">
         <theme:scss file="theme/scss/base.scss" />
     </theme:resources>
