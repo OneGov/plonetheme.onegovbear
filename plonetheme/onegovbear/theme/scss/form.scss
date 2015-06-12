@@ -1,3 +1,49 @@
+$formtabs-border-color: #ccc;
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                formtabs-border-color);
+}
+
+#content ul.formTabs, ul.formTabs {
+  @include ul($style: 'inline');
+  border-bottom: 1px solid $formtabs-border-color;
+
+  &:after {
+    clear: both;
+  }
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+
+  a {
+    display: block;
+    float: left;
+    margin-bottom: -1px;
+    padding: 0.5em 0.75em;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.selected {
+      border: 1px solid $formtabs-border-color;
+      @include borderradius(5px 5px 0 0);
+      border-bottom-width: 0;
+      background-color: $content-bg-color;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+
+/* OLD */
+
+
 @mixin inputfield($full-width:false) {
   font-size: $font-size;
   font-family: $body-font-family;
@@ -20,40 +66,6 @@
   }
 }
 
-/* @group formTabs */
-
-ul.formTabs {
-  @include ul($style: 'inline');
-  border-bottom: 1px solid $page-bordercolor;
-  width: 100%;
-  &:after {
-    clear: both;
-  }
-  &:before, &:after {
-    content: "";
-    display: table;
-  }
-  & a {
-    border: 1px solid $page-bordercolor;
-    background-color: $lightgray;
-    padding: 0.5em 0.75em;
-    text-decoration: none;
-    display: block;
-    float: left;
-    margin-bottom: -1px;
-    margin-left: -1px;
-    &.selected,
-    &:hover {
-      color: $text-color;
-      text-decoration: none;
-      border-bottom-color: $page-background;
-      background-color: $page-background;
-    }
-  }
-}
-fieldset.formPanel {
-  border: none;
-}
 
 /* @end */
 
