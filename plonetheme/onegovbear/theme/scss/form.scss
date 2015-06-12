@@ -20,58 +20,6 @@
   }
 }
 
-@mixin button($base-color, $disabled:false) {
-  $input-context-bg-start: $base-color;
-  $input-context-bg-end: darken($input-context-bg-start, 10%);
-  $input-context-border: darken($input-context-bg-end, 5%);
-  $input-context-color: contrast($base-color, $button-color-light, $button-color-dark);
-
-  $input-context-hover-border: $input-context-border;
-  $input-context-hover-bg-start: darken($input-context-bg-start, 10%);
-  $input-context-hover-bg-end: darken($input-context-bg-end, 10%);
-  $input-context-hover-color: $input-context-color;
-
-
-  border: 1px solid $input-context-border;
-  @include borderradius();
-  @include gradient($input-context-bg-start, $input-context-bg-end);
-  font-family: $body-font-family;
-  color: $input-context-color;
-  padding: 0.5em 1em;
-  margin: 0.5em 0.5em 0 0;
-  display: inline-block;
-  @include boxshadow(0 0.1em 0.3em -0.1em $darkgray);
-  /* no effects if disabled */
-  @if (not $disabled) {
-    &:hover, &:focus, &:active {
-      border: 1px solid $input-context-hover-border;
-      @include gradient($input-context-hover-bg-start, $input-context-hover-bg-end);
-      color: $input-context-hover-color;
-      text-decoration: none;
-    }
-    &:active {
-      @include boxshadow(0 0 0.25em $darkgray);
-    }
-  }
-}
-
-
-@mixin button_context() {
-  @include button($input-context-base);
-}
-
-@mixin button_standalone() {
-  @include button($input-standalone-base);
-}
-
-@mixin button_destructive() {
-  @include button($input-destructive-base);
-}
-
-@mixin button_disabled() {
-  @include button(transparentize($input-context-base, 0.7), $disabled:true);
-}
-
 /* @group formTabs */
 
 ul.formTabs {
@@ -127,33 +75,6 @@ textarea {
   width: 99%;
   padding: 0.5%;
 }
-
-/* @end */
-
-/* @group buttons */
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button.context,
-a.button {
-  @include button_context();
-}
-a.button.standalone,
-input.standalone {
-  @include button_standalone();
-}
-a.button.destructive,
-input.destructive {
-  @include button_destructive();
-}
-a.button.disabled,
-input[type="button"][disabled],
-input[type="submit"][disabled],
-button[disabled] {
-  @include button_disabled();
-}
-/* TODO: inactive buttons */
 
 /* @end */
 

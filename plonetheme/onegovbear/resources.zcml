@@ -10,6 +10,7 @@
         <theme:scss file="theme/scss/mixins.scss" />
         <theme:scss file="theme/scss/helper.scss" />
 
+        <theme:scss file="theme/scss/buttons.scss" />
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/layout.scss" />
         <theme:scss file="theme/scss/content.scss" />
