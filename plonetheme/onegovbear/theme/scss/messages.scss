@@ -24,7 +24,7 @@ dl.portalMessage, #content dl.portalMessage {
     padding: 0.4em 1em;
     display: table-cell;
     font-weight: normal;
-    @include borderradius(5px 0 0 5px);
+    @include borderradius($border-radius 0 0 $border-radius);
   }
 
   @include portal-message-dt($portalmessage-undefined-color, portalMessage);
@@ -39,7 +39,7 @@ dl.portalMessage, #content dl.portalMessage {
     background-color: $portalmessage-message-color;
     border: 1px solid $portalmessage-border-color;
     border-left-width: 0;
-    @include borderradius(0 5px 5px 0);
+    @include borderradius(0 $border-radius $border-radius 0);
   }
 
 }

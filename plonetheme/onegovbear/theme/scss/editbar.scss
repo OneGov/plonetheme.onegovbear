@@ -20,7 +20,7 @@ $editbar-link-hover-color: $link-hover-color;
   margin-bottom: 1em;
   padding: 0;
   display: block;
-  @include borderradius(0.5em 0.5em 0 0);
+  @include borderradius($border-radius $border-radius 0 0);
 
   #content-views {
     float: left;
@@ -37,7 +37,7 @@ $editbar-link-hover-color: $link-hover-color;
     }
     .selected a {
       background-color: $content-bg-color;
-      @include borderradius(5px 5px 0 0);
+      @include borderradius($border-radius $border-radius 0 0);
       color: $editbar-link-active-color;
     }
     a:hover {

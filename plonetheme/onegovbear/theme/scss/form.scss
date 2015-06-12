@@ -97,7 +97,7 @@ $input-error-border-color: transparentize($danger-color, 50%);
 
     &.selected {
       border: 1px solid $formtabs-border-color;
-      @include borderradius(5px 5px 0 0);
+      @include borderradius($border-radius $border-radius 0 0);
       border-bottom-width: 0;
       background-color: $content-bg-color;
 
