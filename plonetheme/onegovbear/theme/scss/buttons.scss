@@ -10,11 +10,12 @@ $button-text-light-color: white;
 $button-text-dark-color: black;
 
 
-@mixin button($button-color, $button-active-color:darken($button-color, 15%),  $disabled:false) {
+@mixin button($button-color, $disabled:false) {
   $button-text-color: contrast($button-color,
                                $button-text-light-color, $button-text-dark-color,
                                $lightness:63%);
   $button-border-color: darken($button-color, 15%);
+  $button-active-color: darken($button-color, 15%);
   $button-active-text-color: contrast($button-active-color,
                                       $button-text-light-color, $button-text-dark-color,
                                       $lightness:63%);
@@ -56,7 +57,7 @@ button.context,
 a.button,
 a.button.standalone,
 input.standalone {
-  @include button($button-standalone-color, $button-active-color: #eee);
+  @include button($button-standalone-color);
 }
 
 input[type="submit"],
