@@ -53,15 +53,15 @@ $button-text-dark-color: black;
 }
 
 input[type="button"],
-button.context,
+input[type="submit"],
+input[type="reset"],
 a.button,
 a.button.standalone,
 input.standalone {
   @include button($button-standalone-color);
 }
 
-input[type="submit"],
-input[type="reset"],
+button.context,
 a.button.context,
 input.context {
   @include button($button-context-color);
