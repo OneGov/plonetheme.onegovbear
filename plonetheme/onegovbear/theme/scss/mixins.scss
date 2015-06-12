@@ -16,12 +16,6 @@
   -moz-box-shadow: $definition;
 }
 
-@mixin borderradius($radius: $border-radius) {
-  border-radius: $radius;
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-}
-
 @mixin boxsizing($value) {
   box-sizing: $value;
   -webkit-box-sizing: $value;
