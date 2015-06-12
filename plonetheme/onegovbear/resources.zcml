@@ -10,6 +10,8 @@
         <theme:scss file="theme/scss/mixins.scss" />
         <theme:scss file="theme/scss/helper.scss" />
 
+        <theme:scss file="theme/scss/accessibility.scss" />
+
         <theme:scss file="theme/scss/buttons.scss" />
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/layout.scss" />
@@ -29,7 +31,6 @@
         <theme:scss file="theme/scss/tables.scss" />
         <theme:scss file="theme/scss/batching.scss" />
         <theme:scss file="theme/scss/responsive.scss" />
-        <theme:scss file="theme/scss/accessibility.scss" />
         <theme:scss file="theme/scss/overrides.scss" />
     </theme:resources>
 

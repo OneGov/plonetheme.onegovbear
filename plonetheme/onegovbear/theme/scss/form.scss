@@ -1,12 +1,80 @@
 $formtabs-border-color: #ccc;
+$input-bg-color: #fafafa;
+$input-border-color: darken($input-bg-color, 20%);
+$input-focus-color: change-color($primary-color, $lightness: 70%);
+$input-required-color: change-color($danger-color, $saturation: 90%);
+$input-error-bg-color: transparentize($danger-color, 85%);
+$input-error-border-color: transparentize($danger-color, 50%);
 
 @if function-exists(register-theming-variables) {
   ?: register-theming-variables(color,
-                                formtabs-border-color);
+                                formtabs-border-color,
+                                input-bg-color,
+                                input-border-color,
+                                input-focus-color,
+                                input-required-color,
+                                input-error-bg-color,
+                                input-error-border-color);
 }
+
+@mixin inputfield() {
+  font-size: $font-size;
+  font-family: $body-font-family;
+  display: inline-block;
+  line-height: 1em;
+  padding: 0.5em;
+  width: 20em;
+
+  border: 1px solid $input-border-color;
+  @include borderradius();
+  background: $input-bg-color;
+  @include boxshadow(0 1px 1px darken($input-bg-color, 5%) inset);
+
+  &:focus {
+    @include no_focus();
+    border: 1px solid $input-focus-color;
+    @include boxshadow(0 1px 1px transparentize($input-focus-color, 0.8) inset,
+                       0 0 5px transparentize($input-focus-color, 0.6));
+  }
+}
+
+@mixin requiredbox() {
+  .required:after {
+    position: relative;
+    display: inline-block;
+    content: "";
+    margin-left: 0.3em;
+    bottom: 0.15em;
+    width: 5px;
+    height: 5px;
+    background-color: $input-required-color;
+    @include borderradius(2px);
+    @include boxshadow(0 0 1px darken($input-required-color, 20%) inset,
+                       0 0 1px lighten($input-required-color, 10%));
+  }
+}
+
+@mixin fielderrors() {
+  &.error {
+    @include borderradius();
+    background-color: $input-error-bg-color;
+    border: 1px solid $input-error-border-color;
+    margin-left: -0.72em;
+    margin-right: -0.72em;
+    padding: 0.6em;
+    @include boxshadow(0 0 5px transparentize($input-error-border-color, 0.3) inset,
+                       0 0 8px transparentize($input-error-border-color, 0.2));
+    .fieldErrorBox {
+      color: darken($danger-color, 20%);
+      padding-bottom: 0.5em;
+    }
+  }
+}
+
 
 #content ul.formTabs, ul.formTabs {
   @include ul($style: 'inline');
+  @include requiredbox();
   border-bottom: 1px solid $formtabs-border-color;
 
   &:after {
@@ -40,216 +108,39 @@ $formtabs-border-color: #ccc;
   }
 }
 
-
-/* OLD */
-
-
-@mixin inputfield($full-width:false) {
-  font-size: $font-size;
-  font-family: $body-font-family;
-  display: inline-block;
-  line-height: 1em;
-  padding: 0.5em;
-  width: 20em;
-  border: 1px solid $input-bordercolor;
-  @include borderradius();
-  @if $full-width == true {
-    padding: 0.5em 3%;
-    width: 94%;
-  }
-  background: $input-background-color;
-  &:hover {
-
-  }
-  &:focus {
-    border-color: $global-navigation-color;
-  }
-}
-
-
-/* @end */
-
-/* @group input fields */
-
 input[type="text"],
-input[type="password"] {
-  @include inputfield();
-}
-
-/* @end */
-
-/* @group textarea */
-
+input[type="password"],
 textarea {
   @include inputfield();
 }
-.field textarea {
-  width: 99%;
-  padding: 0.5%;
-}
 
-/* @end */
-
-/* @group labels */
-
-label,
-div.label {
-  font-weight:bold;
-}
-label .formHelp,
-div.label .formHelp {
-  color: $text-color-light;
-  display: block;
-  font-weight: normal;
-}
-#content optgroup {
-  font-style: normal;
-  font-weight: bold;
-  color: #999;
-  padding-left: 0.25em;
-}
-#content option {
-  color: black;
-}
-#content optgroup > option {
-  padding: 0 0.25em 0 1em;
-}
-dl.enableFormTabbing dd {
-  margin-left: 0;
-  padding-top: 2em;
-}
 .field {
+  @include fielderrors();
   clear: both;
   margin-bottom: 1em;
-}
-.field input[type="text"][name$=".title"],
-input#title {
-  /* width: 100%; */
-  font-size: $font-size-18;
-}
-.field.error input[type="text"][name$=".title"],
-.error input#title {
-  /* width: 99%; */
-}
-.fieldRequired {
-  padding: 0 0 0 1em;
-  color: $page-background;
-}
-div.overlay .field label .required,
-#form .field label .required,
-.formQuestion .required {
-  font-size: 1px;
-  color: transparent;
-}
-div.overlay .field label .required:after,
-#form .field label .required:after,
-#sendto_form .fieldRequired:before,
-.formQuestion .required:after {
-  font-size: $font-size;
-  content: "■";
-  color: #FF0000;
-}
-#content li.formTab a.required span:after {
-  content: " ■";
-  color: #FF0000;
-}
 
-/* z3cform required implementation */
-#content li.formTab a.required span:after,
-#content-core li.formTab a.required span:after,
-  div.field span.required:after {
-  content: "■";
-  color: red;
-  padding-left: 0.2em;
-}
+  label, div.label {
+    @include requiredbox();
+    font-weight: bold;
+    .formHelp {
+      color: $light-text-color;
+      display: block;
+      margin: 0 0 0.2em 0;
+      font-weight: normal;
+    }
+    .required {
+      position: relative;
+      left: -0.6em;
+    }
+  }
 
-/* no required mark for input fields */
-div.overlay .field label input.required,
-#form .field label input.required,
-.formQuestion input.required {
-  visibility: visible;
-  font-size: $font-size;
-}
-div.overlay .field label input.required:after,
-#form .field label input.required:after {
-  content: '';
-}
-.formHelp {
-  margin: 0 0 0.2em 0;
-}
-div.field.error {
-  background-color: #fdc;
-  border:  1px solid red;
-  padding: 0.5em;
-  margin:  1em 0;
-}
-.error .fieldRequired {
-  color: #d00;
-}
-div.error.warning {
-  background-color: transparent;
-  border: none;
-  margin-top: 0;
-  padding: 0;
-}
-div.error.warning input {
-  border: 2px solid red;
-}
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-/* @end */
-
-/* @group checkboxes and radio */
-
-input[type="checkbox"],
-input[type="radio"] {
-  &:hover {}
-  &:focus {
-    border-color: $global-navigation-color;
+  input[type="text"][name$="title"],
+  input#title {
+    font-size: 120%;
   }
 }
-
-/* @end */
-
-/* @group listing bar */
-
-div.listingBar .next {
-  display: inline-block;
-  float: right;
-}
-div.listingBar .previous {
-  display: inline-block;
-}
-div.listingBar .current {
-  vertical-align: middle;
-}
-
-#content div.listingBar a,
-#content div.listingBar span.current,
-div.listingBar a {
-  padding: 0.5em 0.75em;
-  vertical-align: middle;
-}
-#content div.listingBar span.current {
-  @include borderradius();
-  background-color: #e7eff0;
-}
-
-/* @end */
-
-/* @group notification form */
-.template-notification_form #content form {
-    padding-right: 2px;
-}
-
-.template-notification_form #content form textarea{
-    width: 98%;
-    padding:1%;
-}
-/* @end */
-
-
-/* @group plone form gen */
-.qefield .field {
-    clear:none;
-}
-/* @end */
