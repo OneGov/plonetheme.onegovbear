@@ -1,47 +1,44 @@
-/* @group status messages */
+$portalmessage-info-color: $success-color;
+$portalmessage-warning-color: $warning-color;
+$portalmessage-error-color: $danger-color;
+$portalmessage-undefined-color: #eee;
+$portalmessage-message-color: #fafafa;
+$portalmessage-border-color: #ccc;
+
+@mixin portal-message-dt($portalmessage-dt-color, $typeclass:null) {
+  &.$typeclass dt {
+    background-color: $portalmessage-dt-color;
+    border: 1px solid darken($portalmessage-dt-color, 15%);
+    color: contrast($portalmessage-dt-color,
+                    lighten($portalmessage-dt-color, 50%),
+                    darken($portalmessage-dt-color, 50%),
+                    $lightness:63%);
+  }
+}
 
 dl.portalMessage {
-  margin: 1em 0;
-  border: 1px solid $lightgray;
-  @include borderradius();
-  background-color: $lightgray;
-  clear: both;
-}
-dl.portalMessage dt {
-  background-color: $message-color-info;
-  line-height: 1.25em;
-  float: left;
-  margin-right: 0.75em;
-  padding: 0.5em 0.75em;
-  color: $page-background;
-  @include borderradius($border-radius 0 0 $border-radius);
-}
-dl.portalMessage dd {
-  padding: 0.5em 0.5em;
-  margin: 0;
-  line-height: 1.25em;
-  color: $text-color-light;
-}
-#column-content dl.portalMessage dd {
-  margin: 0;
-}
-dl.warning dt {
-  background-color: $message-color-warning;
-}
-dl.error dt {
-  background-color: $message-color-error;
-}
+  display: block;
+  margin: 0.5em 0;
 
-/* Additional specificity for when status is shown inside #content */
-#content dl.portalMessage {
-  font-size: 100%;
-}
-#content dl.portalMessage dt {
-  margin: 0 0.5em 0 0;
-  padding: 0.5em 0.75em;
-}
-#content dl.portalMessage dd {
-  margin: 0;
-}
+  dt {
+    padding: 0.4em 1em;
+    display: table-cell;
+    @include borderradius(5px 0 0 5px);
+  }
 
-/* @end */
+  @include portal-message-dt($portalmessage-undefined-color, portalMessage);
+  @include portal-message-dt($portalmessage-info-color, info);
+  @include portal-message-dt($portalmessage-warning-color, warning);
+  @include portal-message-dt($portalmessage-error-color, error);
+
+  dd {
+    padding: 0.4em 1em;
+    display: table-cell;
+    width: 100%;
+    background-color: $portalmessage-message-color;
+    border: 1px solid $portalmessage-border-color;
+    border-left-width: 0;
+    @include borderradius(0 5px 5px 0);
+  }
+
+}
