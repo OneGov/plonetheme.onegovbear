@@ -1,8 +1,9 @@
-$menu-bg-color: $gray-lighter;
+$menu-bg-color: #fff;
 $menu-link-color: $gray-darker;
-$menu-bg-color-hover: $gray-light;
-$menu-link-color-hover: $gray-lighter;
+$menu-bg-color-hover: darken($menu-bg-color, 5%);
+$menu-link-color-hover: darken($menu-link-color, 5%);
 $menu-border-color: darken($menu-bg-color, 20%);
+$menu-border-radius: 5px;
 
 
 @if function-exists(register-theming-variables) {
@@ -12,6 +13,9 @@ $menu-border-color: darken($menu-bg-color, 20%);
                                 menu-bg-color-hover,
                                 menu-link-color-hover,
                                 menu-border-color);
+
+  ?: register-theming-variables(width,
+                                menu-border-radius);
 }
 
 
@@ -26,34 +30,46 @@ dl.actionMenu {
   }
 
   dd.actionMenuContent {
+    cursor: default;
     background-color: $menu-bg-color;
     border: 1px solid $menu-border-color;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     @include boxshadow(0.5em 1em 2em -1em $menu-border-color);
-
-    & .subMenuTitle {
-      padding: 0 0.5em;
-    }
-    a > .subMenuTitle {
-      padding: 0;
-    }
+    @include borderradius($menu-border-radius);
 
     ul {
       @include ul($style: 'plain');
       li {
         margin: 0;
+        padding: 0;
+        display: block;
+
+        &.actionSeparator {
+          margin-top: 0.5em;
+          border-top: 1px solid $menu-border-color;
+          padding-top: 0.5em;
+        }
+
+        > * {
+          display: block;
+          background: transparent;
+          padding: 0.3em 1.5em;
+          color: $menu-link-color;
+          white-space: nowrap;
+        }
       }
     }
 
     a {
-      display: block;
-      background: transparent;
-      padding: 0.2em 0.5em;
-      color: $menu-link-color;
-      white-space: nowrap;
       &:hover, .actionMenuSelected {
         background-color: $menu-bg-color-hover;
         color: $menu-link-color-hover;
       }
+    }
+
+    .actionMenuSelected {
+      font-weight: bold;
     }
   }
 
