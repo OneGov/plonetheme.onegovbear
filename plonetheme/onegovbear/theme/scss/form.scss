@@ -114,6 +114,11 @@ textarea {
   @include inputfield();
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.25em;
+}
+
 .field {
   @include fielderrors();
   clear: both;
