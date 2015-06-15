@@ -6,10 +6,10 @@ $plone-datepicker-border-radius: $menu-border-radius;
 
 @if function-exists(register-theming-variables) {
   ?: register-theming-variables(color,
-                                $plone-datepicker-bg-color,
-                                $plone-datepicker-heading-bg-color,
-                                $plone-datepicker-hover-bg-color,
-                                $plone-datepicker-border-color);
+                                plone-datepicker-bg-color,
+                                plone-datepicker-heading-bg-color,
+                                plone-datepicker-hover-bg-color,
+                                plone-datepicker-border-color);
 
   ?: register-theming-variables(width,
                                 plone-datepicker-border-radius);
