@@ -1,0 +1,81 @@
+$calendar-portlet-bg-color: $portlet-column-bg-color;
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                calendar-portlet-bg-color);
+}
+
+
+.portletCalendar {
+  width: auto;
+  margin: 1px 0 1em 0;
+  dt {
+    background-color: $calendar-portlet-bg-color;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6em;
+    border-bottom: none;
+    #calendar-previous {
+      float: left;
+      padding: 0 1em;
+      margin: 0 -.5em;
+    }
+    #calendar-next {
+      float: right;
+      padding: 0 1em;
+      margin: 0 -.5em;
+    }
+  }
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  a:focus,
+  a:hover,
+  .ploneCalendar a {
+    text-decoration: none;
+  }
+  .ploneCalendar {
+    border-spacing: 0;
+    width:100%;
+    td {
+      background-color: transparent;
+      width: 14%;
+      text-align: center;
+      padding: 2px;
+      border: 1px solid transparent;
+      background-color: transparent;
+    }
+    .weekdays th {
+      background-color: transparent;
+      text-align: center;
+      padding: 2px;
+    }
+    .event {
+      background-color: transparent;
+    }
+    .todayevent {
+      background-color: $calendar-portlet-bg-color;
+      border: 1px solid $text-color;
+    }
+    td.todaynoevent{
+      background-color: $content-bg-color;
+      border-color: $gray-light;
+    }
+    td:hover { background-color: #FFF; }
+    td a {
+      display:inline-block;
+      width: 100%;
+      height: 100%;
+    }
+    /* grey out prev/next month incl. links and background */
+    td:empty,
+    td.cal_prev_month,
+    td.cal_next_month {
+      opacity:0.4;
+    }
+    td:empty:hover { background-color:transparent; }
+  }
+
+}

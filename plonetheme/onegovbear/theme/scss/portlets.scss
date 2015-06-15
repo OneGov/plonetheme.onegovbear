@@ -1,3 +1,10 @@
+$portlet-column-bg-color: $gray-lighter;
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                portlet-column-bg-color);
+}
+
 
 #column-navigation, #column-sidebar {
 
@@ -18,7 +25,7 @@
 
 
 #column-sidebar .portlet {
-  background-color: $gray-lighter;
+  background-color: $portlet-column-bg-color;
   padding: 1em;
   margin-bottom: 1em;
   & .portletHeader {
