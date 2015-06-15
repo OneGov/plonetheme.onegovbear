@@ -1,0 +1,59 @@
+$portlet-navigation-bg-color: $content-bg-color;
+$portlet-navigation-hover-color: lighten($gray-base, 97.5%);
+$portlet-navigation-active-color: lighten($gray-base, 95.5%);
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                portlet-navigation-bg-color,
+                                portlet-navigation-hover-color,
+                                portlet-navigation-active-color);
+}
+
+
+@mixin navigationitem($color) {
+  background-color: $color;
+  border: 1px solid $color;
+  @include borderradius();
+}
+
+
+.portlet.portletNavigationTree {
+
+  border-top: 1px solid $gray-lighter;
+  border-bottom: 1px solid $gray-lighter;
+
+  .navTreeItem {
+    display: block;
+  }
+
+  ul li a {
+    padding: 0.4em 0;
+    display: block;
+    text-decoration: none;
+    @include navigationitem($portlet-navigation-bg-color);
+    &:hover {
+      @include navigationitem($portlet-navigation-hover-color);
+    }
+  }
+  a.navTreeCurrentItem {
+    font-weight: bold;
+    color: $gray-darker;
+    @include navigationitem($portlet-navigation-active-color);
+  }
+
+  @for $i from 1 through 10 {
+    ul.navTreeLevel#{$i} a {
+      padding-left: $i + 1 * 1em;
+    }
+  }
+
+  ul.navTreeLevel0 > li > a{
+    padding-left:1em
+  }
+
+  ul li.navTreeTopNode {
+    border-bottom: 1px solid $gray-lighter;
+    padding-left: 0;
+  }
+
+}
