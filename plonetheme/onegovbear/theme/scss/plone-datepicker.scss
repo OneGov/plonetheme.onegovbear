@@ -1,0 +1,170 @@
+$plone-datepicker-bg-color: $menu-bg-color;
+$plone-datepicker-heading-bg-color: darken($plone-datepicker-bg-color, 5%);
+$plone-datepicker-hover-bg-color: darken($plone-datepicker-bg-color, 10%);
+$plone-datepicker-border-color: $menu-border-color;
+$plone-datepicker-border-radius: $menu-border-radius;
+
+@if function-exists(register-theming-variables) {
+  ?: register-theming-variables(color,
+                                $plone-datepicker-bg-color,
+                                $plone-datepicker-heading-bg-color,
+                                $plone-datepicker-hover-bg-color,
+                                $plone-datepicker-border-color);
+
+  ?: register-theming-variables(width,
+                                plone-datepicker-border-radius);
+}
+
+
+/* Reset default CSS */
+body .calendar {
+  border: initial;
+  background: initial;
+  font-size: initial;
+
+  table {
+    border: initial;
+    font-size: initial;
+    border-collapse: initial;
+
+    .wn {
+      padding: initial;
+      border: initial;
+      background: initial;
+      color: initial;
+    }
+
+    thead .name, thead .active {
+      border: initial;
+      padding: initial;
+      text-align: initial;
+      background: initial;
+      color: initial;
+    }
+
+    tbody .day {
+      &, &.selected, &.today, &.hilite, &:hover {
+        font-weight: initial;
+        color: initial;
+        background-color: initial;
+        width: initial;
+        text-align: initial;
+        padding: initial;
+        border: initial;
+        border-color: initial;
+      }
+    }
+
+    tbody tr.rowhilite td {
+      background: initial;
+      color: initial;
+    }
+
+    tfoot .ttip {
+      background: initial;
+      padding: initial;
+      border: initial;
+      border-color: initial;
+      color: initial;
+      text-align: initial;
+    }
+  }
+
+  .button {
+    text-align: initial;
+    padding: initial;
+    border: initial;
+    background: initial;
+  }
+
+  .title {
+    font-weight: initial;
+    padding: initial;
+    border: initial;
+    background: initial;
+    color: initial;
+    text-align: initial;
+  }
+}
+
+
+html body .calendar {
+  table {
+    font-size: $font-size-small;
+    cursor: default;
+    background: $plone-datepicker-bg-color;
+    border: 1px solid $plone-datepicker-border-color;
+    @include boxshadow(0.5em 1em 2em -1em $plone-datepicker-border-color);
+    @include borderradius($plone-datepicker-border-radius);
+    padding-bottom: 0.5em;
+
+    tr {
+      td {
+        padding: 0.2em !important;
+        min-width: 2em;
+        text-align: center !important;
+
+        &.button, &.day {
+          cursor: pointer;
+        }
+
+        &.today {
+          font-weight: bold !important;
+        }
+
+        &:hover, &.selected {
+          background-color: $plone-datepicker-hover-bg-color !important;
+          @include boxshadow(0 0 10px darken($plone-datepicker-hover-bg-color, 10%) inset);
+        }
+
+        &.wn, &.name {
+          color: transparentize($text-color, 50%);
+          cursor: default;
+          font-size: 80%;
+          &:hover {
+            background-color: transparent !important;
+            @include boxshadow(none);
+            color: transparentize($text-color, 40%);
+          }
+        }
+
+        &.name {
+          /* disable changing first week day */
+          pointer-events: none;
+        }
+      }
+    }
+
+    thead tr {
+      background: $plone-datepicker-heading-bg-color;
+
+      &:first-child {
+        /* top-left corner */
+        td:first-child {
+          @include borderradius($plone-datepicker-border-radius 0 0 0);
+
+          /* deactivate info button in top-left corner */
+          pointer-events: none;
+          color: transparent;
+        }
+
+        /* top-right corner */
+        td:last-child {
+          @include borderradius(0 $plone-datepicker-border-radius 0 0);
+          color: $danger-color;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+
+      &:last-child td {
+        border-bottom: 1px solid $plone-datepicker-border-color;
+      }
+    }
+
+    /* disable help in footer */
+    tfoot {
+      display: none;
+    }
+  }
+}
