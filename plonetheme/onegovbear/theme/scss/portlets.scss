@@ -26,6 +26,7 @@ $portlet-column-bg-color: $gray-lighter;
 
 #column-sidebar .portlet {
   background-color: $portlet-column-bg-color;
+  @include borderradius();
   padding: 1em;
   margin-bottom: 1em;
   & .portletHeader {
@@ -83,4 +84,3 @@ $portlet-column-bg-color: $gray-lighter;
   }
 
 }
-
