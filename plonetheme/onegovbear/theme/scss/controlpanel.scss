@@ -1,0 +1,5 @@
+body.template-overview-controlpanel {
+  #content ul.configlets {
+    @include ul($style:'plain');
+  }
+}
