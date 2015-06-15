@@ -3,12 +3,19 @@ $overlay-close-color: #333 !default;
 $overlay-close-bg-color: #eee !default;
 $overlay-close-hover-color: #fff !default;
 $overlay-close-hover-bg-color: #333 !default;
+$overlay-close-mask-color: transparentize($gray-light, 20%);
+
+#cboxOverlay,
+#exposeMask {
+  background: $overlay-close-mask-color !important;
+  opacity: 1 !important;
+}
 
 .overlay {
   display: none;
   background-color: $content-bg-color;
   padding: 2em;
-  @include boxshadow(0.1em 0.1em 1em 0 $gray);
+  @include boxshadow(0.1em 0.1em 1em 0 $gray-dark);
   @include borderradius(10px);
   min-width: 25%;
 
