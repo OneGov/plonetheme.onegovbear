@@ -17,6 +17,7 @@
         <theme:scss file="theme/scss/layout.scss" />
         <theme:scss file="theme/scss/content.scss" />
         <theme:scss file="theme/scss/base.scss" />
+        <theme:scss file="theme/scss/pathbar.scss" />
         <theme:scss file="theme/scss/menues.scss" />
         <theme:scss file="theme/scss/editbar.scss" />
         <theme:scss file="theme/scss/languageselector.scss" />

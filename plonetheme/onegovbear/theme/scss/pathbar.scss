@@ -1,0 +1,8 @@
+#breadcrumbs-wrapper {
+  margin-bottom: 0.5em;
+
+  @include tablet {
+    display:none;
+  }
+}
+
