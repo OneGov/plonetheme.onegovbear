@@ -1,30 +1,63 @@
-/* @group overlay */
+$overlay-close-width: 20px !default;
+$overlay-close-color: #333 !default;
+$overlay-close-bg-color: #eee !default;
+$overlay-close-hover-color: #fff !default;
+$overlay-close-hover-bg-color: #333 !default;
 
 .overlay {
   display: none;
-  background-color: $page-background;
+  background-color: $content-bg-color;
   padding: 2em;
-  @include boxshadow(0 0 1em 0 $darkgray);
-  @include borderradius(4px);
+  @include boxshadow(0.1em 0.1em 1em 0 $gray);
+  @include borderradius(10px);
   min-width: 25%;
-}
-.overlay .formControls {
-  margin-top: 1em;
-}
-/* default close button positioned on upper-left corner */
-div.overlaybg div.close,
-div.overlay div.close {
-  background-image: url(#{$portal-url}/++theme++plonetheme.onegovbear/images/pb_close.png);
-  position: absolute;
-  left: -14px;
-  top: -14px;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-}
-div.overlay div.close span {
-  text-indent: -8000px;
-  display: block;
-}
 
-/* @end */
+  .formControls {
+    margin-top: 1em;
+  }
+
+  div.close {
+    position: absolute;
+    right: #{$overlay-close-width * -0.6};
+    top: #{$overlay-close-width * -0.6};
+    cursor: pointer;
+    height: $overlay-close-width;
+    width: $overlay-close-width;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: $overlay-close-bg-color;
+      display: block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100%;
+      @include boxshadow(0 0 #{$overlay-close-width * 0.1} 0 darken($overlay-close-color, 20%),
+                         inset 0 0 #{$overlay-close-width * 0.1} 0 darken($overlay-close-bg-color, 10%));
+    }
+
+    &:after {
+      position: absolute;
+      content: 'x';
+      color: $overlay-close-color;
+      font-family: Verdana;
+      height: 100%;
+      width: 100%;
+      font-size: $overlay-close-width;
+      margin: 0;
+      padding-left: #{$overlay-close-width * 0.23};
+      margin-top: #{$overlay-close-width * -0.33};
+    }
+
+    &:hover {
+      &:before {
+        background-color: $overlay-close-hover-bg-color;
+        @include boxshadow(0 0 #{$overlay-close-width * 0.1} 0 $overlay-close-color,
+                           inset 0 0 #{$overlay-close-width * 0.1} 0 darken($overlay-close-hover-bg-color, 10%));
+      }
+      &:after {
+        color: $overlay-close-hover-color;
+      }
+    }
+  }
+}
