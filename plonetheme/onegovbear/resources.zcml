@@ -22,6 +22,7 @@
         <theme:scss file="theme/scss/languageselector.scss" />
         <theme:scss file="theme/scss/personaltools.scss" />
         <theme:scss file="theme/scss/globalnav.scss" />
+        <theme:scss file="theme/scss/portlets.scss" />
         <theme:scss file="theme/scss/icons.scss" />
         <theme:scss file="theme/scss/form.scss" />
         <theme:scss file="theme/scss/plone-datepicker.scss" />

@@ -145,58 +145,6 @@
 
 /* @end */
 
-/* @group left navigation */
-
-#column-navigation .portletContextNavigation {
-  border: 1px solid $lightgray2;
-  border-width: 1px 0;
-  & ul {
-    @include ul($style: 'plain');
-    line-height: 1.25em;
-    & li {
-      margin-bottom: 0;
-      padding: 0;
-      display: block;
-      & a {
-        padding: 0.4em 1em;
-        display: block;
-        text-decoration: none;
-        padding-left: 1.5em;
-      }
-    }
-  }
-  & .current {
-    padding: 0.5em 0.5em;
-    @include gradient($navigation-gradient-from, $navigation-gradient-to);
-    font-weight: bold;
-    + li.child {
-      border-top: 1px solid $lightgray2;
-    }
-  }
-  & .parent, & .sibling {
-    border-bottom: 1px solid $lightgray2;
-    & a {
-      padding-left: 0.5em;
-    }
-    &.sibling {
-      background-color: $navigation-sibling-background;
-      &.beforeContext {
-        border-top: none;
-        border-bottom: 1px solid $lightgray2;
-      }
-      &.afterContext {
-        border-top: 1px solid $lightgray2;
-        border-bottom: none;
-      }
-      &:hover {
-        @include gradient($navigation-gradient-from, $navigation-gradient-to);
-      }
-    }
-  }
-}
-
-/* @end */
-
 /* @group mobile navigation */
 
 .mobileButtons,
@@ -282,70 +230,6 @@ div.slideNavi .globalnav li a {
 }
 
 /* @end */
-
-/* @group side portlets */
-
-#column-sidebar dl.portlet {
-  background-color: $lightgray;
-  padding: 1em;
-  margin-bottom: 1em;
-  & dt.portletHeader {
-    margin-bottom: 0.75em;
-  }
-}
-
-/* @end */
-
-/* @group portlets */
-
-dl.portlet {
-  & dt.portletHeader {
-    cursor: default;
-    font-size: $font-size-18;
-    margin-bottom: 1em;
-  }
-}
-
-.managedPortlet {
-  border: 1px solid $lightgray2;
-  background-color: $lightgray;
-  margin: 1em 0;
-  @include borderradius();
-  overflow: hidden;
-}
-.managedPortletActions > a,
-.portlet-action {
-  float: left;
-  padding: 0.5em;
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
-}
-.managedPortlet .portletHeader > a {
-  display: block;
-  clear: both;
-  padding: 0.5em;
-  background-color: $page-background;
-  border-top: 1px solid $lightgray2;
-}
-.portlet-action button {
-  border: none;
-  background: transparent;
-}
-.portlet-action.delete {
-  float: right;
-}
-.managedPortletActions > a.delete {
-  float: right;
-}
-.managedPortletActions > a.delete,
-.portlet-action.delete button {
-  color: #F00;
-}
-
-/* @end */
-
 
 /* @group byline */
 

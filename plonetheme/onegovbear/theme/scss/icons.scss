@@ -184,14 +184,6 @@ body.template-create_from_template .contenttype-file,
   @include icon($char: "_ ");
 }
 
-/* no images in navigation */
-dl.portletNavigationTree img {
-  display: none;
-}
-#column-navigation .portletNavigationTree a {
-  background-image: none;
-}
-
 a[target="_blank"],
 span.link-external a,
 a.external-link {

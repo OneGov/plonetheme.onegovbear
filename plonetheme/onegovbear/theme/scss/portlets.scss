@@ -1,0 +1,79 @@
+
+#column-navigation, #column-sidebar {
+
+  .portletWrapper {
+    margin-bottom:2em;
+  }
+
+  .portletHeader {
+    font-size: $font-size-large;
+  }
+
+  .portletHeader a.tile {
+    padding:0.4em 0;
+    display: block;
+  }
+
+}
+
+
+#column-sidebar .portlet {
+  background-color: $gray-lighter;
+  padding: 1em;
+  margin-bottom: 1em;
+  & .portletHeader {
+    margin-bottom: 0.75em;
+  }
+}
+
+
+.managedPortlet {
+  border: 1px solid $gray-light;
+  background-color: $gray-lighter;
+  @include borderradius();
+  margin: 1em 0;
+  overflow: hidden;
+
+  .portlet-action
+   {
+      float: left;
+      padding: 0.5em;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+    }
+  }
+
+  .portletHeader > a {
+    display: block;
+    clear: both;
+    text-decoration: none;
+    padding: 0.5em;
+    background-color: $content-bg-color;
+    &:hover {
+        text-decoration: none;
+    }
+  }
+
+  .portlet-action button {
+    border: none;
+    background: transparent;
+  }
+
+  .portlet-action.delete {
+    float: right;
+  }
+
+  .managedPortletActions a {
+    font-size: $font-size-base;
+  }
+  .managedPortletActions > a.delete {
+    float: right;
+  }
+  .managedPortletActions > a.delete,
+  .portlet-action.delete button {
+    color: #F00;
+  }
+
+}
+
