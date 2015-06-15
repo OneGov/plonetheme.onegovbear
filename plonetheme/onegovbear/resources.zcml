@@ -36,7 +36,6 @@
         <theme:scss file="theme/scss/tables.scss" />
         <theme:scss file="theme/scss/batching.scss" />
         <theme:scss file="theme/scss/responsive.scss" />
-        <theme:scss file="theme/scss/overrides.scss" />
         <theme:scss file="theme/scss/controlpanel.scss" />
     </theme:resources>
 
