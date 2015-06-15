@@ -1,5 +1,19 @@
-body.template-overview-controlpanel {
-  #content ul.configlets {
-    @include ul($style:'plain');
+#content ul.configlets,  ul.configlets {
+  @include ul($style:'plain');
+
+  li {
+    padding: 0;
+    margin: 0;
+
+    a {
+      padding: 0.4em;
+      display: block;
+      text-decoration: none;
+      @include navigationitem($portlet-navigation-bg-color);
+      &:hover {
+        text-decoration: none;
+        @include navigationitem($portlet-navigation-hover-color);
+      }
+    }
   }
 }
