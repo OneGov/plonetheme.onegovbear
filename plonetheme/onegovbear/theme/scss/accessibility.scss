@@ -1,30 +1,9 @@
-/* @group accessibility focus */
-
-@mixin focus() {
-  outline: 1px $focus_outline_color dotted;
+a:focus {
+  outline-color: $outline-color;
+  outline-offset: 1px;
+  outline-style: auto;
+  outline-width: 5px;
 }
-@mixin no_focus() {
-  outline: none;
-}
-
-a:focus,
-input:focus,
-textarea:focus {
-  @include focus();
-}
-a:hover,
-input:hover,
-textarea:hover {
-  @include no_focus();
-}
-#portal-breadcrumbs:hover a,
-#portal-globalnav:hover a {
-  @include no_focus();
-}
-
-/* @end */
-
-/* @group accessibility accesskeys */
 
 #accesskeys > a:focus,
 #portal-searchbox > a[accesskey]:focus {
@@ -40,5 +19,3 @@ textarea:hover {
   text-decoration: underline;
   z-index: 999;
 }
-
-/* @end */
