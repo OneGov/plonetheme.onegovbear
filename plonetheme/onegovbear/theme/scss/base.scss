@@ -131,14 +131,3 @@ dl.collapsible {
 }
 
 /* @end */
-
-/* @group tooltips */
-
-.tooltip {
-  background-color: $page-background;
-  border-color: $darkgray;
-  @include boxshadow(0 0 1em $darkgray);
-  color: $text-color;
-}
-
-/* @end */
