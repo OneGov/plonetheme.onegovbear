@@ -140,8 +140,8 @@ input[type="radio"] {
   }
 
   textarea {
+    @include boxshadow(border-box);
     width: 100%;
-    box-sizing: border-box;
   }
 
   input[type="text"][name$="title"],

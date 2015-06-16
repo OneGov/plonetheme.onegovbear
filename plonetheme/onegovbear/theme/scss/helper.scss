@@ -1,5 +1,15 @@
 /* helper style classes */
 
+@mixin tag() {
+  @include borderradius();
+  display: block;
+  float: left;
+  background: $highlight-color-light;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 /* @group tags */
 .tag {
     @include tag();
