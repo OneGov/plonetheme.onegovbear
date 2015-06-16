@@ -1,33 +1,7 @@
-/* @group byline */
-
-.documentByLine {
-  color: $text-color-light;
-  margin-bottom: 1em;
-}
-
-/* @end */
-
 /* @group below-content viewlet */
 
 #viewlet-below-content {
   margin-top: 2em;
-}
-
-/* @end */
-
-/* @group category tags */
-
-#category.documentByLine .separator {
-  display: none;
-}
-#category.documentByLine a {
-  @include borderradius();
-  background-color: $global-navigation-color;
-  color: $page-background;
-  padding: 0.25em 0.5em;
-  &:hover {
-    color: $page-background;
-  }
 }
 
 /* @end */

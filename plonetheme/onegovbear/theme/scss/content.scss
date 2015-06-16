@@ -112,3 +112,17 @@ dl.collapsible {
     display: block;
   }
 }
+
+.documentByLine {
+  color: $light-text-color;
+  margin-bottom: 1em;
+}
+
+#category.documentByLine {
+  .separator {
+    display: none;
+  }
+  a {
+    @include label($primary-color);
+  }
+}
