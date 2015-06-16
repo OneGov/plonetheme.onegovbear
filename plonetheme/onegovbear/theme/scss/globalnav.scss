@@ -21,6 +21,8 @@ $globalnav-separator-width: 1px;
   background-color: $globalnav-background-color;
   margin: 0;
   padding: 0;
+  position: absolute;
+  width: 100%;
 
   > li {
     a {

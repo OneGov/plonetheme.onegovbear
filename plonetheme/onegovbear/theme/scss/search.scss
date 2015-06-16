@@ -1,12 +1,26 @@
 /* @group searchbox */
 
 #portal-searchbox {
+  position: relative;
+  float: right;
+  margin-top: 0.55em;
+  margin-right: 0.55em;
+  width: auto;
+
+  .searchSection {
+      display: none;
+  }
+
+  .LSBox {
+    float: right;
+  }
+
   & #searchGadget {
-    @include inputfield();
-    @include boxshadow(0 0 0.5em $page-bordercolor inset);
+    width:8em;
+    box-sizing: border-box;
+    float: right;
     &:focus {
-      /* TODO: should this be in a variable? */
-      @include boxshadow(0 0 0.5em desaturate(lighten($global-navigation-color, 60%), 80%) inset);
+      width: 20em;
     }
   }
   & input.searchButton {
@@ -22,6 +36,7 @@
   text-decoration: none;
 }
 #LSResult {
+  top: 2.4em;
   width: 100%;
   border: 1px solid $input-bordercolor;
   border-top-width: 0;
@@ -33,9 +48,7 @@
     font-weight: normal;
   }
 }
-div.searchSection {
-  padding: 1em;
-}
+
 fieldset.livesearchContainer {
   border: none;
   margin: 0;
