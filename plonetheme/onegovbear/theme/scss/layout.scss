@@ -13,15 +13,25 @@ body {
   color: $text-color;
 }
 
+
 #container {
   width: 100%;
 }
+
 
 #page-wrapper {
   position: relative;
   background-color: $content-bg-color;
   width: $page-wrapper-width;
   margin: 0 auto;
+}
+
+
+#header {
+  #portal-logo {
+    display: inline-block;
+    margin: 1.5em 0;
+  }
 }
 
 
