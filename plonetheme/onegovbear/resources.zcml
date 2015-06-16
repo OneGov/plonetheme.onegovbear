@@ -30,7 +30,6 @@
         <theme:scss file="theme/scss/form.scss" />
         <theme:scss file="theme/scss/plone-datepicker.scss" />
         <theme:scss file="theme/scss/search.scss" />
-        <theme:scss file="theme/scss/filter.scss" />
         <theme:scss file="theme/scss/overlays.scss" />
         <theme:scss file="theme/scss/messages.scss" />
         <theme:scss file="theme/scss/tables.scss" />
