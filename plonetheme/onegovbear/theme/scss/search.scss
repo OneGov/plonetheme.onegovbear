@@ -1,137 +1,102 @@
-/* @group searchbox */
+$searchbox-liveresults-bg-color: #fff !default;
+$searchbox-liveresults-hover-bg-color: darken($menu-bg-color, 5%) !default;
+$searchbox-liveresults-border-color: darken($menu-bg-color, 20%) !default;
+$searchbox-liveresults-border-radius: 5px !default;
+$search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $saturation:90%);
+
+@include declare-variables(
+  searchbox-liveresults-bg-color,
+  searchbox-liveresults-hover-bg-color,
+  searchbox-liveresults-border-color,
+  searchbox-liveresults-border-radius);
+
 
 #portal-searchbox {
-  position: relative;
   float: right;
   margin-top: 0.55em;
-  margin-right: 0.55em;
-  width: auto;
+  width: 12.55em;
 
   .searchSection {
-      display: none;
+    display: none;
   }
 
-  .LSBox {
-    float: right;
+  & input.searchButton {
+    display: none;
   }
 
   & #searchGadget {
-    width:8em;
-    box-sizing: border-box;
-    float: right;
+    width: 12em;
+    position: absolute;
+    right: 0.55em;
     &:focus {
       width: 20em;
     }
   }
-  & input.searchButton {
+
+
+  #LSResult {
     display: none;
-  }
-}
+    position: absolute;
+    z-index: 3;
+    top: 3em;
+    right: 0.55em;
+    min-width: 20em;
+    max-width: 40em;
+    padding: 0.5em 0;
+    background-color: $searchbox-liveresults-bg-color;
+    border: 1px solid $searchbox-liveresults-border-color;
+    @include boxshadow(0.5em 1em 2em -1em $searchbox-liveresults-border-color);
+    @include borderradius($searchbox-liveresults-border-radius);
 
-/* @end */
-
-/* @group livesearch */
-
-#LSResult a {
-  text-decoration: none;
-}
-#LSResult {
-  top: 2.4em;
-  width: 100%;
-  border: 1px solid $input-bordercolor;
-  border-top-width: 0;
-  background-color: $page-background;
-  z-index: 3;
-  @include boxshadow(0 0 0.5em $lightgray2);
-  position: absolute;
-  & label {
-    font-weight: normal;
-  }
-}
-
-fieldset.livesearchContainer {
-  border: none;
-  margin: 0;
-  padding: 0;
-  & legend {
-    display: none;
-  }
-  & ul {
-    @include ul(plain);
-    & li {
+    fieldset.livesearchContainer {
       margin: 0;
+      padding: 0;
+      border: none;
+      legend#livesearchLegend {
+        display: none;
+      }
+    }
+
+    ul.LSTable {
+      @include ul(plain);
+      padding: 0;
+
+      li {
+        margin: 0;
+        padding: 0 1.5em;
+        display: block;
+
+        &.LSHighlight {
+          background-color: $searchbox-liveresults-hover-bg-color;
+        }
+
+        + li {
+          margin-top: 0.5em;
+        }
+
+        > * {
+          display: block;
+          padding: 0;
+          background: transparent;
+        }
+
+        > .LSDescr {
+          padding-left: 1.5em;
+          color: $light-text-color;
+        }
+      }
+    }
+
+    #LSNothingFound {
+      margin-bottom: 0.5em;
+    }
+    #LSNothingFound, div.LSRow {
+      padding-left: 1.5em;
     }
   }
 }
-#LSNothingFound,
-.LSRow {
-  padding: 1em;
-  border-top: 1px solid $input-bordercolor;
-  padding: 1em;
-}
-.LSRow:hover,
-.LSHighlight {
-  background-color: $lightgray;
-}
-.LSRow.advancedSearch {
-  display: none;
-}
 
-/* @end */
 
-/* @group search results */
-
-.searchResults dt {
-  font-size: $font-size-18;
-  line-height: $body-line-height;
-}
-#search-results-bar {
-  background-color: $lightgray;
-  padding: 0.5em;
-}
 .highlightedSearchTerm {
-  background-color: $search-highlight-background;
+  background-color: $search-highlight-bg-color;
 }
-
-/* @end */
-
-/* @group solr search results */
-
-#search-results {
-  float: left;
-  width: 72%;
-  margin-left: 3%;
-}
-#portal-searchfacets {
-  float: left;
-  width: 25%;
-}
-#portal-searchfacets h4,
-#available-facets dt {
-  font-size: $font-size-18;
-  margin-bottom: 0.5em;
-}
-
-#selected-facets,
-#available-facets ul {
-  /* padding-left: 0; */
-  @include ul(plain);
-  li {
-    margin-bottom: 0;
-  }
-}
-#selected-facets {
-  margin-bottom: 1em;
-}
-.facetItemTitle {
-  font-weight: bold;
-}
-a.facetRemoveItem,
-a.facetRemoveItem:hover{
-  text-decoration: none;
-}
-#search-results .searchResults {
-  margin-top: 1em;
-}
-
-/* @end */

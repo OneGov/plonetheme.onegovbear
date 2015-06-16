@@ -22,7 +22,7 @@ body {
 #page-wrapper {
   position: relative;
   background-color: $content-bg-color;
-  width: $page-wrapper-width;
+  max-width: $page-wrapper-width;
   margin: 0 auto;
 }
 

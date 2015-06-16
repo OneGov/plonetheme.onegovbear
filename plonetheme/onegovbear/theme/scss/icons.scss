@@ -205,25 +205,6 @@ a.external-link {
   }
 }
 
-.LSBox:before {
-  content: "";
-  position: absolute;
-  font-family: "icomoon";
-  right: 0.4em;
-  top: 0.4em;
-  color: $link-color;
-}
-
-#toggle_slidenavi {
-  @include icon($char: "");
-}
-#toggle_usermenu {
-  @include icon($char: "");
-}
-#toggle_search {
-  @include icon($char: "");
-}
-
 .portlet.portletCollection.newsTemplate a.RssLink {
   @include icon($char:'G');
   @include invisible_text($icon-size: 16px);

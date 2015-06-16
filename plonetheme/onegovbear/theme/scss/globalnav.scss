@@ -17,11 +17,9 @@ $globalnav-separator-width: 1px !default;
 
 #portal-globalnav {
   @include ul(inline);
-  clear: both;
   background-color: $globalnav-background-color;
   margin: 0;
   padding: 0;
-  position: absolute;
   width: 100%;
 
   > li {
