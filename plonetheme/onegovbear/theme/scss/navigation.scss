@@ -2,12 +2,11 @@ $portlet-navigation-bg-color: $content-bg-color;
 $portlet-navigation-hover-color: lighten($gray-base, 97.5%);
 $portlet-navigation-active-color: lighten($gray-base, 95.5%);
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                portlet-navigation-bg-color,
-                                portlet-navigation-hover-color,
-                                portlet-navigation-active-color);
-}
+@include declare-variables(
+  portlet-navigation-bg-color,
+  portlet-navigation-hover-color,
+  portlet-navigation-active-color);
+
 
 
 @mixin navigationitem($color) {

@@ -5,18 +5,15 @@ $globalnav-link-color-hover: $globalnav-link-color;
 $globalnav-separator-color: $gray-darker;
 $globalnav-separator-width: 1px;
 
+@include declare-variables(
+  globalnav-background-color,
+  globalnav-background-color-hover,
+  globalnav-link-color,
+  globalnav-link-color-hover,
+  globalnav-separator-color,
+  globalnav-separator-width);
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                globalnav-background-color,
-                                globalnav-background-color-hover,
-                                globalnav-link-color,
-                                globalnav-link-color-hover,
-                                globalnav-separator-color);
 
-  ?: register-theming-variables(width,
-                                globalnav-separator-width);
-}
 
 #portal-globalnav {
   @include ul(inline);

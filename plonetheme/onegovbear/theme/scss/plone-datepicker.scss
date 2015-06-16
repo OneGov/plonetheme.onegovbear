@@ -4,16 +4,13 @@ $plone-datepicker-hover-bg-color: darken($plone-datepicker-bg-color, 10%);
 $plone-datepicker-border-color: $menu-border-color;
 $plone-datepicker-border-radius: $menu-border-radius;
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                plone-datepicker-bg-color,
-                                plone-datepicker-heading-bg-color,
-                                plone-datepicker-hover-bg-color,
-                                plone-datepicker-border-color);
+@include declare-variables(
+  plone-datepicker-bg-color,
+  plone-datepicker-heading-bg-color,
+  plone-datepicker-hover-bg-color,
+  plone-datepicker-border-color,
+  plone-datepicker-border-radius);
 
-  ?: register-theming-variables(width,
-                                plone-datepicker-border-radius);
-}
 
 
 /* Reset default CSS */

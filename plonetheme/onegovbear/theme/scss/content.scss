@@ -1,9 +1,8 @@
 $text-color-light: desaturate(lighten($text-color, 25%), 100%);
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                text-color-light);
-}
+@include declare-variables(
+  text-color-light);
+
 
 
 h1 {

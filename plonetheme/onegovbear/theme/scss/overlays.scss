@@ -5,6 +5,15 @@ $overlay-close-hover-color: #fff !default;
 $overlay-close-hover-bg-color: #333 !default;
 $overlay-close-mask-color: transparentize($gray-light, 20%);
 
+@include declare-variables(
+  overlay-close-width,
+  overlay-close-color,
+  overlay-close-bg-color,
+  overlay-close-hover-color,
+  overlay-close-hover-bg-color,
+  overlay-close-mask-color);
+
+
 #cboxOverlay,
 #exposeMask {
   background: $overlay-close-mask-color !important;

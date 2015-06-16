@@ -5,18 +5,13 @@ $menu-link-color-hover: darken($menu-link-color, 5%);
 $menu-border-color: darken($menu-bg-color, 20%);
 $menu-border-radius: 5px;
 
-
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                menu-bg-color,
-                                menu-link-color,
-                                menu-bg-color-hover,
-                                menu-link-color-hover,
-                                menu-border-color);
-
-  ?: register-theming-variables(width,
-                                menu-border-radius);
-}
+@include declare-variables(
+  menu-bg-color,
+  menu-link-color,
+  menu-bg-color-hover,
+  menu-link-color-hover,
+  menu-border-color,
+  menu-border-radius);
 
 
 

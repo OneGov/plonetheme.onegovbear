@@ -5,9 +5,19 @@ $button-success-color: $success-color;
 $button-warning-color: $warning-color;
 $button-danger-color: $danger-color;
 $button-disabled-color: #ddd;
-
 $button-text-light-color: white;
 $button-text-dark-color: black;
+
+@include declare-variables(
+  button-standalone-color,
+  button-context-color,
+  button-destructive-color,
+  button-success-color,
+  button-warning-color,
+  button-danger-color,
+  button-disabled-color,
+  button-text-light-color,
+  button-text-dark-color);
 
 
 @mixin button($button-color, $disabled:false) {

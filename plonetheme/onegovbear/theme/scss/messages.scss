@@ -5,6 +5,16 @@ $portalmessage-undefined-color: #eee;
 $portalmessage-message-color: #fafafa;
 $portalmessage-border-color: #ccc;
 
+@include declare-variables(
+  portalmessage-info-color,
+  portalmessage-warning-color,
+  portalmessage-error-color,
+  portalmessage-undefined-color,
+  portalmessage-message-color,
+  portalmessage-border-color);
+
+
+
 @mixin portal-message-dt($portalmessage-dt-color, $typeclass:null) {
   &.$typeclass dt {
     background-color: $portalmessage-dt-color;

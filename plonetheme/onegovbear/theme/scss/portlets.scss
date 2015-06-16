@@ -1,9 +1,8 @@
 $portlet-column-bg-color: $gray-lighter;
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                portlet-column-bg-color);
-}
+@include declare-variables(
+  portlet-column-bg-color);
+
 
 
 #column-navigation, #column-sidebar {
@@ -44,12 +43,12 @@ $portlet-column-bg-color: $gray-lighter;
   overflow: hidden;
 
   .portlet-action
-   {
-      float: left;
-      padding: 0.5em;
+  {
+    float: left;
+    padding: 0.5em;
+    text-decoration: none;
+    &:hover {
       text-decoration: none;
-      &:hover {
-        text-decoration: none;
     }
   }
 
@@ -60,7 +59,7 @@ $portlet-column-bg-color: $gray-lighter;
     padding: 0.5em;
     background-color: $content-bg-color;
     &:hover {
-        text-decoration: none;
+      text-decoration: none;
     }
   }
 

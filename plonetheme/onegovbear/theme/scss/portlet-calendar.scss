@@ -1,9 +1,7 @@
 $calendar-portlet-bg-color: $portlet-column-bg-color;
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                calendar-portlet-bg-color);
-}
+@include declare-variables(
+  calendar-portlet-bg-color);
 
 
 .portletCalendar {

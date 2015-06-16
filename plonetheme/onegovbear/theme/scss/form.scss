@@ -6,16 +6,16 @@ $input-required-color: change-color($danger-color, $saturation: 90%);
 $input-error-bg-color: transparentize($danger-color, 85%);
 $input-error-border-color: transparentize($danger-color, 50%);
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                formtabs-border-color,
-                                input-bg-color,
-                                input-border-color,
-                                input-focus-color,
-                                input-required-color,
-                                input-error-bg-color,
-                                input-error-border-color);
-}
+@include declare-variables(
+  formtabs-border-color,
+  input-bg-color,
+  input-border-color,
+  input-focus-color,
+  input-required-color,
+  input-error-bg-color,
+  input-error-border-color);
+
+
 
 @mixin inputfield() {
   font-size: $font-size;

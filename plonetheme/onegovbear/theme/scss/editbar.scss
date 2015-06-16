@@ -3,13 +3,12 @@ $editbar-link-color: $link-color;
 $editbar-link-active-color: $link-color;
 $editbar-link-hover-color: $link-hover-color;
 
-@if function-exists(register-theming-variables) {
-  ?: register-theming-variables(color,
-                                editbar-bg-color,
-                                editbar-link-color,
-                                editbar-link-active-color,
-                                editbar-link-hover-color);
-}
+@include declare-variables(
+  editbar-bg-color,
+  editbar-link-color,
+  editbar-link-active-color,
+  editbar-link-hover-color);
+
 
 
 #edit-bar {
