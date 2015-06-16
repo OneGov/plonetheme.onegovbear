@@ -39,7 +39,7 @@ dl.actionMenu {
     @include borderradius($menu-border-radius);
 
     ul {
-      @include ul($style: 'plain');
+      @include ul(plain);
       li {
         margin: 0;
         padding: 0;

@@ -24,7 +24,7 @@
 /* @group document actions */
 
 #document-actions ul {
-  @include ul($style: 'inline');
+  @include ul(inline);
   float: right;
   & li a {
     font-size: 1.5em;
@@ -164,7 +164,7 @@ div.slideNavi .globalnav li a {
     color: $footer-color;
   }
   & ul {
-    @include ul($style: 'plain');
+    @include ul(plain);
   }
   & .portlet {
     padding-left: 3em;
@@ -189,7 +189,7 @@ div.slideNavi .globalnav li a {
 /* @group site-actions */
 
 #portal-siteactions {
-  @include ul($style: 'inline');
+  @include ul(inline);
   & a {
     color: $darkgray;
   }

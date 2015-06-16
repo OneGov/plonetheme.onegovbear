@@ -63,7 +63,7 @@ fieldset {
   ul {
     @include ul();
     &.listTypePlain {
-      @include ul($style:'plain');
+      @include ul(plain);
     }
   }
 

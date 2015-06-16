@@ -1,6 +1,6 @@
 #portal-languageselector {
   float: left;
-  @include ul('inline');
+  @include ul(inline);
 
   li {
     &:after {

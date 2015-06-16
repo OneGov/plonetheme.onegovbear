@@ -44,7 +44,7 @@ fieldset.livesearchContainer {
     display: none;
   }
   & ul {
-    @include ul($style: 'plain');
+    @include ul(plain);
     & li {
       margin: 0;
     }
@@ -102,7 +102,7 @@ fieldset.livesearchContainer {
 #selected-facets,
 #available-facets ul {
   /* padding-left: 0; */
-  @include ul($style:'plain');
+  @include ul(plain);
   li {
     margin-bottom: 0;
   }

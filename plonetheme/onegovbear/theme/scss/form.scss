@@ -73,7 +73,7 @@ $input-error-border-color: transparentize($danger-color, 50%);
 
 
 #content ul.formTabs, ul.formTabs {
-  @include ul($style: 'inline');
+  @include ul(inline);
   @include requiredbox();
   border-bottom: 1px solid $formtabs-border-color;
 

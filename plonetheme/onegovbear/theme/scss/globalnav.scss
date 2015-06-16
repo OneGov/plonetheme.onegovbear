@@ -19,7 +19,7 @@ $globalnav-separator-width: 1px;
 }
 
 #portal-globalnav {
-  @include ul($style: 'inline');
+  @include ul(inline);
   clear: both;
   background-color: $globalnav-background-color;
   margin: 0;

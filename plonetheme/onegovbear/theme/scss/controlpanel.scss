@@ -1,5 +1,5 @@
 #content ul.configlets,  ul.configlets {
-  @include ul($style:'plain');
+  @include ul(plain);
 
   li {
     padding: 0;

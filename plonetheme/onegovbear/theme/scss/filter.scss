@@ -49,7 +49,7 @@
                 }
             }
             ul {
-                @include ul('plain');
+                @include ul(plain);
 
                 display: none;
                 position: absolute;

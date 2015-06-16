@@ -3,7 +3,7 @@
 
   /* Anonymous: list actions by floating */
   ul {
-    @include ul('inline');
+    @include ul(inline);
 
     a {
       &:after {
