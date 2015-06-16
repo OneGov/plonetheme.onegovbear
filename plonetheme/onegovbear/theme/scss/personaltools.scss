@@ -1,6 +1,10 @@
 #portal-personaltools-wrapper {
   float: right;
 
+  dl {
+    @include dl(plain);
+  }
+
   /* Anonymous: list actions by floating */
   ul {
     @include ul(inline);

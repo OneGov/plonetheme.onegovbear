@@ -23,6 +23,7 @@ $editbar-link-hover-color: $link-hover-color;
   @include borderradius($border-radius $border-radius 0 0);
 
   #content-views {
+    @include ul(inline);
     float: left;
     display: block;
 
@@ -46,19 +47,27 @@ $editbar-link-hover-color: $link-hover-color;
   }
 
   .contentActions {
-    > #contentActionMenus dd.actionMenuContent {
-      border-top-width: 0;
-      @include borderradius(0 0 $menu-border-radius $menu-border-radius);
-    }
+    > #contentActionMenus {
+      @include ul(inline);
 
-    > #contentActionMenus > li {
-      float: right;
-      dt.actionMenuHeader a {
-        line-height: 2.25em;
-        padding: 0.5em;
-        color: $editbar-link-color;
-        &:hover {
-          color: $editbar-link-hover-color;
+      dl {
+        @include dl(plain);
+      }
+
+      dd.actionMenuContent {
+        border-top-width: 0;
+        @include borderradius(0 0 $menu-border-radius $menu-border-radius);
+      }
+
+      > li {
+        float: right;
+        dt.actionMenuHeader a {
+          line-height: 2.25em;
+          padding: 0.5em;
+          color: $editbar-link-color;
+          &:hover {
+            color: $editbar-link-hover-color;
+          }
         }
       }
     }

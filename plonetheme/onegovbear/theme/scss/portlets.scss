@@ -25,6 +25,7 @@ $portlet-column-bg-color: $gray-lighter;
 
 
 #column-sidebar .portlet {
+  @include dl(plain);
   background-color: $portlet-column-bg-color;
   @include borderradius();
   padding: 1em;
