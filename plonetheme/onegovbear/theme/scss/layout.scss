@@ -3,6 +3,13 @@ $page-wrapper-width: 1200px !default;
 @include declare-variables(
   page-wrapper-width);
 
+.visualClear {
+  clear: both;
+}
+
+.clearfix {
+  @include clearfix();
+}
 
 
 body {

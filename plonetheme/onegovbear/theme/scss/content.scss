@@ -83,3 +83,20 @@ fieldset {
     color: $text-color-light;
   }
 }
+
+.hiddenStructure {
+  display: block;
+  background: transparent;
+  background-image: none; /* safari bug */
+  border: none;
+  height: 0.1em;
+  overflow: hidden;
+  padding: 0;
+  margin: -0.1em 0 0 -0.1em !important;
+  width: 1px;
+}
+
+#content .visualNoMarker {
+  list-style: none;
+  margin-left: 0;
+}
