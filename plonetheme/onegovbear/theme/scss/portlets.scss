@@ -1,4 +1,4 @@
-$portlet-column-bg-color: $gray-lighter;
+$portlet-column-bg-color: $gray-lighter !default;
 
 @include declare-variables(
   portlet-column-bg-color);

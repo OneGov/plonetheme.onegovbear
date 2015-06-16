@@ -1,9 +1,9 @@
-$globalnav-background-color: $gray-light;
-$globalnav-background-color-hover: $gray-darker;
-$globalnav-link-color: $gray-lighter;
-$globalnav-link-color-hover: $globalnav-link-color;
-$globalnav-separator-color: $gray-darker;
-$globalnav-separator-width: 1px;
+$globalnav-background-color: $gray-light !default;
+$globalnav-background-color-hover: $gray-darker !default;
+$globalnav-link-color: $gray-lighter !default;
+$globalnav-link-color-hover: $globalnav-link-color !default;
+$globalnav-separator-color: $gray-darker !default;
+$globalnav-separator-width: 1px !default;
 
 @include declare-variables(
   globalnav-background-color,

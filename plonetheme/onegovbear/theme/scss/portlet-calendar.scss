@@ -1,4 +1,4 @@
-$calendar-portlet-bg-color: $portlet-column-bg-color;
+$calendar-portlet-bg-color: $portlet-column-bg-color !default;
 
 @include declare-variables(
   calendar-portlet-bg-color);

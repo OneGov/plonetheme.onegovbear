@@ -1,10 +1,10 @@
-$formtabs-border-color: #ccc;
-$input-bg-color: #fafafa;
-$input-border-color: darken($input-bg-color, 20%);
-$input-focus-color: $outline-color;
-$input-required-color: change-color($danger-color, $saturation: 90%);
-$input-error-bg-color: transparentize($danger-color, 85%);
-$input-error-border-color: transparentize($danger-color, 50%);
+$formtabs-border-color: #ccc !default;
+$input-bg-color: #fafafa !default;
+$input-border-color: darken($input-bg-color, 20%) !default;
+$input-focus-color: $outline-color !default;
+$input-required-color: change-color($danger-color, $saturation: 90%) !default;
+$input-error-bg-color: transparentize($danger-color, 85%) !default;
+$input-error-border-color: transparentize($danger-color, 50%) !default;
 
 @include declare-variables(
   formtabs-border-color,

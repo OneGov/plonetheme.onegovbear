@@ -1,7 +1,7 @@
-$editbar-bg-color: $gray-lighter;
-$editbar-link-color: $link-color;
-$editbar-link-active-color: $link-color;
-$editbar-link-hover-color: $link-hover-color;
+$editbar-bg-color: $gray-lighter !default;
+$editbar-link-color: $link-color !default;
+$editbar-link-active-color: $link-color !default;
+$editbar-link-hover-color: $link-hover-color !default;
 
 @include declare-variables(
   editbar-bg-color,

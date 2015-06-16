@@ -1,6 +1,6 @@
-$portlet-navigation-bg-color: $content-bg-color;
-$portlet-navigation-hover-color: lighten($gray-base, 97.5%);
-$portlet-navigation-active-color: lighten($gray-base, 95.5%);
+$portlet-navigation-bg-color: $content-bg-color !default;
+$portlet-navigation-hover-color: lighten($gray-base, 97.5%) !default;
+$portlet-navigation-active-color: lighten($gray-base, 95.5%) !default;
 
 @include declare-variables(
   portlet-navigation-bg-color,

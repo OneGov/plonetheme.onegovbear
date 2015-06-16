@@ -1,9 +1,9 @@
-$table-heading-bg-color: $gray-lighter;
-$table-border-color: darken($table-heading-bg-color, 15%);
-$table-seperator-border-color: darken($content-bg-color, 15%);
-$table-odd-bg-color: darken($content-bg-color, 2%);
-$table-drag-bg-color: change-color($primary-color, $lightness: 93%);
-$table-drag-border-color: change-color($primary-color, $lightness: 85%);
+$table-heading-bg-color: $gray-lighter !default;
+$table-border-color: darken($table-heading-bg-color, 15%) !default;
+$table-seperator-border-color: darken($content-bg-color, 15%) !default;
+$table-odd-bg-color: darken($content-bg-color, 2%) !default;
+$table-drag-bg-color: change-color($primary-color, $lightness: 93%) !default;
+$table-drag-border-color: change-color($primary-color, $lightness: 85%) !default;
 
 @include declare-variables(
   table-heading-bg-color,

@@ -1,9 +1,9 @@
-$portalmessage-info-color: lighten($context-color, 40%);
-$portalmessage-warning-color: lighten($warning-color, 30%);
-$portalmessage-error-color: lighten($danger-color, 20%);
-$portalmessage-undefined-color: #eee;
-$portalmessage-message-color: #fafafa;
-$portalmessage-border-color: #ccc;
+$portalmessage-info-color: lighten($context-color, 40%) !default;
+$portalmessage-warning-color: lighten($warning-color, 30%) !default;
+$portalmessage-error-color: lighten($danger-color, 20%) !default;
+$portalmessage-undefined-color: #eee !default;
+$portalmessage-message-color: #fafafa !default;
+$portalmessage-border-color: #ccc !default;
 
 @include declare-variables(
   portalmessage-info-color,

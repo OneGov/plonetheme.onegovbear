@@ -1,12 +1,12 @@
-$button-standalone-color: $standalone-color;
-$button-context-color: $context-color;
-$button-destructive-color: $danger-color;
-$button-success-color: $success-color;
-$button-warning-color: $warning-color;
-$button-danger-color: $danger-color;
-$button-disabled-color: #ddd;
-$button-text-light-color: white;
-$button-text-dark-color: black;
+$button-standalone-color: $standalone-color !default;
+$button-context-color: $context-color !default;
+$button-destructive-color: $danger-color !default;
+$button-success-color: $success-color !default;
+$button-warning-color: $warning-color !default;
+$button-danger-color: $danger-color !default;
+$button-disabled-color: #ddd !default;
+$button-text-light-color: white !default;
+$button-text-dark-color: black !default;
 
 @include declare-variables(
   button-standalone-color,

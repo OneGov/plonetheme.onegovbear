@@ -1,4 +1,4 @@
-$page-wrapper-width: 1200px;
+$page-wrapper-width: 1200px !default;
 
 @include declare-variables(
   page-wrapper-width);
