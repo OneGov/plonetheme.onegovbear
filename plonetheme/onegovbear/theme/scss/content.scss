@@ -100,3 +100,15 @@ fieldset {
   list-style: none;
   margin-left: 0;
 }
+
+dl.collapsible {
+  dt {
+    cursor: pointer;
+  }
+  dd {
+    display: none;
+  }
+  &.expandedBlockCollapsible dd {
+    display: block;
+  }
+}
