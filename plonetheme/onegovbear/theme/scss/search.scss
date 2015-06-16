@@ -28,6 +28,7 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     width: 12em;
     position: absolute;
     right: 0.55em;
+    @include transition(width 200ms);
     &:focus {
       width: 20em;
     }
@@ -63,15 +64,11 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
 
       li {
         margin: 0;
-        padding: 0 1.5em;
+        padding: 0.3em 1.5em;
         display: block;
 
         &.LSHighlight {
           background-color: $searchbox-liveresults-hover-bg-color;
-        }
-
-        + li {
-          margin-top: 0.5em;
         }
 
         > * {
