@@ -14,7 +14,6 @@
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/layout.scss" />
         <theme:scss file="theme/scss/content.scss" />
-        <theme:scss file="theme/scss/base.scss" />
         <theme:scss file="theme/scss/pathbar.scss" />
         <theme:scss file="theme/scss/menues.scss" />
         <theme:scss file="theme/scss/editbar.scss" />
@@ -33,6 +32,7 @@
         <theme:scss file="theme/scss/batching.scss" />
         <theme:scss file="theme/scss/responsive.scss" />
         <theme:scss file="theme/scss/controlpanel.scss" />
+        <theme:scss file="theme/scss/login.scss" />
         <theme:scss file="theme/scss/sitemap.scss" />
     </theme:resources>
 
