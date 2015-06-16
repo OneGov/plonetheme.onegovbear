@@ -33,6 +33,7 @@
         <theme:scss file="theme/scss/batching.scss" />
         <theme:scss file="theme/scss/responsive.scss" />
         <theme:scss file="theme/scss/controlpanel.scss" />
+        <theme:scss file="theme/scss/sitemap.scss" />
     </theme:resources>
 
 </configure>
