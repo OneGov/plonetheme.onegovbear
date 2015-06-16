@@ -24,6 +24,7 @@ $input-error-border-color: transparentize($danger-color, 50%) !default;
   line-height: 1em;
   padding: 0.5em;
   width: 20em;
+  outline: none;
 
   border: 1px solid $input-border-color;
   @include borderradius();
