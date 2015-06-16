@@ -35,6 +35,18 @@ body {
 }
 
 
+#document-actions {
+  float: right;
+  width: auto;
+  >ul {
+    @include ul(inline);
+  }
+  li:not(:last-child):after {
+    content: ' | ';
+  }
+}
+
+
 #content {
   clear: both;
 }
