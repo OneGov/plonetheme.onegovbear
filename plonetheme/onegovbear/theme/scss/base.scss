@@ -1,24 +1,3 @@
-/* @group site-actions */
-
-#portal-siteactions {
-  @include ul(inline);
-  & a {
-    color: $darkgray;
-  }
-  & li {
-    border-left: 1px solid $darkgray;
-    padding-left: 0.5em;
-    margin-left: 0.5em;
-  }
-  & li:first-child {
-    border-left: none;
-    padding-left: 0;
-    margin-left: 0;
-  }
-}
-
-/* @end */
-
 /* @group login */
 
 #login-form {

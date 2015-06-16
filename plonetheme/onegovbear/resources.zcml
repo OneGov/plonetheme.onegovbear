@@ -18,8 +18,7 @@
         <theme:scss file="theme/scss/pathbar.scss" />
         <theme:scss file="theme/scss/menues.scss" />
         <theme:scss file="theme/scss/editbar.scss" />
-        <theme:scss file="theme/scss/languageselector.scss" />
-        <theme:scss file="theme/scss/personaltools.scss" />
+        <theme:scss file="theme/scss/actions.scss" />
         <theme:scss file="theme/scss/globalnav.scss" />
         <theme:scss file="theme/scss/portlets.scss" />
         <theme:scss file="theme/scss/navigation.scss" />
