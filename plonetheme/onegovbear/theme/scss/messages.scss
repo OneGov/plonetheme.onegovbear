@@ -28,13 +28,14 @@ $portalmessage-border-color: #ccc !default;
 
 dl.portalMessage, #content dl.portalMessage {
   display: block;
-  margin: 1em 2em;
+  margin: 1em 0;
 
   dt {
     padding: 0.4em 1em;
     display: table-cell;
     font-weight: normal;
     @include borderradius($border-radius 0 0 $border-radius);
+    white-space: nowrap;
   }
 
   @include portal-message-dt($portalmessage-undefined-color, portalMessage);
