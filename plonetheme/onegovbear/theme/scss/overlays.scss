@@ -40,6 +40,10 @@ $overlay-close-mask-color: transparentize($gray-light, 20%) !default;
     height: $overlay-close-width;
     width: $overlay-close-width;
 
+    >span {
+      display: none;
+    }
+
     &:before {
       position: absolute;
       content: '';
