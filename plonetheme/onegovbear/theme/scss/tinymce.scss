@@ -1,0 +1,36 @@
+table.mceLayout {
+  td.mceIframeContainer {
+    border: none;
+    @include inputfield;
+    padding: 0;
+    width: 100%;
+  }
+
+  &.mceEditorFocus {
+    td.mceIframeContainer {
+      border: 1px solid $input-focus-color;
+      @include boxshadow(0 1px 1px transparentize($input-focus-color, 0.8) inset,
+                         0 0 5px transparentize($input-focus-color, 0.6));
+      background: $input-bg-color;
+    }
+  }
+
+  tr.mceLast {
+    td.mceStatusbar {
+      border: none;
+      #text_path_row {
+        display: none;
+      }
+      #text_resize {
+        top: -22px;
+        position: relative;
+        display: block;
+        float: right;
+      }
+    }
+  }
+}
+
+body.mceContentBody {
+  padding: 0.5em;
+}

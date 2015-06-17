@@ -24,6 +24,7 @@
         <theme:scss file="theme/scss/portlet-calendar.scss" />
         <theme:scss file="theme/scss/icons.scss" />
         <theme:scss file="theme/scss/form.scss" />
+        <theme:scss file="theme/scss/tinymce.scss" />
         <theme:scss file="theme/scss/plone-datepicker.scss" />
         <theme:scss file="theme/scss/search.scss" />
         <theme:scss file="theme/scss/overlays.scss" />
