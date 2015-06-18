@@ -15,15 +15,17 @@ $overlay-close-mask-color: transparentize($gray-light, 20%) !default;
 
 
 #cboxOverlay,
-#exposeMask {
+#exposeMask,
+.contenttreeWindowBlocker {
   background: $overlay-close-mask-color !important;
   opacity: 1 !important;
 }
 
-.overlay {
+.overlay, .contenttreeWindow {
   display: none;
   background-color: $content-bg-color;
   padding: 2em;
+  @include boxsizing(border-box);
   @include boxshadow(0.1em 0.1em 1em 0 $gray-dark);
   @include borderradius(10px);
   min-width: 25%;
