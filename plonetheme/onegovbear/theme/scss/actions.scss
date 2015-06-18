@@ -13,7 +13,7 @@
   }
 
   /* Anonymous: list actions by floating */
-  ul {
+  > ul {
     @include ul(inline);
     li {
       @include linklist;
