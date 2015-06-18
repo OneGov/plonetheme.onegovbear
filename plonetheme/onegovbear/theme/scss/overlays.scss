@@ -29,7 +29,7 @@ $overlay-close-mask-color: transparentize($gray-light, 20%) !default;
   @include boxsizing(border-box);
   @include boxshadow(0.1em 0.1em 1em 0 $gray-dark);
   @include borderradius(10px);
-  min-width: 25%;
+  min-width: 80%;
   z-index: 1000 !important;
 
   .formControls {
