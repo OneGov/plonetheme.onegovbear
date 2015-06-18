@@ -138,7 +138,7 @@ html body .calendar {
       &:first-child {
         /* top-left corner */
         td:first-child {
-          @include borderradius($plone-datepicker-border-radius 0 0 0);
+          @include borderradius($plone-datepicker-border-radius - 1px 0 0 0);
 
           /* deactivate info button in top-left corner */
           pointer-events: none;
@@ -147,7 +147,7 @@ html body .calendar {
 
         /* top-right corner */
         td:last-child {
-          @include borderradius(0 $plone-datepicker-border-radius 0 0);
+          @include borderradius(0 $plone-datepicker-border-radius - 1px 0 0);
           color: $danger-color;
           font-weight: bold;
           cursor: pointer;
