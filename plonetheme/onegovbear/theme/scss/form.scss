@@ -18,8 +18,8 @@ $input-error-border-color: transparentize($danger-color, 50%) !default;
 
 
 @mixin inputfield() {
-  font-size: $font-size;
-  font-family: $body-font-family;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
   display: inline-block;
   line-height: 1em;
   padding: 0.5em;
