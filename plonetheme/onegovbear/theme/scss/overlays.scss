@@ -19,6 +19,7 @@ $overlay-close-mask-color: transparentize($gray-light, 20%) !default;
 .contenttreeWindowBlocker {
   background: $overlay-close-mask-color !important;
   opacity: 1 !important;
+  z-index: 999 !important;
 }
 
 .overlay, .contenttreeWindow {
@@ -29,6 +30,7 @@ $overlay-close-mask-color: transparentize($gray-light, 20%) !default;
   @include boxshadow(0.1em 0.1em 1em 0 $gray-dark);
   @include borderradius(10px);
   min-width: 25%;
+  z-index: 1000 !important;
 
   .formControls {
     margin-top: 1em;
