@@ -54,34 +54,20 @@ fieldset {
   border-width: 0 0 1px 0;
 }
 
-#content {
-  p {
-    margin-bottom: 1em;
-  }
+p {
+  margin-bottom: 1em;
+}
 
-  ul {
-    @include ul();
-    &.listTypePlain {
-      @include ul(plain);
-    }
-  }
+ul.listTypePlain {
+  @include ul(plain);
+}
 
-  ol {
-    @include ul();
-    list-style: decimal;
-  }
+dl {
+  @include dl(default);
+}
 
-  dl {
-    & dt {
-      font-weight: bold;
-    }
-    & dd {
-      margin-bottom: 1em;
-    }
-  }
-  .discreet {
-    color: $text-color-light;
-  }
+.discreet {
+  color: $text-color-light;
 }
 
 .hiddenStructure {
