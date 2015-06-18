@@ -16,5 +16,6 @@
     <stylesheet id="deprecated.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="navtree.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="invisibles.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
+    <stylesheet id="++resource++plone.app.jquerytools.overlays.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
 
 </object>
