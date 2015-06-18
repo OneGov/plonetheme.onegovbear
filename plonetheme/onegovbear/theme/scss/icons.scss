@@ -1,214 +1,214 @@
-@mixin invisible_text($icon-size: $font-size) {
-  font-size: 1px;
-  color: transparent;
-  width: 20px;
-  margin: 0 3px;
-  height: 20px;
-  overflow: hidden;
-  display: block;
-  float: left;
-  &:before {
-    font-size: $icon-size;
-    color: $link-color;
-  }
-  &:hover {
-    &:before {
-      color: $link-color-hover;
-    }
-  }
-}
+/* @mixin invisible_text($icon-size: $font-size) { */
+/*   font-size: 1px; */
+/*   color: transparent; */
+/*   width: 20px; */
+/*   margin: 0 3px; */
+/*   height: 20px; */
+/*   overflow: hidden; */
+/*   display: block; */
+/*   float: left; */
+/*   &:before { */
+/*     font-size: $icon-size; */
+/*     color: $link-color; */
+/*   } */
+/*   &:hover { */
+/*     &:before { */
+/*       color: $link-color-hover; */
+/*     } */
+/*   } */
+/* } */
 
-@mixin base_icon($char) {
-  font-family: "icomoon";
-  font-size: 1em;
-  content: $char;
-  white-space: nowrap;
-  line-height: 1em;
-}
-@mixin icon($char:"", $style:"before"){
-  @if $style == "before" {
-    &:before {
-      @include base_icon($char);
-    }
-  }
-  @if $style == "after" {
-    &:after {
-      @include base_icon($char);
-    }
-  }
-}
+/* @mixin base_icon($char) { */
+/*   font-family: "icomoon"; */
+/*   font-size: 1em; */
+/*   content: $char; */
+/*   white-space: nowrap; */
+/*   line-height: 1em; */
+/* } */
+/* @mixin icon($char:"", $style:"before"){ */
+/*   @if $style == "before" { */
+/*     &:before { */
+/*       @include base_icon($char); */
+/*     } */
+/*   } */
+/*   @if $style == "after" { */
+/*     &:after { */
+/*       @include base_icon($char); */
+/*     } */
+/*   } */
+/* } */
 
-.contenttype-blog,
-.contenttype-blogcategory {
-  @include icon($char: "< ");
-}
-.contenttype-book {
-  @include icon($char: "? ");
-}
-.contenttype-textblock,
-.contenttype-paragraph,
-.contenttype-graphicblock,
-.contenttype-htmlblock {
-  @include icon($char: "I ");
-}
-.contenttype-contact,
-.contenttype-ftw_contact,
-.contenttype-member {
-  @include icon($char: "\\ ");
-}
-.contenttype-poodle {
-  @include icon($char: "a ");
-}
-.contenttype-document,
-.contenttype-contentpage,
-.contenttype-page {
-  @include icon($char: " ");
-}
-.contenttype-meeting-item {
-  @include icon($char: "K ");
-}
-.contenttype-billboardcategory,
-.contenttype-newsfolder,
-.contenttype-eventfolder,
-.contenttype-homefolder,
-.contenttype-tabbedviewfolder,
-.contenttype-folder {
-  @include icon($char: "] ");
-}
-.contenttype-banner {
-  @include icon($char: "X ");
-}
-.contenttype-link {
-  @include icon($char: " ");
-}
-.link-mailto a,
-.contenttype-ftw_mail,
-.contenttype-mail {
-  @include icon($char: ". ");
-}
-.contenttype-news {
-  @include icon($char: "a ");
-}
-.contenttype-news-item {
-  @include icon($char: "a ");
-}
-.contenttype-event,
-.contenttype-plone-app-event-dx-event,
-.contenttype-eventpage,
-.contenttype-meeting {
-  @include icon($char: "e ");
-}
-.contenttype-ticket,
-.contenttype-poiissue,
-.contenttype-task {
-  @include icon($char: "8 ");
-}
-.contenttype-workspace {
-  @include icon($char: "% ");
-}
-.contenttype-remark {
-  @include icon($char: "E ");
-}
-.contenttype-billboardad {
-  @include icon($char: ": ");
-}
-.contenttype-ticket-box {
-  @include icon($char: "F ");
-}
-.contenttype-chapter {
-  @include icon($char: "# ");
-}
-.contenttype-table {
-  @include icon($char: "L ");
-}
-.contenttype-classificationitem {
-  @include icon($char: " ");
-}
-.contenttype-blogentry {
-  @include icon($char: "N ");
-}
-.contenttype-formfolder {
-  @include icon($char: " ");
-}
-.contenttype-subsite {
-  @include icon('Y ');
-}
-.contenttype-listingblock {
-  @include icon('I ');
-}
-.contenttype-addressblock {
-  @include icon('I ');
-}
-.contenttype-refegovservice {
-  @include icon(' ');
-}
-.contenttype-shopitemblock {
-  @include icon('H ');
-}
-.contenttype-collection {
-  @include icon($char: "F ");
-}
+/* .contenttype-blog, */
+/* .contenttype-blogcategory { */
+/*   @include icon($char: "< "); */
+/* } */
+/* .contenttype-book { */
+/*   @include icon($char: "? "); */
+/* } */
+/* .contenttype-textblock, */
+/* .contenttype-paragraph, */
+/* .contenttype-graphicblock, */
+/* .contenttype-htmlblock { */
+/*   @include icon($char: "I "); */
+/* } */
+/* .contenttype-contact, */
+/* .contenttype-ftw_contact, */
+/* .contenttype-member { */
+/*   @include icon($char: "\\ "); */
+/* } */
+/* .contenttype-poodle { */
+/*   @include icon($char: "a "); */
+/* } */
+/* .contenttype-document, */
+/* .contenttype-contentpage, */
+/* .contenttype-page { */
+/*   @include icon($char: " "); */
+/* } */
+/* .contenttype-meeting-item { */
+/*   @include icon($char: "K "); */
+/* } */
+/* .contenttype-billboardcategory, */
+/* .contenttype-newsfolder, */
+/* .contenttype-eventfolder, */
+/* .contenttype-homefolder, */
+/* .contenttype-tabbedviewfolder, */
+/* .contenttype-folder { */
+/*   @include icon($char: "] "); */
+/* } */
+/* .contenttype-banner { */
+/*   @include icon($char: "X "); */
+/* } */
+/* .contenttype-link { */
+/*   @include icon($char: " "); */
+/* } */
+/* .link-mailto a, */
+/* .contenttype-ftw_mail, */
+/* .contenttype-mail { */
+/*   @include icon($char: ". "); */
+/* } */
+/* .contenttype-news { */
+/*   @include icon($char: "a "); */
+/* } */
+/* .contenttype-news-item { */
+/*   @include icon($char: "a "); */
+/* } */
+/* .contenttype-event, */
+/* .contenttype-plone-app-event-dx-event, */
+/* .contenttype-eventpage, */
+/* .contenttype-meeting { */
+/*   @include icon($char: "e "); */
+/* } */
+/* .contenttype-ticket, */
+/* .contenttype-poiissue, */
+/* .contenttype-task { */
+/*   @include icon($char: "8 "); */
+/* } */
+/* .contenttype-workspace { */
+/*   @include icon($char: "% "); */
+/* } */
+/* .contenttype-remark { */
+/*   @include icon($char: "E "); */
+/* } */
+/* .contenttype-billboardad { */
+/*   @include icon($char: ": "); */
+/* } */
+/* .contenttype-ticket-box { */
+/*   @include icon($char: "F "); */
+/* } */
+/* .contenttype-chapter { */
+/*   @include icon($char: "# "); */
+/* } */
+/* .contenttype-table { */
+/*   @include icon($char: "L "); */
+/* } */
+/* .contenttype-classificationitem { */
+/*   @include icon($char: " "); */
+/* } */
+/* .contenttype-blogentry { */
+/*   @include icon($char: "N "); */
+/* } */
+/* .contenttype-formfolder { */
+/*   @include icon($char: " "); */
+/* } */
+/* .contenttype-subsite { */
+/*   @include icon('Y '); */
+/* } */
+/* .contenttype-listingblock { */
+/*   @include icon('I '); */
+/* } */
+/* .contenttype-addressblock { */
+/*   @include icon('I '); */
+/* } */
+/* .contenttype-refegovservice { */
+/*   @include icon(' '); */
+/* } */
+/* .contenttype-shopitemblock { */
+/*   @include icon('H '); */
+/* } */
+/* .contenttype-collection { */
+/*   @include icon($char: "F "); */
+/* } */
 
-/* seantis.dir.base and seantis.dir.contacts */
-.contenttype-seantis-dir-contacts-directory {
-  @include icon($char: "F ");
-}
+/* /\* seantis.dir.base and seantis.dir.contacts *\/ */
+/* .contenttype-seantis-dir-contacts-directory { */
+/*   @include icon($char: "F "); */
+/* } */
 
-.contenttype-seantis-dir-contacts-item {
-  @include icon($char: "_ ");
-}
+/* .contenttype-seantis-dir-contacts-item { */
+/*   @include icon($char: "_ "); */
+/* } */
 
-.contenttype-seantis-dir-contacts-contact {
-  @include icon($char: "");
-}
+/* .contenttype-seantis-dir-contacts-contact { */
+/*   @include icon($char: ""); */
+/* } */
 
-/* ftw.shop */
-.contenttype-supplier {
-  @include icon($char: "8 ");
-}
-.contenttype-shopcategory {
-  @include icon($char: "7 ");
-}
-.contenttype-shopitem {
-  @include icon($char: "H ");
-}
+/* /\* ftw.shop *\/ */
+/* .contenttype-supplier { */
+/*   @include icon($char: "8 "); */
+/* } */
+/* .contenttype-shopcategory { */
+/*   @include icon($char: "7 "); */
+/* } */
+/* .contenttype-shopitem { */
+/*   @include icon($char: "H "); */
+/* } */
 
 
-/* only show sprites in factory menu for file and image */
-body.template-create_from_template .contenttype-image,
-#plone-contentmenu-factories li a.contenttype-image span {
-  @include icon($char: "X ");
-}
-body.template-create_from_template .contenttype-file,
-#plone-contentmenu-factories li a.contenttype-file span {
-  @include icon($char: "_ ");
-}
+/* /\* only show sprites in factory menu for file and image *\/ */
+/* body.template-create_from_template .contenttype-image, */
+/* #plone-contentmenu-factories li a.contenttype-image span { */
+/*   @include icon($char: "X "); */
+/* } */
+/* body.template-create_from_template .contenttype-file, */
+/* #plone-contentmenu-factories li a.contenttype-file span { */
+/*   @include icon($char: "_ "); */
+/* } */
 
-a[target="_blank"],
-span.link-external a,
-a.external-link {
-  @include icon("j ");
-}
+/* a[target="_blank"], */
+/* span.link-external a, */
+/* a.external-link { */
+/*   @include icon("j "); */
+/* } */
 
-.to_top a {
-  @include icon($char: " ", $style: "after");
-}
+/* .to_top a { */
+/*   @include icon($char: " ", $style: "after"); */
+/* } */
 
-.portletContextNavigation .parent a {
-  @include icon($char: " k", $style: "after");
-}
+/* .portletContextNavigation .parent a { */
+/*   @include icon($char: " k", $style: "after"); */
+/* } */
 
-#portal-globalnav.flyoutEnabled > li > .wrapper a {
-  @include icon($char: " ", $style: "after");
-  &:after {
-    font-size: 0.75em;
-  }
-}
+/* #portal-globalnav.flyoutEnabled > li > .wrapper a { */
+/*   @include icon($char: " ", $style: "after"); */
+/*   &:after { */
+/*     font-size: 0.75em; */
+/*   } */
+/* } */
 
-.portlet.portletCollection.newsTemplate a.RssLink {
-  @include icon($char:'G');
-  @include invisible_text($icon-size: 16px);
-  float: right;
-}
+/* .portlet.portletCollection.newsTemplate a.RssLink { */
+/*   @include icon($char:'G'); */
+/*   @include invisible_text($icon-size: 16px); */
+/*   float: right; */
+/* } */
 
-/* @end */
+/* /\* @end *\/ */
