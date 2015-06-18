@@ -6,8 +6,6 @@
     <include package="ftw.theming" file="meta.zcml" />
 
     <theme:resources profile="plonetheme.onegovbear:default" slot="theme">
-        <theme:scss file="theme/scss/variables.scss" />
-
         <theme:scss file="theme/scss/accessibility.scss" />
 
         <theme:scss file="theme/scss/buttons.scss" />
