@@ -1,7 +1,4 @@
 .contenttreeWindow {
-  position: fixed;
-  margin-top: -3em;
-
   .contenttreeWindowHeader {
     h2 {
       margin: 0;
@@ -23,16 +20,6 @@
     position: absolute;
     bottom: 2em;
   }
-}
-
-.contenttreeWindowBlocker {
-  position: fixed;
-  width: auto;
-  height: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
 .autocompleteInputWidget {
