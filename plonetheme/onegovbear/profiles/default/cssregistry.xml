@@ -18,5 +18,6 @@
     <stylesheet id="invisibles.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="++resource++plone.app.jquerytools.overlays.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="++resource++plone.formwidget.contenttree/contenttree.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
+    <stylesheet id="++resource++tinymce.stylesheets/tinymce.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
 
 </object>

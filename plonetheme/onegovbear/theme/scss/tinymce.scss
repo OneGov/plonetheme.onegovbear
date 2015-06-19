@@ -34,3 +34,36 @@ table.mceLayout {
 body.mceContentBody {
   padding: 0.5em;
 }
+
+
+/* TinyMCE styles */
+
+ul {
+  &.listTypeDisc {
+    list-style-type: disc;
+  }
+  &.listTypeSquare {
+    list-style-type: square;
+  }
+  &.listTypeCircle {
+    list-style-type: circle;
+  }
+}
+
+ol {
+  &.listTypeDecimal {
+    list-style-type: decimal;
+  }
+  &.listTypeLowerAlpha {
+    list-style-type: lower-alpha;
+  }
+  &.listTypeUpperAlpha {
+    list-style-type: upper-alpha;
+  }
+  &.listTypeLowerRoman {
+    list-style-type: lower-roman;
+  }
+  &.listTypeUpperRoman {
+    list-style-type: upper-roman;
+  }
+}
