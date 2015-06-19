@@ -21,19 +21,20 @@ $portlet-navigation-active-color: lighten($gray-base, 95.5%) !default;
 
   border-top: 1px solid $gray-lighter;
   border-bottom: 1px solid $gray-lighter;
+}
+
+
+ul.navTree {
+  @include ul(plain);
+  li {
+    margin-bottom: 0;
+  }
 
   .navTreeItem {
     display: block;
   }
 
-  ul {
-    @include ul(plain);
-    li {
-      margin-bottom: 0;
-    }
-  }
-
-  ul li a {
+  a {
     padding: 0.4em 0;
     display: block;
     text-decoration: none;
@@ -42,23 +43,24 @@ $portlet-navigation-active-color: lighten($gray-base, 95.5%) !default;
       @include navigationitem($portlet-navigation-hover-color);
     }
   }
-  a.navTreeCurrentItem {
+
+  a.navTreeCurrentItem, li.navTreeCurrentItem > a {
     font-weight: bold;
     color: $gray-darker;
     @include navigationitem($portlet-navigation-active-color);
   }
 
   @for $i from 1 through 10 {
-    ul.navTreeLevel#{$i} a {
+    &.navTreeLevel#{$i} a {
       padding-left: $i + 1 * 1em;
     }
   }
 
-  ul.navTreeLevel0 > li > a{
+  &.navTreeLevel0 > li > a{
     padding-left:1em
   }
 
-  ul li.navTreeTopNode {
+  li.navTreeTopNode {
     border-bottom: 1px solid $gray-lighter;
     padding-left: 0;
   }
