@@ -28,7 +28,6 @@ body {
 
 #page-wrapper {
   position: relative;
-  background-color: $content-bg-color;
   max-width: $page-wrapper-width;
   margin: 0 auto;
   margin-bottom: 1em;
@@ -36,10 +35,28 @@ body {
 
 
 #header {
-  #portal-logo {
-    display: inline-block;
+  margin-bottom: 1.4em;
+
+  >.row >.cell {
+    /* Remove paddings since we have no background color. */
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  .topRow {
     margin: 1.5em 0;
   }
+
+  #portal-logo {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 1.5em;
+  }
+}
+
+
+#columns {
+  background-color: $content-bg-color;
 }
 
 
