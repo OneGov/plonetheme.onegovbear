@@ -1,0 +1,54 @@
+$toolbar-bg-color: $gray-darker;
+$action-bg-color: $gray-dark;
+$action-bg-color-hover: $gray-light;
+
+$column-bg-color: $gray-light;
+
+$block-placeholder-bg-color: lighten($gray-light, 10%);
+$block-placeholder-border-size: 1px;
+$block-placeholder-border-style: dotted;
+$block-placeholder-border-color: darken($gray-light, 10%);
+
+$layout-placeholder-bg-color: $block-placeholder-bg-color;
+$layout-placeholder-border-size: $block-placeholder-border-size;
+$layout-placeholder-border-style: $block-placeholder-border-style;
+$layout-placeholder-border-color: $block-placeholder-border-color;
+
+ul[class^="sl-toolbar"] {
+  border-radius: $border-radius;
+  background-color: $toolbar-bg-color;
+}
+
+.sl-block {
+  box-shadow: none;
+  .sl-block-content {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.sl-column {
+  background-color: $content-bg-color;
+}
+
+.sl-layout {
+  .block-placeholder {
+    background-color: $block-placeholder-bg-color;
+    border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
+  }
+}
+
+.sl-simplelayout {
+  .layout-placeholder {
+    background-color: $layout-placeholder-bg-color;
+    border: $layout-placeholder-border-size $layout-placeholder-border-style $layout-placeholder-border-color;
+  }
+}
+
+// If user is permitted to edit the simplelayout page
+.documentEditable {
+  .sl-column {
+    background-color: $column-bg-color;
+  }
+}
