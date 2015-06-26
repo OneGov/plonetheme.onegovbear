@@ -34,6 +34,7 @@
         <theme:scss file="theme/scss/login.scss" />
         <theme:scss file="theme/scss/sitemap.scss" />
         <theme:scss file="theme/scss/simplelayout.scss" />
+        <theme:scss file="theme/scss/slider.scss" />
     </theme:resources>
 
 </configure>

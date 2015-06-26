@@ -1,0 +1,33 @@
+$slider-text-bg-color: #fff !default;
+$slider-text-transparency: 0.6 !default;
+$slider-text-title-font-size: 20px !default;
+$slider-text-title-font-color: $text-color !default;
+$slider-text-font-size: 16px !default;
+$slider-text-font-color: $text-color !default;
+
+@include declare-variables(
+  slider-text-bg-color,
+  slider-text-transparency);
+
+.sliderPane {
+  position: relative;
+  .sliderText {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background-color: $slider-text-bg-color;
+    opacity: $slider-text-transparency;
+    padding: 15px 10px;
+    > p {
+      font-size: $slider-text-font-size;
+      color: $slider-text-font-color;
+      &.documentFirstHeading {
+        font-size: $slider-text-title-font-size;
+        color: $slider-text-title-font-color;
+      }
+    }
+  }
+  > a .sliderText .documentFirstHeading {
+    color: $link-color;
+  }
+}

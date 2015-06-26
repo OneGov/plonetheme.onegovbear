@@ -28,12 +28,24 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     width: 12em;
     position: absolute;
     right: 0.55em;
-    @include transition(width 200ms);
-    &:focus {
-      width: 20em;
-    }
   }
 
+  .LSBox {
+    &:before {
+        font-family: FontAwesome;
+        content: "\f002";
+        position: absolute;
+        z-index: 1;
+        right: 10px;
+        top: 10px;
+        font-size: 14px;
+        padding: 6px 15px 6px 5px;
+        background-color: $input-bg-color;
+    }
+    input[type="text"] {
+      line-height: 20px;
+    }
+  }
 
   #LSResult {
     display: none;

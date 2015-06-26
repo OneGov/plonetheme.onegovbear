@@ -4,6 +4,7 @@ $globalnav-link-color: $gray-lighter !default;
 $globalnav-link-color-hover: $globalnav-link-color !default;
 $globalnav-separator-color: $gray-darker !default;
 $globalnav-separator-width: 1px !default;
+$globalnav-font-size: 16px !default;
 
 @include declare-variables(
   globalnav-background-color,
@@ -11,7 +12,8 @@ $globalnav-separator-width: 1px !default;
   globalnav-link-color,
   globalnav-link-color-hover,
   globalnav-separator-color,
-  globalnav-separator-width);
+  globalnav-separator-width,
+  globalnav-font-size);
 
 
 
@@ -30,6 +32,8 @@ $globalnav-separator-width: 1px !default;
       margin: 0;
       border-right: $globalnav-separator-width solid $globalnav-separator-color;
       text-transform: uppercase;
+      font-size: $globalnav-font-size;
+          @include transition(background-color 100ms);
     }
 
     &:hover, &.selected {
