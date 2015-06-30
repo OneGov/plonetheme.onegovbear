@@ -35,6 +35,7 @@
         <theme:scss file="theme/scss/sitemap.scss" />
         <theme:scss file="theme/scss/simplelayout.scss" />
         <theme:scss file="theme/scss/slider.scss" />
+        <theme:scss file="theme/scss/datagridwidget.scss" />
     </theme:resources>
 
 </configure>

@@ -1,0 +1,49 @@
+table.datagridwidget-table-view {
+    width: 100%;
+    tr.datagridwidget-empty-row {
+        display: none;
+    }
+    td {
+        padding-right: 1em;
+        padding-bottom: 1em;
+        vertical-align: bottom;
+
+        &.datagridwidget-manipulator {
+            vertical-align: middle;
+            text-align: center;
+        }
+         > * {
+            cursor: pointer;
+         }
+
+        div.field {
+            margin-bottom: 0;
+        }
+        div.fieldErrorBox {
+            display: block;
+        }
+        input[type="text"] {
+            width:100%;
+            box-sizing: border-box;
+        }
+        .querySelectSearch {
+            input[type="text"] {
+                width: 70%;
+            },
+            .searchButton {
+                width: 27%;
+                margin:0;
+            }
+            .formControls {
+                margin:0;
+            }
+        }
+        div.error {
+            color: darken($danger-color, 20%);
+        }
+
+    }
+    td:last {
+        padding-right: 0;
+    }
+}
