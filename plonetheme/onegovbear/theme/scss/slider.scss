@@ -9,25 +9,59 @@ $slider-text-font-color: $text-color !default;
   slider-text-bg-color,
   slider-text-transparency);
 
-.sliderPane {
-  position: relative;
-  .sliderText {
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-    background-color: $slider-text-bg-color;
-    opacity: $slider-text-transparency;
-    padding: 15px 10px;
-    > p {
-      font-size: $slider-text-font-size;
-      color: $slider-text-font-color;
-      &.documentFirstHeading {
-        font-size: $slider-text-title-font-size;
-        color: $slider-text-title-font-color;
+.sliderPanes {
+
+  .sliderPane {
+    position: relative;
+    .sliderText {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      background-color: $slider-text-bg-color;
+      opacity: $slider-text-transparency;
+      padding: 15px 10px;
+      > p {
+        font-size: $slider-text-font-size;
+        color: $slider-text-font-color;
+        &.documentFirstHeading {
+          font-size: $slider-text-title-font-size;
+          color: $slider-text-title-font-color;
+        }
       }
     }
+    > a .sliderText .documentFirstHeading {
+      color: $link-color;
+    }
   }
-  > a .sliderText .documentFirstHeading {
-    color: $link-color;
+
+  > button {
+    line-height: 0;
+    font-size: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: $gray-dark;
+    color: $gray-lighter;
+    float: left;
+    margin-top: 5px;
+    &:before {
+      font-family: FontAwesome;
+      font-size: 10px;
+    }
+  }
+
+  .slick-play {
+    margin-right: 5px;
+    &:before {
+      content: "\f04b";
+    }
+  }
+
+  .slick-pause {
+    &:before {
+      content: "\f04c";
+    }
   }
 }
