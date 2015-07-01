@@ -2,12 +2,12 @@ $toolbar-bg-color: $gray-darker;
 $action-bg-color: $gray-dark;
 $action-bg-color-hover: $gray-light;
 
-$column-bg-color: $gray-light;
+$column-bg-color: $gray;
 
-$block-placeholder-bg-color: lighten($gray-light, 10%);
+$block-placeholder-bg-color: $gray-light;
 $block-placeholder-border-size: 1px;
 $block-placeholder-border-style: dotted;
-$block-placeholder-border-color: darken($gray-light, 10%);
+$block-placeholder-border-color: $gray-dark;
 
 $layout-placeholder-bg-color: $block-placeholder-bg-color;
 $layout-placeholder-border-size: $block-placeholder-border-size;
@@ -21,15 +21,22 @@ ul[class^="sl-toolbar"] {
 
 .sl-block {
   box-shadow: none;
+  margin-bottom: 2px;
   .sl-block-content {
     img {
       max-width: 100%;
     }
   }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .sl-column {
   background-color: $content-bg-color;
+  .block-placeholder {
+    margin-bottom: 1px;
+  }
 }
 
 .sl-layout {
