@@ -10,9 +10,9 @@ $slider-text-font-color: $text-color !default;
   slider-text-transparency);
 
 .sliderPanes {
-
   .sliderPane {
     position: relative;
+    margin:0 5px 0 5px;
     .sliderText {
       position: absolute;
       bottom: 20px;
@@ -50,6 +50,10 @@ $slider-text-font-color: $text-color !default;
       font-family: FontAwesome;
       font-size: 10px;
     }
+  }
+
+  &.OnlyPane .sliderPane {
+    margin:0;
   }
 
   .slick-play {
