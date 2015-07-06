@@ -10,6 +10,8 @@
 
     <include file="resources.zcml" />
 
+    <include package=".viewlets" />
+
     <plone:static type="theme" directory="theme" />
 
     <genericsetup:registerProfile
