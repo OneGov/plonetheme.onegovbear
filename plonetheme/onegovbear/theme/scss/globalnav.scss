@@ -1,14 +1,14 @@
-$globalnav-background-color: $gray-light !default;
-$globalnav-background-color-hover: $gray-darker !default;
+$globalnav-bg-color: $gray-light !default;
+$globalnav-bg-color-hover: $gray-dark !default;
 $globalnav-link-color: $gray-lighter !default;
 $globalnav-link-color-hover: $globalnav-link-color !default;
-$globalnav-separator-color: $gray-darker !default;
+$globalnav-separator-color: $gray !default;
 $globalnav-separator-width: 1px !default;
 $globalnav-font-size: 16px !default;
 
 @include declare-variables(
-  globalnav-background-color,
-  globalnav-background-color-hover,
+  globalnav-bg-color,
+  globalnav-bg-color-hover,
   globalnav-link-color,
   globalnav-link-color-hover,
   globalnav-separator-color,
@@ -19,7 +19,7 @@ $globalnav-font-size: 16px !default;
 
 #portal-globalnav {
   @include ul(inline);
-  background-color: $globalnav-background-color;
+  background-color: $globalnav-bg-color;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -38,7 +38,7 @@ $globalnav-font-size: 16px !default;
 
     &:hover, &.selected {
       a {
-        background-color: $globalnav-background-color-hover;
+        background-color: $globalnav-bg-color-hover;
         color: $globalnav-link-color-hover;
         text-decoration: none;
       }
