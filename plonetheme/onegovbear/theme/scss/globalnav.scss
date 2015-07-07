@@ -25,7 +25,7 @@ $globalnav-font-size: 16px !default;
   width: 100%;
 
   > li {
-    a {
+    > a {
       color: $globalnav-link-color;
       display: inline-block;
       padding: 1em;
@@ -37,7 +37,7 @@ $globalnav-font-size: 16px !default;
     }
 
     &:hover, &.selected {
-      a {
+      > a {
         background-color: $globalnav-bg-color-hover;
         color: $globalnav-link-color-hover;
         text-decoration: none;
