@@ -36,6 +36,8 @@
         <theme:scss file="theme/scss/simplelayout.scss" />
         <theme:scss file="theme/scss/slider.scss" />
         <theme:scss file="theme/scss/datagridwidget.scss" />
+        <theme:scss file="theme/scss/servicenavigation.scss" />
+        <theme:scss file="theme/scss/portaltop.scss" />
     </theme:resources>
 
 </configure>
