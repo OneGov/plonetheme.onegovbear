@@ -38,6 +38,7 @@
         <theme:scss file="theme/scss/datagridwidget.scss" />
         <theme:scss file="theme/scss/servicenavigation.scss" />
         <theme:scss file="theme/scss/portaltop.scss" />
+        <theme:scss file="theme/scss/additionallogo.scss" />
     </theme:resources>
 
 </configure>
