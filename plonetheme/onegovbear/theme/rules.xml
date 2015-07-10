@@ -43,6 +43,10 @@
     <after theme-children="/html/head" css:content="#portal-top link"/>
 
     <replace css:content="#portal-logo" css:theme="#portal-logo" />
+    <rules if-content="//*[@id='additional-logo']">
+        <after css:content="#additional-logo" css:theme="#portal-logo" />
+    </rules>
+
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
