@@ -39,6 +39,11 @@
         <theme:scss file="theme/scss/servicenavigation.scss" />
         <theme:scss file="theme/scss/portaltop.scss" />
         <theme:scss file="theme/scss/additionallogo.scss" />
+        <theme:scss file="theme/scss/plonebrowser.scss" />
+
+        <theme:scss file="theme/scss/iconset.scss"
+                    slot="bottom"
+                    after="ftw.theming:resources/scss/iconset_font-awesome.scss" />
     </theme:resources>
 
 </configure>
