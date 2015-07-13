@@ -19,6 +19,11 @@ TODO: Not working on page load.
           if (editor.windowManager && editor.windowManager.onOpen) {
             editor.windowManager.onOpen.add(function() {
               if (this.lastId) {
+                /*
+                  _add is not in scope of Event.
+                  so best guess is to bind the _add function to add.
+                 */
+                global.tinymce.dom.Event._add = global.tinymce.dom.Event.add;
                 $("#" + this.lastId.replace("wrapper", "ifr")).contents().find("head").append(css);
                 $(".mceLeft").hide();
               }
