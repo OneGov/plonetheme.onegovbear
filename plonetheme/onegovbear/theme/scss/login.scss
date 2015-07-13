@@ -1,8 +1,18 @@
+.overlay-login {
+  width: 600px !important;
+  height: 320px !important;
+  left: 50% !important;
+  margin-left: -300px;
+  top: 50% !important;
+  margin-top: -280px;
+}
+
 #login-form {
   margin-bottom: 1em;
 
   label {
+    display: block;
+    line-height: 30px;
     min-width: 8em;
-    display: inline-block;
   }
 }
