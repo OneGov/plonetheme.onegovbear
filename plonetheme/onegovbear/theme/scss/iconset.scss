@@ -1,0 +1,54 @@
+@if $standard-iconset == font-awesome {
+
+  #plonebrowser {
+    #internal_link > a, #home {
+      @extend .fa-icon;
+      @extend .fa-home;
+    }
+    #external_link > a {
+      @extend .fa-icon;
+      @extend .fa-external-link;
+    }
+    #email_link > a {
+      @extend .fa-icon;
+      @extend .fa-envelope-o;
+    }
+    #anchor_link > a {
+      @extend .fa-icon;
+      @extend .fa-anchor;
+    }
+    #clear-btn {
+      @extend .fa-icon;
+      @extend .fa-times;
+    }
+    #search-btn {
+      @extend .fa-icon;
+      @extend .fa-search;
+    }
+    #shortcutsicon {
+      @extend .fa-icon;
+      @extend .fa-star;
+    }
+    #currentfolder {
+      @extend .fa-icon;
+      @extend .fa-folder-open;
+    }
+    #upload-button > a {
+      @extend .fa-icon;
+      @extend .fa-upload;
+    }
+    #internallinkcontainer .thumb {
+      @extend .fa-icon;
+      @extend .fa-folder-open-o;
+    }
+    #listview {
+      @extend .fa-icon;
+      @extend .fa-list;
+    }
+    #thumbview {
+      @extend .fa-icon;
+      @extend .fa-th;
+    }
+  }
+
+}
