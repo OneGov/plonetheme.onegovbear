@@ -16,7 +16,7 @@ $pathbar-text-color: $text-color;
     float:left;
     background-color: $pathbar-bg-color;
     > span {
-      padding: 6px 5px 8px 5px;
+      padding: 6px 8px;
       display:inline-block;
       > a {
         color: $pathbar-text-color;
