@@ -16,6 +16,7 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
   float: right;
   display: table-cell;
   position: relative;
+  top: 2px;
 
   #portal-searchbox {
 
@@ -28,18 +29,18 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     }
 
     & #searchGadget {
-      width: 94px;
+      width: 90px;
       position: absolute;
       right: 0.55em;
       z-index: 2;
       &:focus{
-          width: 220px;
+          width: 215px;
       }
     }
 
     .LSBox {
       position: relative;
-      top: 8px;
+      top: 5px;
       height: 0;
       &:before {
           font-family: FontAwesome;
