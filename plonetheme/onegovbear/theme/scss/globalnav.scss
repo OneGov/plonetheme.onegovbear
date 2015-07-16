@@ -5,11 +5,13 @@ $globalnav-link-color-hover: $globalnav-link-color !default;
 $globalnav-separator-color: $gray !default;
 $globalnav-separator-width: 1px !default;
 $globalnav-font-size: 16px !default;
+$globalnav-link-font-weight: normal !default;
 
 @include declare-variables(
   globalnav-bg-color,
   globalnav-bg-color-hover,
   globalnav-link-color,
+  globalnav-link-font-weight,
   globalnav-link-color-hover,
   globalnav-separator-color,
   globalnav-separator-width,
@@ -32,6 +34,7 @@ $globalnav-font-size: 16px !default;
   > li {
     > a {
       color: $globalnav-link-color;
+      font-weight: $globalnav-link-font-weight;
       display: inline-block;
       padding: 1em;
       margin: 0;
