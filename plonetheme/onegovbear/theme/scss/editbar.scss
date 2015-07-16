@@ -2,6 +2,7 @@ $editbar-bg-color: $gray-lighter !default;
 $editbar-link-color: $link-color !default;
 $editbar-link-active-color: $link-color !default;
 $editbar-link-hover-color: $link-hover-color !default;
+$editbar-link-font-weight: $link-font-weight !default;
 
 @include declare-variables(
   editbar-bg-color,
@@ -30,6 +31,7 @@ $editbar-link-hover-color: $link-hover-color !default;
       display: inline-block;
       padding: 0.4em 0.5em 0.5em 0.5em;
       color: $editbar-link-color;
+      font-weight: $editbar-link-font-weight;
     }
 
     .selected a, a:hover {
@@ -56,6 +58,9 @@ $editbar-link-hover-color: $link-hover-color !default;
       dd.actionMenuContent {
         border-top-width: 0;
         @include borderradius(0 0 $menu-border-radius $menu-border-radius);
+        a {
+            font-weight: $editbar-link-font-weight;
+        }
       }
 
       > li {
@@ -64,6 +69,7 @@ $editbar-link-hover-color: $link-hover-color !default;
           line-height: 2.25em;
           padding: 0.5em;
           color: $editbar-link-color;
+          font-weight: $editbar-link-font-weight;
           &:hover {
             color: $editbar-link-hover-color;
           }
