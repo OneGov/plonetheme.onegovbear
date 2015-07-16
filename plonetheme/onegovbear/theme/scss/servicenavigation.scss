@@ -6,10 +6,7 @@ $service-nav-link-color: $secondary-color !default;
 
 
 #service-navigation {
-  max-width: $page-wrapper-width;
-  margin: 0 auto;
-  text-align: right;
-  padding: 0.25em 0;
+  float: right;
   ul {
     @include ul(inline);
     li {

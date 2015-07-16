@@ -6,4 +6,9 @@ $portal-top-bg-color: $page-bg-color !default;
 
 #portal-top {
   background-color: $portal-top-bg-color;
+  max-width: $page-wrapper-width;
+  margin: 0 auto;
+  padding: 0.25em 0;
+  height: 1.5em;
+  position: relative;
 }
