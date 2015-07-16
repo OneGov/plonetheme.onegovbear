@@ -14,9 +14,8 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
 .portal-searchbox-wrapper{
   width: 270px;
   float: right;
-  display: table-cell;
   position: relative;
-  top: 2px;
+  top: -52px;
 
   #portal-searchbox {
 

@@ -17,38 +17,35 @@ $globalnav-link-font-weight: normal !default;
   globalnav-separator-width,
   globalnav-font-size);
 
-.globalnavRow {
-  > .cell {
-    display: table;
-  }
-}
+#portal-globalnav-wrapper {
+  position: relative;
+  margin-right: 270px;
+  #portal-globalnav {
+    @include ul(inline);
+    background-color: $globalnav-bg-color;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
-#portal-globalnav {
-  display: table-cell;
-  @include ul(inline);
-  background-color: $globalnav-bg-color;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-
-  > li {
-    > a {
-      color: $globalnav-link-color;
-      font-weight: $globalnav-link-font-weight;
-      display: inline-block;
-      padding: 1em;
-      margin: 0;
-      border-right: $globalnav-separator-width solid $globalnav-separator-color;
-      text-transform: uppercase;
-      font-size: $globalnav-font-size;
-          @include transition(background-color 100ms);
-    }
-
-    &:hover, &.selected {
+    > li {
       > a {
-        background-color: $globalnav-bg-color-hover;
-        color: $globalnav-link-color-hover;
-        text-decoration: none;
+        color: $globalnav-link-color;
+        font-weight: $globalnav-link-font-weight;
+        display: inline-block;
+        padding: 1em;
+        margin: 0;
+        border-right: $globalnav-separator-width solid $globalnav-separator-color;
+        text-transform: uppercase;
+        font-size: $globalnav-font-size;
+            @include transition(background-color 100ms);
+      }
+
+      &:hover, &.selected {
+        > a {
+          background-color: $globalnav-bg-color-hover;
+          color: $globalnav-link-color-hover;
+          text-decoration: none;
+        }
       }
     }
   }
