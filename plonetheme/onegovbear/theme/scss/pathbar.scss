@@ -68,3 +68,8 @@ $pathbar-text-color: $text-color;
     display:none;
   }
 }
+
+body.portaltype-plone-site #breadcrumbs-wrapper {
+    display:none;
+}
+
