@@ -1,0 +1,45 @@
+$language-selector-link-color: $secondary-color !default;
+
+
+@include declare-variables(
+  language-selector-link-color);
+
+
+#portal-languageselector-wrapper {
+  float: left;
+
+  dl#portal-languageselector {
+    float: left;
+    @include dl(plain);
+
+    dt {
+      &.actionMenuHeader {
+          border: 1px solid $language-selector-link-color;
+          padding-left: 0.5em;
+
+        a {
+          color: $language-selector-link-color;
+
+          &:after {
+            font-weight: normal;
+            font-style: normal;
+            margin-left: 0.2em;
+            text-align: center;
+            min-width: 1.4em;
+            display: inline-block;
+            font-family: FontAwesome;
+            content: "\f0d7";
+          }
+        }
+      }
+    }
+
+    dd {
+      @include ul(plain);
+      margin-left:0;
+      &.actionMenuContent {
+        right:inherit;
+      }
+    }
+  }
+}

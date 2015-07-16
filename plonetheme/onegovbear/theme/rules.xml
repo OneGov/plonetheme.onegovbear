@@ -53,7 +53,7 @@
     <replace css:content="#portal-languageselector" css:theme="#portal-languageselector" />
 
     <rules if-content="//*[@id='service-navigation']">
-      <replace css:content="#service-navigation" css:theme-children="#portal-top" />
+      <before css:content="#service-navigation" css:theme-children="#portal-top" />
     </rules>
     <replace css:content="ul.mobileButtons" css:theme="ul.mobileButtons" />
 
