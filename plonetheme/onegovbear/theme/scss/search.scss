@@ -12,7 +12,7 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
 
 
 .portal-searchbox-wrapper{
-  width: 270px;
+  width: 360px;
   float: right;
   position: relative;
   top: -52px;
@@ -28,12 +28,12 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     }
 
     & #searchGadget {
-      width: 90px;
+      width: 112px;
       position: absolute;
       right: 0.55em;
       z-index: 2;
       &:focus{
-          width: 215px;
+          width: 258px;
       }
     }
 
