@@ -15,9 +15,14 @@ $globalnav-font-size: 16px !default;
   globalnav-separator-width,
   globalnav-font-size);
 
-
+.globalnavRow {
+  > .cell {
+    display: table;
+  }
+}
 
 #portal-globalnav {
+  display: table-cell;
   @include ul(inline);
   background-color: $globalnav-bg-color;
   margin: 0;
