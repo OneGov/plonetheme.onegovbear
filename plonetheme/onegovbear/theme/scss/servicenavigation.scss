@@ -14,6 +14,7 @@ $service-nav-link-color: $secondary-color !default;
       > a {
         color: $service-nav-link-color;
         text-transform: uppercase;
+        font-weight: normal
       }
     }
   }
