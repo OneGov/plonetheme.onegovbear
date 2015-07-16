@@ -1,4 +1,4 @@
-$service-nav-link-color: $gray-lighter !default;
+$service-nav-link-color: $secondary-color !default;
 
 
 @include declare-variables(
@@ -16,6 +16,7 @@ $service-nav-link-color: $gray-lighter !default;
       margin-left: 1em;
       > a {
         color: $service-nav-link-color;
+        text-transform: uppercase;
       }
     }
   }

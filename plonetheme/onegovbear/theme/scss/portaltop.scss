@@ -1,4 +1,4 @@
-$portal-top-bg-color: $gray-dark !default;
+$portal-top-bg-color: $page-bg-color !default;
 
 @include declare-variables(
   portal-top-bg-color);
