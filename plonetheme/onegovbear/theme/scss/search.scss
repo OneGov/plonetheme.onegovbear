@@ -31,7 +31,7 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
       width: 94px;
       position: absolute;
       right: 0.55em;
-      z-index: 10;
+      z-index: 2;
       &:focus{
           width: 220px;
       }
@@ -45,7 +45,7 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
           font-family: FontAwesome;
           content: "\f002";
           position: absolute;
-          z-index: 15;
+          z-index: 3;
           right: 10px;
           top: 3px;
           font-size: 14px;
