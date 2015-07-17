@@ -1,6 +1,7 @@
-$pathbar-bg-color: $gray-light;
-$pathbar-arrow-color: #fff;
-$pathbar-text-color: $text-color;
+$pathbar-bg-color: $gray-light !default;
+$pathbar-arrow-color: #fff !default;
+$pathbar-text-color: $text-color !default;
+$pathbar-font-weight: normal !default;
 
 @include declare-variables(
   pathbar-bg-color,
@@ -16,16 +17,21 @@ $pathbar-text-color: $text-color;
     float:left;
     background-color: $pathbar-bg-color;
     > span {
-      padding: 6px 8px;
+      padding: 6px 0 6px 0;
       display:inline-block;
+      &:first-child {
+        padding: 6px 0px 6px 8px;
+      }
       > a {
         color: $pathbar-text-color;
         padding-right: 25px;
+        font-weight: $pathbar-font-weight;
+        font-size: $font-size-small;
       }
       // White separator between pathbar lines
       &:before {
         content: "";
-        height: 3px;
+        height: 0;
         position: absolute;
         background-color: $pathbar-arrow-color;
         left: 0;
