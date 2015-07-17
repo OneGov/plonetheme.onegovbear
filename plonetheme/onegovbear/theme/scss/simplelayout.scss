@@ -19,6 +19,14 @@ ul[class^="sl-toolbar"] {
   background-color: $toolbar-bg-color;
 }
 
+.sl-toolbox {
+  a {
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+}
+
 .sl-block {
   box-shadow: none;
   margin-bottom: 2px;
