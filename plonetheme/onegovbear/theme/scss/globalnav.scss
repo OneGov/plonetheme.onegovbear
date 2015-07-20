@@ -36,7 +36,10 @@ $globalnav-link-font-weight: normal !default;
         border-right: $globalnav-separator-width solid $globalnav-separator-color;
         text-transform: uppercase;
         font-size: $globalnav-font-size;
-            @include transition(background-color 100ms);
+        @include transition(background-color 100ms);
+        &.open {
+          color: $globalnav-link-color-hover;
+        }
       }
 
       &:hover, &.selected {
