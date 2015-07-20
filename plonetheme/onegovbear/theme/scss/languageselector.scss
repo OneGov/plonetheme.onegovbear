@@ -16,6 +16,7 @@ $language-selector-link-color: $secondary-color !default;
       &.actionMenuHeader {
           border: 1px solid $language-selector-link-color;
           padding-left: 0.5em;
+          margin-top: -1px;
 
         a {
           color: $language-selector-link-color;
