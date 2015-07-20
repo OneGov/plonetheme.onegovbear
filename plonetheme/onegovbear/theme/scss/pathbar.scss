@@ -24,7 +24,7 @@ $pathbar-font-weight: normal !default;
       }
       > a {
         color: $pathbar-text-color;
-        padding-right: 25px;
+        padding-right: 30px;
         font-weight: $pathbar-font-weight;
         font-size: $font-size-small;
       }
@@ -48,11 +48,12 @@ $pathbar-font-weight: normal !default;
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 18px 0 18px 23px;
+          border-width: 17px 23px;
+          //border-width: 18px 0 18px 23px;
           border-color: transparent transparent transparent #fff;
           position: absolute;
-          top: -24px;
-          right: 0;
+          top: -23px;
+          right: -18px;
         }
         // Grey triangle for separator
         &:after {
@@ -60,11 +61,12 @@ $pathbar-font-weight: normal !default;
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 14px 0 14px 18px;
+          border-width: 18px 24px;
+          //border-width: 14px 0 14px 18px;
           border-color: transparent transparent transparent $pathbar-bg-color;
           position: absolute;
-          top: -20px;
-          right: 5px;
+          top: -24px;
+          right: -17px;
         }
       }
     }
