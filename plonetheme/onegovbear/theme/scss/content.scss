@@ -3,41 +3,6 @@ $text-color-light: desaturate(lighten($text-color, 25%), 100%) !default;
 @include declare-variables(
   text-color-light);
 
-
-
-h1 {
-  font-size: $font-size-h1;
-}
-
-h2 {
-  font-size: $font-size-h2;
-}
-
-h3 {
-  font-size: $font-size-h3;
-}
-
-h4 {
-  font-size: $font-size-h4;
-}
-
-h5 {
-  font-size: $font-size-h5;
-}
-
-h6 {
-  font-size: $font-size-h6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 1.5em 0 1em 0;
-  font-family: $font-family-base;
-  line-height: $line-height-base;
-  &.documentFirstHeading {
-    margin: 0;
-  }
-}
-
 a,
 :link,
 :visited {

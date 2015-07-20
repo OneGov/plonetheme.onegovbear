@@ -22,6 +22,11 @@ ul[class^="sl-toolbar"] {
   border-radius: $border-radius;
 }
 
+.sl-simplelayout {
+  display: block;
+  @include clearfix();
+}
+
 .sl-toolbox {
   a {
     font-size: 14px;
@@ -31,21 +36,19 @@ ul[class^="sl-toolbar"] {
 
 .sl-block {
   box-shadow: none;
-  margin-bottom: 2px;
+  margin-bottom: 30px;
 
   .sl-block-content {
+    float: left;
     img {
       max-width: 100%;
     }
-  }
-
-  &:last-child {
-    margin-bottom: 0;
   }
 }
 
 .sl-column {
   background-color: $content-bg-color;
+  margin-bottom: 0;
 
   .block-placeholder {
     margin-bottom: 1px;

@@ -19,6 +19,7 @@ $globalnav-link-font-weight: normal !default;
 
 #portal-globalnav-wrapper {
   margin-right: 315px;
+  @include noselect();
   #portal-globalnav {
     @include ul(inline);
     background-color: $globalnav-bg-color;
