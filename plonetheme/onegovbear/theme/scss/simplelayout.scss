@@ -62,6 +62,44 @@ ul[class^="sl-toolbar"] {
 
 .sl-column {
   margin-bottom: 0;
+  .block-placeholder {
+    margin-bottom: 1px;
+  }
+}
+
+.sl-layout {
+  .block-placeholder {
+    background-color: $block-placeholder-bg-color;
+    border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
+  }
+}
+
+.sl-simplelayout {
+  .layout-placeholder {
+    background-color: $layout-placeholder-bg-color;
+    border: $layout-placeholder-border-size $layout-placeholder-border-style $layout-placeholder-border-color;
+  }
+}
+
+// Special handling for blocks in the side par
+#column-sidebar {
+    .sl-column {
+        background-color: transparent;
+        .sl-block {
+            background-color: transparent;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// If user is permitted to edit the simplelayout page
+.documentEditable {
+  .sl-column {
+    background-color: $column-bg-color;
+  }
+}
+
+.sl-column {
   $gutter-width: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
 
   @for $i from 1 through $simplelayout-columns {
