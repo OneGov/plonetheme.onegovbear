@@ -75,7 +75,12 @@ $pathbar-font-weight: normal !default;
   }
 }
 
-body.portaltype-plone-site #breadcrumbs-wrapper {
-    display:none;
+body.portaltype-plone-site {
+  #breadcrumbs-wrapper {
+    margin-bottom: 0;
+    #portal-breadcrumbs {
+      display:none;
+    }
+  }
 }
 
