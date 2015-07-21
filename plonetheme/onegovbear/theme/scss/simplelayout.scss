@@ -17,14 +17,22 @@ $layout-placeholder-border-color: $block-placeholder-border-color;
 $simplelayout-gutter-width: $gutter-width !default;
 $simplelayout-columns: $columns !default;
 
+$simplelayout-block-glow-color: transparentize($primary-color, 60%);
+
 ul[class^="sl-toolbar"] {
   background-color: $toolbar-bg-color;
   border-radius: $border-radius;
+  @include transition(opacity .3s ease-out);
+  z-index: 100;
 }
 
 .sl-simplelayout {
   display: block;
-  @include clearfix();
+  @include clearfix;
+  .layout-placeholder {
+    background-color: $layout-placeholder-bg-color;
+    border: $layout-placeholder-border-size $layout-placeholder-border-style $layout-placeholder-border-color;
+  }
 }
 
 .sl-toolbox {
@@ -37,9 +45,15 @@ ul[class^="sl-toolbar"] {
 .sl-block {
   box-shadow: none;
   margin-bottom: 30px;
+  @include transition(box-shadow .3s ease-out);
+
+  &:hover {
+    @include boxshadow(0 0 20px 0 $simplelayout-block-glow-color);
+  }
 
   .sl-block-content {
     float: left;
+
     img {
       max-width: 100%;
     }
@@ -47,37 +61,7 @@ ul[class^="sl-toolbar"] {
 }
 
 .sl-column {
-  background-color: $content-bg-color;
   margin-bottom: 0;
-
-  .block-placeholder {
-    margin-bottom: 1px;
-  }
-}
-
-.sl-layout {
-  .block-placeholder {
-    background-color: $block-placeholder-bg-color;
-    border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
-  }
-}
-
-.sl-simplelayout {
-  .layout-placeholder {
-    background-color: $layout-placeholder-bg-color;
-    border: $layout-placeholder-border-size $layout-placeholder-border-style $layout-placeholder-border-color;
-  }
-}
-
-// If user is permitted to edit the simplelayout page
-.documentEditable {
-  .sl-column {
-    background-color: $column-bg-color;
-  }
-}
-
-.sl-column {
-
   $gutter-width: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
 
   @for $i from 1 through $simplelayout-columns {
@@ -117,9 +101,18 @@ ul[class^="sl-toolbar"] {
         &:last-of-type {
           margin-right: 0 !important;
         }
-
       }
     }
   }
 
+  .block-placeholder {
+    margin-bottom: 1px;
+  }
+}
+
+.sl-layout {
+  .block-placeholder {
+    background-color: $block-placeholder-bg-color;
+    border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
+  }
 }
