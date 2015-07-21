@@ -1,14 +1,18 @@
-#accesskeys > a:focus,
-#portal-searchbox > a[accesskey]:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  color: #FFF;
-  font-size: 15px;
-  height: auto;
-  width: auto;
-  padding: 0.5em;
-  text-decoration: underline;
-  z-index: 999;
+#accesskeys {
+  > a:focus,
+  #portal-searchbox > a[accesskey]:focus {
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 12px;
+    height: 27px;
+    left: 0;
+    min-width: 200px;
+    outline: none;
+    padding: 0 10px;
+    position: fixed;
+    text-decoration: none;
+    top: 0;
+    width: auto;
+    z-index: 999;
+  }
 }
