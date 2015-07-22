@@ -94,8 +94,8 @@ ul[class^="sl-toolbar"] {
 
 // If user is permitted to edit the simplelayout page
 .documentEditable {
-  .sl-column {
-    background-color: $column-bg-color;
+  .sl-column:empty {
+    outline: 2px dashed rgba(0, 0, 0, 0.6);
   }
 }
 
