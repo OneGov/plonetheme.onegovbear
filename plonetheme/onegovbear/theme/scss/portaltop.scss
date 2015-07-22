@@ -1,4 +1,4 @@
-$portal-top-bg-color: $gray-dark !default;
+$portal-top-bg-color: $page-bg-color !default;
 
 @include declare-variables(
   portal-top-bg-color);
@@ -6,4 +6,10 @@ $portal-top-bg-color: $gray-dark !default;
 
 #portal-top {
   background-color: $portal-top-bg-color;
+  max-width: $page-wrapper-width;
+  margin: 0 auto;
+  padding: 0.25em 0;
+  position: relative;
+  font-size: $font-size-small;
+  @include clearfix();
 }

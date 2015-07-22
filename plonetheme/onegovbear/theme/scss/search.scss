@@ -11,100 +11,109 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
   searchbox-liveresults-border-radius);
 
 
-#portal-searchbox {
+.portal-searchbox-wrapper{
   float: right;
-  margin-top: 0.55em;
-  width: 12.55em;
+  position: relative;
+  top: -52px;
 
-  .searchSection {
-    display: none;
-  }
+  #portal-searchbox {
 
-  & input.searchButton {
-    display: none;
-  }
-
-  & #searchGadget {
-    width: 12em;
-    position: absolute;
-    right: 0.55em;
-  }
-
-  .LSBox {
-    &:before {
-        font-family: FontAwesome;
-        content: "\f002";
-        position: absolute;
-        z-index: 1;
-        right: 10px;
-        top: 10px;
-        font-size: 14px;
-        padding: 6px 15px 6px 5px;
-        background-color: $input-bg-color;
+    .searchSection {
+      display: none;
     }
-    input[type="text"] {
-      line-height: 20px;
+
+    & input.searchButton {
+      display: none;
     }
-  }
 
-  #LSResult {
-    display: none;
-    position: absolute;
-    z-index: 3;
-    top: 3em;
-    right: 0.55em;
-    min-width: 20em;
-    max-width: 40em;
-    padding: 0.5em 0;
-    background-color: $searchbox-liveresults-bg-color;
-    border: 1px solid $searchbox-liveresults-border-color;
-    @include boxshadow(0.5em 1em 2em -1em $searchbox-liveresults-border-color);
-    @include borderradius($searchbox-liveresults-border-radius);
-
-    fieldset.livesearchContainer {
-      margin: 0;
-      padding: 0;
-      border: none;
-      legend#livesearchLegend {
-        display: none;
+    & #searchGadget {
+      width: 112px;
+      position: absolute;
+      right: 0.55em;
+      z-index: 2;
+      &:focus{
+          width: 258px;
       }
     }
 
-    ul.LSTable {
-      @include ul(plain);
-      padding: 0;
+    .LSBox {
+      position: relative;
+      top: 5px;
+      height: 0;
+      &:before {
+          font-family: FontAwesome;
+          content: "\f002";
+          position: absolute;
+          z-index: 3;
+          right: 10px;
+          top: 3px;
+          font-size: 14px;
+          padding: 6px 15px 6px 5px;
+          background-color: $input-bg-color;
+      }
+      input[type="text"] {
+        line-height: 20px;
+      }
+    }
 
-      li {
+    #LSResult {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      top: 3em;
+      right: 0.55em;
+      min-width: 20em;
+      max-width: 40em;
+      padding: 0.5em 0;
+      background-color: $searchbox-liveresults-bg-color;
+      border: 1px solid $searchbox-liveresults-border-color;
+      @include boxshadow(0.5em 1em 2em -1em $searchbox-liveresults-border-color);
+      @include borderradius($searchbox-liveresults-border-radius);
+
+      fieldset.livesearchContainer {
         margin: 0;
-        padding: 0.3em 1.5em;
-        display: block;
-
-        &.LSHighlight {
-          background-color: $searchbox-liveresults-hover-bg-color;
-        }
-
-        > * {
-          display: block;
-          padding: 0;
-          background: transparent;
-        }
-
-        > .LSDescr {
-          padding-left: 1.5em;
-          color: $light-text-color;
+        padding: 0;
+        border: none;
+        legend#livesearchLegend {
+          display: none;
         }
       }
-    }
 
-    #LSNothingFound {
-      margin-bottom: 0.5em;
-    }
-    #LSNothingFound, div.LSRow {
-      padding-left: 1.5em;
+      ul.LSTable {
+        @include ul(plain);
+        padding: 0;
+
+        li {
+          margin: 0;
+          padding: 0.3em 1.5em;
+          display: block;
+
+          &.LSHighlight {
+            background-color: $searchbox-liveresults-hover-bg-color;
+          }
+
+          > * {
+            display: block;
+            padding: 0;
+            background: transparent;
+          }
+
+          > .LSDescr {
+            padding-left: 1.5em;
+            color: $light-text-color;
+          }
+        }
+      }
+
+      #LSNothingFound {
+        margin-bottom: 0.5em;
+      }
+      #LSNothingFound, div.LSRow {
+        padding-left: 1.5em;
+      }
     }
   }
 }
-
 
 .highlightedSearchTerm {
   background-color: $search-highlight-bg-color;

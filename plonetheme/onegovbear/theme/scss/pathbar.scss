@@ -1,6 +1,7 @@
-$pathbar-bg-color: $gray-light;
-$pathbar-arrow-color: #fff;
-$pathbar-text-color: $text-color;
+$pathbar-bg-color: $gray-light !default;
+$pathbar-arrow-color: #fff !default;
+$pathbar-text-color: $text-color !default;
+$pathbar-font-weight: normal !default;
 
 @include declare-variables(
   pathbar-bg-color,
@@ -8,24 +9,29 @@ $pathbar-text-color: $text-color;
   pathbar-text-color);
 
 #breadcrumbs-wrapper {
-  margin-bottom: 0.5em;
-  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-top: 2em;
 
   #portal-breadcrumbs {
     width: 100%;
     float:left;
     background-color: $pathbar-bg-color;
     > span {
-      padding: 6px 8px;
+      padding: 6px 0;
       display:inline-block;
+      &:first-child {
+        padding: 6px 0 6px 8px;
+      }
       > a {
         color: $pathbar-text-color;
-        padding-right: 25px;
+        padding-right: 30px;
+        font-weight: $pathbar-font-weight;
+        font-size: $font-size-small;
       }
       // White separator between pathbar lines
       &:before {
         content: "";
-        height: 3px;
+        height: 0;
         position: absolute;
         background-color: $pathbar-arrow-color;
         left: 0;
@@ -42,11 +48,11 @@ $pathbar-text-color: $text-color;
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 18px 0 18px 23px;
+          border-width: 17px 23px;
           border-color: transparent transparent transparent #fff;
           position: absolute;
-          top: -24px;
-          right: 0;
+          top: -23px;
+          right: -18px;
         }
         // Grey triangle for separator
         &:after {
@@ -54,11 +60,11 @@ $pathbar-text-color: $text-color;
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 14px 0 14px 18px;
+          border-width: 18px 24px;
           border-color: transparent transparent transparent $pathbar-bg-color;
           position: absolute;
-          top: -20px;
-          right: 5px;
+          top: -24px;
+          right: -17px;
         }
       }
     }
@@ -68,3 +74,13 @@ $pathbar-text-color: $text-color;
     display:none;
   }
 }
+
+body.portaltype-plone-site {
+  #breadcrumbs-wrapper {
+    margin-bottom: 0;
+    #portal-breadcrumbs {
+      display:none;
+    }
+  }
+}
+

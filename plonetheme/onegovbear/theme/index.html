@@ -18,7 +18,25 @@
   </head>
   <body>
     <p id="accesskeys" class="hiddenStructure" />
-    <div id="portal-top" />
+    <div id="portal-top">
+      <div id="portal-languageselector-wrapper">
+        <dl id="portal-languageselector" class="actionMenu deactivated">
+          <dt class="actionMenuHeader">
+            <a href="#">Deutsch <span style="font-size:10px;"> ▼</span></a>
+          </dt>
+          <dd class="actionMenuContent">
+            <ul>
+              <li class="language-en">
+                <a href="#">English</a>
+              </li>
+              <li class="language-fr">
+                <a href="#">Français</a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
     <div id="container">
       <div id="page-wrapper" class="clearfix">
 
@@ -37,23 +55,6 @@
 
           <div class="row topRow">
             <div class="cell position-0 width-16">
-              <div id="portal-languageselector-wrapper">
-                <dl id="portal-languageselector" class="actionMenu deactivated">
-                  <dt class="actionMenuHeader">
-                    <a href="#">Deutsch <span style="font-size:10px;"> ▼</span></a>
-                  </dt>
-                  <dd class="actionMenuContent">
-                    <ul>
-                      <li class="language-en">
-                        <a href="#">English</a>
-                      </li>
-                      <li class="language-fr">
-                        <a href="#">Français</a>
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-              </div>
               <div id="portal-personaltools-wrapper">
                 <dl class="actionMenu deactivated" id="portal-personaltools"><dt id="anon-personalbar">
                   <a href="#" id="personaltools-a">Kontakt</a>
@@ -71,34 +72,35 @@
 
           <div class="row globalnavRow">
             <div class="cell position-0 width-16">
-
-              <div id="portal-searchbox">
-
-                <form action="#search" id="livesearch0" name="searchform">
-                  <div class="LSBox">
-                    <input type="text" id="searchGadget" class="searchField inputLabel" placeholder="OneGovBox durchsuchen" />
-                    <input type="submit" value="Suche" class="searchButton" />
-                  </div>
-                </form>
-
+               <div id="portal-globalnav-wrapper">
+                <ul id="portal-globalnav">
+                  <li class="">
+                    <span class="wrapper"><a title="" href="#">Private</a></span>
+                  </li>
+                  <li class="">
+                    <span class="wrapper"><a title="" href="#">Unternehmen</a></span>
+                  </li>
+                  <li class="plain">
+                    <span class="wrapper"><a title="" href="#">Portrait</a></span>
+                  </li>
+                  <li class="selected">
+                    <span class="wrapper"><a title="" href="#">Beh&ouml;rden</a></span>
+                  </li>
+                </ul>
               </div>
 
-              <ul id="portal-globalnav">
-                <li class="">
-                  <span class="wrapper"><a title="" href="#">Private</a></span>
-                </li>
-                <li class="">
-                  <span class="wrapper"><a title="" href="#">Unternehmen</a></span>
-                </li>
-                <li class="plain">
-                  <span class="wrapper"><a title="" href="#">Portrait</a></span>
-                </li>
-                <li class="selected">
-                  <span class="wrapper"><a title="" href="#">Beh&ouml;rden</a></span>
-                </li>
-              </ul>
-
+              <div class="portal-searchbox-wrapper">
+                <div id="portal-searchbox">
+                  <form action="#search" id="livesearch0" name="searchform">
+                    <div class="LSBox">
+                      <input type="text" id="searchGadget" class="searchField inputLabel"  placeholder="OneGovBox durchsuchen" />
+                    <input type="submit" value="Suche" class="searchButton" />
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
+
           </div>
           <!-- closes #header -->
         </div>

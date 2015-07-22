@@ -1,4 +1,4 @@
-$service-nav-link-color: $gray-lighter !default;
+$service-nav-link-color: $secondary-color !default;
 
 
 @include declare-variables(
@@ -6,16 +6,15 @@ $service-nav-link-color: $gray-lighter !default;
 
 
 #service-navigation {
-  max-width: $page-wrapper-width;
-  margin: 0 auto;
-  text-align: right;
-  padding: 0.25em 0;
+  float: right;
   ul {
     @include ul(inline);
     li {
       margin-left: 1em;
       > a {
         color: $service-nav-link-color;
+        text-transform: uppercase;
+        font-weight: normal
       }
     }
   }

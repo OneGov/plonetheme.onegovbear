@@ -1,0 +1,54 @@
+h1 {
+  font-size: $font-size-h1;
+  margin-bottom: 30px;
+  line-height: 33.6px;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  margin-bottom: 20px;
+  line-height: 28px;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 24px;
+}
+
+.sl-block-content {
+  img {
+    margin-bottom: 20px;
+  }
+  ul {
+    margin-left: 0;
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-family: $font-family-base;
+
+  &.documentFirstHeading {
+    margin-top: 0;
+  }
+}

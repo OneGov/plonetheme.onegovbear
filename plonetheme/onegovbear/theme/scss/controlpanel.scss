@@ -27,12 +27,14 @@ body.template-theming-controlpanel {
   }
 
   #portal-column-one {
-    @include position0();
-    @include width4();
+    @extend .position-0;
+    @extend .width-4;
+    @extend .cell;
   }
   #portal-column-content {
-    @include position4();
-    @include width12();
+    @extend .position-4;
+    @extend .width-12;
+    @extend .cell;
   }
   #portal-logo { clear: both; }
 

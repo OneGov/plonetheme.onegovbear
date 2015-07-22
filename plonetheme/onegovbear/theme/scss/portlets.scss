@@ -9,17 +9,17 @@ $portlet-column-bg-color: $gray-lighter !default;
 
   .portletWrapper {
     margin-bottom:2em;
+    .portlet {
+      .portletHeader {
+        font-size: $font-size-h2;
+        font-weight: bold;
+        a.tile {
+          padding:0.4em 0;
+          display: block;
+        }
+      }
+    }
   }
-
-  .portletHeader {
-    font-size: $font-size-large;
-  }
-
-  .portletHeader a.tile {
-    padding:0.4em 0;
-    display: block;
-  }
-
 }
 
 

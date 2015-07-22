@@ -8,6 +8,7 @@
     <theme:resources profile="plonetheme.onegovbear:default" slot="theme">
         <theme:scss file="theme/scss/accessibility.scss" />
 
+        <theme:scss file="theme/scss/typography.scss" />
         <theme:scss file="theme/scss/buttons.scss" />
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/layout.scss" />
@@ -38,6 +39,7 @@
         <theme:scss file="theme/scss/servicenavigation.scss" />
         <theme:scss file="theme/scss/portaltop.scss" />
         <theme:scss file="theme/scss/additionallogo.scss" />
+        <theme:scss file="theme/scss/languageselector.scss" />
         <theme:scss file="theme/scss/plonebrowser.scss" />
 
         <theme:scss file="theme/scss/iconset.scss"

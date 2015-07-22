@@ -5,42 +5,50 @@ $globalnav-link-color-hover: $globalnav-link-color !default;
 $globalnav-separator-color: $gray !default;
 $globalnav-separator-width: 1px !default;
 $globalnav-font-size: 16px !default;
+$globalnav-link-font-weight: normal !default;
 
 @include declare-variables(
   globalnav-bg-color,
   globalnav-bg-color-hover,
   globalnav-link-color,
+  globalnav-link-font-weight,
   globalnav-link-color-hover,
   globalnav-separator-color,
   globalnav-separator-width,
   globalnav-font-size);
 
+#portal-globalnav-wrapper {
+  margin-right: 315px;
+  @include noselect();
+  #portal-globalnav {
+    @include ul(inline);
+    background-color: $globalnav-bg-color;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
-
-#portal-globalnav {
-  @include ul(inline);
-  background-color: $globalnav-bg-color;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-
-  > li {
-    > a {
-      color: $globalnav-link-color;
-      display: inline-block;
-      padding: 1em;
-      margin: 0;
-      border-right: $globalnav-separator-width solid $globalnav-separator-color;
-      text-transform: uppercase;
-      font-size: $globalnav-font-size;
-          @include transition(background-color 100ms);
-    }
-
-    &:hover, &.selected {
+    > li {
       > a {
-        background-color: $globalnav-bg-color-hover;
-        color: $globalnav-link-color-hover;
-        text-decoration: none;
+        color: $globalnav-link-color;
+        font-weight: $globalnav-link-font-weight;
+        display: inline-block;
+        padding: 1em;
+        margin: 0;
+        border-right: $globalnav-separator-width solid $globalnav-separator-color;
+        text-transform: uppercase;
+        font-size: $globalnav-font-size;
+        @include transition(background-color 100ms);
+        &.open {
+          color: $globalnav-link-color-hover;
+        }
+      }
+
+      &:hover, &.selected {
+        > a {
+          background-color: $globalnav-bg-color-hover;
+          color: $globalnav-link-color-hover;
+          text-decoration: none;
+        }
       }
     }
   }
