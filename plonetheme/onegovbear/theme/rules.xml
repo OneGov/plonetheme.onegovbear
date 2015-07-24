@@ -23,11 +23,25 @@
 
     <after content="/html/head/meta" theme-children="/html/head" />
     <after content="/html/head/title" theme-children="/html/head" />
+    <after content="/html/head/base | /html/head/comment()" theme-children="/html/head" />
 
-    <after
-        content="/html/head/base | /html/head/style | /html/head/script | /html/head/link | /html/head/comment()"
-        theme-children="/html/head"
-        />
+    <!-- CSS:
+         - Make sure link / style tags are before script tags (parallel downloading)
+         - Move #portal-top link / style tags to the head before script tags
+    -->
+    <after content="/html/head/link | /html/head/style" theme-children="/html/head" />
+    <after theme-children="/html/head" css:content="#portal-top link"/>
+    <after theme-children="/html/head" css:content="#portal-top style"/>
+
+    <!-- JAVASCRIPT:
+         - JS always after CSS
+         - external JS before embedded JS
+         - Move #portal-top script tags to the head
+    -->
+    <after content="/html/head/script[@src]" theme-children="/html/head" />
+    <after theme-children="/html/head" css:content="#portal-top script[src]"/>
+    <after content="/html/head/script[not(@src)]" theme-children="/html/head" />
+    <after theme-children="/html/head" css:content="#portal-top script:not([src])"/>
 
     <!-- Copy html lang -->
     <copy attributes="lang" content="/html" theme="/html" />
@@ -37,10 +51,6 @@
     <replace content="/html/head/meta[@name='viewport']">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
     </replace>
-
-    <after theme-children="/html/head" css:content="#portal-top script"/>
-    <after theme-children="/html/head" css:content="#portal-top style"/>
-    <after theme-children="/html/head" css:content="#portal-top link"/>
 
     <replace css:content="#portal-logo" css:theme="#portal-logo" />
     <rules if-content="//*[@id='additional-logo']">
