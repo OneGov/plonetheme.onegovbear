@@ -50,5 +50,11 @@
       @extend .fa-th;
     }
   }
-
+  span.link-external a, a.external-link {
+    @extend .fa-icon-right;
+    &:after {
+      @extend .fa-arrow-up:before;
+      transform: rotate(45deg);
+    }
+  }
 }
