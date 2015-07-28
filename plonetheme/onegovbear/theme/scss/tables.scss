@@ -5,116 +5,148 @@ $table-odd-bg-color: darken($content-bg-color, 2%) !default;
 $table-drag-bg-color: change-color($primary-color, $lightness: 93%) !default;
 $table-drag-border-color: change-color($primary-color, $lightness: 85%) !default;
 
-@include declare-variables(
-  table-heading-bg-color,
-  table-border-color,
-  table-seperator-border-color,
-  table-odd-bg-color,
-  table-drag-bg-color,
-  table-drag-border-color);
+@include declare-variables(table-heading-bg-color,
+                           table-border-color,
+                           table-seperator-border-color,
+                           table-odd-bg-color,
+                           table-drag-bg-color,
+                           table-drag-border-color);
 
+table {
+  margin-bottom: 1em;
 
-
-table.listing {
-  border: 1px solid $table-border-color;
-  border-collapse: separate;
-  @include borderradius();
-
-  th, thead td {
-    font-weight: bold;
-  }
-
-  td, th {
-    padding: 0.4em 1em;
-  }
-
-  thead {
-    td, th {
-      background-color: $table-heading-bg-color;
-      border-bottom: 1px solid $table-seperator-border-color;
+  &.plain {
+    width: 100%;
+    th, thead td {
+      font-weight: bold;
     }
-    tr:first-child {
+
+    td, th {
+      padding: 0.4em 1em;
+      border: 1px solid $table-seperator-border-color;
+    }
+
+  }
+
+  &.invisible {
+    width: 100%;
+
+    th, thead td {
+      font-weight: bold;
+    }
+
+    td, th {
+      padding: 0.4em 1em;
+    }
+
+  }
+
+  &.listing {
+    border: 1px solid $table-border-color;
+    border-collapse: separate;
+    width: 100%;
+    @include borderradius;
+
+    th, thead td {
+      font-weight: bold;
+    }
+
+    td, th {
+      padding: 0.4em 1em;
+    }
+
+    thead {
       td, th {
-        &:first-child {
-          @include borderradius-top-left($border-radius - 1px);
-        }
-        &:last-child {
-          @include borderradius-top-right($border-radius - 1px);
+        background-color: $table-heading-bg-color;
+        border-bottom: 1px solid $table-seperator-border-color;
+      }
+
+      tr:first-child {
+        td, th {
+          &:first-child {
+            @include borderradius-top-left($border-radius - 1px);
+          }
+
+          &:last-child {
+            @include borderradius-top-right($border-radius - 1px);
+          }
         }
       }
     }
-  }
 
-  tbody {
-    td, th {
-      border-bottom: 1px solid $table-seperator-border-color;
-    }
-    tr:last-child {
+    tbody {
       td, th {
-        border-bottom: none;
-        &:first-child {
-          @include borderradius-bottom-left($border-radius - 1px);
-        }
-        &:last-child {
-          @include borderradius-bottom-right($border-radius - 1px);
+        border-bottom: 1px solid $table-seperator-border-color;
+      }
+
+      tr:last-child {
+        td, th {
+          border-bottom: none;
+
+          &:first-child {
+            @include borderradius-bottom-left($border-radius - 1px);
+          }
+
+          &:last-child {
+            @include borderradius-bottom-right($border-radius - 1px);
+          }
         }
       }
     }
-  }
 
-
-  tfoot {
-    td, th {
-      background-color: $table-heading-bg-color;
-      border-top: 1px solid $table-seperator-border-color;
-    }
-    tr:last-child {
+    tfoot {
       td, th {
-        &:first-child {
-          @include borderradius-bottom-left($border-radius - 1px);
+        background-color: $table-heading-bg-color;
+        border-top: 1px solid $table-seperator-border-color;
+      }
+
+      tr:last-child {
+        td, th {
+          &:first-child {
+            @include borderradius-bottom-left($border-radius - 1px);
+          }
+
+          &:last-child {
+            @include borderradius-bottom-right($border-radius - 1px);
+          }
         }
+      }
+    }
+
+    tr.even {
+      background-color: $table-odd-bg-color;
+    }
+
+    tr.dragindicator {
+      background-color: $table-drag-bg-color;
+      outline: 2px solid $table-drag-border-color;
+    }
+
+    &.vertical {
+      th {
+        background-color: $table-heading-bg-color;
+        border-right: 1px solid $table-seperator-border-color;
+        text-align: right;
+      }
+
+      tr:first-child {
+        th:first-child {
+          @include borderradius-top-left;
+        }
+      }
+    }
+
+    &.grid {
+      td, th {
+        border-right: 1px solid $table-seperator-border-color;
+
         &:last-child {
-          @include borderradius-bottom-right($border-radius - 1px);
+          border-right: none;
         }
-      }
-    }
-  }
-
-  tr.even {
-    background-color: $table-odd-bg-color;
-  }
-
-  tr.dragindicator {
-    background-color: $table-drag-bg-color;
-    outline: 2px solid $table-drag-border-color;
-  }
-
-
-  &.vertical {
-    th {
-      background-color: $table-heading-bg-color;
-      border-right: 1px solid $table-seperator-border-color;
-      text-align: right;
-    }
-    tr:first-child {
-      th:first-child {
-        @include borderradius-top-left();
-      }
-    }
-  }
-
-
-  &.grid {
-    td, th {
-      border-right: 1px solid $table-seperator-border-color;
-      &:last-child {
-        border-right: none;
       }
     }
   }
 }
-
-
 
 /* responsive table */
 /*
@@ -130,8 +162,8 @@ table.listing {
       word-wrap: break-word;
       line-height: 1em;
     }
-
     /* Hide table headers (but not display: none;, for accessibility) */
+
     thead tr {
       position: absolute;
       top: -9999px;
@@ -159,14 +191,14 @@ table.listing {
     }
 
     tbody tr td:first-child {
-      @include borderradius-top-left();
-      @include borderradius-top-right();
+      @include borderradius-top-left;
+      @include borderradius-top-right;
       border-top: 1px solid $table-border-color;
     }
 
     tbody tr td:last-child {
-      @include borderradius-bottom-left();
-      @include borderradius-bottom-right();
+      @include borderradius-bottom-left;
+      @include borderradius-bottom-right;
       border-bottom: 1px solid $table-border-color;
     }
 
