@@ -44,7 +44,6 @@ ul[class^="sl-toolbar"] {
 
 .sl-block {
   box-shadow: none;
-  margin-bottom: 30px;
   @include transition(box-shadow .3s ease-out);
 
   &:hover {

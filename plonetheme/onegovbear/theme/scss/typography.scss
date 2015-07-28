@@ -28,13 +28,22 @@ h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   line-height: 24px;
 }
 
 .sl-block-content {
+  .sl-image {
+    &.left {
+      margin-right: 1em;
+    }
+
+    &.right {
+      margin-left:1em;
+    }
+  }
   img {
-    margin-bottom: 20px;
+    margin-bottom: 1em;
   }
   ul {
     margin-left: 0;
