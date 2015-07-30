@@ -46,10 +46,10 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
           position: absolute;
           z-index: 3;
           right: 10px;
-          top: 3px;
+          top: 6px;
           font-size: 14px;
           padding: 6px 15px 6px 5px;
-          background-color: $input-bg-color;
+          background-color: transparent;
       }
       input[type="text"] {
         line-height: 20px;
