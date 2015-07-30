@@ -43,16 +43,13 @@ ul[class^="sl-toolbar"] {
 }
 
 .sl-block {
-  box-shadow: none;
   @include transition(box-shadow .3s ease-out);
-
+  @include clearfix();
   &:hover {
     @include boxshadow(0 0 20px 0 $simplelayout-block-glow-color);
   }
 
   .sl-block-content {
-    float: left;
-
     img {
       max-width: 100%;
     }
@@ -60,13 +57,13 @@ ul[class^="sl-toolbar"] {
 }
 
 .sl-column {
-  margin-bottom: 0;
   .block-placeholder {
     margin-bottom: 1px;
   }
 }
 
 .sl-layout {
+  @include clearfix();
   .block-placeholder {
     background-color: $block-placeholder-bg-color;
     border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
@@ -100,7 +97,8 @@ ul[class^="sl-toolbar"] {
 
 .sl-column {
   $gutter-width: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
-
+  float: left;
+  min-height: 100px;
   @for $i from 1 through $simplelayout-columns {
     &.sl-col-#{$i} {
       margin-right: 0;
@@ -116,11 +114,16 @@ ul[class^="sl-toolbar"] {
     @for $i from 1 through $simplelayout-columns {
       &.sl-col-#{$i} {
         margin-right: $gutter-width;
-        width: 100% / ($i / 2) - $gutter-width + $gutter-width / ($i / 2);
-
+        width: 100% / ($i / 2) - ($gutter-width / ($i / 2));
         &:nth-of-type(#{$i / 2}n+#{$i / 2}) {
           margin-right: 0;
         }
+      }
+      &.sl-col-1 {
+        width: 100%;
+      }
+      &.sl-col-2 {
+        width: 100%;
       }
     }
   }
@@ -144,12 +147,5 @@ ul[class^="sl-toolbar"] {
 
   .block-placeholder {
     margin-bottom: 1px;
-  }
-}
-
-.sl-layout {
-  .block-placeholder {
-    background-color: $block-placeholder-bg-color;
-    border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
   }
 }
