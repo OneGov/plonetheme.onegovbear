@@ -110,7 +110,7 @@ ul[class^="sl-toolbar"] {
     }
   }
 
-  @media (min-width: $mobile-small) {
+  @include screen-small {
     @for $i from 1 through $simplelayout-columns {
       &.sl-col-#{$i} {
         margin-right: $gutter-width;
@@ -128,7 +128,7 @@ ul[class^="sl-toolbar"] {
     }
   }
 
-  @media (min-width: $desktop-XGA-width) {
+  @include screen-medium {
     @for $i from 1 through $simplelayout-columns {
       &.sl-col-#{$i} {
         margin-right: $gutter-width;
