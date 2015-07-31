@@ -65,50 +65,120 @@ body {
 
 #column-content {
   @include cell();
-  @include position0();
+  @include position(0);
   @include width(16);
-
-  @include screen-small {
-    @include position(0);
-    @include width(16);
-  }
-
-  @include screen-medium {
-    @include position(0);
-    @include width(10);
-  }
-
-  @include screen-large {
-    @include position(4);
-    @include width(8);
-  }
-
 }
 
-#column-sidebar {
-  clear: both;
+// Responsive styles if both columns are available
+.has-nav-column.has-sidebar-column {
 
-  @include screen-medium {
-    @include position(10);
-    @include width(6);
+  #column-content {
+    @include screen-small {
+      @include position(0);
+      @include width(16);
+    }
+
+    @include screen-medium {
+      @include position(0);
+      @include width(10);
+    }
+
+    @include screen-large {
+      @include position(4);
+      @include width(8);
+    }
+
+  }
+
+  #column-sidebar {
+    clear: both;
+
+    @include screen-medium {
+      @include position(10);
+      @include width(6);
+      @include cell();
+    }
+
+    @include screen-large {
+      @include position(12);
+      @include width(4);
+    }
+  }
+
+  #column-navigation {
+    display: none;
     @include cell();
-  }
 
-  @include screen-large {
-    @include position(12);
-    @include width(4);
-  }
-}
+    @include screen-large {
+      display:block;
+      @include position(0);
+      @include width(4);
 
-#column-navigation {
-  display: none;
-  @include cell();
-
-  @include screen-large {
-    display:block;
-    @include position(0);
-    @include width(4);
-
+    }
   }
 }
 
+// Responsive styles if only the navigation column is available
+body.has-nav-column:not(.has-sidebar-column) {
+
+  #column-content {
+    @include screen-small {
+      @include position(0);
+      @include width(16);
+    }
+
+    @include screen-medium {
+      @include position(4);
+      @include width(12);
+    }
+  }
+
+  #column-navigation {
+    display: none;
+    @include cell();
+
+    @include screen-medium {
+      display:block;
+      @include position(0);
+      @include width(4);
+
+    }
+  }
+}
+
+// Responsive styles if only the sidebar column is available
+body.has-sidebar-column:not(.has-nav-column) {
+
+  #column-content {
+
+    @include screen-small {
+      @include position(0);
+      @include width(16);
+    }
+
+    @include screen-medium {
+      @include position(0);
+      @include width(10);
+    }
+
+    @include screen-large {
+      @include position(0);
+      @include width(12);
+    }
+  }
+
+  #column-sidebar {
+    clear: both;
+
+    @include screen-medium {
+      @include position(10);
+      @include width(6);
+      @include cell();
+    }
+
+    @include screen-large {
+      @include position(12);
+      @include width(4);
+    }
+  }
+}
