@@ -27,12 +27,13 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     }
 
     & #searchGadget {
-      width: 112px;
+      width: 85px;
+      padding: .5em 35px .5em .5em;
       position: absolute;
       right: 0.55em;
       z-index: 2;
       &:focus{
-          width: 258px;
+          width: 221px;
       }
     }
 
@@ -46,10 +47,10 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
           position: absolute;
           z-index: 3;
           right: 10px;
-          top: 3px;
+          top: 6px;
           font-size: 14px;
           padding: 6px 15px 6px 5px;
-          background-color: $input-bg-color;
+          background-color: transparent;
       }
       input[type="text"] {
         line-height: 20px;
