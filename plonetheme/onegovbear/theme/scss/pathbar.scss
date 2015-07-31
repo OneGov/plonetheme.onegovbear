@@ -10,7 +10,7 @@ $pathbar-font-weight: normal !default;
 
 #breadcrumbs-wrapper {
   margin-bottom: 2em;
-  margin-top: 1em;
+  display:none;
 
   #portal-breadcrumbs {
     width: 100%;
@@ -70,8 +70,8 @@ $pathbar-font-weight: normal !default;
     }
   }
 
-  @include tablet {
-    display:none;
+  @include screen-large {
+    display: block;
   }
 }
 
