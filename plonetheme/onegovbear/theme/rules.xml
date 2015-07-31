@@ -26,9 +26,13 @@
     <after content="/html/head/base | /html/head/comment()" theme-children="/html/head" />
 
     <!-- CSS:
+         - Insert style.top-nodes at the very top, allowing to early-load custom
+           inline CSS.
          - Make sure link / style tags are before script tags (parallel downloading)
          - Move #portal-top link / style tags to the head before script tags
     -->
+    <after theme-children="/html/head" css:content="html > head > style.top"  />
+    <after theme-children="/html/head" css:content="#portal-top style.top"/>
     <after content="/html/head/link | /html/head/style" theme-children="/html/head" />
     <after theme-children="/html/head" css:content="#portal-top link"/>
     <after theme-children="/html/head" css:content="#portal-top style"/>
