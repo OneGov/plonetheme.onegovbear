@@ -128,7 +128,7 @@ ul[class^="sl-toolbar"] {
     }
   }
 
-  @media (min-width: $desktop-HD-width) {
+  @media (min-width: $desktop-XGA-width) {
     @for $i from 1 through $simplelayout-columns {
       &.sl-col-#{$i} {
         margin-right: $gutter-width;
