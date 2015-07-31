@@ -27,12 +27,13 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     }
 
     & #searchGadget {
-      width: 112px;
+      width: 85px;
+      padding: .5em 35px .5em .5em;
       position: absolute;
       right: 0.55em;
       z-index: 2;
       &:focus{
-          width: 258px;
+          width: 221px;
       }
     }
 
