@@ -14,58 +14,35 @@ $pathbar-font-weight: normal !default;
 
   #portal-breadcrumbs {
     width: 100%;
-    float:left;
     background-color: $pathbar-bg-color;
+    @include clearfix();
     > span {
-      padding: 6px 0;
-      display:inline-block;
-      &:first-child {
-        padding: 6px 0 6px 8px;
-      }
+      float: left;
       > a {
+        display: block;
         color: $pathbar-text-color;
-        padding-right: 30px;
+        padding: 6px;
         font-weight: $pathbar-font-weight;
         font-size: $font-size-small;
+        float: left;
       }
       // White separator between pathbar lines
       &:before {
         content: "";
-        height: 0;
         position: absolute;
-        background-color: $pathbar-arrow-color;
+        background-color: #fff;
         left: 0;
         right: 0;
-        margin-top: 24px;
+        height: 2px;
+        margin-top: -1px;
       }
       > .breadcrumbSeparator {
-        padding-left: 0;
-        position: relative;
-        display: inline-block;
-        // White triangle for border
-        &:before {
-          content: "";
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 17px 23px;
-          border-color: transparent transparent transparent #fff;
-          position: absolute;
-          top: -23px;
-          right: -18px;
-        }
-        // Grey triangle for separator
-        &:after {
-          content: "";
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 18px 24px;
-          border-color: transparent transparent transparent $pathbar-bg-color;
-          position: absolute;
-          top: -24px;
-          right: -17px;
-        }
+        display: block;
+        float: left;
+        width: 18px;
+        height: 31px;
+        background-image: url("++theme++plonetheme.onegovbear/images/pathbar_separator.svg");
+        background-repeat: no-repeat;
       }
     }
   }
