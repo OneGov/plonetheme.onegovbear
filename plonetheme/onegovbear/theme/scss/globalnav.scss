@@ -26,17 +26,21 @@ $globalnav-link-font-weight: normal !default;
     margin: 0;
     padding: 0;
     width: 100%;
+    @include clearfix();
 
     > li {
+      display: block;
+      float: left;
       > a {
         color: $globalnav-link-color;
         font-weight: $globalnav-link-font-weight;
-        display: inline-block;
-        padding: 1em;
+        display: block;
+        padding: 16px;
         margin: 0;
         border-right: $globalnav-separator-width solid $globalnav-separator-color;
         text-transform: uppercase;
         font-size: $globalnav-font-size;
+        height: 20px;
         @include transition(background-color 100ms);
         &.open {
           color: $globalnav-link-color-hover;
