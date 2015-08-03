@@ -115,13 +115,13 @@ html body .calendar {
         }
 
         &.wn, &.name {
-          color: transparentize($text-color, 50%);
+          color: transparentize($text-color, .5);
           cursor: default;
           font-size: 80%;
           &:hover {
             background-color: transparent !important;
             @include boxshadow(none);
-            color: transparentize($text-color, 40%);
+            color: transparentize($text-color, .4);
           }
         }
 
