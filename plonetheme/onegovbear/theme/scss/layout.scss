@@ -65,8 +65,8 @@ body {
 
 #column-content {
   @include cell();
-  @include position(0);
-  @include width(16);
+  @include gridposition(0);
+  @include gridwidth(16);
 }
 
 // Responsive styles if both columns are available
@@ -74,18 +74,18 @@ body {
 
   #column-content {
     @include screen-small {
-      @include position(0);
-      @include width(16);
+      @include gridposition(0);
+      @include gridwidth(16);
     }
 
     @include screen-medium {
-      @include position(0);
-      @include width(10);
+      @include gridposition(0);
+      @include gridwidth(10);
     }
 
     @include screen-large {
-      @include position(4);
-      @include width(8);
+      @include gridposition(4);
+      @include gridwidth(8);
     }
 
   }
@@ -94,14 +94,14 @@ body {
     clear: both;
 
     @include screen-medium {
-      @include position(10);
-      @include width(6);
+      @include gridposition(10);
+      @include gridwidth(6);
       @include cell();
     }
 
     @include screen-large {
-      @include position(12);
-      @include width(4);
+      @include gridposition(12);
+      @include gridwidth(4);
     }
   }
 
@@ -111,8 +111,8 @@ body {
 
     @include screen-large {
       display:block;
-      @include position(0);
-      @include width(4);
+      @include gridposition(0);
+      @include gridwidth(4);
 
     }
   }
@@ -123,13 +123,13 @@ body.has-nav-column:not(.has-sidebar-column) {
 
   #column-content {
     @include screen-small {
-      @include position(0);
-      @include width(16);
+      @include gridposition(0);
+      @include gridwidth(16);
     }
 
     @include screen-medium {
-      @include position(4);
-      @include width(12);
+      @include gridposition(4);
+      @include gridwidth(12);
     }
   }
 
@@ -139,8 +139,8 @@ body.has-nav-column:not(.has-sidebar-column) {
 
     @include screen-medium {
       display:block;
-      @include position(0);
-      @include width(4);
+      @include gridposition(0);
+      @include gridwidth(4);
 
     }
   }
@@ -152,18 +152,18 @@ body.has-sidebar-column:not(.has-nav-column) {
   #column-content {
 
     @include screen-small {
-      @include position(0);
-      @include width(16);
+      @include gridposition(0);
+      @include gridwidth(16);
     }
 
     @include screen-medium {
-      @include position(0);
-      @include width(10);
+      @include gridposition(0);
+      @include gridwidth(10);
     }
 
     @include screen-large {
-      @include position(0);
-      @include width(12);
+      @include gridposition(0);
+      @include gridwidth(12);
     }
   }
 
@@ -171,14 +171,14 @@ body.has-sidebar-column:not(.has-nav-column) {
     clear: both;
 
     @include screen-medium {
-      @include position(10);
-      @include width(6);
+      @include gridposition(10);
+      @include gridwidth(6);
       @include cell();
     }
 
     @include screen-large {
-      @include position(12);
-      @include width(4);
+      @include gridposition(12);
+      @include gridwidth(4);
     }
   }
 }

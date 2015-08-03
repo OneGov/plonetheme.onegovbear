@@ -17,14 +17,13 @@ $gridsystem-width: $columns * $column-width + ($columns - 1) * $gutter-width + 2
   }
 }
 
-@mixin width($x) {
+@mixin gridwidth($x) {
   width: 100% * (($column-width + $gutter-width) * $x - $gutter-width) / $gridsystem-width;
 }
 
-@mixin position($x) {
+@mixin gridposition($x) {
   margin-left: 100% * (($column-width + $gutter-width) * $x - $gridsystem-width + $margin-width) / $gridsystem-width;
 }
-
 
 div.row {
   float: left;
@@ -33,7 +32,7 @@ div.row {
   position: relative;
 }
 
-@mixin cell() {
+@mixin cell {
   position: relative;
   float: left;
   left: 100%;
@@ -43,7 +42,6 @@ div.row {
 div.cell {
   @include cell();
 }
-
 
 // For nested grids - subtract the margin to get the new grid width
 #column-content {
