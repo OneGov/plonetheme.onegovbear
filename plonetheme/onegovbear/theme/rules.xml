@@ -85,29 +85,23 @@
     <replace css:content="div.to_top" css:theme="div.to_top" method="raw" />
     <drop css:content="div.to_top" />
 
-    <!-- make content bigger if there is no navigation column -->
+    <!-- Drop columns without content -->
     <rules if-content="not(//*[@id='portal-column-one'])">
       <drop css:theme="#column-navigation" />
-      <before css:theme-children="#column-content">
-        <xsl:attribute name="class">cell width-12 position-0</xsl:attribute>
-      </before>
     </rules>
-
-    <!-- make content bigger if there is no side column -->
     <rules if-content="not(//*[@id='portal-column-two'])">
       <drop css:theme="#column-sidebar" />
-      <before css:theme-children="#column-content">
-        <xsl:attribute name="class">cell width-12 position-4</xsl:attribute>
-      </before>
-      <!-- even bigger if neither navigation nor sidebar are here -->
-      <rules if-content="not(//*[@id='portal-column-one'])">
-        <drop css:theme="#column-navigation" />
-        <before css:theme-children="#column-content">
-          <xsl:attribute name="class">cell width-16 position-0</xsl:attribute>
-        </before>
-      </rules>
     </rules>
 
+    <!-- Append css classes to body, which indicates the amount of rendered columns -->
+    <before theme-children="/html/body" method="raw">
+      <xsl:attribute name="class">
+          <xsl:value-of select="/html/body/@class" />
+          <xsl:if css:test="#portal-column-one"> has-nav-column</xsl:if>
+          <xsl:if css:test="#portal-column-content"> has-content-column</xsl:if>
+          <xsl:if css:test="#portal-column-two"> has-sidebar-column</xsl:if>
+      </xsl:attribute>
+    </before>
 
 
     <replace css:content="#viewlet-below-content" css:theme="#viewlet-below-content" />

@@ -35,7 +35,6 @@ body {
 
 
 #header {
-  margin-bottom: 1.4em;
 
   >.row >.cell {
     /* Remove paddings since we have no background color. */
@@ -52,9 +51,134 @@ body {
 
 #columns {
   background-color: $content-bg-color;
+  padding-top: 1em;
+
+  @include screen-large {
+    margin-top: 1.4em;
+  }
 }
 
 
 #content {
   clear: both;
+}
+
+#column-content {
+  @include cell();
+  @include gridposition(0);
+  @include gridwidth(16);
+}
+
+// Responsive styles if both columns are available
+.has-nav-column.has-sidebar-column {
+
+  #column-content {
+    @include screen-small {
+      @include gridposition(0);
+      @include gridwidth(16);
+    }
+
+    @include screen-medium {
+      @include gridposition(0);
+      @include gridwidth(10);
+    }
+
+    @include screen-large {
+      @include gridposition(4);
+      @include gridwidth(8);
+    }
+
+  }
+
+  #column-sidebar {
+    clear: both;
+
+    @include screen-medium {
+      @include gridposition(10);
+      @include gridwidth(6);
+      @include cell();
+    }
+
+    @include screen-large {
+      @include gridposition(12);
+      @include gridwidth(4);
+    }
+  }
+
+  #column-navigation {
+    display: none;
+    @include cell();
+
+    @include screen-large {
+      display:block;
+      @include gridposition(0);
+      @include gridwidth(4);
+
+    }
+  }
+}
+
+// Responsive styles if only the navigation column is available
+body.has-nav-column:not(.has-sidebar-column) {
+
+  #column-content {
+    @include screen-small {
+      @include gridposition(0);
+      @include gridwidth(16);
+    }
+
+    @include screen-medium {
+      @include gridposition(4);
+      @include gridwidth(12);
+    }
+  }
+
+  #column-navigation {
+    display: none;
+    @include cell();
+
+    @include screen-medium {
+      display:block;
+      @include gridposition(0);
+      @include gridwidth(4);
+
+    }
+  }
+}
+
+// Responsive styles if only the sidebar column is available
+body.has-sidebar-column:not(.has-nav-column) {
+
+  #column-content {
+
+    @include screen-small {
+      @include gridposition(0);
+      @include gridwidth(16);
+    }
+
+    @include screen-medium {
+      @include gridposition(0);
+      @include gridwidth(10);
+    }
+
+    @include screen-large {
+      @include gridposition(0);
+      @include gridwidth(12);
+    }
+  }
+
+  #column-sidebar {
+    clear: both;
+
+    @include screen-medium {
+      @include gridposition(10);
+      @include gridwidth(6);
+      @include cell();
+    }
+
+    @include screen-large {
+      @include gridposition(12);
+      @include gridwidth(4);
+    }
+  }
 }

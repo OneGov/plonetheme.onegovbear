@@ -18,6 +18,7 @@ $globalnav-link-font-weight: normal !default;
   globalnav-font-size);
 
 #portal-globalnav-wrapper {
+  display: none;
   margin-right: 315px;
   @include noselect();
   #portal-globalnav {
@@ -55,5 +56,8 @@ $globalnav-link-font-weight: normal !default;
         }
       }
     }
+  }
+  @include screen-large {
+    display: block;
   }
 }
