@@ -3,7 +3,7 @@ $overlay-close-color: #333 !default;
 $overlay-close-bg-color: #eee !default;
 $overlay-close-hover-color: #fff !default;
 $overlay-close-hover-bg-color: #333 !default;
-$overlay-close-mask-color: transparentize($gray-light, 20%) !default;
+$overlay-close-mask-color: transparentize($gray-light, .2) !default;
 
 @include declare-variables(
   overlay-close-width,

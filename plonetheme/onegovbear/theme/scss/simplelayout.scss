@@ -17,7 +17,7 @@ $layout-placeholder-border-color: $block-placeholder-border-color;
 $simplelayout-gutter-width: $gutter-width !default;
 $simplelayout-columns: $columns !default;
 
-$simplelayout-block-glow-color: transparentize($primary-color, 60%);
+$simplelayout-block-glow-color: transparentize($primary-color, .6);
 
 ul[class^="sl-toolbar"] {
   background-color: $toolbar-bg-color;
