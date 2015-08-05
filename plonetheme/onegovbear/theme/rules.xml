@@ -114,5 +114,15 @@
     <after content="//*[@id='portal-footer-wrapper']/div/script" css:theme="#container" />
     <after content="//*[@id='portal-footer-wrapper']/div/noscript" css:theme="#container" />
 
+    <rules css:if-content="body.userrole-authenticated">
+        <replace content="//a[contains(@href, 'resolveuid')]">
+            <xsl:copy>
+                <xsl:copy-of select="@*" />
+                <xsl:attribute name="class"><xsl:value-of select="@class" /> broken-link</xsl:attribute>
+                <xsl:apply-templates />
+            </xsl:copy>
+        </replace>
+    </rules>
+
   </rules>
 </rules>

@@ -1,7 +1,9 @@
 $text-color-light: desaturate(lighten($text-color, 25%), 100%) !default;
+$mark-broken-links: true !default;
 
 @include declare-variables(
-  text-color-light);
+  text-color-light,
+  mark-broken-links);
 
 a,
 :link,
@@ -80,5 +82,17 @@ dl.collapsible {
   }
   a {
     @include label($primary-color);
+  }
+}
+
+
+@if $mark-broken-links {
+  a.broken-link {
+    outline: 2px dotted $danger-color;
+    @extend .fa-icon;
+    @extend .fa-exclamation-triangle;
+    &:before {
+      color: $danger-color;
+    }
   }
 }
