@@ -18,10 +18,10 @@ $globalnav-link-font-weight: normal !default;
   globalnav-font-size);
 
 #portal-globalnav-wrapper {
-  display: none;
-  margin-right: 315px;
+  margin-right: 0;
   @include noselect();
   #portal-globalnav {
+    display: none;
     @include ul(inline);
     background-color: $globalnav-bg-color;
     margin: 0;
@@ -56,8 +56,11 @@ $globalnav-link-font-weight: normal !default;
         }
       }
     }
+    @include screen-large {
+      display: block;
+    }
   }
   @include screen-large {
-    display: block;
+    margin-right: 315px;
   }
 }
