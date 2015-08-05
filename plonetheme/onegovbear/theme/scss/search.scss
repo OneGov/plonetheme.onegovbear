@@ -12,11 +12,21 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
 
 
 .portal-searchbox-wrapper{
-  float: right;
+  float: none;
   position: relative;
   top: -52px;
 
+  @include screen-large {
+    float: right;
+  }
+
+
   #portal-searchbox {
+    display: none;
+
+    @include screen-large {
+      display: block;
+    }
 
     .searchSection {
       display: none;
