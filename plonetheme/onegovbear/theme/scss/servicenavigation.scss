@@ -1,20 +1,80 @@
 $service-nav-link-color: $secondary-color !default;
 
-
-@include declare-variables(
-  service-nav-link-color);
-
+@include declare-variables(service-nav-link-color);
 
 #service-navigation {
-  float: right;
+  display: none;
+  position: absolute;
+  top: 80px;
+  z-index: 5;
+  right: 0;
+  cursor: default;
+  background-color: $menu-bg-color;
+  border: 1px solid $menu-border-color;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
+  @include boxshadow(0.5em 1em 2em -1em $menu-border-color);
+
+  @include borderradius($menu-border-radius);
+
   ul {
-    @include ul(inline);
+    @include ul(plain);
+
     li {
-      margin-left: 1em;
+      display: block;
+      min-width: 150px;
+
       > a {
-        color: $service-nav-link-color;
-        text-transform: uppercase;
-        font-weight: normal
+        display: block;
+        background: transparent;
+        padding: 0.3em 1.5em;
+        color: $menu-link-color;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: $menu-bg-color-hover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @include screen-large {
+    display: block;
+    float: right;
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+
+    @include boxshadow(none);
+
+    @include borderradius(none);
+
+    padding: 0;
+
+    ul {
+      @include ul(inline);
+
+      li {
+        margin-left: 1em;
+        display: inline;
+        padding: 0;
+
+        > a {
+          color: $service-nav-link-color;
+          text-transform: uppercase;
+          font-weight: normal;
+          display: inline;
+          padding: 0;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
       }
     }
   }
