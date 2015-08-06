@@ -79,36 +79,70 @@ class IVariablesSchema(form.Schema):
 
 
 class VariablesConfig(object):
-    implements(IVariablesSchema)
+    """
+    This proxy object saves the name of the form field, its value and
+    the SCSS variable name. We need the SCSS variable name later when
+    returning the variables in the dynamic SCSS resource factory.
+    Example:
 
-    def __init__(self, storage):
+        {'service_nav_link_color': {
+            'value': u'green', 'variable_name':
+            '$service-nav-link-color'}
+        }
+    """
+    implements(IVariablesSchema)
+    _protected_names = ['storage', 'fields']
+
+    def __init__(self, storage, fields):
         self.storage = storage
+        self.fields = fields
 
     def __getattr__(self, name):
-        if name == 'storage':
+        if name in self._protected_names:
             return object.__getattr__(self, name)
         value = self.storage.get(name)
-        return value
+        return value.get('value')
 
     def __setattr__(self, name, value):
-        if name == 'storage':
+        if name in self._protected_names:
             return object.__setattr__(self, name, value)
-        self.storage[name] = value
+        if value:
+            self.storage[name] = {
+                'value': value,
+                'variable_name': self.fields._data[name].field.variable_name
+            }
 
 
 class VariablesForm(form.SchemaEditForm):
+    """
+    This form is used to customize the SCSS variables. Subclasses must
+    override `annotation_key` and `config` and implement their own config
+    class with a custom schema.
+    """
     label = _(u'variables_form_label', default=u'Custom SCSS variables')
     description = _(u'variables_form_description',
                     default=u'The values entered in this form will override '
                             u'the SCSS variables defined in the theme for the '
-                            u'INavigationRoot (e.g. Plone Site and Subsites.)')
+                            u'INavigationRoot (e.g. Plone Site and Subsites).')
     schema = IVariablesSchema
     ignoreContext = False
+    annotation_key = ANNOTATION_KEY
+    config = VariablesConfig
 
     def getContent(self):
         annotations = IAnnotations(self.context)
-        if ANNOTATION_KEY not in annotations:
-            annotations[ANNOTATION_KEY] = PersistentMapping()
-        return VariablesConfig(annotations[ANNOTATION_KEY])
+        if self.annotation_key not in annotations:
+            annotations[self.annotation_key] = PersistentMapping()
 
-VariablesForm = wrap_form(VariablesForm)
+        # In case a field has been removed from the schema which previously
+        # has been used to override a SCSS variable its value becomes stale.
+        # The stale value needs to be removed from the annotations
+        # since it cannot be removed in the form due to the missing form
+        # field.
+        for key in [key for key in annotations[self.annotation_key]]:
+            if key not in self.fields.keys():
+                del annotations[self.annotation_key][key]
+
+        return self.config(annotations[self.annotation_key], self.fields)
+
+WrappedVariablesForm = wrap_form(VariablesForm)

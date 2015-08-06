@@ -5,9 +5,9 @@
 
     <browser:page
         for="plone.app.layout.navigation.interfaces.INavigationRoot"
-        name="variables"
+        name="customize-design"
         permission="plonetheme.onegovbear.CustomizeSCSSVariables"
-        class=".forms.VariablesForm"
+        class=".forms.WrappedVariablesForm"
         />
 
 </configure>

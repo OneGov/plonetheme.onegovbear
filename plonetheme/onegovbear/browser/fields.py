@@ -3,12 +3,8 @@ from zope.schema._compat import u
 
 
 class Variable(TextLine):
-    variable_name = ''
-
-    def __init__(self, variable_name=None, **kw):
+    def __init__(self, variable_name, **kw):
         self.variable_name = variable_name
-        if not self.variable_name:
-            self.variable_name = ''
 
         if 'title' not in kw:
             kw['title'] = u(self.variable_name)
