@@ -36,9 +36,6 @@ $language-selector-link-color: $secondary-color !default;
     dd {
       @include ul(plain);
       margin-left:0;
-      &.actionMenuContent {
-        right:inherit;
-      }
     }
   }
 }
