@@ -1,0 +1,27 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-08-06 08:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8 latin1\n"
+
+#. Default: "The values entered in this form will override the SCSS variables defined in the theme for the INavigationRoot (e.g. Plone Site and Subsites.)"
+#: ./plonetheme/onegovbear/browser/forms.py:103
+msgid "variables_form_description"
+msgstr ""
+
+#. Default: "Custom SCSS variables"
+#: ./plonetheme/onegovbear/browser/forms.py:102
+msgid "variables_form_label"
+msgstr ""
+
+

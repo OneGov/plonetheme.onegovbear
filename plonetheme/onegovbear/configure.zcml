@@ -3,13 +3,17 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="plonetheme.onegovbear">
+
+    <i18n:registerTranslations directory="locales"/>
 
     <include package="ftw.upgrade" file="meta.zcml" />
     <include package="plone.app.theming" />
 
     <include file="resources.zcml" />
 
+    <include package=".browser" />
     <include package=".viewlets" />
 
     <plone:static type="theme" directory="theme" />
