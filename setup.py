@@ -36,11 +36,12 @@ setup(name='plonetheme.onegovbear',
       zip_safe=False,
 
       install_requires=[
-        'ftw.theming',
-        'ftw.upgrade',
-        'plone.app.theming',
-        'setuptools',
-        ],
+          'ftw.theming',
+          'ftw.upgrade',
+          'plone.directives.form',
+          'plone.app.theming',
+          'setuptools',
+      ],
 
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
