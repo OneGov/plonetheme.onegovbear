@@ -5,6 +5,11 @@ $portal-top-bg-color: $page-bg-color !default;
 
 
 #portal-top {
+  height: 0;
+
+  @include screen-medium {
+    height: auto;
+  }
   background-color: $portal-top-bg-color;
   max-width: $page-wrapper-width;
   margin: 0 auto;

@@ -1,16 +1,14 @@
 $page-wrapper-width: 1200px !default;
 
-@include declare-variables(
-  page-wrapper-width);
+@include declare-variables(page-wrapper-width);
 
 .visualClear {
   clear: both;
 }
 
 .clearfix {
-  @include clearfix();
+  @include clearfix;
 }
-
 
 body {
   background: $page-bg-color;
@@ -20,11 +18,9 @@ body {
   color: $text-color;
 }
 
-
 #container {
   width: 100%;
 }
-
 
 #page-wrapper {
   position: relative;
@@ -33,10 +29,8 @@ body {
   margin-bottom: 1em;
 }
 
-
 #header {
-
-  >.row >.cell {
+  > .row > .cell {
     /* Remove paddings since we have no background color. */
     margin-left: -100%;
     width: 100%;
@@ -44,10 +38,27 @@ body {
 
   #portal-logo {
     display: inline-block;
-    margin: 2em 0 2em 0;
+    margin-top: 0;
+    position: absolute;
+
+    img {
+      height: 42px;
+      width: auto;
+
+      @include screen-small {
+        height: auto;
+        width: auto;
+      }
+    }
+    @include screen-small {
+
+    }
+    @include screen-medium {
+      margin: 2em 0 2em 0;
+      position: relative;
+    }
   }
 }
-
 
 #columns {
   background-color: $content-bg-color;
@@ -58,36 +69,40 @@ body {
   }
 }
 
-
 #content {
   clear: both;
 }
 
 #column-content {
-  @include cell();
+  @include cell;
+
   @include gridposition(0);
+
   @include gridwidth(16);
 }
 
 // Responsive styles if both columns are available
 .has-nav-column.has-sidebar-column {
-
   #column-content {
     @include screen-small {
       @include gridposition(0);
+
       @include gridwidth(16);
     }
 
+
     @include screen-medium {
       @include gridposition(0);
+
       @include gridwidth(10);
     }
 
+
     @include screen-large {
       @include gridposition(4);
+
       @include gridwidth(8);
     }
-
   }
 
   #column-sidebar {
@@ -95,74 +110,87 @@ body {
 
     @include screen-medium {
       @include gridposition(10);
+
       @include gridwidth(6);
-      @include cell();
+
+      @include cell;
     }
+
 
     @include screen-large {
       @include gridposition(12);
+
       @include gridwidth(4);
     }
   }
 
   #column-navigation {
     display: none;
-    @include cell();
+
+    @include cell;
 
     @include screen-large {
-      display:block;
-      @include gridposition(0);
-      @include gridwidth(4);
+      display: block;
 
+      @include gridposition(0);
+
+      @include gridwidth(4);
     }
   }
 }
 
 // Responsive styles if only the navigation column is available
 body.has-nav-column:not(.has-sidebar-column) {
-
   #column-content {
     @include screen-small {
       @include gridposition(0);
+
       @include gridwidth(16);
     }
 
+
     @include screen-medium {
       @include gridposition(4);
+
       @include gridwidth(12);
     }
   }
 
   #column-navigation {
     display: none;
-    @include cell();
+
+    @include cell;
 
     @include screen-medium {
-      display:block;
-      @include gridposition(0);
-      @include gridwidth(4);
+      display: block;
 
+      @include gridposition(0);
+
+      @include gridwidth(4);
     }
   }
 }
 
 // Responsive styles if only the sidebar column is available
 body.has-sidebar-column:not(.has-nav-column) {
-
   #column-content {
-
     @include screen-small {
       @include gridposition(0);
+
       @include gridwidth(16);
     }
 
+
     @include screen-medium {
       @include gridposition(0);
+
       @include gridwidth(10);
     }
 
+
     @include screen-large {
       @include gridposition(0);
+
       @include gridwidth(12);
     }
   }
@@ -172,12 +200,16 @@ body.has-sidebar-column:not(.has-nav-column) {
 
     @include screen-medium {
       @include gridposition(10);
+
       @include gridwidth(6);
-      @include cell();
+
+      @include cell;
     }
+
 
     @include screen-large {
       @include gridposition(12);
+
       @include gridwidth(4);
     }
   }
