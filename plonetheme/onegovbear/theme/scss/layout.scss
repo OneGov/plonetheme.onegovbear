@@ -38,7 +38,7 @@ body {
 
   #portal-logo {
     display: inline-block;
-    margin-top: 0;
+    margin-top: 1em;
     position: absolute;
 
     img {
@@ -51,7 +51,7 @@ body {
       }
     }
     @include screen-small {
-
+      margin-top: 0;
     }
     @include screen-medium {
       margin: 2em 0 2em 0;
