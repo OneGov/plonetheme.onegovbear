@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-06 08:06+0000\n"
+"POT-Creation-Date: 2015-08-06 08:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,13 +14,16 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
+msgid "customize SCSS variables"
+msgstr "SCSS-Variablen anpassen"
+
 #. Default: "The values entered in this form will override the SCSS variables defined in the theme for the INavigationRoot (e.g. Plone Site and Subsites.)"
-#: ./plonetheme/onegovbear/browser/forms.py:103
+#: ./plonetheme/onegovbear/browser/forms.py:101
 msgid "variables_form_description"
 msgstr "Die Werte für die SCSS-Variablen in diesem Formular überschreiben die Variablen des Themes für INavigationRoot (z.B. Plone Site and Subsites.)"
 
 #. Default: "Custom SCSS variables"
-#: ./plonetheme/onegovbear/browser/forms.py:102
+#: ./plonetheme/onegovbear/browser/forms.py:100
 msgid "variables_form_label"
 msgstr "SCSS-Variablen überschreiben"
 

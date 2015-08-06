@@ -6,7 +6,7 @@
     <browser:page
         for="plone.app.layout.navigation.interfaces.INavigationRoot"
         name="variables"
-        permission="zope2.View"
+        permission="plonetheme.onegovbear.CustomizeSCSSVariables"
         class=".forms.VariablesForm"
         />
 
