@@ -1,8 +1,7 @@
 from ftw.testbrowser import browsing
 from ftw.builder import Builder
 from ftw.builder import create
-from plonetheme.onegovbear.browser.dynamic_scss_resources import \
-    custom_scss_variables
+from plonetheme.onegovbear.browser.dynamic_scss_resources import factory
 from plonetheme.onegovbear.browser.forms import ANNOTATION_KEY
 from plonetheme.onegovbear.tests import FunctionalTestCase
 from zope.annotation import IAnnotations
@@ -47,7 +46,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             '$secondary-color': 'green',
         }).save()
 
-        scss_resource = custom_scss_variables(page, self.request)
+        scss_resource = factory(page, self.request)
         self.assertEqual(
             '$primary-color: blue; $globalnav-bg-color: fuchsia; '
             '$secondary-color: green;',
@@ -60,7 +59,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             '$primary-color': 'yellow',
         }).save()
 
-        scss_resource = custom_scss_variables(page2, self.request)
+        scss_resource = factory(page2, self.request)
         self.assertEqual(
             '$primary-color: yellow; $globalnav-bg-color: fuchsia; '
             '$secondary-color: green;',
@@ -80,7 +79,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             '$secondary-color': 'red',
         }).save()
 
-        scss_resource = custom_scss_variables(self.portal, self.request)
+        scss_resource = factory(self.portal, self.request)
         self.assertEqual(
             '$primary-color: blue; $secondary-color: red;',
             scss_resource.source
@@ -93,7 +92,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             '$secondary-color': '',
         }).save()
 
-        scss_resource = custom_scss_variables(self.portal, self.request)
+        scss_resource = factory(self.portal, self.request)
         self.assertEqual(
             '$primary-color: blue;',
             scss_resource.source

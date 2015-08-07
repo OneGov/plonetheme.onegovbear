@@ -6,42 +6,54 @@ from ftw.theming.resource import SCSSResource
 from plone.app.layout.navigation.interfaces import INavigationRoot
 from plonetheme.onegovbear.browser.forms import ANNOTATION_KEY
 from zope.annotation import IAnnotations
-from zope.interface import provider
+from zope.interface import implements
 
 
-@provider(ISCSSResourceFactory)
-def custom_scss_variables(context, request):
-    ancestor_variables = get_ancestor_variables(context)
+class CustomVariablesResourceFactory(object):
+    implements(ISCSSResourceFactory)
+    annotations_key = ANNOTATION_KEY
 
-    variables = {}
-    for d in ancestor_variables:
-        variables.update(d)
+    def __call__(self, context, request):
+        self.context = context
+        self.request = request
+        return self.get_resource()
 
-    source = ''
-    if variables:
-        source = '; '.join(
-            ['{0}: {1}'.format(value['variable_name'], value['value'])
-             for value in variables.itervalues()]
-        ) + ';'
+    def get_resource(self):
+        source = self.get_source()
+        return SCSSResource(ANNOTATION_KEY, slot='variables', source=source)
 
-    return SCSSResource(ANNOTATION_KEY, slot='variables', source=source)
+    def get_source(self):
+        ancestor_variables = self.get_ancestor_variables()
 
+        variables = {}
+        for d in ancestor_variables:
+            variables.update(d)
 
-def get_ancestor_variables(context):
-    ancestor_variables = []
-    while True:
-        variables = get_scss_variables(context)
+        source = ''
         if variables:
-            ancestor_variables.append(variables)
-        if IPloneSiteRoot.providedBy(context):
-            break
-        context = aq_parent(aq_inner(context))
-    # Inverse the list so the top most variables come first.
-    return reversed(ancestor_variables)
+            source = '; '.join(
+                ['{0}: {1}'.format(value['variable_name'], value['value'])
+                 for value in variables.itervalues()]
+            ) + ';'
+        return source
 
+    def get_ancestor_variables(self):
+        obj = self.context
+        ancestor_variables = []
+        while True:
+            variables = self.get_scss_variables(obj)
+            if variables:
+                ancestor_variables.append(variables)
+            if IPloneSiteRoot.providedBy(obj):
+                break
+            obj = aq_parent(aq_inner(obj))
+        # Inverse the list so the top most variables come first.
+        return reversed(ancestor_variables)
 
-def get_scss_variables(context):
-    if not INavigationRoot.providedBy(context):
-        return {}
-    annotations = IAnnotations(context)
-    return annotations.get(ANNOTATION_KEY) or {}
+    def get_scss_variables(self, obj):
+        if not INavigationRoot.providedBy(obj):
+            return {}
+        annotations = IAnnotations(obj)
+        return annotations.get(ANNOTATION_KEY) or {}
+
+factory = CustomVariablesResourceFactory()

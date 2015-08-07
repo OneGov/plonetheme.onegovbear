@@ -5,7 +5,7 @@
 
     <include package="ftw.theming" file="meta.zcml" />
 
-    <theme:scss_factory factory=".browser.dynamic_scss_resources.custom_scss_variables" />
+    <theme:scss_factory factory=".browser.dynamic_scss_resources.factory" />
 
     <theme:resources profile="plonetheme.onegovbear:default" slot="theme">
         <theme:scss file="theme/scss/accessibility.scss" />
