@@ -1,10 +1,12 @@
+from Products.statusmessages.interfaces import IStatusMessage
 from persistent.mapping import PersistentMapping
 from plone.directives import form
 from plone.z3cform.layout import wrap_form
-from zope.i18n import translate
 from plonetheme.onegovbear import _
 from plonetheme.onegovbear.browser.fields import Variable
+from z3c.form import button
 from zope.annotation import IAnnotations
+from zope.i18n import translate
 from zope.interface import implements
 
 try:
@@ -136,5 +138,36 @@ class VariablesForm(form.SchemaEditForm):
         annotations[self.annotation_key] = cleaned
 
         return self.config(annotations[self.annotation_key], self.fields)
+
+    @button.buttonAndHandler(_(u'Save'), name='save')
+    def handleApply(self, action):
+        """
+        Based on `plone.directives.form.form.EditForm` but with a customized
+        redirect url.
+        """
+        data, errors = self.extractData()
+        if errors:
+            self.status = self.formErrorsMessage
+            return
+        self.applyChanges(data)
+        IStatusMessage(self.request).addStatusMessage(_(u'Changes saved'))
+        self.request.response.redirect(self.redirect_url)
+
+    @button.buttonAndHandler(_(u'Cancel'), name='cancel')
+    def handleCancel(self, action):
+        """
+        Based on plone.directives.form.form.EditForm but with a customized
+        redirect url.
+        """
+        IStatusMessage(self.request).addStatusMessage(_(u'Edit cancelled'))
+        self.request.response.redirect(self.redirect_url)
+
+    @property
+    def redirect_url(self):
+        return self.context.absolute_url() + '/@@customize-design'
+
+    def update(self):
+        super(VariablesForm, self).update()
+        self.request.set('disable_border', 1)
 
 WrappedVariablesForm = wrap_form(VariablesForm)
