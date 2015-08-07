@@ -3,6 +3,7 @@ from Acquisition._Acquisition import aq_parent
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from ftw.theming.interfaces import ISCSSResourceFactory
 from ftw.theming.resource import SCSSResource
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plonetheme.onegovbear.browser.forms import ANNOTATION_KEY
 from zope.annotation import IAnnotations
 from zope.interface import provider
@@ -23,9 +24,7 @@ def custom_scss_variables(context, request):
              for value in variables.itervalues()]
         ) + ';'
 
-    return SCSSResource('plonetheme.onegovbear.custom.scss',
-                        slot='variables',
-                        source=source)
+    return SCSSResource(ANNOTATION_KEY, slot='variables', source=source)
 
 
 def get_ancestor_variables(context):
@@ -42,5 +41,7 @@ def get_ancestor_variables(context):
 
 
 def get_scss_variables(context):
+    if not INavigationRoot.providedBy(context):
+        return {}
     annotations = IAnnotations(context)
     return annotations.get(ANNOTATION_KEY) or {}
