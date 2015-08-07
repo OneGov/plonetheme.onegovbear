@@ -52,3 +52,34 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             scss_resource.source
         )
 
+    @browsing
+    def test_emptying_values(self, browser):
+        """
+        This test makes sure that when a custom variable is emptied it
+        no longer is present in the storage.
+        """
+        browser.login()
+        browser.visit(self.portal, view='customize-design')
+        browser.fill({
+            '$primary-color': 'blue',
+            '$secondary-color': 'red',
+        }).save()
+
+        scss_resource = custom_scss_variables(self.portal, self.request)
+        self.assertEqual(
+            '$primary-color: blue; $secondary-color: red;',
+            scss_resource.source
+        )
+
+        # Now empty a value and make sure its no longer there.
+        browser.visit(self.portal, view='customize-design')
+        browser.fill({
+            '$primary-color': 'blue',
+            '$secondary-color': '',
+        }).save()
+
+        scss_resource = custom_scss_variables(self.portal, self.request)
+        self.assertEqual(
+            '$primary-color: blue;',
+            scss_resource.source
+        )
