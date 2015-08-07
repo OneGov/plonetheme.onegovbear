@@ -10,18 +10,17 @@ from zope.interface import provider
 
 @provider(ISCSSResourceFactory)
 def custom_scss_variables(context, request):
+    ancestor_variables = get_ancestor_variables(context)
 
-    parent_scss_variables = get_parent_scss_variables(context)
-    context_scss_variables = get_scss_variables(context)
-
-    combined_scss_variables = combine_scss_variables(parent_scss_variables,
-                                                     context_scss_variables)
+    variables = {}
+    for d in ancestor_variables:
+        variables.update(d)
 
     source = ''
-    if combined_scss_variables:
+    if variables:
         source = '; '.join(
             ['{0}: {1}'.format(value['variable_name'], value['value'])
-             for value in combined_scss_variables.itervalues()]
+             for value in variables.itervalues()]
         ) + ';'
 
     return SCSSResource('plonetheme.onegovbear.custom.scss',
@@ -29,19 +28,19 @@ def custom_scss_variables(context, request):
                         source=source)
 
 
+def get_ancestor_variables(context):
+    ancestor_variables = []
+    while True:
+        variables = get_scss_variables(context)
+        if variables:
+            ancestor_variables.append(variables)
+        if IPloneSiteRoot.providedBy(context):
+            break
+        context = aq_parent(aq_inner(context))
+    # Inverse the list so the top most variables come first.
+    return reversed(ancestor_variables)
+
+
 def get_scss_variables(context):
     annotations = IAnnotations(context)
     return annotations.get(ANNOTATION_KEY) or {}
-
-
-def get_parent_scss_variables(context):
-    if IPloneSiteRoot.providedBy(context):
-        return {}
-    parent = aq_parent(aq_inner(context))
-    return get_scss_variables(parent)
-
-
-def combine_scss_variables(parent_scss_variables, context_scss_variables):
-    combined_scss_variables = parent_scss_variables.copy()
-    combined_scss_variables.update(context_scss_variables)
-    return combined_scss_variables

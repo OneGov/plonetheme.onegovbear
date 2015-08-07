@@ -38,6 +38,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
         browser.fill({
             '$primary-color': 'blue',
             '$secondary-color': 'red',
+            '$globalnav-bg-color': 'fuchsia',
         }).save()
 
         page = create(Builder('subsite').titled(u'My Subsite'))
@@ -48,7 +49,21 @@ class TestCustomSCSSVariables(FunctionalTestCase):
 
         scss_resource = custom_scss_variables(page, self.request)
         self.assertEqual(
-            '$primary-color: blue; $secondary-color: green;',
+            '$primary-color: blue; $globalnav-bg-color: fuchsia; '
+            '$secondary-color: green;',
+            scss_resource.source
+        )
+
+        page2 = create(Builder('subsite').titled(u'My Subsite').within(page))
+        browser.visit(page2, view='customize-design')
+        browser.fill({
+            '$primary-color': 'yellow',
+        }).save()
+
+        scss_resource = custom_scss_variables(page2, self.request)
+        self.assertEqual(
+            '$primary-color: yellow; $globalnav-bg-color: fuchsia; '
+            '$secondary-color: green;',
             scss_resource.source
         )
 
