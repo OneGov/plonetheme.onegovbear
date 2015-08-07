@@ -4,11 +4,11 @@ $service-nav-link-color: $secondary-color !default;
 
 #service-navigation {
   display: none;
-  position: absolute;
-  top: 80px;
-  z-index: 5;
-  right: 0;
-  cursor: default;
+  // position: absolute;
+  // top: 80px;
+  // z-index: 5;
+  // right: 0;
+  @include mobilemenu();
   background-color: $menu-bg-color;
   border: 1px solid $menu-border-color;
   padding-top: 0.5em;
@@ -21,23 +21,7 @@ $service-nav-link-color: $secondary-color !default;
   ul {
     @include ul(plain);
 
-    li {
-      display: block;
-      min-width: 150px;
 
-      > a {
-        display: block;
-        background: transparent;
-        padding: 0.3em 1.5em;
-        color: $menu-link-color;
-        white-space: nowrap;
-
-        &:hover {
-          background-color: $menu-bg-color-hover;
-          text-decoration: none;
-        }
-      }
-    }
   }
 
   @include screen-large {
@@ -49,7 +33,7 @@ $service-nav-link-color: $secondary-color !default;
     z-index: 1;
     background-color: transparent;
     border: none;
-
+    width: auto;
     @include boxshadow(none);
 
     @include borderradius(none);

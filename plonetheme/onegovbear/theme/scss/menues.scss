@@ -86,3 +86,31 @@ dl.actionMenu {
 dl.actionMenu dt {
   font-weight: normal;
 }
+
+@mixin mobilemenu {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  z-index: 5;
+  width: 90%;
+  margin: auto;
+  cursor: default;
+
+  ul li {
+    display: block;
+
+    a {
+      display: block;
+      background: transparent;
+      padding: 1em;
+      color: $menu-link-color;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: $menu-bg-color-hover;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
