@@ -41,15 +41,6 @@ body {
     margin-top: 1em;
     position: absolute;
 
-    img {
-      height: 42px;
-      width: auto;
-
-      @include screen-small {
-        height: auto;
-        width: auto;
-      }
-    }
     @include screen-small {
       margin-top: 0;
     }
