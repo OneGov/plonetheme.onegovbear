@@ -1,10 +1,16 @@
 from persistent.mapping import PersistentMapping
 from plone.directives import form
 from plone.z3cform.layout import wrap_form
+from zope.i18n import translate
 from plonetheme.onegovbear import _
 from plonetheme.onegovbear.browser.fields import Variable
 from zope.annotation import IAnnotations
 from zope.interface import implements
+
+try:
+    from ftw.subsite.interfaces import ISubsite
+except ImportError:
+    ISubsite = None
 
 ANNOTATION_KEY = 'plonetheme.onegovebear.custom_scss_variables'
 
@@ -53,8 +59,8 @@ class VariablesConfig(object):
     Example:
 
         {'service_nav_link_color': {
-            'value': u'green', 'variable_name':
-            '$service-nav-link-color'}
+            'value': u'green',
+            'variable_name': '$service-nav-link-color'}
         }
     """
     implements(IVariablesSchema)
@@ -89,14 +95,28 @@ class VariablesForm(form.SchemaEditForm):
     class with a custom schema.
     """
     label = _(u'variables_form_label', default=u'Custom SCSS variables')
-    description = _(u'variables_form_description',
-                    default=u'The values entered in this form will override '
-                            u'the SCSS variables defined in the theme for the '
-                            u'INavigationRoot (e.g. Plone Site and Subsites).')
     schema = IVariablesSchema
     ignoreContext = False
     annotation_key = ANNOTATION_KEY
     config = VariablesConfig
+
+    @property
+    def description(self):
+        description = translate(
+            _(u'variables_form_description',
+              default=u'The values entered in this form will override '
+                      u'the SCSS variables defined in the theme for the '
+                      u'INavigationRoot (e.g. Plone Site and Subsites).'),
+            context=self.request)
+
+        # Add a special note if we're on a Subsite.
+        if ISubsite and ISubsite.providedBy(self.context):
+            description += '<br />' + translate(
+                _(u'variables_form_description_subsite',
+                  default=u'Subsites will inherit the variables defined on '
+                          u'the Plone Site or an ancestor Subsite.'),
+                context=self.request)
+        return description
 
     def getContent(self):
         annotations = IAnnotations(self.context)
