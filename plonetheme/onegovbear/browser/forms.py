@@ -78,6 +78,8 @@ class VariablesConfig(object):
                 'value': value,
                 'variable_name': self.fields._data[name].field.variable_name
             }
+        elif name in self.storage:
+            del self.storage[name]
 
 
 class VariablesForm(form.SchemaEditForm):
