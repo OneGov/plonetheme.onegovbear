@@ -6,8 +6,8 @@
     <include package="ftw.lawgiver" file="meta.zcml" />
 
     <lawgiver:map_permissions
-        action_group="customize SCSS variables"
-        permissions="plonetheme.onegovbear: Customize SCSS Variables"
+        action_group="customize design variables"
+        permissions="plonetheme.onegovbear: Customize Design Variables"
         />
 
 </configure>

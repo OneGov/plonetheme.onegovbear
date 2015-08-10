@@ -2,7 +2,7 @@ from ftw.testbrowser import browsing
 from ftw.builder import Builder
 from ftw.builder import create
 from plonetheme.onegovbear.browser.dynamic_scss_resources import factory
-from plonetheme.onegovbear.browser.forms import ANNOTATION_KEY
+from plonetheme.onegovbear.browser.forms import VARIABLES_ANNOTATION_KEY
 from plonetheme.onegovbear.tests import FunctionalTestCase
 from zope.annotation import IAnnotations
 
@@ -28,7 +28,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
                                'variable_name': '$primary-color'},
              'secondary_color': {'value': u'red',
                                  'variable_name': '$secondary-color'}},
-            annotations[ANNOTATION_KEY])
+            annotations[VARIABLES_ANNOTATION_KEY])
 
     @browsing
     def test_value_inheritance(self, browser):
@@ -48,8 +48,8 @@ class TestCustomSCSSVariables(FunctionalTestCase):
 
         scss_resource = factory(page, self.request)
         self.assertEqual(
-            '$primary-color: blue; $globalnav-bg-color: fuchsia; '
-            '$secondary-color: green;',
+            '$primary-color: blue;\n$secondary-color: red;\n'
+            '$globalnav-bg-color: fuchsia;\n$secondary-color: green;',
             scss_resource.source
         )
 
@@ -61,8 +61,9 @@ class TestCustomSCSSVariables(FunctionalTestCase):
 
         scss_resource = factory(page2, self.request)
         self.assertEqual(
-            '$primary-color: yellow; $globalnav-bg-color: fuchsia; '
-            '$secondary-color: green;',
+            '$primary-color: blue;\n$secondary-color: red;\n'
+            '$globalnav-bg-color: fuchsia;\n$secondary-color: green;\n'
+            '$primary-color: yellow;',
             scss_resource.source
         )
 
@@ -81,7 +82,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
 
         scss_resource = factory(self.portal, self.request)
         self.assertEqual(
-            '$primary-color: blue; $secondary-color: red;',
+            '$primary-color: blue;\n$secondary-color: red;',
             scss_resource.source
         )
 

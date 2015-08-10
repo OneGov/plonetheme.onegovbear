@@ -1,17 +1,17 @@
-from Acquisition._Acquisition import aq_inner
-from Acquisition._Acquisition import aq_parent
-from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Acquisition import aq_chain
 from ftw.theming.interfaces import ISCSSResourceFactory
 from ftw.theming.resource import SCSSResource
-from plone.app.layout.navigation.interfaces import INavigationRoot
-from plonetheme.onegovbear.browser.forms import ANNOTATION_KEY
+from plonetheme.onegovbear.browser.forms import VARIABLES_ANNOTATION_KEY
+from plonetheme.onegovbear.interfaces import ICustomDesignVariablesSchema
 from zope.annotation import IAnnotations
+from zope.component import queryMultiAdapter
 from zope.interface import implements
+from zope.schema import getFields, getFieldNamesInOrder
 
 
-class CustomVariablesResourceFactory(object):
+class CustomDesignVariablesResourceFactory(object):
     implements(ISCSSResourceFactory)
-    annotations_key = ANNOTATION_KEY
+    annotations_key = VARIABLES_ANNOTATION_KEY
 
     def __call__(self, context, request):
         self.context = context
@@ -20,40 +20,42 @@ class CustomVariablesResourceFactory(object):
 
     def get_resource(self):
         source = self.get_source()
-        return SCSSResource(ANNOTATION_KEY, slot='variables', source=source)
+        return SCSSResource(VARIABLES_ANNOTATION_KEY, slot='variables',
+                            source=source)
 
     def get_source(self):
         ancestor_variables = self.get_ancestor_variables()
 
-        variables = {}
-        for d in ancestor_variables:
-            variables.update(d)
-
-        source = ''
-        if variables:
-            source = '; '.join(
-                ['{0}: {1}'.format(value['variable_name'], value['value'])
-                 for value in variables.itervalues()]
-            ) + ';'
+        source = '\n'.join(
+            '{0}: {1};'.format(name, value)
+            for name, value in ancestor_variables
+        )
         return source
 
     def get_ancestor_variables(self):
-        obj = self.context
-        ancestor_variables = []
-        while True:
-            variables = self.get_scss_variables(obj)
-            if variables:
-                ancestor_variables.append(variables)
-            if IPloneSiteRoot.providedBy(obj):
-                break
-            obj = aq_parent(aq_inner(obj))
-        # Inverse the list so the top most variables come first.
-        return reversed(ancestor_variables)
+        for variables in map(self.get_scss_variables,
+                             reversed(aq_chain(self.context))):
+            for name, value in variables:
+                if not value:
+                    continue
+                yield value['variable_name'], value['value']
 
     def get_scss_variables(self, obj):
-        if not INavigationRoot.providedBy(obj):
-            return {}
-        annotations = IAnnotations(obj)
-        return annotations.get(ANNOTATION_KEY) or {}
+        # import pdb; pdb.set_trace();
+        # if not IAnnotations.providedBy(obj):
+        #     return
 
-factory = CustomVariablesResourceFactory()
+        schema = queryMultiAdapter((obj, self.request),
+                                   ICustomDesignVariablesSchema)
+        if not schema:
+            return
+
+        annotations = IAnnotations(obj)
+        variables = annotations.get(VARIABLES_ANNOTATION_KEY) or {}
+
+        form_fields = getFields(schema)
+        for field_name in getFieldNamesInOrder(schema):
+            yield (form_fields[field_name].variable_name,
+                   variables.get(field_name))
+
+factory = CustomDesignVariablesResourceFactory()

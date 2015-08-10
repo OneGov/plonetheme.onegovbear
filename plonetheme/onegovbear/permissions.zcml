@@ -3,8 +3,8 @@
     i18n_domain="plonetheme.onegovbear">
     
     <permission
-        id="plonetheme.onegovbear.CustomizeSCSSVariables"
-        title="plonetheme.onegovbear: Customize SCSS Variables"
+        id="plonetheme.onegovbear.CustomizeDesignVariables"
+        title="plonetheme.onegovbear: Customize Design Variables"
         />
 
 </configure>

@@ -6,8 +6,10 @@
     <browser:page
         for="plone.app.layout.navigation.interfaces.INavigationRoot"
         name="customize-design"
-        permission="plonetheme.onegovbear.CustomizeSCSSVariables"
-        class=".forms.WrappedVariablesForm"
+        permission="plonetheme.onegovbear.CustomizeDesignVariables"
+        class=".forms.WrappedDesignVariablesForm"
         />
+
+    <adapter factory=".forms.get_default_design_variables_schema" />
 
 </configure>

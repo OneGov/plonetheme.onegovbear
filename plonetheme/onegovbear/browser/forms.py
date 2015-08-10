@@ -1,23 +1,43 @@
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.statusmessages.interfaces import IStatusMessage
 from persistent.mapping import PersistentMapping
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.directives import form
 from plone.z3cform.layout import wrap_form
 from plonetheme.onegovbear import _
-from plonetheme.onegovbear.browser.fields import Variable
+from plonetheme.onegovbear.interfaces import ICustomDesignVariablesSchema
 from z3c.form import button
 from zope.annotation import IAnnotations
+from zope.component import adapter, getMultiAdapter
 from zope.i18n import translate
-from zope.interface import implements
+from zope.interface import alsoProvides
+from zope.interface import implementer
+from zope.interface import Interface
+from zope.schema import TextLine
+from zope.schema._compat import u
+import time
 
-try:
-    from ftw.subsite.interfaces import ISubsite
-except ImportError:
-    ISubsite = None
-
-ANNOTATION_KEY = 'plonetheme.onegovebear.custom_scss_variables'
+VARIABLES_ANNOTATION_KEY = 'plonetheme.onegovebear.custom_scss_variables'
+TIMESTAMP_ANNOTATION_KEY = VARIABLES_ANNOTATION_KEY + '.lastt_update_timestamp'
 
 
-class IVariablesSchema(form.Schema):
+class Variable(TextLine):
+    def __init__(self, variable_name=None, **kw):
+        self.variable_name = variable_name
+
+        if not variable_name:
+            self.variable_name = '$' + self.__name__
+
+        if 'title' not in kw:
+            kw['title'] = u(self.variable_name)
+
+        if 'required' not in kw:
+            kw['required'] = False
+
+        super(Variable, self).__init__(**kw)
+
+
+class IDefaultDesignVariablesSchema(form.Schema):
     primary_color = Variable('$primary-color')
     secondary_color = Variable('$secondary-color')
     globalnav_bg_color = Variable('$globalnav-bg-color')
@@ -53,7 +73,13 @@ class IVariablesSchema(form.Schema):
     gray_lighter = Variable('$gray-lighter')
 
 
-class VariablesConfig(object):
+@adapter(INavigationRoot, Interface)
+@implementer(ICustomDesignVariablesSchema)
+def get_default_design_variables_schema(context, request):
+    return IDefaultDesignVariablesSchema
+
+
+class DesignVariablesConfig(object):
     """
     This proxy object saves the name of the form field, its value and
     the SCSS variable name. We need the SCSS variable name later when
@@ -65,8 +91,7 @@ class VariablesConfig(object):
             'variable_name': '$service-nav-link-color'}
         }
     """
-    implements(IVariablesSchema)
-    _protected_names = ['storage', 'fields']
+    _protected_names = ['storage', 'fields', '__provides__']
 
     def __init__(self, storage, fields):
         self.storage = storage
@@ -74,13 +99,14 @@ class VariablesConfig(object):
 
     def __getattr__(self, name):
         if name in self._protected_names:
-            return object.__getattr__(self, name)
+            return self.__dict__.get(name)
         value = self.storage.get(name)
         return value.get('value')
 
     def __setattr__(self, name, value):
         if name in self._protected_names:
-            return object.__setattr__(self, name, value)
+            self.__dict__[name] = value
+            return
         if value:
             self.storage[name] = {
                 'value': value,
@@ -90,54 +116,46 @@ class VariablesConfig(object):
             del self.storage[name]
 
 
-class VariablesForm(form.SchemaEditForm):
+class DesignVariablesForm(form.SchemaEditForm):
     """
-    This form is used to customize the SCSS variables. Subclasses must
+    This form is used to customize the design variables (SCSS). Subclasses must
     override `annotation_key` and `config` and implement their own config
     class with a custom schema.
     """
-    label = _(u'variables_form_label', default=u'Custom SCSS variables')
-    schema = IVariablesSchema
+    label = _(u'variables_form_label',
+              default=u'Custom design variables (SCSS)')
     ignoreContext = False
-    annotation_key = ANNOTATION_KEY
-    config = VariablesConfig
 
     @property
     def description(self):
         description = translate(
             _(u'variables_form_description',
-              default=u'The values entered in this form will override '
-                      u'the SCSS variables defined in the theme for the '
-                      u'INavigationRoot (e.g. Plone Site and Subsites).'),
+              default=u'This form can be used to customize a selection of the '
+                      u'design variable defined in this theme.'),
             context=self.request)
 
-        # Add a special note if we're on a Subsite.
-        if ISubsite and ISubsite.providedBy(self.context):
+        if not IPloneSiteRoot.providedBy(self.context):
             description += '<br />' + translate(
-                _(u'variables_form_description_subsite',
-                  default=u'Subsites will inherit the variables defined on '
-                          u'the Plone Site or an ancestor Subsite.'),
+                _(u'variables_form_description_inheritance',
+                  default=u'Variables will be inherited from the ancestors.'),
                 context=self.request)
         return description
 
+    @property
+    def schema(self):
+        return getMultiAdapter((self.context, self.request),
+                               ICustomDesignVariablesSchema)
+
     def getContent(self):
         annotations = IAnnotations(self.context)
-        if self.annotation_key not in annotations:
-            annotations[self.annotation_key] = PersistentMapping()
+        if VARIABLES_ANNOTATION_KEY not in annotations:
+            annotations[VARIABLES_ANNOTATION_KEY] = PersistentMapping()
 
-        # In case a field is removed from the schema which previously
-        # has been used to override a SCSS variable its value becomes stale.
-        # The stale value needs to be removed from the annotations
-        # since it cannot be removed in the form due to the missing form
-        # field. This is done by rebuilding the value stored in the
-        # annotations.
-        cleaned = {}
-        for key in self.fields.keys():
-            if key in annotations[self.annotation_key].keys():
-                cleaned[key] = annotations[self.annotation_key][key]
-        annotations[self.annotation_key] = cleaned
+        config = DesignVariablesConfig(annotations[VARIABLES_ANNOTATION_KEY],
+                                       self.fields)
+        alsoProvides(config, self.schema)
 
-        return self.config(annotations[self.annotation_key], self.fields)
+        return config
 
     @button.buttonAndHandler(_(u'Save'), name='save')
     def handleApply(self, action):
@@ -150,13 +168,17 @@ class VariablesForm(form.SchemaEditForm):
             self.status = self.formErrorsMessage
             return
         self.applyChanges(data)
+
+        annotations = IAnnotations(self.context)
+        annotations[TIMESTAMP_ANNOTATION_KEY] = time.time()
+
         IStatusMessage(self.request).addStatusMessage(_(u'Changes saved'))
         self.request.response.redirect(self.redirect_url)
 
     @button.buttonAndHandler(_(u'Cancel'), name='cancel')
     def handleCancel(self, action):
         """
-        Based on plone.directives.form.form.EditForm but with a customized
+        Based on `plone.directives.form.form.EditForm` but with a customized
         redirect url.
         """
         IStatusMessage(self.request).addStatusMessage(_(u'Edit cancelled'))
@@ -167,7 +189,7 @@ class VariablesForm(form.SchemaEditForm):
         return self.context.absolute_url() + '/@@customize-design'
 
     def update(self):
-        super(VariablesForm, self).update()
+        super(DesignVariablesForm, self).update()
         self.request.set('disable_border', 1)
 
-WrappedVariablesForm = wrap_form(VariablesForm)
+WrappedDesignVariablesForm = wrap_form(DesignVariablesForm)

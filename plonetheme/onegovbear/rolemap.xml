@@ -2,7 +2,7 @@
 <rolemap>
     <permissions>
 
-        <permission name="plonetheme.onegovbear: Customize SCSS Variables" acquire="False">
+        <permission name="plonetheme.onegovbear: Customize Design Variables" acquire="False">
             <role name="Manager" />
         </permission>
 
