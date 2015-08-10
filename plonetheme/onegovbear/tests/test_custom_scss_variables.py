@@ -50,7 +50,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
         self.assertEqual(
             '$primary-color: blue;\n$secondary-color: red;\n'
             '$globalnav-bg-color: fuchsia;\n$secondary-color: green;',
-            scss_resource.source
+            scss_resource.get_source(page, self.request)
         )
 
         page2 = create(Builder('subsite').titled(u'My Subsite').within(page))
@@ -64,7 +64,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             '$primary-color: blue;\n$secondary-color: red;\n'
             '$globalnav-bg-color: fuchsia;\n$secondary-color: green;\n'
             '$primary-color: yellow;',
-            scss_resource.source
+            scss_resource.get_source(page2, self.request)
         )
 
     @browsing
@@ -83,7 +83,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
         scss_resource = factory(self.portal, self.request)
         self.assertEqual(
             '$primary-color: blue;\n$secondary-color: red;',
-            scss_resource.source
+            scss_resource.get_source(self.portal, self.request)
         )
 
         # Now empty a value and make sure its no longer there.
@@ -96,5 +96,5 @@ class TestCustomSCSSVariables(FunctionalTestCase):
         scss_resource = factory(self.portal, self.request)
         self.assertEqual(
             '$primary-color: blue;',
-            scss_resource.source
+            scss_resource.get_source(self.portal, self.request)
         )

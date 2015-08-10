@@ -18,7 +18,7 @@ from zope.schema._compat import u
 import time
 
 VARIABLES_ANNOTATION_KEY = 'plonetheme.onegovebear.custom_scss_variables'
-TIMESTAMP_ANNOTATION_KEY = VARIABLES_ANNOTATION_KEY + '.lastt_update_timestamp'
+TIMESTAMP_ANNOTATION_KEY = VARIABLES_ANNOTATION_KEY + '.last_update_timestamp'
 
 
 class Variable(TextLine):
@@ -117,11 +117,6 @@ class DesignVariablesConfig(object):
 
 
 class DesignVariablesForm(form.SchemaEditForm):
-    """
-    This form is used to customize the design variables (SCSS). Subclasses must
-    override `annotation_key` and `config` and implement their own config
-    class with a custom schema.
-    """
     label = _(u'variables_form_label',
               default=u'Custom design variables (SCSS)')
     ignoreContext = False
