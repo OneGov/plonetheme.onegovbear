@@ -36,17 +36,27 @@ body {
     width: 100%;
   }
 
-  #portal-logo {
-    display: inline-block;
-    margin-top: 1em;
-    position: absolute;
-
-    @include screen-small {
-      margin-top: 0;
+  .logoRow {
+    padding: 10px 5px;
+    box-sizing: border-box;
+    @include screen-large {
+      padding: 30px 0;
     }
-    @include screen-medium {
-      margin: 2em 0 2em 0;
-      position: relative;
+    > .cell {
+      display: table;
+    }
+  }
+
+  #portal-logo {
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+    img {
+      max-height: 50px;
+      width: auto;
+      @include screen-small {
+        max-height: none;
+      }
     }
   }
 }

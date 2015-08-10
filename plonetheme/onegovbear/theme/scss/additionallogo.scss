@@ -1,28 +1,17 @@
 #additional-logo {
-  right: 0;
-  float:right;
-  position: absolute;
-  margin-top: 1em;
-  top: 50px;
+
+  vertical-align: top;
+  text-align: right;
+  display: table-cell;
 
   img {
-    height: 50px;
+    max-height: 50px;
     width: auto;
 
     @include screen-small {
-      height: auto;
+      max-height: none;
       width: auto;
     }
   }
 
-  @include screen-small {
-    position: relative;
-    top:0;
-    margin-top: 0;
-  }
-
-  @include screen-medium {
-    margin: 2em 0 2em 0;
-    position: relative;
-  }
 }
