@@ -69,6 +69,12 @@
     <replace css:content="#service-navigation" css:theme="#service-navigation" />
     <replace css:content="ul.mobileButtons" css:theme="ul.mobileButtons" />
 
+    <replace css:content-children="#edit-bar" css:theme-children="#edit-bar" />
+    <rules if-content="not(//*[@id='edit-bar']/*)">
+        <drop css:theme="#edit-bar" />
+    </rules>
+    <drop css:content="#edit-bar" />
+
     <replace css:content-children="#portal-breadcrumbs" css:theme-children="#portal-breadcrumbs" />
     <drop css:content="#portal-breadcrumbs" />
 

@@ -1,7 +1,13 @@
-$editbar-bg-color: $gray-lighter !default;
-$editbar-link-color: $link-color !default;
-$editbar-link-active-color: $link-color !default;
-$editbar-link-hover-color: $link-hover-color !default;
+$editbar-bg-color: $secondary-color !default;
+$editbar-link-color: contrast($editbar-bg-color,
+                              $gray-lighter,
+                              $gray-darker,
+                              $lightness:60%) !default;
+$editbar-link-active-color: $gray-darker !default;
+$editbar-link-hover-color: contrast($editbar-bg-color,
+                                    lighten($gray-lighter, 20%),
+                                    darken($gray-darker, 20%),
+                                    $lightness:60%) !default;
 $editbar-link-font-weight: $link-font-weight !default;
 
 @include declare-variables(
@@ -17,7 +23,6 @@ $editbar-link-font-weight: $link-font-weight !default;
   border: 0.25em solid $editbar-bg-color;
   min-height: 2em;
   margin: 0;
-  margin-bottom: 1em;
   padding: 0;
   display: block;
   @include borderradius($border-radius $border-radius 0 0);
@@ -41,6 +46,9 @@ $editbar-link-font-weight: $link-font-weight !default;
       background-color: $content-bg-color;
       @include borderradius($border-radius $border-radius 0 0);
       color: $editbar-link-active-color;
+      &:hover {
+        color: $editbar-link-active-color;
+      }
     }
     a:hover {
       color: $editbar-link-hover-color;
