@@ -43,11 +43,7 @@ ul[class^="sl-toolbar"] {
 }
 
 .sl-block {
-  @include transition(box-shadow .3s ease-out);
   @include clearfix();
-  &:hover {
-    @include boxshadow(0 0 20px 0 $simplelayout-block-glow-color);
-  }
 
   .sl-block-content {
     img {
@@ -92,6 +88,12 @@ ul[class^="sl-toolbar"] {
 .documentEditable {
   .sl-column:empty {
     outline: 2px dashed rgba(0, 0, 0, 0.6);
+  }
+  .sl-block {
+    @include transition(box-shadow .3s ease-out);
+    &:hover {
+      @include boxshadow(0 0 20px 0 $simplelayout-block-glow-color);
+    }
   }
 }
 
