@@ -9,6 +9,7 @@ $pathbar-font-weight: normal !default;
   pathbar-text-color);
 
 #breadcrumbs-wrapper {
+  margin-top: 1em;
   margin-bottom: 2em;
   display:none;
 
@@ -60,4 +61,3 @@ body.portaltype-plone-site {
     }
   }
 }
-

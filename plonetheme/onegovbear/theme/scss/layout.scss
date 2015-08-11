@@ -63,8 +63,7 @@ body {
 
 #columns {
   background-color: $content-bg-color;
-  padding-top: 1em;
-
+  @include borderradius($border-radius);
   @include screen-large {
     margin-top: 1.4em;
   }
