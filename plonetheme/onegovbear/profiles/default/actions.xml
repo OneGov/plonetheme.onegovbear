@@ -7,7 +7,8 @@
                 i18n:domain="plonetheme.onegovbear">
             <property name="title" i18n:translate="">Customize design</property>
             <property name="url_expr">string:@@customize-design</property>
-            <property name="condition_expr">python:context.restrictedTraverse('@@plone_context_state').canonical_object().restrictedTraverse('@@plone_interface_info').provides('plone.app.layout.navigation.interfaces.INavigationRoot')</property>
+            <property name="icon_expr"></property>
+            <property name="available_expr">python:context.restrictedTraverse('@@plone_context_state').canonical_object().restrictedTraverse('@@plone_interface_info').provides('plone.app.layout.navigation.interfaces.INavigationRoot')</property>
             <property name="permissions">
                 <element value="plonetheme.onegovbear: Customize Design Variables"/>
             </property>
