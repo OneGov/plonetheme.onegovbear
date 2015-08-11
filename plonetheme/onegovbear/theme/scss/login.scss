@@ -1,10 +1,11 @@
 .overlay-login {
   width: 600px !important;
-  height: 320px !important;
-  left: 50% !important;
-  margin-left: -300px;
-  top: 50% !important;
-  margin-top: -280px;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  top: 100px !important;
+  bottom: auto !important;
 }
 
 #login-form {
