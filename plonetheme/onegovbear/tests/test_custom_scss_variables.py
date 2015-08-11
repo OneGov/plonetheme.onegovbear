@@ -1,10 +1,11 @@
-from ftw.testbrowser import browsing
 from ftw.builder import Builder
 from ftw.builder import create
+from ftw.testbrowser import browsing
 from plonetheme.onegovbear.browser.dynamic_scss_resources import factory
 from plonetheme.onegovbear.browser.forms import VARIABLES_ANNOTATION_KEY
 from plonetheme.onegovbear.tests import FunctionalTestCase
 from zope.annotation import IAnnotations
+import transaction
 
 
 class TestCustomSCSSVariables(FunctionalTestCase):
@@ -97,4 +98,36 @@ class TestCustomSCSSVariables(FunctionalTestCase):
         self.assertEqual(
             '$primary-color: blue;',
             scss_resource.get_source(self.portal, self.request)
+        )
+
+    @browsing
+    def test_user_action(self, browser):
+        action_link_label = 'Customize design'
+        action_link_url = '@@customize-design'
+
+        # Make sure the manager
+        browser.login().visit(self.portal)
+        self.assertEqual(
+            action_link_url,
+            browser.find(action_link_label).attrib['href']
+        )
+
+        # Make sure the action is not available for users
+        # without the permission to configure the contact form.
+        member = create(Builder('user')
+                        .named('Hugo', 'Boss')
+                        .with_roles('Member'))
+        browser.login(member).visit(self.portal)
+        self.assertIsNone(browser.find(action_link_label))
+
+        # Give the user the permission to configure the contact form and
+        # make sure the user can see the action.
+        permissions = 'plonetheme.onegovbear: Customize Design Variables'
+        self.portal.manage_permission(permissions, roles=['Member'],
+                                      acquire=False)
+        transaction.commit()
+        browser.visit(self.portal)
+        self.assertEqual(
+            action_link_url,
+            browser.find(action_link_label).attrib['href']
         )
