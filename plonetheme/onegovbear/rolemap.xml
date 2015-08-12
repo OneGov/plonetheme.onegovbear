@@ -4,6 +4,7 @@
 
         <permission name="plonetheme.onegovbear: Customize Design Variables" acquire="False">
             <role name="Manager" />
+            <role name="Site Manager" />
         </permission>
 
     </permissions>
