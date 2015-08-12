@@ -6,7 +6,7 @@ from plonetheme.onegovbear.browser.forms import VARIABLES_ANNOTATION_KEY
 from plonetheme.onegovbear.interfaces import ICustomDesignVariablesSchema
 from zope.annotation import IAnnotations
 from zope.component import queryMultiAdapter
-from zope.interface import implements
+from zope.interface import provider
 from zope.schema import getFields, getFieldNamesInOrder
 
 
@@ -62,15 +62,9 @@ class CustomDesignVariablesSCSSResource(SCSSResource):
         return annotations.get(TIMESTAMP_ANNOTATION_KEY, None)
 
 
-class CustomDesignVariablesResourceFactory(object):
-    implements(ISCSSResourceFactory)
-    annotations_key = VARIABLES_ANNOTATION_KEY
-
-    def __call__(self, context, request):
-        self.context = context
-        self.request = request
-        return CustomDesignVariablesSCSSResource(
-            name='plonetheme.onegovbear.custom_design_variables.scss',
-            slot='variables')
-
-factory = CustomDesignVariablesResourceFactory()
+@provider(ISCSSResourceFactory)
+def custom_design_variables_resource_factory(context, request):
+    return CustomDesignVariablesSCSSResource(
+        'plonetheme.onegovbear.custom_design_variables.scss',
+        slot='addon',
+    )
