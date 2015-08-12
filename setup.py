@@ -5,7 +5,6 @@ version = '1.0.0.dev0'
 
 tests_require = [
     'ftw.builder',
-    'ftw.subsite',
     'ftw.testbrowser',
     'plone.app.testing',
     ]
@@ -41,7 +40,6 @@ setup(name='plonetheme.onegovbear',
           'ftw.upgrade',
           'plone.directives.form',
           'plone.app.theming',
-          'plone.app.widgets',
           'setuptools',
       ],
 
