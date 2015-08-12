@@ -3,34 +3,42 @@ $searchbox-liveresults-hover-bg-color: darken($menu-bg-color, 5%) !default;
 $searchbox-liveresults-border-color: darken($menu-bg-color, 20%) !default;
 $searchbox-liveresults-border-radius: 5px !default;
 $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $saturation:90%);
+$searchbox-width: 295px;
 
 @include declare-variables(
   searchbox-liveresults-bg-color,
   searchbox-liveresults-hover-bg-color,
   searchbox-liveresults-border-color,
-  searchbox-liveresults-border-radius);
+  searchbox-liveresults-border-radius,
+  $searchbox-width);
 
 
 .portal-searchbox-wrapper{
-  float: none;
-  position: relative;
-  top: 0;
 
-  @include screen-medium {
-    top: -52px;
-  }
+  float: left;
+  width: $searchbox-width;
+  padding: 6px;
+  box-sizing: border-box;
+  margin-left: -$searchbox-width;
+  display: none;
+  z-index: 1;
+  right: 0;
 
   @include screen-large {
-    float: right;
+    display: block;
+    &.open {
+      position: static !important;
+      margin-left: -$searchbox-width !important;
+    }
   }
 
+  &.open {
+    display: block;
+    position: absolute;
+    margin-left: 0;
+  }
 
   #portal-searchbox {
-    display: none;
-
-    @include screen-large {
-      display: block;
-    }
 
     .searchSection {
       display: none;
@@ -41,30 +49,28 @@ $search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $satu
     }
 
     & #searchGadget {
-      width: 85px;
+      width: 135px;
       padding: .5em 35px .5em .5em;
-      position: absolute;
-      right: 0.55em;
-      z-index: 2;
+      float: right;
+      box-sizing: border-box;
       &:focus{
-          width: 221px;
+          width: 100%;
       }
     }
 
     .LSBox {
+      @include clearfix();
       position: relative;
-      top: 5px;
-      height: 0;
       &:before {
           font-family: FontAwesome;
           content: "\f002";
           position: absolute;
           z-index: 3;
-          right: 10px;
-          top: 6px;
+          right: 12px;
+          top: 12px;
           font-size: 14px;
-          padding: 6px 15px 6px 5px;
           background-color: transparent;
+          visibility: visible;
       }
       input[type="text"] {
         line-height: 20px;

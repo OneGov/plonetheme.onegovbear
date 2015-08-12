@@ -19,6 +19,8 @@ $globalnav-link-font-weight: normal !default;
 
 #portal-globalnav-wrapper {
   margin-right: 0;
+  float: left;
+  width: 100%;
   @include noselect();
   #portal-globalnav {
     display: none;
@@ -26,8 +28,10 @@ $globalnav-link-font-weight: normal !default;
     background-color: $globalnav-bg-color;
     margin: 0;
     padding: 0;
-    width: 100%;
     @include clearfix();
+    @include screen-large {
+      margin-right: 315px;
+    }
 
     > li {
       display: block;
@@ -59,8 +63,5 @@ $globalnav-link-font-weight: normal !default;
     @include screen-large {
       display: block;
     }
-  }
-  @include screen-large {
-    margin-right: 315px;
   }
 }
