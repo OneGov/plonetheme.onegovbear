@@ -130,5 +130,9 @@
         </replace>
     </rules>
 
+    <!-- Drop empty attributes on the logo image tag -->
+    <drop attributes="alt" content="//a[@id='portal-logo']/img[@alt='']" />
+    <drop attributes="title" content="//a[@id='portal-logo']/img[@title='']" />
+
   </rules>
 </rules>
