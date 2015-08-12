@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonetheme.onegovbear">
+
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="customize-design"
+        permission="plonetheme.onegovbear.CustomizeDesignVariables"
+        class=".forms.WrappedDesignVariablesForm"
+        />
+
+    <adapter factory=".forms.get_default_design_variables_schema" />
+
+</configure>

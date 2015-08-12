@@ -5,7 +5,9 @@ from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
+from plone.testing import z2
 from zope.configuration import xmlconfig
+import ftw.subsite.tests.builders
 
 
 class ThemeLayer(PloneSandboxLayer):
@@ -21,8 +23,12 @@ class ThemeLayer(PloneSandboxLayer):
             '</configure>',
             context=configurationContext)
 
+        z2.installProduct(app, 'ftw.simplelayout')
+        z2.installProduct(app, 'ftw.subsite')
+
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'plonetheme.onegovbear:default')
+        applyProfile(portal, 'ftw.subsite:default')
 
 
 THEME_FIXTURE = ThemeLayer()
