@@ -1,6 +1,7 @@
 from ftw.builder import Builder
 from ftw.builder import create
 from ftw.testbrowser import browsing
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plonetheme.onegovbear.browser.dynamic_scss_resources import custom_design_variables_resource_factory
 from plonetheme.onegovbear.browser.forms import VARIABLES_ANNOTATION_KEY
 from plonetheme.onegovbear.tests import FunctionalTestCase
@@ -41,7 +42,7 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             '$globalnav-bg-color': 'fuchsia',
         }).save()
 
-        page = create(Builder('subsite').titled(u'My Subsite'))
+        page = create(Builder('folder').titled(u'My Subsite').providing(INavigationRoot))
         browser.visit(page, view='customize-design')
         browser.fill({
             '$secondary-color': 'green',
@@ -55,7 +56,8 @@ class TestCustomSCSSVariables(FunctionalTestCase):
             scss_resource.get_source(page, self.request)
         )
 
-        page2 = create(Builder('subsite').titled(u'My Subsite').within(page))
+        page2 = create(Builder('folder').titled(u'My Subsite').within(page)
+                       .providing(INavigationRoot))
         browser.visit(page2, view='customize-design')
         browser.fill({
             '$primary-color': 'yellow',
