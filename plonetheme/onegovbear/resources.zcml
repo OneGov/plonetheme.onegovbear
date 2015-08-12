@@ -41,6 +41,7 @@
         <theme:scss file="theme/scss/additionallogo.scss" />
         <theme:scss file="theme/scss/languageselector.scss" />
         <theme:scss file="theme/scss/plonebrowser.scss" />
+        <theme:scss file="theme/scss/overlay.scss" />
 
         <theme:scss file="theme/scss/iconset.scss"
                     slot="bottom"
