@@ -14,5 +14,5 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
-msgid "customize SCSS variables"
+msgid "customize design variables"
 msgstr ""
