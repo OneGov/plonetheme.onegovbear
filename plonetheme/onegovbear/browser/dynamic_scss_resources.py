@@ -1,6 +1,6 @@
 from Acquisition import aq_chain
 from ftw.theming.interfaces import ISCSSResourceFactory
-from ftw.theming.resource import SCSSResource
+from ftw.theming.resource import DynamicSCSSResource
 from plonetheme.onegovbear.browser.forms import TIMESTAMP_ANNOTATION_KEY
 from plonetheme.onegovbear.browser.forms import VARIABLES_ANNOTATION_KEY
 from plonetheme.onegovbear.interfaces import ICustomDesignVariablesSchema
@@ -10,7 +10,7 @@ from zope.interface import provider
 from zope.schema import getFields, getFieldNamesInOrder
 
 
-class CustomDesignVariablesSCSSResource(SCSSResource):
+class CustomDesignVariablesSCSSResource(DynamicSCSSResource):
 
     def get_source(self, context, request):
         ancestor_variables = self._get_ancestor_variables(context)
