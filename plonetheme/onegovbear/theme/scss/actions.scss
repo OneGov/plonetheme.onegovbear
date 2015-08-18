@@ -9,6 +9,7 @@
   /* Anonymous: list actions by floating */
   > ul {
     @include ul(inline);
+    margin-left: 1em;
     li {
       @include linklist;
     }
