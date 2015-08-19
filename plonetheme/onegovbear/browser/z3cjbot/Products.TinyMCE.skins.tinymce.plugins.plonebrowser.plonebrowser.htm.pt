@@ -14,7 +14,8 @@
   <link rel="stylesheet" type="text/css" tal:attributes="href context/theming.css/get_url" />
   <!-- PATCH END -->
 </head>
-<body id="plonebrowser">
+<!-- PATCHED - class="icons-on" -->
+<body id="plonebrowser" class="icons-on">
   <div class="dialog-wrapper icons-on" id="content">
 
         <div id="linktype_panel">
@@ -53,7 +54,7 @@
                     <a id="thumbview" href="" title="Thumbnail view" class="current" i18n:attributes="title" i18n:domain="plone"><img src="img/display_thumbs.png" /></a>
                 </div>
                 <div class="action-icons">
-                    <a id="shortcutsicon" href="" title="Shortcuts" i18n:translate=""><img src="img/star.png" /></a>
+                    <a id="shortcutsicon" href="" title="" i18n:translate=""><img src="img/star.png" /></a>
                 </div>
                 <div id="shortcutsview">
                     <div id="item-template" class="shortcut"></div>
