@@ -181,6 +181,11 @@
         display: table-cell;
         padding-top: 1px;
         border-left: 1px solid $gray-light;
+
+        &:empty {
+          display: none;
+
+        }
         > img {
           display: none;
         }
