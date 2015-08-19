@@ -185,12 +185,15 @@
         }
         > a,
         span {
-          padding: 3px 5px 3px 5px;
+          padding: 0 5px 0 5px;
           border: 1px solid $gray-light;
+          border-left: none;
           border-left-width: 0;
           position: relative;
           display: inline-block;
           margin-top: -1px;
+          margin-right: -4px;
+          line-height: 25px;
           &:before {
             content: "";
             width: 0;
@@ -214,7 +217,7 @@
             top: -1px;
           }
           & + img + span {
-            margin-left: -23px;
+            margin-left: -29px;
             padding-left: 32px;
             border-left-width: 0;
           }
@@ -223,7 +226,7 @@
           border-left-width: 1px;
         }
         a {
-          margin-left: -23px;
+          margin-left: -29px;
           padding-left: 32px;
           &:first-of-type {
             padding-left: 6px;
