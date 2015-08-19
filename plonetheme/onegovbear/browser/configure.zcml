@@ -12,4 +12,11 @@
 
     <adapter factory=".forms.get_default_design_variables_schema" />
 
+    <include package="z3c.jbot" file="meta.zcml" />
+
+    <browser:jbot
+        directory="z3cjbot"
+        layer="plonetheme.onegovbear.interfaces.IOneGovBearLayer" />
+
+
 </configure>
