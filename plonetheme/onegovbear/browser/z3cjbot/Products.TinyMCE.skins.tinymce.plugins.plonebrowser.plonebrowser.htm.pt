@@ -10,6 +10,9 @@
   <link rel="stylesheet" type="text/css" href="css/plonebrowser.css" />
   <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/portal_css/columns.css" />
   <link rel="stylesheet" type="text/css" href="css/plonebrowser.css" />
+  <!-- PATCH START -->
+  <link rel="stylesheet" type="text/css" tal:attributes="href context/theming.css/get_url" />
+  <!-- PATCH END -->
 </head>
 <body id="plonebrowser">
   <div class="dialog-wrapper icons-on" id="content">
