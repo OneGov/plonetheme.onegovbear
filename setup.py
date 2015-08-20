@@ -41,6 +41,7 @@ setup(name='plonetheme.onegovbear',
           'plone.directives.form',
           'plone.app.theming',
           'setuptools',
+          'z3c.jbot',
       ],
 
       tests_require=tests_require,
