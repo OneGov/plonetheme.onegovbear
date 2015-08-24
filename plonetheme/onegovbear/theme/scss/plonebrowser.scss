@@ -10,6 +10,10 @@
     width: 100% !important;
     height: 100% !important;
     margin-left: -5px;
+
+    &[src$="source_editor.htm"] {
+      height: 80% !important;
+    }
   }
   .mceMiddle span {
     left: 0;
@@ -19,6 +23,10 @@
     pointer-events: none;
     cursor: default;
   }
+
+  .mceWrapper .mceBottom .mceCenter {
+    background-color: transparent;
+ }
 }
 
 .mceActionPanel {
@@ -30,8 +38,16 @@
   font-size: $font-size-base !important;
 }
 
-#table #content.dialog-wrapper {
-  font-size: $font-size-base !important;
+#table {
+  #content.dialog-wrapper {
+    font-size: $font-size-base !important;
+  }
+  .panel_wrapper div.current {
+    height: auto;
+  }
+  .mceActionPanel {
+    margin-bottom: 50px;
+  }
 }
 
 #summary {
@@ -66,6 +82,7 @@
   }
   #insert-selection {
     float: right;
+    margin-bottom: 2em;
   }
   #upload-button {
     img {
@@ -284,5 +301,9 @@
     padding-top: 10px;
     margin-top: 10px;
     border-top: 1px solid $gray-light;
+
+    .mceBottom .mceCenter {
+      background-color: transparent;
+    }
   }
 }
