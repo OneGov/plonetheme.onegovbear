@@ -10,6 +10,10 @@
     width: 100% !important;
     height: 100% !important;
     margin-left: -5px;
+
+    &[src$="source_editor.htm"] {
+      height: 80% !important;
+    }
   }
   .mceMiddle span {
     left: 0;

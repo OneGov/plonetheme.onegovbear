@@ -143,3 +143,9 @@ font-weight: normal;
 }
 
 .verticalborder { height: 330px; width: 0px; border-right: 0.1em solid #329FD7; margin: 10px 20px 10px 20px }
+
+/* PATCHED */
+
+form#source .mceActionPanel {
+    margin-top: -3px;
+}
