@@ -70,6 +70,7 @@
   }
   #insert-selection {
     float: right;
+    margin-bottom: 2em;
   }
   #upload-button {
     img {
@@ -288,5 +289,9 @@
     padding-top: 10px;
     margin-top: 10px;
     border-top: 1px solid $gray-light;
+
+    .mceBottom .mceCenter {
+      background-color: transparent;
+    }
   }
 }
