@@ -23,6 +23,10 @@
     pointer-events: none;
     cursor: default;
   }
+
+  .mceWrapper .mceBottom .mceCenter {
+    background-color: transparent;
+ }
 }
 
 .mceActionPanel {
@@ -34,8 +38,16 @@
   font-size: $font-size-base !important;
 }
 
-#table #content.dialog-wrapper {
-  font-size: $font-size-base !important;
+#table {
+  #content.dialog-wrapper {
+    font-size: $font-size-base !important;
+  }
+  .panel_wrapper div.current {
+    height: auto;
+  }
+  .mceActionPanel {
+    margin-bottom: 50px;
+  }
 }
 
 #summary {
