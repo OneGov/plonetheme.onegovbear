@@ -9,6 +9,9 @@
     <script type="text/javascript" src="../../utils/editable_selects.js"></script>
     <script type="text/javascript" src="js/table.js"></script>
     <link href="css/table.css" rel="stylesheet" type="text/css" />
+  <!-- PATCH START -->
+  <link rel="stylesheet" type="text/css" tal:attributes="href context/theming.css/get_url" />
+  <!-- PATCH END -->
 
 </head>
 <body id="table" role="application" aria-labelledby="app_title">
