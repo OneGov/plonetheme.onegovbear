@@ -33,6 +33,18 @@ table.mceLayout {
 
 body.mceContentBody {
   padding: 0.5em;
+
+  a {
+    color: $link-color !important;
+    font-weight: $link-font-weight;
+    text-decoration: $link-decoration !important;
+    border-bottom: none !important;
+
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+  }
 }
 
 
