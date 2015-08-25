@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-12 15:43+0000\n"
+"POT-Creation-Date: 2015-08-24 15:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,11 +14,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
-#: ./plonetheme/onegovbear/browser/forms.py:173
+#: ./plonetheme/onegovbear/browser/forms.py:272
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ./plonetheme/onegovbear/browser/forms.py:170
+#: ./plonetheme/onegovbear/browser/forms.py:269
 msgid "Changes saved"
 msgstr "Änderungen gespeichert"
 
@@ -26,29 +26,195 @@ msgstr "Änderungen gespeichert"
 msgid "Customize design"
 msgstr "Design anpassen"
 
-#: ./plonetheme/onegovbear/browser/forms.py:179
+#: ./plonetheme/onegovbear/browser/forms.py:278
 msgid "Edit cancelled"
 msgstr "Bearbeiten abgebrochen"
 
-#: ./plonetheme/onegovbear/browser/forms.py:155
+#: ./plonetheme/onegovbear/browser/forms.py:254
 msgid "Save"
 msgstr "Speichern"
 
 msgid "customize design variables"
 msgstr "Design-Variablen anpassen"
 
-#. Default: "This form can be used to customize a selection of the design variable defined in this theme."
+#. Default: "Color of button related to the current context."
+#: ./plonetheme/onegovbear/browser/forms.py:75
+msgid "label_button_context_color"
+msgstr "Farbe der Knöpfe, die sich auf den aktuellen Kontext beziehen."
+
+#. Default: "Color of buttons causing a dangerous action."
+#: ./plonetheme/onegovbear/browser/forms.py:91
+msgid "label_button_danger_color"
+msgstr "Farbe für Knöpfe, welche eine gefährliche Aktion auslösen."
+
+#. Default: "Color of buttons causing a destructive action, e.g. deleting content."
+#: ./plonetheme/onegovbear/browser/forms.py:79
+msgid "label_button_destructive_color"
+msgstr "Farbe für Knöpfe, welche eine destruktive Aktion auslösen, z.B. Inhalt löschen."
+
+#. Default: "Color of disabled buttons i.e. not causing an action."
+#: ./plonetheme/onegovbear/browser/forms.py:95
+msgid "label_button_disabled_color"
+msgstr "Farbe für inaktive Knöpfe, d.h. Knöpfe, die keine Aktion auslösen oder nicht geklickt werden können."
+
+#. Default: "Color of the standalone button, e.g. \"cancel\" buttons."
+#: ./plonetheme/onegovbear/browser/forms.py:71
+#, fuzzy
+msgid "label_button_standalone_color"
+msgstr "Farbe für Standalone-Knöpfe, z.B. \"Abbrechen\"-Knöpfe."
+
+#. Default: "Color of buttons conveying a successful action."
+#: ./plonetheme/onegovbear/browser/forms.py:83
+msgid "label_button_success_color"
+msgstr "Farbe für Knöpfe, welche erfolgreiche Aktion auslösen, z.B. Speichern eines Dokuments."
+
+#. Default: "A dark color for buttons with light colors (applied automatically for maximum contrast)."
+#: ./plonetheme/onegovbear/browser/forms.py:103
+msgid "label_button_text_dark_color"
+msgstr "Eine dunkle Farbe für das Label von Knöpfen mit heller Hintergrundfarbe."
+
+#. Default: "A light color for buttons with dark colors (applied automatically for maximum contrast)."
+#: ./plonetheme/onegovbear/browser/forms.py:99
+msgid "label_button_text_light_color"
+msgstr "Eine helle Farbe für das Label von Knöpfen mit dunkler Hintergrundfarbe."
+
+#. Default: "Color of buttons causing an action the user should be warned about."
+#: ./plonetheme/onegovbear/browser/forms.py:87
+msgid "label_button_warning_color"
+msgstr "Farbe für Knöpfe, die eine Aktion auslösen, vor welcher der Benutzer gewarnt werden muss."
+
+#. Default: "Base font family."
+#: ./plonetheme/onegovbear/browser/forms.py:123
+msgid "label_font_family_base"
+msgstr "Basis-Schriftfamilie"
+
+#. Default: "Base font size."
+#: ./plonetheme/onegovbear/browser/forms.py:131
+msgid "label_font_size_base"
+msgstr "Basis-Schriftgrösse, z.B. für Inhaltstext."
+
+#. Default: "Font size of the largest heading (H1)."
+#: ./plonetheme/onegovbear/browser/forms.py:135
+msgid "label_font_size_h1"
+msgstr "Schriftgrösse der grössten Überschrift (H1)."
+
+#. Default: "Font size of the second level heading (H2)."
+#: ./plonetheme/onegovbear/browser/forms.py:139
+msgid "label_font_size_h2"
+msgstr "Schriftgrösse der zweiten Überschrift (H2)."
+
+#. Default: "Font size of the third level heading (H3)."
+#: ./plonetheme/onegovbear/browser/forms.py:143
+msgid "label_font_size_h3"
+msgstr "Schriftgrösse der dritten Überschrift (H3)."
+
+#. Default: "Background color of the footer."
+#: ./plonetheme/onegovbear/browser/forms.py:107
+msgid "label_footer_background_color"
+msgstr "Hintergrundfarbe der Links im Footer"
+
+#. Default: "The color used for elements inside the footer, e.g. text."
+#: ./plonetheme/onegovbear/browser/forms.py:111
+msgid "label_footer_font_color"
+msgstr "Farbe der Elemente im Footer, z.B. nicht verlinkter Text."
+
+#. Default: "The color of the links inside the footer."
+#: ./plonetheme/onegovbear/browser/forms.py:115
+msgid "label_footer_link_color"
+msgstr "Farbe der Links im Footer."
+
+#. Default: "The color the links inside the footer change to when the mouse is moved over them."
+#: ./plonetheme/onegovbear/browser/forms.py:119
+msgid "label_footer_link_color_hover"
+msgstr "Farbe der Links im Footer, wenn man mit der Maus über den Link fährt."
+
+#. Default: "The color used for the background of the global navigation."
+#: ./plonetheme/onegovbear/browser/forms.py:51
+msgid "label_globalnav_bg_color"
+msgstr "Hintergrundfarbe der Hauptnavigation."
+
+#. Default: "The color the background of the global navigation changes to when the mouse is moved over it."
+#: ./plonetheme/onegovbear/browser/forms.py:55
+msgid "label_globalnav_bg_color_hover"
+msgstr "Hintergrundfarbe der Hauptnavigation, wenn man mit der Maus darüber fährt."
+
+#. Default: "The color of the text of the global navigation items."
+#: ./plonetheme/onegovbear/browser/forms.py:59
+msgid "label_globalnav_link_color"
+msgstr "Textfarbe der einzelnen Knöpfe in der Hauptnavigation."
+
+#. Default: "The color the text of the global navigation items changes to when the mouse is moved over it."
+#: ./plonetheme/onegovbear/browser/forms.py:63
+msgid "label_globalnav_link_color_hover"
+msgstr "Textfarbe der einzelnen Knöpfe in der Hauptnavigation, wenn man mit der Maus darüber fährt."
+
+#. Default: "The color of the separator of the global navigation items."
+#: ./plonetheme/onegovbear/browser/forms.py:67
+msgid "label_globalnav_separator_color"
+msgstr "Die Farbe des Trenners zwischen den Knöpfen in der Hauptnavigation."
+
+#. Default: "A gray which is lighter than $gray-dark."
+#: ./plonetheme/onegovbear/browser/forms.py:163
+msgid "label_gray"
+msgstr "Ein Grau, das etwas heller ist als $gray-dark."
+
+#. Default: "The base gray. Other shades of gray are derived from this color."
+#: ./plonetheme/onegovbear/browser/forms.py:151
+msgid "label_gray_base"
+msgstr "Das Basis-Grau. Die anderen Grautönen werden von diesem Wert abgeleitet."
+
+#. Default: "A gray which is lighter than $gray-darker."
+#: ./plonetheme/onegovbear/browser/forms.py:159
+msgid "label_gray_dark"
+msgstr "Ein Grau, das etwas heller ist als $gray-darker."
+
+#. Default: "A gray which is lighter than $gray-base."
+#: ./plonetheme/onegovbear/browser/forms.py:155
+msgid "label_gray_darker"
+msgstr "Ein Grau, das etwas heller ist als $gray-base."
+
+#. Default: "A gray which is lighter than $gray."
+#: ./plonetheme/onegovbear/browser/forms.py:167
+msgid "label_gray_light"
+msgstr "Ein Grau, das etwas heller ist als $gray."
+
+#. Default: "A gray which is lighter than $gray-light."
+#: ./plonetheme/onegovbear/browser/forms.py:171
+msgid "label_gray_lighter"
+msgstr "Ein Grau, das etwas heller ist als $gray-light."
+
+#. Default: "Base line height."
 #: ./plonetheme/onegovbear/browser/forms.py:127
+msgid "label_line_height_base"
+msgstr "Basis-Zeilenabstand"
+
+#. Default: "Background color of the page."
+#: ./plonetheme/onegovbear/browser/forms.py:147
+msgid "label_page_bg_color"
+msgstr "Hintergrundfarbe der Webseite."
+
+#. Default: "The default color used if no other color has been defined."
+#: ./plonetheme/onegovbear/browser/forms.py:43
+msgid "label_primary_color"
+msgstr "Die Primärfarbe."
+
+#. Default: "Used for the background color of the edit bar, the link color of the language selector and service navigation."
+#: ./plonetheme/onegovbear/browser/forms.py:47
+msgid "label_secondary_color"
+msgstr "Wird für die Hintergrundfarbe der Edit-Leiste, die Farbe der Links im Sprachumschalter und der Links der Servicenavigation verwendet."
+
+#. Default: "This form can be used to customize a selection of the design variable defined in this theme."
+#: ./plonetheme/onegovbear/browser/forms.py:226
 msgid "variables_form_description"
 msgstr "Dieses Formular dient dem Anpassen von einigen ausgewählten Design-Variablen des Themes."
 
 #. Default: "Variables will be inherited from the ancestors."
-#: ./plonetheme/onegovbear/browser/forms.py:134
+#: ./plonetheme/onegovbear/browser/forms.py:233
 msgid "variables_form_description_inheritance"
 msgstr "Variablen werden von den übergeordneten Inhalten geerbet, falls sie dort angepasst worden sind."
 
 #. Default: "Custom design variables (SCSS)"
-#: ./plonetheme/onegovbear/browser/forms.py:120
+#: ./plonetheme/onegovbear/browser/forms.py:219
 msgid "variables_form_label"
 msgstr "Design-Variablen überschreiben (SCSS)"
 
