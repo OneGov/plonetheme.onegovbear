@@ -33,7 +33,6 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
 }
 
 .overlay, .contenttreeWindow {
-  display: none;
   background-color: $content-bg-color;
   padding: 0.3em;
   @include boxsizing(border-box);
