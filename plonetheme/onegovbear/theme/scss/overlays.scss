@@ -38,8 +38,8 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
   padding: 0.3em;
   @include boxsizing(border-box);
   @include boxshadow(0.1em 0.1em 1em 0 $gray-dark);
-  @include borderradius-top-left(10px);
-  @include borderradius-top-right(10px);
+  @include borderradius(10px);
+  padding-bottom: 60px;
   z-index: 1000 !important;
 
   position: fixed !important;
@@ -84,7 +84,7 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
 
   .formControls {
     position: absolute;
-    bottom: -58px;
+    bottom: 0;
     left: 0;
     padding: 0 20px 10px 20px;
     box-sizing: border-box;
