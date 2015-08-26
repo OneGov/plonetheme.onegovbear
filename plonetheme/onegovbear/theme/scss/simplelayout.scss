@@ -5,14 +5,11 @@ $action-bg-color-hover: $gray-light;
 $column-bg-color: $gray-light;
 
 $block-placeholder-bg-color: $gray;
-$block-placeholder-border-size: 1px;
-$block-placeholder-border-style: dotted;
-$block-placeholder-border-color: $gray-dark;
 
 $layout-placeholder-bg-color: $block-placeholder-bg-color;
-$layout-placeholder-border-size: $block-placeholder-border-size;
-$layout-placeholder-border-style: $block-placeholder-border-style;
-$layout-placeholder-border-color: $block-placeholder-border-color;
+$layout-placeholder-border-size: 1px;
+$layout-placeholder-border-style: dotted;
+$layout-placeholder-border-color: $gray-dark;
 
 $simplelayout-gutter-width: $gutter-width !default;
 $simplelayout-columns: $columns !default;
@@ -52,17 +49,10 @@ ul[class^="sl-toolbar"] {
   }
 }
 
-.sl-column {
-  .block-placeholder {
-    margin-bottom: 1px;
-  }
-}
-
 .sl-layout {
   @include clearfix();
   .block-placeholder {
     background-color: $block-placeholder-bg-color;
-    border: $block-placeholder-border-size $block-placeholder-border-style $block-placeholder-border-color;
   }
 }
 
@@ -145,9 +135,5 @@ ul[class^="sl-toolbar"] {
         }
       }
     }
-  }
-
-  .block-placeholder {
-    margin-bottom: 1px;
   }
 }
