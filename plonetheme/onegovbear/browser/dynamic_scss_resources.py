@@ -66,5 +66,6 @@ class CustomDesignVariablesSCSSResource(DynamicSCSSResource):
 def custom_design_variables_resource_factory(context, request):
     return CustomDesignVariablesSCSSResource(
         'plonetheme.onegovbear.custom_design_variables.scss',
-        slot='addon',
+        slot='variables',
+        before='ftw.theming:portal_url',
     )
