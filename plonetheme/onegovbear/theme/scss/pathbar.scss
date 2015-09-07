@@ -13,6 +13,12 @@ $pathbar-font-weight: normal !default;
   margin-bottom: 2em;
   display:none;
 
+  #breadcrumbs-you-are-here {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
   #portal-breadcrumbs {
     width: 100%;
     background-color: $pathbar-bg-color;
