@@ -1,5 +1,7 @@
 #accesskeys {
-  > a:focus,
+  @include ul(inline);
+
+  > li > a:focus,
   #portal-searchbox > a[accesskey]:focus {
     background-color: $primary-color;
     color: #fff;
@@ -14,5 +16,6 @@
     top: 0;
     width: auto;
     z-index: 999;
+    line-height: 27px;
   }
 }

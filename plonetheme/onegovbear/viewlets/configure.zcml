@@ -10,4 +10,13 @@
     layer="plonetheme.onegovbear.interfaces.IOneGovBearLayer"
     />
 
+    <!-- The skip links for accessibility -->
+    <browser:viewlet
+        name="plone.skip_links"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".accesskeys.OneGovBearSkipLinksViewlet"
+        permission="zope2.View"
+        layer="plonetheme.onegovbear.interfaces.IOneGovBearLayer"
+        />
+
 </configure>
