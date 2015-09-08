@@ -1,0 +1,14 @@
+<ul class="hiddenStructure" id="accesskeys"
+   i18n:domain="plonetheme.onegovbear"
+   tal:define="url view/current_page_url">
+    <li>
+        <a accesskey="2"
+           tal:attributes="href string:${url}#content"
+           i18n:translate="label_skiptocontent">Content</a>
+    </li>
+    <li>
+        <a accesskey="6"
+           tal:attributes="href string:${url}#portal-globalnav"
+           i18n:translate="label_skiptonavigation">Navigation</a>
+    </li>
+</ul>

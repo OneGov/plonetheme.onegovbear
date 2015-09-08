@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-24 15:29+0000\n"
+"POT-Creation-Date: 2015-09-08 06:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -200,6 +200,16 @@ msgstr ""
 #. Default: "Used for the background color of the edit bar, the link color of the language selector and service navigation."
 #: ./plonetheme/onegovbear/browser/forms.py:47
 msgid "label_secondary_color"
+msgstr ""
+
+#. Default: "Content"
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:5
+msgid "label_skiptocontent"
+msgstr ""
+
+#. Default: "Navigation"
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:10
+msgid "label_skiptonavigation"
 msgstr ""
 
 #. Default: "This form can be used to customize a selection of the design variable defined in this theme."
