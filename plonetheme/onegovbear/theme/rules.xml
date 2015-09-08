@@ -62,6 +62,9 @@
     </rules>
 
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
+    <!-- Move hidden h2 of global section too -->
+    <before css:content="#portal-header > h2" css:theme="#portal-globalnav"/>
+
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
 
