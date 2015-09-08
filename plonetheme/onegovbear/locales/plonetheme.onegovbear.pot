@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-08 07:20+0000\n"
+"POT-Creation-Date: 2015-09-08 12:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,10 @@ msgstr ""
 
 #: ./plonetheme/onegovbear/browser/forms.py:278
 msgid "Edit cancelled"
+msgstr ""
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:3
+msgid "Navigation on ${title}"
 msgstr ""
 
 #: ./plonetheme/onegovbear/browser/forms.py:254
@@ -203,17 +207,17 @@ msgid "label_secondary_color"
 msgstr ""
 
 #. Default: "Contact"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:11
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:14
 msgid "label_skiptocontact"
 msgstr ""
 
 #. Default: "Content"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:6
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:9
 msgid "label_skiptocontent"
 msgstr ""
 
 #. Default: "Navigation"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:16
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:19
 msgid "label_skiptonavigation"
 msgstr ""
 

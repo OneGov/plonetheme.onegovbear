@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-08 07:20+0000\n"
+"POT-Creation-Date: 2015-09-08 12:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Design anpassen"
 #: ./plonetheme/onegovbear/browser/forms.py:278
 msgid "Edit cancelled"
 msgstr "Bearbeiten abgebrochen"
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:3
+msgid "Navigation on ${title}"
+msgstr "Navigieren auf ${title}"
 
 #: ./plonetheme/onegovbear/browser/forms.py:254
 msgid "Save"

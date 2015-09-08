@@ -8,5 +8,6 @@ class OneGovBearSkipLinksViewlet(common.SkipLinksViewlet):
 
     def update(self):
         super(OneGovBearSkipLinksViewlet, self).update()
-        self.nav_root_url = api.portal.get_navigation_root(
-            self.context).absolute_url()
+        nav_root = api.portal.get_navigation_root(self.context)
+        self.nav_root_url = nav_root.absolute_url()
+        self.nav_root_title = nav_root.Title()
