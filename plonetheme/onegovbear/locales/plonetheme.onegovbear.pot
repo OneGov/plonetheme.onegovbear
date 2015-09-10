@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-08 13:41+0000\n"
+"POT-Creation-Date: 2015-09-10 08:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,24 @@ msgstr ""
 msgid "Changes saved"
 msgstr ""
 
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:10
+msgid "Content navigation"
+msgstr ""
+
 #: ./plonetheme/onegovbear/profiles/default/actions.xml
 msgid "Customize design"
 msgstr ""
 
 #: ./plonetheme/onegovbear/browser/forms.py:278
 msgid "Edit cancelled"
+msgstr ""
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:18
+msgid "Footer"
+msgstr ""
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:14
+msgid "Further informations"
 msgstr ""
 
 #: ./plonetheme/onegovbear/viewlets/accesskeys.pt:7
@@ -211,17 +223,17 @@ msgid "label_secondary_color"
 msgstr ""
 
 #. Default: "Contact"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:18
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:31
 msgid "label_skiptocontact"
 msgstr ""
 
 #. Default: "Content"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:13
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:26
 msgid "label_skiptocontent"
 msgstr ""
 
 #. Default: "Navigation"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:23
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:36
 msgid "label_skiptonavigation"
 msgstr ""
 

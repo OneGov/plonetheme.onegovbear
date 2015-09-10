@@ -7,6 +7,19 @@
         Navigation on <span i18n:name="title" tal:replace="view/nav_root_title" />
     </h1>
 
+    <h1 id="hidden_content_navigation_title"
+        i18n:translate=""
+        class="hiddenStructure">Content navigation</h1>
+
+    <h1 class="hiddenStructure"
+        id="hidden_further_infos_title"
+        i18n:translate="">Further informations</h1>
+
+    <h1 class="hiddenStructure"
+        id="hidden_footer_title"
+        i18n:translate="">Footer</h1>
+
+
     <ul tal:define="url view/current_page_url;
                     nav_root_url view/nav_root_url">
         <li>

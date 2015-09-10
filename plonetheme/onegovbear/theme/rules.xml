@@ -93,6 +93,23 @@
     <!-- copy missing accesskeys -->
     <replace css:theme="#accesskeys" css:content="#accesskeys" />
 
+    <!-- Move hidden titles from accesskeys viewlet to place, where they belong -->
+    <drop css:content="#hidden_content_navigation_title" />
+    <before css:theme="#column-navigation">
+        <xsl:copy-of css:select="#hidden_content_navigation_title"/>
+    </before>
+
+    <drop css:content="#hidden_further_infos_title" />
+    <before css:theme="#column-sidebar">
+        <xsl:copy-of css:select="#hidden_further_infos_title"/>
+    </before>
+
+    <drop css:content="#hidden_footer_title" />
+    <before css:theme="#footer">
+        <xsl:copy-of css:select="#hidden_footer_title"/>
+    </before>
+
+
     <replace css:content-children="#portal-column-one" css:theme-children="#column-navigation" />
     <replace css:content-children="#portal-column-content" css:theme-children="#column-content" />
     <replace css:content-children="#portal-column-two" css:theme-children="#column-sidebar" />
