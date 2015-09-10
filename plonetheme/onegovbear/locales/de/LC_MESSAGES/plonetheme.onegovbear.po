@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-08 07:20+0000\n"
+"POT-Creation-Date: 2015-09-10 08:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr "Abbrechen"
 msgid "Changes saved"
 msgstr "Änderungen gespeichert"
 
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:10
+msgid "Content navigation"
+msgstr "Inhalts Navigation"
+
 #: ./plonetheme/onegovbear/profiles/default/actions.xml
 msgid "Customize design"
 msgstr "Design anpassen"
@@ -29,6 +33,22 @@ msgstr "Design anpassen"
 #: ./plonetheme/onegovbear/browser/forms.py:278
 msgid "Edit cancelled"
 msgstr "Bearbeiten abgebrochen"
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:18
+msgid "Footer"
+msgstr "Fusszeile"
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:14
+msgid "Further informations"
+msgstr "Weitere Informationen."
+
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:7
+msgid "Navigation on ${title}"
+msgstr "Navigieren auf ${title}"
+
+#: ./plonetheme/onegovbear/viewlets/pathbar.pt:6
+msgid "Pathbar"
+msgstr "Pfadleiste"
 
 #: ./plonetheme/onegovbear/browser/forms.py:254
 msgid "Save"
@@ -204,17 +224,17 @@ msgid "label_secondary_color"
 msgstr "Wird für die Hintergrundfarbe der Edit-Leiste, die Farbe der Links im Sprachumschalter und der Links der Servicenavigation verwendet."
 
 #. Default: "Contact"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:11
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:31
 msgid "label_skiptocontact"
 msgstr "Kontakt"
 
 #. Default: "Content"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:6
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:26
 msgid "label_skiptocontent"
 msgstr "Inhalt"
 
 #. Default: "Navigation"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:16
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:36
 msgid "label_skiptonavigation"
 msgstr "Navigation"
 

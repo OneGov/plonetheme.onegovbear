@@ -62,9 +62,18 @@
     </rules>
 
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
+    <!-- Move hidden h2 of global section too -->
+    <before css:content="#portal-header > h2.hiddenStructure" css:theme="#portal-globalnav"/>
+
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
-    <replace css:content="#portal-languageselector" css:theme="#portal-languageselector" />
+
+    <rules if-content="not(//*[@id='portal-languageselector-wrapper'])">
+        <replace css:content="#portal-languageselector" css:theme="#portal-languageselector" />
+    </rules>
+    <rules if-content="//*[@id='portal-languageselector-wrapper']">
+        <replace css:content="#portal-languageselector-wrapper" css:theme="#portal-languageselector-wrapper" />
+    </rules>
 
     <replace css:content="#service-navigation" css:theme="#service-navigation" />
     <replace css:content="ul.mobileButtons" css:theme="ul.mobileButtons" />
@@ -82,7 +91,24 @@
     <drop css:content="div.documentActions" />
 
     <!-- copy missing accesskeys -->
-    <replace css:theme-children="#accesskeys" css:content="#accesskeys li" />
+    <replace css:theme="#accesskeys" css:content="#accesskeys" />
+
+    <!-- Move hidden titles from accesskeys viewlet to place, where they belong -->
+    <drop css:content="#hidden_content_navigation_title" />
+    <before css:theme="#column-navigation">
+        <xsl:copy-of css:select="#hidden_content_navigation_title"/>
+    </before>
+
+    <drop css:content="#hidden_further_infos_title" />
+    <before css:theme="#column-sidebar">
+        <xsl:copy-of css:select="#hidden_further_infos_title"/>
+    </before>
+
+    <drop css:content="#hidden_footer_title" />
+    <before css:theme="#footer">
+        <xsl:copy-of css:select="#hidden_footer_title"/>
+    </before>
+
 
     <replace css:content-children="#portal-column-one" css:theme-children="#column-navigation" />
     <replace css:content-children="#portal-column-content" css:theme-children="#column-content" />

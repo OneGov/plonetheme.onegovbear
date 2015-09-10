@@ -1,4 +1,4 @@
-#accesskeys {
+#accesskeys ul {
   @include ul(inline);
 
   > li > a:focus,

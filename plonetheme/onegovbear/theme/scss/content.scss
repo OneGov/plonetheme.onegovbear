@@ -48,6 +48,9 @@ dl {
   padding: 0;
   margin: -0.1em 0 0 -0.1em !important;
   width: 1px;
+  left: -1000px;
+  top: -1000px;
+  position: absolute;
 }
 
 #content .visualNoMarker {
