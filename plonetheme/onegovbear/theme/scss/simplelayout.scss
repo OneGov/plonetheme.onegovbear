@@ -77,7 +77,9 @@ ul[class^="sl-toolbar"] {
 // If user is permitted to edit the simplelayout page
 .documentEditable {
   .sl-column:empty {
-    outline: 2px dashed rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 5px 1px #000;
+    -webkit-box-shadow: 0 0 5px 1px #000;
+    box-shadow: 0 0 5px 1px #000;
   }
   .sl-block {
     @include transition(box-shadow .3s ease-out);
