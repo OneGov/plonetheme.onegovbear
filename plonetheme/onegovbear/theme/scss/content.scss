@@ -103,3 +103,13 @@ dl.collapsible {
 iframe {
   border: none;
 }
+
+#folderlisting-main-table #listing-table .draggable.draggingHook {
+  font-size: 0;
+  @extend .fa-icon;
+  @extend .fa-bars;
+  &:before {
+    font-size: 20px;
+    padding-left: 15px;
+  }
+}
