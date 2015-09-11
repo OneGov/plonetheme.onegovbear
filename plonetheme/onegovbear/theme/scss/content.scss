@@ -15,10 +15,6 @@ a,
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
   }
-  &:focus {
-    outline: $link-focus-color solid 5px;
-    background-color: $link-focus-color;
-  }
 }
 
 fieldset {
