@@ -8,7 +8,7 @@ $portal-top-bg-color: $page-bg-color !default;
   padding: 0;
 
   @include screen-large {
-    padding: 0.25em 0;
+    padding: 7px 0;
   }
 
   background-color: $portal-top-bg-color;
