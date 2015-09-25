@@ -50,6 +50,7 @@ body {
 
   #portal-logo {
     img {
+      float: left;
       max-height: 50px;
       width: auto;
       @include screen-small {
