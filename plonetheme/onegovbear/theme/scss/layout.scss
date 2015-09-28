@@ -38,11 +38,8 @@ body {
   }
 
   .logoRow {
-    padding: 10px 5px;
     box-sizing: border-box;
-    @include screen-large {
-      padding: 30px 0;
-    }
+    padding: 30px 0;
     > .cell {
       display: table;
     }
