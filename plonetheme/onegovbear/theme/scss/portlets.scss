@@ -4,6 +4,10 @@ $portlet-column-bg-color: $gray-lighter !default;
   portlet-column-bg-color);
 
 
+.template-folder_contents.has-sidebar-column #column-sidebar {
+  display: none;
+}
+
 
 #column-navigation, #column-sidebar {
 
