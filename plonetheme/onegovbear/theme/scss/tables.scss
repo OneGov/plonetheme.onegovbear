@@ -19,11 +19,21 @@ table {
     width: 100%;
     th, thead td {
       font-weight: bold;
+      text-align: left;
     }
 
     td, th {
       padding: 0.4em 1em;
       border: 1px solid $table-seperator-border-color;
+    }
+
+    tbody {
+      th {
+        background-color: $table-heading-bg-color;
+      }
+      tr:nth-child(odd) td {
+        background-color: $table-odd-bg-color;
+      }
     }
 
   }
@@ -33,6 +43,7 @@ table {
 
     th, thead td {
       font-weight: bold;
+      text-align: left;
     }
 
     td, th {
@@ -75,8 +86,17 @@ table {
     }
 
     tbody {
-      td, th {
+      th {
         border-bottom: 1px solid $table-seperator-border-color;
+        background-color: $table-heading-bg-color;
+      }
+
+      tr:nth-child(odd) td {
+        background-color: $table-odd-bg-color;
+      }
+
+      td, th {
+        text-align: left;
       }
 
       tr:last-child {
@@ -111,10 +131,6 @@ table {
           }
         }
       }
-    }
-
-    tr.even {
-      background-color: $table-odd-bg-color;
     }
 
     tr.dragindicator {
