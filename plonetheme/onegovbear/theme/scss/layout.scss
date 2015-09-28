@@ -48,7 +48,7 @@ body {
   #portal-logo {
     img {
       float: left;
-      max-height: 50px;
+      max-height: 75px;
       width: auto;
       @include screen-small {
         max-height: none;
