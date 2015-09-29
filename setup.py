@@ -7,6 +7,7 @@ tests_require = [
     'ftw.builder',
     'ftw.testbrowser',
     'plone.app.testing',
+    'unittest2',
     ]
 
 setup(name='plonetheme.onegovbear',
