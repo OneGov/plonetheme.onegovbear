@@ -1,17 +1,18 @@
 h1 {
   font-size: $font-size-h1;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   line-height: 33.6px;
 }
 
 h2 {
   font-size: $font-size-h2;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 28px;
 }
 
 h3 {
   font-size: $font-size-h3;
+  margin-bottom: 12px;
 }
 
 h4 {
@@ -45,7 +46,7 @@ p {
   img {
     margin-bottom: 1em;
   }
-  ul {
+  ul, ol {
     margin-left: 0;
     padding-left: 20px;
     margin-top: 0;

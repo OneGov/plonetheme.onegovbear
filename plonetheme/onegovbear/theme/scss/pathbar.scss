@@ -8,6 +8,10 @@ $pathbar-font-weight: normal !default;
   pathbar-arrow-color,
   pathbar-text-color);
 
+.template-startpage #breadcrumbs-wrapper {
+  margin-top: 2em;
+}
+
 #breadcrumbs-wrapper {
   margin-top: 1em;
   margin-bottom: 2em;
