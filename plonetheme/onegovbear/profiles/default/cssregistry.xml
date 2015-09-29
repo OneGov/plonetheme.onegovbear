@@ -2,6 +2,7 @@
 <object name="portal_css">
 
     <stylesheet id="reset.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
+    <stylesheet id="print.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="authoring.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="columns.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
     <stylesheet id="public.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />

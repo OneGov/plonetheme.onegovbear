@@ -1,0 +1,113 @@
+@include print {
+  #header {
+    display: none;
+  }
+
+  #edit-bar {
+    display: none;
+  }
+
+  #portal-top {
+    display: none;
+  }
+
+  #accesskeys {
+    display: none;
+  }
+
+  #bottom-actions {
+    display: none;
+  }
+
+  #edit-bar {
+    display: none;
+  }
+
+  #viewlet-below-content {
+    display: none;
+  }
+
+  #breadcrumbs-wrapper {
+    display: none;
+  }
+
+
+  .portalMessage {
+    display: none !important;
+  }
+
+  .sl-toolbox {
+    display: none;
+  }
+
+  .sl-toolbar-block, .sl-toolbar-layout {
+    display: none;
+  }
+
+  .sliderWrapper {
+    display: none;
+  }
+
+  #colorbox {
+    display: none !important;
+  }
+
+  #cboxOverlay {
+    display: none !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  #columns {
+    margin: 0;
+  }
+
+  #column-content {
+    margin-left: -100%;
+    width: 100%;
+  }
+
+  a, a:hover, a:visited, a:active {
+   color: $link-color !important;
+   text-decoration: $link-decoration !important;
+  }
+
+  img,
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-before: avoid;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+  tr, td, th {
+      page-break-inside: avoid;
+      page-break-after: auto;
+  }
+
+  body {
+    padding: 0 !important;
+    background-color: #fff;
+  }
+
+  #page-wrapper {
+    width: 21cm;
+  }
+
+  @page {
+    size: 22cm 28in portrait;
+    margin: 2.5cm 2.5cm 2cm;
+    orphans: 8;
+    widows: 4;
+  }
+
+}
