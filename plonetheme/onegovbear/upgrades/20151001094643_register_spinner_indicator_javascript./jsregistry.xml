@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+
+    <javascript
+        id="++theme++plonetheme.onegovbear/js/spin.js"
+        enabled="True"
+        authenticated="True"
+        insert-after="kss-bbb.js"
+        />
+
+</object>
