@@ -49,13 +49,10 @@ $searchbox-width: 295px;
     }
 
     & #searchGadget {
-      width: 135px;
+      width: 100%;
       padding: .5em 35px .5em .5em;
       float: right;
       box-sizing: border-box;
-      &:focus{
-          width: 100%;
-      }
     }
 
     .LSBox {
