@@ -36,6 +36,9 @@ $portlet-column-bg-color: $gray-lighter !default;
   & .portletHeader {
     margin-bottom: 0.75em;
   }
+  .sl-column > .sl-block {
+    margin-bottom: 2em;
+  }
 }
 
 
