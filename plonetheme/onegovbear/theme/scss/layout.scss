@@ -20,6 +20,7 @@ body {
 
 #container {
   width: 100%;
+  float: left;
 }
 
 #page-wrapper {
@@ -27,7 +28,6 @@ body {
   max-width: $page-wrapper-width;
   margin: 0 auto;
   margin-bottom: 1em;
-  overflow: hidden;
 }
 
 #header {
