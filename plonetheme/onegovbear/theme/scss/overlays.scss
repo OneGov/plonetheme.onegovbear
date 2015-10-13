@@ -92,6 +92,10 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     right: 0;
+    > input {
+      // http://blog.getpostman.com/2015/01/23/ui-repaint-issue-on-chrome/
+      -webkit-transform: translate3d(0, 0, 0)
+    }
   }
 
   div.close {
