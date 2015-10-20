@@ -23,6 +23,7 @@ $searchbox-width: 295px;
   display: none;
   z-index: 1;
   right: 0;
+  height: 52px;
 
   @include screen-large {
     display: block;
@@ -50,7 +51,7 @@ $searchbox-width: 295px;
 
     & #searchGadget {
       width: 135px;
-      padding: .5em 35px .5em .5em;
+      padding: 9px 35px 9px 10px;
       float: right;
       box-sizing: border-box;
       &:focus{
@@ -73,7 +74,9 @@ $searchbox-width: 295px;
           visibility: visible;
       }
       input[type="text"] {
-        line-height: 20px;
+        border: none;
+        line-height: 22px;
+        height: 40px;
       }
     }
 
