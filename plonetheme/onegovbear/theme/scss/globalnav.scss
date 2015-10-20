@@ -17,6 +17,10 @@ $globalnav-link-font-weight: normal !default;
   globalnav-separator-width,
   globalnav-font-size);
 
+.navigation {
+  height: 52px;
+}
+
 #portal-globalnav-wrapper {
   margin-right: 0;
   float: left;
