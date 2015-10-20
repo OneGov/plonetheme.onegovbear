@@ -18,7 +18,9 @@ $globalnav-link-font-weight: normal !default;
   globalnav-font-size);
 
 .navigation {
-  height: 52px;
+  @include screen-large {
+    height: 52px;
+  }
 }
 
 #portal-globalnav-wrapper {
