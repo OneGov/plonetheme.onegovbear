@@ -73,6 +73,10 @@ body {
   }
 }
 
+#content-core {
+  @include clearfix();
+}
+
 #column-content {
   @include cell;
 
