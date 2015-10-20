@@ -67,6 +67,10 @@ body {
 
 #content {
   clear: both;
+  margin-top: 2em;
+  @include screen-large {
+    margin-top: 0;
+  }
 }
 
 #column-content {
