@@ -1,6 +1,6 @@
 @include print {
-  #header {
-    display: none;
+  .globalnavRow {
+    display: none !important;
   }
 
   #edit-bar {
@@ -56,6 +56,10 @@
     display: none !important;
   }
 
+  #footer {
+    display: none;
+  }
+
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -72,6 +76,7 @@
     margin-left: -100%;
     width: 100%;
   }
+
 
   a, a:hover, a:visited, a:active {
    color: $link-color !important;
