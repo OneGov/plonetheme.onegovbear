@@ -36,6 +36,9 @@ $pathbar-font-weight: normal !default;
         font-weight: $pathbar-font-weight;
         font-size: $font-size-small;
         float: left;
+        &:hover {
+          color: $link-hover-color;
+        }
       }
       // White separator between pathbar lines
       &:before {
