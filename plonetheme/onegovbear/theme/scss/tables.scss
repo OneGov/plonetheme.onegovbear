@@ -91,6 +91,10 @@ table {
         background-color: $table-heading-bg-color;
       }
 
+      tr:nth-child(odd) td {
+        background-color: $table-odd-bg-color;
+      }
+
       td, th {
         text-align: left;
       }
