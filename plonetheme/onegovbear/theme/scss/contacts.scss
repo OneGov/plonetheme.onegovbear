@@ -1,0 +1,13 @@
+.contactFolderSearchSlot {
+    @extend .fa-icon;
+    @extend .fa-search;
+    &:before {
+        position: absolute;
+        z-index: 3;
+        right: 16px;
+        font-size: 18px;
+        background-color: transparent;
+        visibility: visible;
+        margin-top: 12px;
+    }
+}
