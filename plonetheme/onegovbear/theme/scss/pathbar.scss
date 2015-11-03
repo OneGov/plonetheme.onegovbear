@@ -8,8 +8,19 @@ $pathbar-font-weight: normal !default;
   pathbar-arrow-color,
   pathbar-text-color);
 
-.template-startpage #breadcrumbs-wrapper {
+.template-startpage #breadcrumbs-wrapper,
+body.portaltype-ftw-subsite-subsite #breadcrumbs-wrapper{
   margin-top: 2em;
+}
+
+body.portaltype-plone-site,
+body.portaltype-ftw-subsite-subsite {
+  #breadcrumbs-wrapper {
+    margin-bottom: 0;
+    #portal-breadcrumbs {
+      display:none;
+    }
+  }
 }
 
 #breadcrumbs-wrapper {
@@ -66,11 +77,3 @@ $pathbar-font-weight: normal !default;
   }
 }
 
-body.portaltype-plone-site {
-  #breadcrumbs-wrapper {
-    margin-bottom: 0;
-    #portal-breadcrumbs {
-      display:none;
-    }
-  }
-}
