@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-10 08:49+0000\n"
+"POT-Creation-Date: 2015-10-28 10:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -223,17 +223,22 @@ msgid "label_secondary_color"
 msgstr ""
 
 #. Default: "Contact"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:31
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:41
 msgid "label_skiptocontact"
 msgstr ""
 
 #. Default: "Content"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:26
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:36
 msgid "label_skiptocontent"
 msgstr ""
 
+#. Default: "Homepage"
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:26
+msgid "label_skiptohomepage"
+msgstr ""
+
 #. Default: "Navigation"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:36
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:31
 msgid "label_skiptonavigation"
 msgstr ""
 

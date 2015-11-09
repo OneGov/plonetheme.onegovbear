@@ -23,6 +23,16 @@
     <ul tal:define="url view/current_page_url;
                     nav_root_url view/nav_root_url">
         <li>
+            <a accesskey="0"
+               tal:attributes="href string:${url}"
+               i18n:translate="label_skiptohomepage">Homepage</a>
+        </li>
+        <li>
+            <a accesskey="1"
+               tal:attributes="href string:${url}#portal-globalnav"
+               i18n:translate="label_skiptonavigation">Navigation</a>
+        </li>
+        <li>
             <a accesskey="2"
                tal:attributes="href string:${url}#content"
                i18n:translate="label_skiptocontent">Content</a>
@@ -31,11 +41,6 @@
             <a accesskey="3"
                tal:attributes="href string:${nav_root_url}/contact-info"
                i18n:translate="label_skiptocontact">Contact</a>
-        </li>
-        <li>
-            <a accesskey="6"
-               tal:attributes="href string:${url}#portal-globalnav"
-               i18n:translate="label_skiptonavigation">Navigation</a>
         </li>
     </ul>
 
