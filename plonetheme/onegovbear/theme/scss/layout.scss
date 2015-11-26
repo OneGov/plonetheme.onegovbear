@@ -59,6 +59,7 @@ body {
 
 #columns {
   background-color: $content-bg-color;
+  @include boxshadow(4px 0 24px -5px rgba(0, 0, 0, 0.75));
   @include borderradius($border-radius);
   @include screen-large {
     margin-top: 1.4em;

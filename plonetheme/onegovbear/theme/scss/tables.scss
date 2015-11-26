@@ -1,7 +1,11 @@
-$table-heading-bg-color: $gray-lighter !default;
-$table-border-color: darken($table-heading-bg-color, 15%) !default;
-$table-seperator-border-color: darken($content-bg-color, 15%) !default;
-$table-odd-bg-color: darken($content-bg-color, 2%) !default;
+$table-heading-bg-color: $primary-color !default;
+$table-heading-text-color: contrast($table-heading-bg-color,
+                                    $text-color,
+                                    $gray-lighter,
+                                    $lightness:10%) !default;
+$table-border-color: transparent !default;
+$table-seperator-border-color: transparent !default;
+$table-odd-bg-color: transparent !default;
 $table-drag-bg-color: change-color($primary-color, $lightness: 93%) !default;
 $table-drag-border-color: change-color($primary-color, $lightness: 85%) !default;
 
@@ -23,7 +27,7 @@ table {
     }
 
     td, th {
-      padding: 0.4em 1em;
+      padding: $box-model;
       border: 1px solid $table-seperator-border-color;
     }
 
@@ -47,7 +51,7 @@ table {
     }
 
     td, th {
-      padding: 0.4em 1em;
+      padding: $box-model;
     }
 
   }
@@ -63,13 +67,15 @@ table {
     }
 
     td, th {
-      padding: 0.4em 1em;
+      padding: $box-model;
     }
 
     thead {
       td, th {
         background-color: $table-heading-bg-color;
         border-bottom: 1px solid $table-seperator-border-color;
+        color: $table-heading-text-color;
+        text-align: left;
       }
 
       tr:first-child {
@@ -89,6 +95,7 @@ table {
       th {
         border-bottom: 1px solid $table-seperator-border-color;
         background-color: $table-heading-bg-color;
+        color: $table-heading-text-color;
       }
 
       tr:nth-child(odd) td {

@@ -1,4 +1,4 @@
-$portlet-column-bg-color: $gray-lighter !default;
+$portlet-column-bg-color: transparent !default;
 
 @include declare-variables(
   portlet-column-bg-color);
@@ -11,36 +11,177 @@ $portlet-column-bg-color: $gray-lighter !default;
 
 #column-navigation, #column-sidebar {
 
+
   .portletWrapper {
-    margin-bottom:2em;
+    padding: $box-model;
     .portlet {
+      @include dl(plain);
+      @include borderradius();
+      background-color: $portlet-column-bg-color;
       .portletHeader {
-        font-size: $font-size-h2;
-        font-weight: bold;
-        a.tile {
-          padding:0.4em 0;
-          display: block;
+        font-size: $font-size-h3;
+        color: $text-color;
+        padding-bottom: $box-model-bottom;
+        border-bottom: 1px solid $gray-light;
+        margin-bottom: $box-model-bottom;
+      }
+      .portletItem {
+        padding-bottom: $box-model-bottom;
+        border-bottom: 1px solid $gray-lighter;
+        margin-bottom: $box-model-bottom;
+      }
+      .portletFooter {
+        border-bottom: 1px solid $gray-light;
+        padding-bottom: $box-model-bottom;
+        margin-bottom: $box-model-bottom;
+      }
+      .sl-column > .sl-block {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+.portletWorkflowReview {
+  .portletHeader {
+  }
+  .portletItem {
+    .portletItemDetails {
+      color: $gray-light;
+      display: inline-block;
+    }
+  }
+  .portletFooter {
+
+  }
+}
+
+.labelJarPortlet {
+  > h2 {
+    padding-bottom: $box-model-bottom;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: $box-model-bottom;
+  }
+  #create-label {
+    padding-top: $box-model-top;
+    padding-bottom: $box-model-bottom;
+    .new-label-label {
+      padding-top: $box-model-top;
+      padding-bottom: $box-model-bottom;
+      font-size: $font-size-h5;
+    }
+    .colorChooser {
+      padding: $box-model-top 0 $box-model-bottom 0;
+      margin: 0;
+      border: 0;
+      .colorBox {
+        &:hover {
+          transform: scale(1.3);
         }
       }
     }
   }
 }
 
-
-#column-sidebar .portlet {
-  @include dl(plain);
-  background-color: $portlet-column-bg-color;
-  @include borderradius();
-  padding: 1em;
-  margin-bottom: 1em;
-  & .portletHeader {
-    margin-bottom: 0.75em;
-  }
-  .sl-column > .sl-block {
-    margin-bottom: 2em;
+.portletActions {
+  ul {
+    @include ul(plain);
+    > li {
+      display: inline-block;
+      > a {
+        @include button($context-color);
+        margin: 0;
+      }
+    }
   }
 }
 
+.labelJarPortlet > .labelListing {
+  .labelItem {
+    padding: $box-model;
+    border-bottom: 1px solid $gray-lighter;
+    &.selected {
+      background-color: $gray-lighter;
+      .labelColor {
+        background-color: transparent;
+        color: $text-color;
+        border: none;
+        @include boxshadow(none);
+      }
+    }
+    > .labelColor {
+      padding: 0;
+      margin: 0;
+      color: $text-color;
+      &:hover {
+        border: none;
+        @include boxshadow(none);
+      }
+      &:before {
+        border: none !important;
+        margin: 2px 10px 0 0;
+      }
+    }
+    &:hover {
+      background-color: $gray-lighter;
+      cursor: pointer;
+      .editLabelLink {
+        display: block;
+      }
+    }
+  }
+}
+
+.portletVersions {
+  .versionItem {
+    padding-bottom: $box-model-bottom;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: $box-model-bottom;
+    li {
+      display: inline-block;
+
+      a {
+        @include button($context-color);
+        margin: 0;
+      }
+    }
+  }
+}
+
+.portletInformation {
+  ul {
+    @include ul(plain);
+    label {
+      font-size: $font-size-h4;
+      padding-bottom: $box-model-bottom;
+      border-bottom: 1px solid $gray-light;
+      margin-bottom: $box-model-bottom;
+      display: block;
+    }
+    li {
+      padding: $box-model-top 0 $box-model-bottom 0;
+    }
+    > li {
+      ul {
+        > li {
+          padding-bottom: $box-model-bottom;
+          border-bottom: 1px solid $gray-lighter;
+          margin-bottom: $box-model-bottom;
+        }
+        .toggleLabelForm > a {
+          @include button($context-color);
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.portletVersions {
+  ul {
+    @include ul(plain);
+  }
+}
 
 .managedPortlet {
   border: 1px solid $gray-light;

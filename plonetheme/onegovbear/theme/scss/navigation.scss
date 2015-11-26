@@ -18,9 +18,11 @@ $portlet-navigation-active-color: lighten($gray-base, 95.5%) !default;
 
 .portlet.portletNavigationTree {
   @include dl(plain);
-
-  border-top: 1px solid $gray-lighter;
-  border-bottom: 1px solid $gray-lighter;
+  li {
+    padding-bottom: $box-model-bottom;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: $box-model-bottom;
+  }
 }
 
 

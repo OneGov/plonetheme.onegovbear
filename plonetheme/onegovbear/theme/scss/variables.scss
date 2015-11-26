@@ -1,0 +1,210 @@
+/* COLORS */
+$primary-color: #586875;
+$secondary-color: #a5c8ca;
+
+$gray-base: #403e3d;
+$gray-darker: lighten($gray-base, 13.5%) !default;
+$gray-dark: lighten($gray-base, 20%) !default;
+$gray: lighten($gray-base, 33.5%) !default;
+$gray-light: lighten($gray-base, 46.7%) !default;
+$gray-lighter: lighten($gray-base, 70%) !default;
+
+$success-color: #B3CC57;
+$warning-color: #FFBE40;
+$danger-color: #EF746F;
+
+$page-bg-color: #fff;
+$content-bg-color: #fff !default;
+$text-color: $gray-dark !default;
+$light-text-color: $primary-color !default;
+$link-color: $primary-color !default;
+$link-font-weight: normal !default;
+$link-hover-color: $secondary-color;
+$link-focus-color: $secondary-color;
+$outline-color: change-color($primary-color, $lightness: 60%);
+
+$button-standalone-color: $standalone-color;
+$button-context-color: $context-color !default;
+$button-destructive-color: $danger-color !default;
+$button-success-color: $success-color !default;
+$button-warning-color: $warning-color !default;
+$button-danger-color: $danger-color !default;
+$button-disabled-color: $gray-light !default;
+$button-text-light-color: white !default;
+$button-text-dark-color: black !default;
+
+@include declare-variables(
+  primary-color,
+  secondary-color,
+  gray-base,
+  gray-darker,
+  gray-dark,
+  gray,
+  gray-light,
+  gray-lighter,
+  standalone-color,
+  context-color,
+  success-color,
+  warning-color,
+  danger-color,
+  page-bg-color,
+  content-bg-color,
+  text-color,
+  light-text-color,
+  link-color,
+  link-font-weight,
+  link-hover-color,
+  link-focus-color,
+  link-decoration,
+  link-hover-decoration,
+  outline-color,
+  button-standalone-color,
+  button-context-color,
+  button-destructive-color,
+  button-success-color,
+  button-warning-color,
+  button-danger-color,
+  button-disabled-color,
+  button-text-light-color,
+  button-text-dark-color);
+
+
+/* COMPONENTS */
+$border-radius: 2px !default;
+
+@include declare-variables(
+  border-radius);
+
+
+/* TYPOGRAPHY */
+
+$font-family-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-fallback: "Times New Roman", Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-size-base: 14px;
+$font-size-large: $font-size-base * 2.369;
+$font-size-small: $font-size-base * 0.75;;
+$line-height-base: 1.428571429;
+
+$font-size-h1: $font-size-base * 3.157;
+$font-size-h2: $font-size-base * 2.369;
+$font-size-h3: $font-size-base * 1.777;
+$font-size-h4: $font-size-base * 1.333;
+$font-size-h5: $font-size-base;
+$font-size-h6: $font-size-base * 0.75;
+
+$box-model-top: 15px;
+$box-model-right: 10px;
+$box-model-bottom: 15px;
+$box-model-left: 10px;
+$box-model: $box-model-top $box-model-right $box-model-bottom $box-model-left;
+
+@include declare-variables(
+  font-family-sans-serif,
+  font-family-serif,
+  font-family-monospace,
+  font-family-base,
+  font-size-base,
+  font-size-large,
+  font-size-small,
+  line-height-base,
+  font-size-h1,
+  font-size-h2,
+  font-size-h3,
+  font-size-h4,
+  font-size-h5,
+  font-size-h6);
+
+
+/* Viewports */
+
+// Taken from http://en.wikipedia.org/wiki/Display_resolution
+$desktop-WQHD-width:   2560px !default;
+$desktop-FHD-width:    1920px !default;
+$desktop-HDPLUS-width: 1600px !default;
+$desktop-HD-width:     1360px !default;
+$desktop-WXGA-width:   1280px !default;
+$desktop-XGA-width:    1024px !default;
+
+// Taken from http://www.ciop.com/common-resolutions-for-mobile-phones-and-tablets
+$mobile-large: 1280px !default;
+$mobile-medium: 1024px !default;
+$mobile-small: 800px !default;
+$mobile-smaller: 600px !default;
+$mobile-tiny: 480px !default;
+
+$screen-XL: "(min-width: #{$desktop-WQHD-width})" !default;
+$screen-L: "(min-width: #{$desktop-HDPLUS-width})" !default;
+$screen-M: "(min-width: #{$desktop-HD-width})" !default;
+$screen-S: "(min-width: #{$desktop-XGA-width})" !default;
+$screen-XS: "(min-width: #{$mobile-small})" !default;
+$screen-XXS: "(min-width: #{$mobile-tiny})" !default;
+
+@include declare-variables(
+  screen-XL,
+  screen-L,
+  screen-M,
+  screen-S,
+  screen-XS);
+
+@mixin desktop-XL {
+  @media #{$screen-XL} {
+    @content;
+  }
+}
+
+@mixin desktop-L {
+  @media #{$screen-L} {
+    @content;
+  }
+}
+
+@mixin desktop-M {
+  @media #{$screen-M} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$screen-S} {
+    @content;
+  }
+}
+@mixin phone {
+  @media #{$screen-XS} {
+    @content;
+  }
+}
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin screen-large {
+  @media #{$screen-S} {
+    @content;
+  }
+}
+
+@mixin screen-medium {
+  @media #{$screen-XS} {
+    @content;
+  }
+}
+@mixin screen-small {
+  @media #{$screen-XXS} {
+    @content;
+  }
+}
+
+
+/* ICONS */
+
+$standard-iconset: font-awesome;
+$use-font-awesome-mimetype-icons: true;
+@include declare-variables(
+  standard-iconset,
+  use-font-awesome-mimetype-icons);

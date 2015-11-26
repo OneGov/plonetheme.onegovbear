@@ -22,8 +22,9 @@ $input-error-border-color: transparentize($danger-color, .5) !default;
   font-family: $font-family-base;
   display: inline-block;
   line-height: 1em;
-  padding: 0.5em;
-  width: 20em;
+  padding: $box-model;
+  width: 100%;
+  max-width: 20em;
   outline: none;
   box-sizing: border-box;
 

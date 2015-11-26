@@ -1,11 +1,12 @@
-$globalnav-bg-color: $gray-light !default;
-$globalnav-bg-color-hover: $gray-dark !default;
-$globalnav-link-color: $gray-lighter !default;
-$globalnav-link-color-hover: $globalnav-link-color !default;
-$globalnav-separator-color: $gray !default;
-$globalnav-separator-width: 1px !default;
+$globalnav-bg-color: $primary-color !default;
+$globalnav-bg-color-hover: $secondary-color;
+$globalnav-separator-color: $gray-light !default;
+$globalnav-separator-width: 0;
 $globalnav-font-size: 16px !default;
 $globalnav-link-font-weight: normal !default;
+
+$globalnav-link-color: $gray-lighter !default;
+$globalnav-link-color-hover: $gray-darker !default;
 
 @include declare-variables(
   globalnav-bg-color,
@@ -35,23 +36,25 @@ $globalnav-link-font-weight: normal !default;
     margin: 0;
     padding: 0;
     @include clearfix();
-    @include screen-large {
-      margin-right: 315px;
-    }
+    border-radius: $border-radius;
 
     > li {
       display: block;
       float: left;
+      &:first-child > a {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
       > a {
         color: $globalnav-link-color;
         font-weight: $globalnav-link-font-weight;
         display: block;
-        padding: 16px;
+        padding: $box-model;
         margin: 0;
         border-right: $globalnav-separator-width solid $globalnav-separator-color;
-        text-transform: uppercase;
         font-size: $globalnav-font-size;
         height: 20px;
+        text-decoration: none;
         @include transition(background-color 100ms);
         &.open {
           color: $globalnav-link-color-hover;

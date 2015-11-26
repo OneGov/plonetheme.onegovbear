@@ -1,6 +1,6 @@
-$portalmessage-info-color: lighten($context-color, 40%) !default;
-$portalmessage-warning-color: lighten($warning-color, 30%) !default;
-$portalmessage-error-color: lighten($danger-color, 20%) !default;
+$portalmessage-info-color: $context-color !default;
+$portalmessage-warning-color: $warning-color !default;
+$portalmessage-error-color: $danger-color !default;
 $portalmessage-undefined-color: #eee !default;
 $portalmessage-message-color: #fafafa !default;
 $portalmessage-border-color: #ccc !default;
