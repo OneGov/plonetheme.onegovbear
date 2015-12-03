@@ -12,4 +12,7 @@
   a {
     @include button($button-standalone-color);
   }
+  a, span {
+    line-height: normal;
+  }
 }
