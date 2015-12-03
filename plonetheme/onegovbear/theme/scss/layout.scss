@@ -60,14 +60,16 @@ body {
 #columns {
   background-color: $content-bg-color;
   @include borderradius($border-radius);
+  padding-top: 2em;
+  margin-top: 0;
   @include screen-large {
+    padding-top: 0;
     margin-top: 1.4em;
   }
 }
 
 #content {
   clear: both;
-  margin-top: 2em;
   @include screen-large {
     margin-top: 0;
   }

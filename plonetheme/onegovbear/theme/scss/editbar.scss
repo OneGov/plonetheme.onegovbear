@@ -26,6 +26,10 @@ $editbar-link-font-weight: $link-font-weight !default;
   padding: 0;
   display: block;
   @include borderradius($border-radius $border-radius 0 0);
+  margin-top: -2em;
+  @include screen-large {
+    margin-top: 0;
+  }
 
   #content-views {
     @include ul(inline);
