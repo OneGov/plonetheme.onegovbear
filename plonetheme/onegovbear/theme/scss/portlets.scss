@@ -33,11 +33,28 @@ $portlet-column-bg-color: $gray-lighter !default;
   @include borderradius();
   padding: 1em;
   margin-bottom: 1em;
+
+  &.SimplelayoutPortlet {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .block-placeholder {
+    float: none;
+  }
+
   & .portletHeader {
     margin-bottom: 0.75em;
   }
   .sl-column > .sl-block {
     margin-bottom: 2em;
+    padding: 1em;
+    background-color: $portlet-column-bg-color;
+    box-sizing: border-box;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
