@@ -1,17 +1,22 @@
 
 #portal-personaltools-wrapper {
-  float: right;
 
   dl {
     @include dl(plain);
+    margin-left: 0;
   }
-
   /* Anonymous: list actions by floating */
   > ul {
     @include ul(inline);
     margin-left: 1em;
     li {
       @include linklist;
+    }
+  }
+  @include screen-large {
+    float: right;
+    dl {
+      margin-left: 0.5em;
     }
   }
 }

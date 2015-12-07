@@ -7,9 +7,16 @@ $language-selector-link-color: $secondary-color !default;
 
 #portal-languageselector-wrapper {
   float: left;
+  width: 100%;
+
+  @include screen-large {
+      width: auto;
+  }
 
   dl#portal-languageselector {
     float: left;
+    width: 100%;
+    margin-left: 0;
     @include dl(plain);
 
     dt {
@@ -34,8 +41,21 @@ $language-selector-link-color: $secondary-color !default;
     }
 
     dd {
+      top: 0;
       @include ul(plain);
       margin-left:0;
     }
+
+    @include screen-large {
+      width: auto;
+      dl {
+        margin-left: 0.5em;
+      }
+
+      dd {
+        top: auto;
+      }
+    }
+
   }
 }
