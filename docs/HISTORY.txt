@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0a3 (unreleased)
+1.0.0a3 (2015-12-08)
 --------------------
 
 - Fix print issues with deco grid and simplelayout.
