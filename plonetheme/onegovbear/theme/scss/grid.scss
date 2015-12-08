@@ -30,6 +30,11 @@ div.row {
   width: 100%;
   display: block;
   position: relative;
+
+  @include print {
+    float: none;
+    position: static;
+  }
 }
 
 @mixin cell {
@@ -37,6 +42,13 @@ div.row {
   float: left;
   left: 100%;
   clear: none;
+
+  @include print {
+    float: none;
+    position: static;
+    left: 0;
+    margin: 0 !important;
+  }
 }
 
 div.cell {

@@ -31,6 +31,10 @@
     display: none;
   }
 
+  #column-navigation {
+    display: none !important;
+  }
+
 
   .portalMessage {
     display: none !important;
@@ -108,15 +112,17 @@
     background-color: #fff;
   }
 
+  #container {
+    background-image: none;
+  }
+
   #page-wrapper {
-    width: 21cm;
+    width: 100%;
+    max-width: none;
   }
 
   @page {
-    size: 22cm 28in portrait;
     margin: 2.5cm 2.5cm 2cm;
-    orphans: 8;
-    widows: 4;
   }
 
 }

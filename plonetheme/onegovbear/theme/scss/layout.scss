@@ -85,6 +85,7 @@ body {
   @include gridposition(0);
 
   @include gridwidth(16);
+
 }
 
 // Responsive styles if both columns are available
@@ -109,6 +110,7 @@ body {
 
       @include gridwidth(8);
     }
+
   }
 
   #column-sidebar {
@@ -128,6 +130,7 @@ body {
 
       @include gridwidth(4);
     }
+
   }
 
   #column-navigation {
@@ -142,6 +145,7 @@ body {
 
       @include gridwidth(4);
     }
+
   }
 }
 
@@ -160,6 +164,7 @@ body.has-nav-column:not(.has-sidebar-column) {
 
       @include gridwidth(12);
     }
+
   }
 
   #column-navigation {
@@ -174,6 +179,7 @@ body.has-nav-column:not(.has-sidebar-column) {
 
       @include gridwidth(4);
     }
+
   }
 }
 
@@ -199,6 +205,7 @@ body.has-sidebar-column:not(.has-nav-column) {
 
       @include gridwidth(12);
     }
+
   }
 
   #column-sidebar {
@@ -218,5 +225,6 @@ body.has-sidebar-column:not(.has-nav-column) {
 
       @include gridwidth(4);
     }
+
   }
 }

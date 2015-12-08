@@ -138,4 +138,21 @@ ul[class^="sl-toolbar"] {
       }
     }
   }
+
+  @include print {
+    @for $i from 1 through $simplelayout-columns {
+      &.sl-col-#{$i} {
+        margin-right: 0 !important;
+        width: 100% !important;
+
+        &:nth-of-type(#{$i / 2}n+#{$i / 2}) {
+          margin-right: 0 !important;
+        }
+
+        &:last-of-type {
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
 }
