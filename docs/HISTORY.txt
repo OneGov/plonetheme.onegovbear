@@ -5,7 +5,9 @@ Changelog
 1.0.0a3 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Fix print issues with deco grid and simplelayout.
+  IE printed only the first page, Safari did not use the print css at all.
+  [Kevin, mathias.leimgruber]
 
 
 1.0.0a2 (2015-12-07)
