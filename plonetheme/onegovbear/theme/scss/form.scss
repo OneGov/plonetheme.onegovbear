@@ -150,3 +150,10 @@ input[type="radio"] {
     font-size: 120%;
   }
 }
+
+// Form: Image widget.
+// On some images the width calculation fails -> -1 appears.
+#form-widgets-image > span > img:first-child {
+  width: 128px;
+}
+
