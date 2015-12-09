@@ -73,7 +73,7 @@ $editbar-link-font-weight: $link-font-weight !default;
 
       > li {
         float: right;
-        dt.actionMenuHeader a {
+        dt.actionMenuHeader a, dt.actionMenuHeader > span {
           line-height: 2.25em;
           padding: 0.5em;
           color: $editbar-link-color;
