@@ -7,52 +7,65 @@ $portlet-column-bg-color: transparent !default;
 .template-folder_contents.has-sidebar-column #column-sidebar {
   display: none;
 }
-
-
-#column-navigation, #column-sidebar {
-
-
-  .portletWrapper {
-    padding: $box-model;
-    .portlet {
-      @include dl(plain);
-      @include borderradius();
-      background-color: $portlet-column-bg-color;
-      .portletHeader {
-        font-size: $font-size-h3;
-        color: $text-color;
-        padding-bottom: $box-model-bottom;
-        border-bottom: 1px solid $gray-light;
-        margin-bottom: $box-model-bottom;
-      }
-      .portletItem {
-        padding-bottom: $box-model-bottom;
-        border-bottom: 1px solid $gray-lighter;
-        margin-bottom: $box-model-bottom;
-      }
-      .portletFooter {
-        border-bottom: 1px solid $gray-light;
-        padding-bottom: $box-model-bottom;
-        margin-bottom: $box-model-bottom;
-      }
-      .sl-column > .sl-block {
-        margin-bottom: 2em;
+.portletWrapper {
+  padding: $box-model;
+  &:first-of-type {
+    .portletHeader {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+.portlet {
+  @include dl(plain);
+  @include borderradius();
+  background-color: $portlet-column-bg-color;
+  ul {
+    @include ul(plain);
+  }
+  .portletHeader {
+    font-size: $font-size-h3;
+    color: $text-color;
+    padding-bottom: $box-model-bottom;
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: $box-model-bottom;
+    margin-top: $box-model-top;
+    padding-top: $box-model-bottom;
+  }
+  .portletItem {
+    padding-bottom: $box-model-bottom;
+    margin-bottom: $box-model-bottom;
+    border-bottom: 1px solid $gray-lighter;
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  ul {
+    @include ul(plain);
+    > li {
+      padding-bottom: $box-model-bottom;
+      border-bottom: 1px solid $gray-lighter;
+      margin-bottom: $box-model-bottom;
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
       }
     }
+  }
+  .sl-column > .sl-block {
+    margin-bottom: 2em;
   }
 }
 
 .portletWorkflowReview {
-  .portletHeader {
-  }
   .portletItem {
     .portletItemDetails {
       color: $gray-light;
       display: inline-block;
     }
-  }
-  .portletFooter {
-
   }
 }
 
@@ -71,7 +84,7 @@ $portlet-column-bg-color: transparent !default;
       font-size: $font-size-h5;
     }
     .colorChooser {
-      padding: $box-model-top 0 $box-model-bottom 0;
+      padding: $box-model-top 0 $box-model-bottom;
       margin: 0;
       border: 0;
       .colorBox {
@@ -83,20 +96,8 @@ $portlet-column-bg-color: transparent !default;
   }
 }
 
-.portletActions {
-  ul {
-    @include ul(plain);
-    > li {
-      display: inline-block;
-      > a {
-        @include button($context-color);
-        margin: 0;
-      }
-    }
-  }
-}
-
-.labelJarPortlet > .labelListing {
+.labelJarPortlet .labelListing {
+  @include ul(plain);
   .labelItem {
     padding: $box-model;
     border-bottom: 1px solid $gray-lighter;
@@ -133,55 +134,27 @@ $portlet-column-bg-color: transparent !default;
 }
 
 .portletVersions {
-  .versionItem {
-    padding-bottom: $box-model-bottom;
-    border-bottom: 1px solid $gray-light;
-    margin-bottom: $box-model-bottom;
-    li {
-      display: inline-block;
-
-      a {
-        @include button($context-color);
-        margin: 0;
+  > .portletItem {
+    > ul > li > ul > li {
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .versionItem {
+      span {
+        display: block;
+      }
+      .version {
+        font-weight: bold;
+      }
+      .user {
+        font-style: italic;
+        color: $gray;
       }
     }
   }
 }
 
-.portletInformation {
-  ul {
-    @include ul(plain);
-    label {
-      font-size: $font-size-h4;
-      padding-bottom: $box-model-bottom;
-      border-bottom: 1px solid $gray-light;
-      margin-bottom: $box-model-bottom;
-      display: block;
-    }
-    li {
-      padding: $box-model-top 0 $box-model-bottom 0;
-    }
-    > li {
-      ul {
-        > li {
-          padding-bottom: $box-model-bottom;
-          border-bottom: 1px solid $gray-lighter;
-          margin-bottom: $box-model-bottom;
-        }
-        .toggleLabelForm > a {
-          @include button($context-color);
-          margin: 0;
-        }
-      }
-    }
-  }
-}
-
-.portletVersions {
-  ul {
-    @include ul(plain);
-  }
-}
 
 .managedPortlet {
   border: 1px solid $gray-light;
