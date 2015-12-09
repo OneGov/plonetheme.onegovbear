@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0a4 (unreleased)
+1.0.0a4 (2015-12-09)
 --------------------
 
 - Fix image display with for form image widget.
