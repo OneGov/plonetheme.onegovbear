@@ -61,6 +61,22 @@ $portlet-column-bg-color: transparent !default;
 }
 
 .portletWorkflowReview {
+  .portletHeader {
+    .quantity {
+      $badge-height: 20px;
+      font-size: $font-size-h5;
+      color: $gray-lighter;
+      background-color: $danger-color;
+      display: inline-block;
+      width: $badge-height;
+      height: $badge-height;
+      border-radius: 50%;
+      text-align: center;
+      vertical-align: 15px;
+      line-height: $badge-height;
+      margin-left: -8px;
+    }
+  }
   .portletItem {
     .portletItemDetails {
       color: $gray-light;
