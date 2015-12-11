@@ -48,6 +48,7 @@
         <theme:scss file="theme/scss/languageselector.scss" />
         <theme:scss file="theme/scss/plonebrowser.scss" />
         <theme:scss file="theme/scss/print.scss" />
+        <theme:scss file="theme/scss/labels.scss" />
 
         <theme:scss file="theme/scss/iconset.scss"
                     slot="bottom"
