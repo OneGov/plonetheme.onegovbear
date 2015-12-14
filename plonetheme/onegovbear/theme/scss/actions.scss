@@ -28,8 +28,9 @@
 
 
 #bottom-actions {
-  width: $page-wrapper-width;
-  margin: 0 auto;
+  max-width: $page-wrapper-width;
+  margin: 15px auto;
+ @include clearfix();
   #portal-siteactions {
     @include ul(plain);
     @include linklist;
