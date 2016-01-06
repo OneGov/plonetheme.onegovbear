@@ -6,6 +6,9 @@ $globalnav-separator-color: $gray !default;
 $globalnav-separator-width: 1px !default;
 $globalnav-font-size: 16px !default;
 $globalnav-link-font-weight: normal !default;
+$globalnav-discreet-hover-color: transparent !default;
+$globalnav-discreet-border-width: 3px !default;
+$globalnav-gutter-width: 3px !default;
 
 @include declare-variables(
   globalnav-bg-color,
@@ -15,7 +18,10 @@ $globalnav-link-font-weight: normal !default;
   globalnav-link-color-hover,
   globalnav-separator-color,
   globalnav-separator-width,
-  globalnav-font-size);
+  globalnav-font-size,
+  globalnav-discreet-hover-color,
+  $globalnav-discreet-border-width,
+  $globalnav-gutter-width);
 
 .navigation {
   @include screen-large {
@@ -38,20 +44,26 @@ $globalnav-link-font-weight: normal !default;
     @include screen-large {
       margin-right: 315px;
     }
-
     > li {
       display: block;
       float: left;
+      margin-right: $globalnav-gutter-width;
       > a {
         color: $globalnav-link-color;
         font-weight: $globalnav-link-font-weight;
         display: block;
         padding: 16px;
         margin: 0;
-        border-right: $globalnav-separator-width solid $globalnav-separator-color;
         text-transform: uppercase;
         font-size: $globalnav-font-size;
         height: 20px;
+
+        @if $globalnav-discreet-hover-color == transparent {
+          border-right: $globalnav-separator-width solid $globalnav-separator-color;
+        } @else {
+          border-bottom: $globalnav-discreet-border-width solid transparent;
+        }
+
         @include transition(background-color 100ms);
         &.open {
           color: $globalnav-link-color-hover;
@@ -63,7 +75,16 @@ $globalnav-link-font-weight: normal !default;
           background-color: $globalnav-bg-color-hover;
           color: $globalnav-link-color-hover;
           text-decoration: none;
+          position: relative;
+          @if $globalnav-discreet-hover-color != transparent {
+            border-bottom: $globalnav-discreet-border-width solid $globalnav-discreet-hover-color;
+            $triangle-width: $globalnav-discreet-border-width * 2;
+          }
         }
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
     @include screen-large {
