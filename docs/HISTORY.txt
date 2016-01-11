@@ -5,7 +5,11 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Add more global sections (aka tabs) scss variables.
+  [kevin]
+
+- Remove custom pathbar styling and template.
+  [kevin]
 
 
 1.0.0a4 (2015-12-09)

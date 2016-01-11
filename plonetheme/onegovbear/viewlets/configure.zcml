@@ -2,14 +2,6 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
 
-  <browser:viewlet
-    name="plone.path_bar"
-    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
-    class=".pathbar.PathBarViewlet"
-    permission="zope2.View"
-    layer="plonetheme.onegovbear.interfaces.IOneGovBearLayer"
-    />
-
     <!-- The skip links for accessibility -->
     <browser:viewlet
         name="plone.skip_links"
