@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Add pagewrapper.scss - this can be configured thru ``$showpagewrapper`` variable.
+  [mathias.leimgruber]
+
 - Add more global sections (aka tabs) scss variables.
   [kevin]
 
