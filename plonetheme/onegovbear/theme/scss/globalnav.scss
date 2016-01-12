@@ -41,9 +41,6 @@ $globalnav-gutter-width: 3px !default;
     margin: 0;
     padding: 0;
     @include clearfix();
-    @include screen-large {
-      margin-right: 315px;
-    }
     > li {
       display: block;
       float: left;

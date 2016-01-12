@@ -15,15 +15,14 @@ $searchbox-width: 295px;
 
 .portal-searchbox-wrapper{
 
-  float: left;
   width: $searchbox-width;
-  padding: 6px;
   box-sizing: border-box;
-  margin-left: -$searchbox-width;
   display: none;
   z-index: 1;
   right: 0;
   height: 52px;
+  position: absolute;
+  top: -70px;
 
   @include screen-large {
     display: block;
@@ -71,7 +70,6 @@ $searchbox-width: 295px;
           visibility: visible;
       }
       input[type="text"] {
-        border: none;
         line-height: 22px;
         height: 40px;
       }
