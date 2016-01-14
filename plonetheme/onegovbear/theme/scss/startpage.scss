@@ -1,0 +1,5 @@
+body.portaltype-plone-site {
+  h1.documentFirstHeading {
+    @extend .hiddenStructure;
+  }
+}

@@ -15,6 +15,7 @@
         <theme:scss file="theme/scss/grid.scss" />
         <theme:scss file="theme/scss/layout.scss" />
         <theme:scss file="theme/scss/pagewrapper.scss" />
+        <theme:scss file="theme/scss/startpage.scss" />
         <theme:scss file="theme/scss/contacts.scss" />
         <theme:scss file="theme/scss/content.scss" />
         <theme:scss file="theme/scss/pathbar.scss" />
