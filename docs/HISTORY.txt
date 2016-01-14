@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Hide pathbar and documentFirstHeading on the front page.
+  [mathias.leimgruber]
+
 - Add pagewrapper.scss - this can be configured thru ``$showpagewrapper`` variable.
   [mathias.leimgruber]
 

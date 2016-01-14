@@ -1,5 +1,9 @@
-body.portaltype-plone-site {
+body.portaltype-plone-site, body.portaltype-ftw-subsite-subsite {
   h1.documentFirstHeading {
+    @extend .hiddenStructure;
+  }
+
+  #breadcrumbs-wrapper {
     @extend .hiddenStructure;
   }
 }
