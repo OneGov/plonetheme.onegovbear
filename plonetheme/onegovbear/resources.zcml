@@ -19,7 +19,7 @@
         <theme:scss file="theme/scss/site/editbar.scss" />
         <theme:scss file="theme/scss/site/portaltop.scss" />
         <theme:scss file="theme/scss/site/layout.scss" />
-        <theme:scss file="theme/scss/site/typography.scss" />
+        <theme:scss file="theme/scss/typography.scss" />
 
         <theme:scss file="theme/scss/pagewrapper.scss" />
         <theme:scss file="theme/scss/startpage.scss" />

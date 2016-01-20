@@ -1,20 +1,13 @@
-$page-wrapper-width: 1200px !default;
-
-@include declare-variables(page-wrapper-width);
-
-.visualClear {
-  clear: both;
-}
-
-.clearfix {
-  @include clearfix;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: $color-page-background;
-  font-family: $font-family-primary;
+  @include clearfix();
+  margin: 0;
   font-size: $font-size-base;
   line-height: $line-height-base;
+  font-family: $font-family-primary;
   color: $color-text;
 }
 
@@ -23,69 +16,84 @@ body {
   float: left;
 }
 
-#page-wrapper {
-  position: relative;
-  max-width: $page-wrapper-width;
-  margin: 0 auto;
-  margin-bottom: 1em;
-}
-
 #header {
-  > .row > .cell {
-    /* Remove paddings since we have no background color. */
-    margin-left: -100%;
-    width: 100%;
-  }
-
-  .logoRow {
-    box-sizing: border-box;
-    padding: 10px 0;
-    > .cell {
-      display: table;
-    }
-  }
-
-  #portal-logo {
-    img {
-      float: left;
-      max-height: 75px;
-      width: auto;
-      @include screen-small {
-        max-height: none;
-      }
-    }
-  }
-}
-
-#columns {
-  background-color: $color-content-background;
-  @include borderradius($border-radius-primary);
-  padding-top: 2em;
-  margin-top: 0;
-  @include screen-large {
-    padding-top: 0;
-    margin-top: 1.4em;
-  }
-}
-
-#content {
-  clear: both;
-  @include screen-large {
-    margin-top: 0;
-  }
-}
-
-#content-core {
+  padding-bottom: $padding-vertical * 10;
+  border-bottom: $padding-vertical solid $color-primary;
   @include clearfix();
 }
 
-#column-content {
-  @include cell;
+#columns {
+  @include clearfix();
+  max-width: $max-width-page;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: $box-shadow-secondary;
+  margin-top: -$padding-vertical * 10 - $padding-vertical;
+  background-color: $color-content-background;
+  padding-bottom: $margin-vertical;
+  > .row {
+    @include row();
+  }
+}
 
+#breadcrumbs-wrapper {
+  @include clearfix();
+  margin: $margin-vertical 0;
+}
+
+#portal-breadcrumbs {
+  @include cell();
   @include gridposition(0);
-
   @include gridwidth(16);
+}
 
+#column-content {
+  padding: $padding-vertical $padding-horizontal;
+}
+
+.logoRow {
+  max-width: $max-width-page;
+  margin: $margin-vertical auto;
+}
+
+#bottom-actions {
+  background-color: $color-primary;
+}
+
+#portal-siteactions {
+  @include list-horizontal();
+  max-width: $max-width-page;
+  margin: 0 auto;
+  > li > a {
+    @include no-link();
+    @include auto-link-color();
+  }
+}
+
+.logoRow {
+  @include clearfix();
+  max-width: $max-width-page;
+  margin: $margin-vertical auto;
+  > .cell {
+    @include cell();
+    @include gridposition(0);
+    @include gridwidth(16);
+  }
+}
+
+.globalnavRow {
+  @include row();
+  border-bottom: 1px solid $color-primary;
+  margin: $margin-vertical 0;
+  .fixed-header {
+    max-width: $max-width-page;
+    margin: 0 auto;
+  }
+  .navigation {
+    @include cell();
+    @include gridposition(0);
+    @include gridwidth(16);
+  }
 }
 
 // Responsive styles if both columns are available
