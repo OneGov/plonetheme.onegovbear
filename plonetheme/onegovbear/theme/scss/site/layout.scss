@@ -45,15 +45,28 @@ body {
   @include cell();
   @include gridposition(0);
   @include gridwidth(16);
+  @include clearfix();
+  > .row {
+    @include row();
+  }
 }
 
 #column-content {
-  padding: $padding-vertical $padding-horizontal;
+  @include cell();
+  @include gridposition(0);
+  @include gridwidth(16);
 }
 
-.logoRow {
-  max-width: $max-width-page;
-  margin: $margin-vertical auto;
+#column-sidebar {
+  @include cell();
+  @include gridposition(0);
+  @include gridwidth(16);
+}
+
+#column-navigation {
+  @include cell();
+  @include gridposition(0);
+  @include gridwidth(16);
 }
 
 #bottom-actions {
@@ -96,46 +109,39 @@ body {
   }
 }
 
+.logoRow {
+  max-width: $max-width-page;
+  margin: $margin-vertical auto;
+}
+
 // Responsive styles if both columns are available
 .has-nav-column.has-sidebar-column {
   #column-content {
-    @include screen-small {
-      @include gridposition(0);
-
-      @include gridwidth(16);
-    }
-
 
     @include screen-medium {
       @include gridposition(0);
-
       @include gridwidth(10);
     }
 
-
     @include screen-large {
       @include gridposition(4);
-
       @include gridwidth(8);
     }
 
   }
 
   #column-sidebar {
+
     clear: both;
 
     @include screen-medium {
       @include gridposition(10);
-
       @include gridwidth(6);
-
-      @include cell;
+      clear: none;
     }
-
 
     @include screen-large {
       @include gridposition(12);
-
       @include gridwidth(4);
     }
 
@@ -143,14 +149,9 @@ body {
 
   #column-navigation {
     display: none;
-
-    @include cell;
-
     @include screen-large {
       display: block;
-
       @include gridposition(0);
-
       @include gridwidth(4);
     }
 
@@ -160,16 +161,9 @@ body {
 // Responsive styles if only the navigation column is available
 body.has-nav-column:not(.has-sidebar-column) {
   #column-content {
-    @include screen-small {
-      @include gridposition(0);
-
-      @include gridwidth(16);
-    }
-
 
     @include screen-medium {
       @include gridposition(4);
-
       @include gridwidth(12);
     }
 
@@ -178,13 +172,9 @@ body.has-nav-column:not(.has-sidebar-column) {
   #column-navigation {
     display: none;
 
-    @include cell;
-
     @include screen-medium {
       display: block;
-
       @include gridposition(0);
-
       @include gridwidth(4);
     }
 
@@ -194,43 +184,31 @@ body.has-nav-column:not(.has-sidebar-column) {
 // Responsive styles if only the sidebar column is available
 body.has-sidebar-column:not(.has-nav-column) {
   #column-content {
-    @include screen-small {
-      @include gridposition(0);
-
-      @include gridwidth(16);
-    }
-
 
     @include screen-medium {
       @include gridposition(0);
-
       @include gridwidth(10);
     }
 
-
     @include screen-large {
       @include gridposition(0);
-
       @include gridwidth(12);
     }
 
   }
 
   #column-sidebar {
+
     clear: both;
 
     @include screen-medium {
       @include gridposition(10);
-
       @include gridwidth(6);
-
-      @include cell;
+      clear: none;
     }
-
 
     @include screen-large {
       @include gridposition(12);
-
       @include gridwidth(4);
     }
 
