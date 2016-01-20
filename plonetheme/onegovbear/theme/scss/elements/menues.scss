@@ -1,0 +1,59 @@
+.actionMenu {
+  margin: 0;
+  position: relative;
+  &.activated {
+    .actionMenuContent {
+      display: block;
+    }
+  }
+  .actionMenuHeader {
+    padding: $padding-vertical $padding-horizontal;
+    a {
+      @include no-link();
+    }
+  }
+  .actionMenuContent {
+    margin: 0;
+    display: none;
+    position: absolute;
+    right: 0;
+    box-shadow: $box-shadow-secondary;
+    > ul {
+      @include list-group-interactive();
+    }
+  }
+}
+
+
+#column-content dl.actionMenu dt,
+dl.actionMenu dt {
+  font-weight: normal;
+}
+
+@mixin mobilemenu {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 34px;
+  z-index: 5;
+  margin: auto;
+  cursor: default;
+
+  ul li {
+    display: block;
+
+    a {
+      display: block;
+      background: transparent;
+      padding: 1em;
+      @include auto-text-color();
+      white-space: nowrap;
+
+      &:hover {
+        background-color: $color-primary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+

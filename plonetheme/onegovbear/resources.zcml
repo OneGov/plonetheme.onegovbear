@@ -26,7 +26,6 @@
         <theme:scss file="theme/scss/contacts.scss" />
         <theme:scss file="theme/scss/content.scss" />
         <theme:scss file="theme/scss/pathbar.scss" />
-        <theme:scss file="theme/scss/menues.scss" />
         <theme:scss file="theme/scss/editbar.scss" />
         <theme:scss file="theme/scss/actions.scss" />
         <theme:scss file="theme/scss/globalnav.scss" />

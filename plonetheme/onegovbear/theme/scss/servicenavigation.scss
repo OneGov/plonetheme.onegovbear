@@ -9,14 +9,14 @@ $service-nav-link-color: $color-secondary !default;
   // z-index: 5;
   // right: 0;
   @include mobilemenu();
-  background-color: $menu-bg-color;
-  border: 1px solid $menu-border-color;
+  background-color: $color-white;
+  border: 1px solid $color-gray-light;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 
-  @include boxshadow(0.5em 1em 2em -1em $menu-border-color);
+  box-shadow: $box-shadow-primary;
 
-  @include borderradius($menu-border-radius);
+  border-radius: $border-radius-primary;
 
   ul {
     @include ul(plain);
