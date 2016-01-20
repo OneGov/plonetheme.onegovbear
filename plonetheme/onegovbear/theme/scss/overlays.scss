@@ -3,7 +3,7 @@ $overlay-close-color: #333 !default;
 $overlay-close-bg-color: #eee !default;
 $overlay-close-hover-color: #fff !default;
 $overlay-close-hover-bg-color: #333 !default;
-$overlay-close-mask-color: transparentize($gray-light, .2) !default;
+$overlay-close-mask-color: transparentize($color-gray-light, .2) !default;
 
 @include declare-variables(
   overlay-close-width,
@@ -34,10 +34,10 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
 
 .overlay, .contenttreeWindow {
   display: none;
-  background-color: $content-bg-color;
+  background-color: $color-content-background;
   padding: 0.3em;
   @include boxsizing(border-box);
-  @include boxshadow(0.1em 0.1em 1em 0 $gray-dark);
+  @include boxshadow(0.1em 0.1em 1em 0 $color-gray-dark);
   @include borderradius(10px);
   padding-bottom: 60px;
   z-index: 1000 !important;

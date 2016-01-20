@@ -1,4 +1,4 @@
-$service-nav-link-color: $secondary-color !default;
+$service-nav-link-color: $color-secondary !default;
 
 @include declare-variables(service-nav-link-color);
 
@@ -58,7 +58,7 @@ $service-nav-link-color: $secondary-color !default;
           &:hover {
             background-color: transparent;
             text-decoration: underline;
-            color: $link-hover-color;
+            color: $color-link-hover;
           }
         }
       }

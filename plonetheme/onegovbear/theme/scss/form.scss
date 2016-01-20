@@ -1,10 +1,11 @@
 $formtabs-border-color: #ccc !default;
 $input-bg-color: #fafafa !default;
 $input-border-color: darken($input-bg-color, 20%) !default;
-$input-focus-color: $outline-color !default;
-$input-required-color: change-color($danger-color, $saturation: 90%) !default;
-$input-error-bg-color: transparentize($danger-color, .85) !default;
-$input-error-border-color: transparentize($danger-color, .5) !default;
+$input-focus-color: $color-secondary !default;
+$input-required-color: change-color($color-danger, $saturation: 90%) !default;
+$input-error-bg-color: transparentize($color-danger, .85) !default;
+$input-error-border-color: transparentize($color-danger, .5) !default;
+$font-size-input: 1em !default;
 
 @include declare-variables(
   formtabs-border-color,
@@ -18,8 +19,8 @@ $input-error-border-color: transparentize($danger-color, .5) !default;
 
 
 @mixin inputfield() {
-  font-size: $font-size-base;
-  font-family: $font-family-base;
+  font-size: $font-size-input;
+  font-family: $font-family-primary;
   display: inline-block;
   line-height: 1em;
   padding: 0.5em;
@@ -66,7 +67,7 @@ $input-error-border-color: transparentize($danger-color, .5) !default;
     @include boxshadow(0 0 5px transparentize($input-error-border-color, .3) inset,
                        0 0 8px transparentize($input-error-border-color, .2));
     .fieldErrorBox {
-      color: darken($danger-color, 20%);
+      color: darken($color-danger, 20%);
       padding-bottom: 0.5em;
     }
   }
@@ -98,12 +99,12 @@ $input-error-border-color: transparentize($danger-color, .5) !default;
 
     &.selected {
       border: 1px solid $formtabs-border-color;
-      @include borderradius($border-radius $border-radius 0 0);
+      @include borderradius($border-radius-primary $border-radius-primary 0 0);
       border-bottom-width: 0;
-      background-color: $content-bg-color;
+      background-color: $color-content-background;
 
       &:hover {
-        color: $link-color;
+        color: $color-link;
       }
     }
   }
@@ -129,7 +130,7 @@ input[type="radio"] {
     @include requiredbox();
     font-weight: bold;
     .formHelp {
-      color: $light-text-color;
+      color: $color-text-inverted;
       display: block;
       margin: 0 0 0.2em 0;
       font-weight: normal;

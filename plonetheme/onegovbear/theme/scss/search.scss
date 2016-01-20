@@ -2,7 +2,7 @@ $searchbox-liveresults-bg-color: #fff !default;
 $searchbox-liveresults-hover-bg-color: darken($menu-bg-color, 5%) !default;
 $searchbox-liveresults-border-color: darken($menu-bg-color, 20%) !default;
 $searchbox-liveresults-border-radius: 5px !default;
-$search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $saturation:90%) !default;
+$search-highlight-bg-color: change-color($color-secondary, $lightness:70%, $saturation:90%) !default;
 $searchbox-width: 295px;
 
 @include declare-variables(
@@ -118,7 +118,7 @@ $searchbox-width: 295px;
 
           > .LSDescr {
             padding-left: 1.5em;
-            color: $light-text-color;
+            color: $color-text-inverted;
           }
         }
       }

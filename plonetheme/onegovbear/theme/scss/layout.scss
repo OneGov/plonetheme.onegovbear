@@ -11,11 +11,11 @@ $page-wrapper-width: 1200px !default;
 }
 
 body {
-  background: $page-bg-color;
-  font-family: $font-family-base, $font-family-fallback;
+  background: $color-page-background;
+  font-family: $font-family-primary;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $text-color;
+  color: $color-text;
 }
 
 #container {
@@ -58,8 +58,8 @@ body {
 }
 
 #columns {
-  background-color: $content-bg-color;
-  @include borderradius($border-radius);
+  background-color: $color-content-background;
+  @include borderradius($border-radius-primary);
   padding-top: 2em;
   margin-top: 0;
   @include screen-large {

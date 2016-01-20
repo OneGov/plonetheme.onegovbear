@@ -1,9 +1,9 @@
-$table-heading-bg-color: $gray-lighter !default;
+$table-heading-bg-color: $color-gray-light !default;
 $table-border-color: darken($table-heading-bg-color, 15%) !default;
-$table-seperator-border-color: darken($content-bg-color, 15%) !default;
-$table-odd-bg-color: darken($content-bg-color, 2%) !default;
-$table-drag-bg-color: change-color($primary-color, $lightness: 93%) !default;
-$table-drag-border-color: change-color($primary-color, $lightness: 85%) !default;
+$table-seperator-border-color: darken($color-content-background, 15%) !default;
+$table-odd-bg-color: darken($color-content-background, 2%) !default;
+$table-drag-bg-color: change-color($color-primary, $lightness: 93%) !default;
+$table-drag-border-color: change-color($color-primary, $lightness: 85%) !default;
 
 @include declare-variables(table-heading-bg-color,
                            table-border-color,
@@ -75,11 +75,11 @@ table {
       tr:first-child {
         td, th {
           &:first-child {
-            @include borderradius-top-left($border-radius - 1px);
+            @include borderradius-top-left($border-radius-primary - 1px);
           }
 
           &:last-child {
-            @include borderradius-top-right($border-radius - 1px);
+            @include borderradius-top-right($border-radius-primary - 1px);
           }
         }
       }
@@ -104,11 +104,11 @@ table {
           border-bottom: none;
 
           &:first-child {
-            @include borderradius-bottom-left($border-radius - 1px);
+            @include borderradius-bottom-left($border-radius-primary - 1px);
           }
 
           &:last-child {
-            @include borderradius-bottom-right($border-radius - 1px);
+            @include borderradius-bottom-right($border-radius-primary - 1px);
           }
         }
       }
@@ -123,11 +123,11 @@ table {
       tr:last-child {
         td, th {
           &:first-child {
-            @include borderradius-bottom-left($border-radius - 1px);
+            @include borderradius-bottom-left($border-radius-primary - 1px);
           }
 
           &:last-child {
-            @include borderradius-bottom-right($border-radius - 1px);
+            @include borderradius-bottom-right($border-radius-primary - 1px);
           }
         }
       }

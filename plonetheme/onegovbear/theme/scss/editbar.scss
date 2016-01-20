@@ -1,14 +1,14 @@
-$editbar-bg-color: $secondary-color !default;
+$editbar-bg-color: $color-secondary !default;
 $editbar-link-color: contrast($editbar-bg-color,
-                              $gray-lighter,
-                              $gray-darker,
+                              $color-gray-light,
+                              $color-gray-dark,
                               $lightness:60%) !default;
-$editbar-link-active-color: $gray-darker !default;
+$editbar-link-active-color: $color-gray-dark !default;
 $editbar-link-hover-color: contrast($editbar-bg-color,
-                                    lighten($gray-lighter, 20%),
-                                    darken($gray-darker, 20%),
+                                    lighten($color-gray-light, 20%),
+                                    darken($color-gray-dark, 20%),
                                     $lightness:60%) !default;
-$editbar-link-font-weight: $link-font-weight !default;
+$editbar-link-font-weight: $font-weight-link !default;
 
 @include declare-variables(
   editbar-bg-color,
@@ -25,7 +25,7 @@ $editbar-link-font-weight: $link-font-weight !default;
   margin: 0;
   padding: 0;
   display: block;
-  @include borderradius($border-radius $border-radius 0 0);
+  @include borderradius($border-radius-primary $border-radius-primary 0 0);
   margin-top: -2em;
   @include screen-large {
     margin-top: 0;
@@ -47,8 +47,8 @@ $editbar-link-font-weight: $link-font-weight !default;
       text-decoration: none;
     }
     .selected a {
-      background-color: $content-bg-color;
-      @include borderradius($border-radius $border-radius 0 0);
+      background-color: $color-content-background;
+      @include borderradius($border-radius-primary $border-radius-primary 0 0);
       color: $editbar-link-active-color;
       &:hover {
         color: $editbar-link-active-color;

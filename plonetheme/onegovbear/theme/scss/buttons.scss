@@ -5,28 +5,28 @@ button,
 a.button,
 a.button.standalone,
 input.standalone {
-  @include button($button-standalone-color);
+  @include button();
 }
 
 button.context,
 a.button.context,
 input.context {
-  @include button($button-context-color);
+  @include button();
 }
 
 a.button.destructive,
 input.destructive {
-  @include button($button-destructive-color);
+  @include button-danger();
 }
 
 a.button.success,
 input.success {
-  @include button($button-success-color);
+  @include button-success();
 }
 
 a.button.warning,
 input.warning {
-  @include button($button-warning-color);
+  @include button-warning();
 }
 
 a.button.disabled,
@@ -34,5 +34,5 @@ input[type="button"][disabled],
 input[type="submit"][disabled],
 input[type="reset"][disabled],
 button[disabled] {
-  @include button($button-disabled-color, $disabled:true);
+  @include button-disabled();
 }

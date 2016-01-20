@@ -7,6 +7,8 @@
 
     <theme:scss_factory factory=".browser.dynamic_scss_resources.custom_design_variables_resource_factory" />
 
+    <theme:scss file="theme/scss/globals/variables.scss" slot="variables" />
+
     <theme:resources profile="plonetheme.onegovbear:default" slot="theme">
         <theme:scss file="theme/scss/accessibility.scss" />
 

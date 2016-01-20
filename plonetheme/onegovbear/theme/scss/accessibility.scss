@@ -5,7 +5,7 @@
     display: inline-block;
     > a:focus,
     #portal-searchbox > a[accesskey]:focus {
-      background-color: $primary-color;
+      background-color: $color-primary;
       color: #fff;
       font-size: 12px;
       height: 27px;
