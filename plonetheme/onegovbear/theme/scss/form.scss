@@ -63,7 +63,7 @@ input[type="radio"] {
     @include requiredbox();
     font-weight: bold;
     .formHelp {
-      color: $color-text-inverted;
+      color: $color-text-light;
       display: block;
       margin: 0 0 0.2em 0;
       font-weight: normal;
