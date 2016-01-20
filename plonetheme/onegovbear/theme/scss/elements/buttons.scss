@@ -5,7 +5,7 @@ button,
 a.button,
 a.button.standalone,
 input.standalone {
-  @include button();
+  @include button-default();
 }
 
 button.context,
@@ -35,4 +35,8 @@ input[type="submit"][disabled],
 input[type="reset"][disabled],
 button[disabled] {
   @include button-disabled();
+}
+
+.managePortletsLink > a {
+  @include button();
 }
