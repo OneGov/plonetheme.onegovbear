@@ -1,0 +1,18 @@
+#edit-bar {
+  @include clearfix();
+  background-color: $color-secondary;
+}
+
+.contentActions {
+  float: right;
+}
+
+#contentActionMenus {
+  @include list-horizontal();
+  @include auto-text-color();
+}
+
+#content-views {
+  @include tab-list();
+  float: left;
+}
