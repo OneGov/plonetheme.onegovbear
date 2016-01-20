@@ -5,6 +5,12 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Decrease upper and lower padding of logoRow.
+  [elioschmutz]
+
+- Add padding for page-wrapper
+  [elioschmutz]
+
 - Hide pathbar and documentFirstHeading on the front page.
   [mathias.leimgruber]
 
