@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<registry>
+  plone app theming interfaces IThemeSettings parameterExpressions
+  <record name="plone.app.theming.interfaces.IThemeSettings.parameterExpressions">
+    <value purge="False">
+        <element key="pathbar_full_width">python: True</element>
+    </value>
+  </record>
+</registry>
