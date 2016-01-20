@@ -1,7 +1,7 @@
 table.mceLayout {
   td.mceIframeContainer {
     border: none;
-    @include inputfield;
+    @include input();
     padding: 0;
     width: 100%;
   }

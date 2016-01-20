@@ -16,30 +16,6 @@ $font-size-input: 1em !default;
   input-error-bg-color,
   input-error-border-color);
 
-
-
-@mixin inputfield() {
-  font-size: $font-size-input;
-  font-family: $font-family-primary;
-  display: inline-block;
-  line-height: 1em;
-  padding: 0.5em;
-  width: 20em;
-  outline: none;
-  box-sizing: border-box;
-
-  border: 1px solid $input-border-color;
-  @include borderradius();
-  background: $input-bg-color;
-  @include boxshadow(0 1px 1px darken($input-bg-color, 5%) inset);
-
-  &:focus {
-    border: 1px solid $input-focus-color;
-    @include boxshadow(0 1px 1px transparentize($input-focus-color, .8) inset,
-                       0 0 5px transparentize($input-focus-color, .6));
-  }
-}
-
 @mixin requiredbox() {
   .required:after {
     position: relative;
@@ -73,12 +49,6 @@ $font-size-input: 1em !default;
   }
 }
 
-input[type="text"],
-input[type="password"],
-textarea {
-  @include inputfield();
-}
-
 input[type="checkbox"],
 input[type="radio"] {
   margin-right: 0.25em;
@@ -104,15 +74,6 @@ input[type="radio"] {
     }
   }
 
-  textarea {
-    @include boxshadow(border-box);
-    width: 100%;
-  }
-
-  input[type="text"][name$="title"],
-  input#title {
-    font-size: 120%;
-  }
 }
 
 // Form: Image widget.

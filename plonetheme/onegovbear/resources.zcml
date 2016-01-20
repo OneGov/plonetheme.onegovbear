@@ -16,6 +16,7 @@
         <theme:scss file="theme/scss/elements/menues.scss" />
         <theme:scss file="theme/scss/elements/buttons.scss" />
         <theme:scss file="theme/scss/elements/tabs.scss" />
+        <theme:scss file="theme/scss/elements/form.scss" />
 
         <theme:scss file="theme/scss/site/editbar.scss" />
         <theme:scss file="theme/scss/site/portaltop.scss" />
