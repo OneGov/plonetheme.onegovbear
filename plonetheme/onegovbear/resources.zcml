@@ -13,7 +13,6 @@
         <theme:scss file="theme/scss/accessibility.scss" />
 
         <theme:scss file="theme/scss/elements/menues.scss" />
-
         <theme:scss file="theme/scss/elements/buttons.scss" />
         <theme:scss file="theme/scss/elements/tabs.scss" />
 
@@ -48,7 +47,6 @@
         <theme:scss file="theme/scss/simplelayout.scss" />
         <theme:scss file="theme/scss/datagridwidget.scss" />
         <theme:scss file="theme/scss/servicenavigation.scss" />
-        <theme:scss file="theme/scss/portaltop.scss" />
         <theme:scss file="theme/scss/additionallogo.scss" />
         <theme:scss file="theme/scss/languageselector.scss" />
         <theme:scss file="theme/scss/plonebrowser.scss" />

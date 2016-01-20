@@ -1,0 +1,15 @@
+#portal-top {
+  @include clearfix();
+  background-color: $color-primary;
+}
+
+#portal-personaltools-wrapper {
+  width: 100%;
+  max-width: $max-width-page;
+  margin: 0 auto;
+  text-align: right;
+}
+
+#portal-personaltools {
+  @include auto-text-color();
+}
