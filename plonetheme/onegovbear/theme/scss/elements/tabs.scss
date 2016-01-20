@@ -1,0 +1,8 @@
+.formTabs {
+  @include tab-list();
+
+  > li > a.selected {
+    @include tab-select();
+  }
+
+}

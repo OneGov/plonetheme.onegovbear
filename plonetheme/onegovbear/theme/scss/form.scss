@@ -73,43 +73,6 @@ $font-size-input: 1em !default;
   }
 }
 
-
-#content ul.formTabs, ul.formTabs {
-  @include ul(inline);
-  @include requiredbox();
-  border-bottom: 1px solid $formtabs-border-color;
-
-  &:after {
-    clear: both;
-  }
-  &:before, &:after {
-    content: "";
-    display: table;
-  }
-
-  a {
-    display: block;
-    float: left;
-    margin-bottom: -1px;
-    padding: 0.5em 0.75em;
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &.selected {
-      border: 1px solid $formtabs-border-color;
-      @include borderradius($border-radius-primary $border-radius-primary 0 0);
-      border-bottom-width: 0;
-      background-color: $color-content-background;
-
-      &:hover {
-        color: $color-link;
-      }
-    }
-  }
-}
-
 input[type="text"],
 input[type="password"],
 textarea {
