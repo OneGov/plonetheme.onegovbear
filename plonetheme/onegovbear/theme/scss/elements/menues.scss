@@ -1,6 +1,10 @@
 .actionMenu {
   margin: 0;
   position: relative;
+
+  /* Because the gridsystem uses relative position we have to set a fixed z-index for the actionMenu */
+  z-index: 1;
+
   &.activated {
     .actionMenuContent {
       display: block;
