@@ -1,4 +1,3 @@
-$text-color-light: desaturate(lighten($color-text, 25%), 100%) !default;
 $mark-broken-links: true !default;
 
 @include declare-variables(
@@ -18,39 +17,20 @@ a,
 }
 
 fieldset {
-  margin: 1em 0;
+  margin: $margin-vertical 0;
   border-width: 0 0 1px 0;
 }
 
-p {
-  margin-bottom: 1em;
-}
-
 ul.listTypePlain {
-  @include ul(plain);
-}
-
-dl {
-  @include dl(default);
+  @include list();
 }
 
 .discreet {
-  color: $text-color-light;
+  color: $color-text-light;
 }
 
 .hiddenStructure {
-  display: block;
-  background: transparent;
-  background-image: none; /* safari bug */
-  border: none;
-  height: 0.1em;
-  overflow: hidden;
-  padding: 0;
-  margin: -0.1em 0 0 -0.1em !important;
-  width: 1px;
-  left: -1000px;
-  top: -1000px;
-  position: absolute;
+  @include hidden-structure();
 }
 
 #content .visualNoMarker {
@@ -71,12 +51,12 @@ dl.collapsible {
 }
 
 .documentByLine {
-  color: $color-text-inverted;
-  margin-bottom: 1em;
+  color: $color-text-light;
+  margin-bottom: $margin-vertical;
 }
 
 #viewlet-below-content {
-  margin-top: 2em;
+  margin-top: $margin-vertical;
 }
 
 #category.documentByLine {
@@ -109,7 +89,7 @@ iframe {
   @extend .fa-icon;
   @extend .fa-bars;
   &:before {
-    font-size: 20px;
-    padding-left: 15px;
+    font-size: $font-size-medium;
+    padding-left: $padding-horizontal * 2;
   }
 }
