@@ -85,7 +85,8 @@
     <drop css:content="#edit-bar" />
 
     <replace css:content-children="#portal-breadcrumbs" css:theme-children="#portal-breadcrumbs" />
-    <drop css:content="#portal-breadcrumbs" />
+    <drop css:content="#portal-breadcrumbs" if="$pathbar_full_width" />
+    <drop css:theme="#portal-breadcrumbs" if="$pathbar_full_width = False" />
 
     <replace css:content-children="div.documentActions" css:theme-children="#document-actions" />
     <drop css:content="div.documentActions" />
