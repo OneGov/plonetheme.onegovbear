@@ -5,6 +5,13 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Fix init apply of onegovbear profile. Check commit desc for details.
+  [mathias.leimgruber]
+
+- Apply pagewrapper padding only to header if feature is enabled.
+  Remove pagewrapper padding for content area.
+  [mathias.leimgruber]
+
 - Introduce theming variable to configure pathbar location.
   It is possible to set the `pathbar_full_width` theme parameter in the FTI.
   When `pathbar_full_width` is set to `python: True` the pathbar is displayed full width.
