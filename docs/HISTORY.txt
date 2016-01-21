@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Fix init apply of onegovbear profile. Check commit desc for details.
+  [mathias.leimgruber]
+
 - Apply pagewrapper padding only to header if feature is enabled.
   Remove pagewrapper padding for content area.
   [mathias.leimgruber]
