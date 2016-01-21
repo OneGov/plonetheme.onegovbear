@@ -23,5 +23,14 @@ $content-border-color: transparentize($gray, 50%) !default;
 
       @include borderradius-bottom-left(2 * $border-radius - $content-border-size);
     }
+
+    #header .logoRow {
+      padding: 10px 5px;
+    }
+
+    .portal-searchbox-wrapper {
+      padding: 5px 5px;
+    }
+
   }
 }
