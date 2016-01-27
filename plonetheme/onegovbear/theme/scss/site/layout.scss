@@ -116,7 +116,7 @@ body {
 
 .globalnavRow {
   @include row();
-  border-bottom: 2px solid $color-primary;
+  border-bottom: 1px solid $color-primary;
   margin: $margin-vertical 0;
   .fixed-header {
     max-width: $max-width-page;
@@ -131,13 +131,18 @@ body {
 
 #portal-globalnav {
   @include list-horizontal();
-  a {
+
+  li.selected a{
+    border-bottom-color: $color-primary;
+  }
+
+  > li > a {
     @include no-link();
     font-size: $font-size-medium;
     margin-right: $margin-horizontal;
+    padding: $padding-vertical ($padding-horizontal / 2);
     border-bottom: 3px solid transparent;
     &:hover {
-      color: $color-link;
       border-bottom-color: $color-primary;
     }
   }
