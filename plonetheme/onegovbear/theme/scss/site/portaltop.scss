@@ -5,7 +5,9 @@
 
 #portal-personaltools-wrapper {
   text-align: right;
-  float: right;
+  width: 100%;
+  max-width: $max-width-page;
+  margin: 0 auto;
 
   #user-name {
     @extend .fa-icon;

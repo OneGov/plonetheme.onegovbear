@@ -110,7 +110,6 @@ body {
 }
 
 .logoRow {
-  @include row;
   max-width: $max-width-page;
   margin: $margin-vertical auto;
 }
