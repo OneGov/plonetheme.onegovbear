@@ -114,6 +114,39 @@ body {
   margin: $margin-vertical auto;
 }
 
+.globalnavRow {
+  @include row();
+  border-bottom: 2px solid $color-primary;
+  margin: $margin-vertical 0;
+  .fixed-header {
+    max-width: $max-width-page;
+    margin: 0 auto;
+  }
+  .navigation {
+    @include cell();
+    @include gridposition(0);
+    @include gridwidth(16);
+  }
+}
+
+#portal-globalnav {
+  @include list-horizontal();
+  a {
+    @include no-link();
+    font-size: $font-size-medium;
+    margin-right: $margin-horizontal;
+    border-bottom: 3px solid transparent;
+    &:hover {
+      color: $color-link;
+      border-bottom-color: $color-primary;
+    }
+  }
+}
+
+.global-nav-search-wrapper {
+  @include clearfix();
+}
+
 // Responsive styles if both columns are available
 .has-nav-column.has-sidebar-column {
   #column-content {

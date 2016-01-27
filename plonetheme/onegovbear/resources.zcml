@@ -29,7 +29,6 @@
         <theme:scss file="theme/scss/content.scss" />
         <theme:scss file="theme/scss/pathbar.scss" />
         <theme:scss file="theme/scss/actions.scss" />
-        <theme:scss file="theme/scss/globalnav.scss" />
         <theme:scss file="theme/scss/portlets.scss" />
         <theme:scss file="theme/scss/navigation.scss" />
         <theme:scss file="theme/scss/portlet-calendar.scss" />
