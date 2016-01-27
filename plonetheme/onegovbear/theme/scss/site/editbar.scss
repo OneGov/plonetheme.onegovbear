@@ -8,8 +8,12 @@
 }
 
 #contentActionMenus {
-  @include list-horizontal();
-  @include auto-text-color();
+  @include list-horizontal($direction: rtl);
+
+  .actionMenuHeader a {
+    @include auto-text-color($color-secondary);
+  }
+
 }
 
 #content-views {
