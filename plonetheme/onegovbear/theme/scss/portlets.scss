@@ -1,4 +1,4 @@
-$portlet-column-bg-color: $color-gray-light !default;
+$portlet-column-bg-color: transparent !default;
 
 @include declare-variables(
   portlet-column-bg-color);
@@ -68,6 +68,13 @@ $portlet-column-bg-color: $color-gray-light !default;
 
   .portlet-action
   {
+
+    button {
+      @include auto-text-color($color-content-background);
+      margin: 0;
+      padding: 0;
+    }
+
     float: left;
     padding: 0.5em;
     text-decoration: none;
