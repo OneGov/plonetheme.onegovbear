@@ -28,7 +28,6 @@
         <theme:scss file="theme/scss/contacts.scss" />
         <theme:scss file="theme/scss/content.scss" />
         <theme:scss file="theme/scss/pathbar.scss" />
-        <theme:scss file="theme/scss/actions.scss" />
         <theme:scss file="theme/scss/portlets.scss" />
         <theme:scss file="theme/scss/navigation.scss" />
         <theme:scss file="theme/scss/portlet-calendar.scss" />
@@ -47,7 +46,6 @@
         <theme:scss file="theme/scss/sitemap.scss" />
         <theme:scss file="theme/scss/simplelayout.scss" />
         <theme:scss file="theme/scss/datagridwidget.scss" />
-        <theme:scss file="theme/scss/servicenavigation.scss" />
         <theme:scss file="theme/scss/additionallogo.scss" />
         <theme:scss file="theme/scss/languageselector.scss" />
         <theme:scss file="theme/scss/plonebrowser.scss" />
