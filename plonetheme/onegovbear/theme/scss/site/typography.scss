@@ -7,6 +7,7 @@ body {
  */
 h1, h2, h3, h4 {
   font-family: $font-family-heading;
+  margin-top: 0;
   margin-bottom: .5em;
   line-height: $line-height-base;
 }
