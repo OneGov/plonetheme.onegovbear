@@ -143,6 +143,32 @@ body {
   }
 }
 
+.LSBox {
+  @include clearfix();
+  position: relative;
+  &:after {
+    font-family: FontAwesome;
+    content: "\f002";
+    position: absolute;
+    visibility: visible;
+    right: - 2 * $padding-horizontal - ($padding-horizontal / 2);
+    top: $padding-vertical;
+  }
+  input[type="text"] {
+    padding-right: 2 * $padding-horizontal;
+  }
+}
+
+.global-nav-search-wrapper {
+  position: relative;
+  .portal-searchbox-wrapper {
+    position: absolute;
+    height: auto;
+    right: 3 * $padding-horizontal;
+    top: -$line-height-base - $padding-vertical * 2 - $margin-vertical - $margin-vertical;
+  }
+}
+
 .global-nav-search-wrapper {
   @include clearfix();
 }
