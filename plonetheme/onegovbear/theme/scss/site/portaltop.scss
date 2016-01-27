@@ -4,10 +4,13 @@
 }
 
 #portal-personaltools-wrapper {
-  width: 100%;
-  max-width: $max-width-page;
-  margin: 0 auto;
   text-align: right;
+  float: right;
+
+  #user-name {
+    @extend .fa-icon;
+    @extend .fa-user;
+  }
 }
 
 #portal-personaltools {
