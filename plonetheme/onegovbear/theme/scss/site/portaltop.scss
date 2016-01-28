@@ -1,20 +1,37 @@
-#portal-top {
+.masthead {
   @include clearfix();
   background-color: $color-primary;
 }
 
-#portal-personaltools-wrapper {
-  text-align: right;
-  width: 100%;
+#portal-top {
   max-width: $max-width-page;
   margin: 0 auto;
-
-  #user-name {
-    @extend .fa-icon;
-    @extend .fa-user;
+  .actionMenuHeader > a {
+    @include auto-text-color($color-secondary);
+    &:hover {
+      @include auto-text-color($color-secondary);
+    }
+  }
+  #anon-personalbar > a {
+    @include auto-text-color($color-secondary);
   }
 }
 
-#portal-personaltools {
-  @include auto-text-color();
+#portal-personaltools-wrapper {
+  float: right;
+  > ul {
+    @include list-horizontal();
+  }
+}
+
+#service-navigation {
+  float: right;
+  > ul {
+    @include list-horizontal();
+  }
+}
+
+#user-name {
+  @extend .fa-icon;
+  @extend .fa-user;
 }
