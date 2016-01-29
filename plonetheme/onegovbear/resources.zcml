@@ -23,7 +23,6 @@
         <theme:scss file="theme/scss/site/layout.scss" />
         <theme:scss file="theme/scss/site/typography.scss" />
 
-        <theme:scss file="theme/scss/pagewrapper.scss" />
         <theme:scss file="theme/scss/startpage.scss" />
         <theme:scss file="theme/scss/contacts.scss" />
         <theme:scss file="theme/scss/content.scss" />
