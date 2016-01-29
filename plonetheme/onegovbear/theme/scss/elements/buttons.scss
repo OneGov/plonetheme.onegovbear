@@ -10,7 +10,8 @@ input.standalone {
 
 button.context,
 a.button.context,
-input.context {
+input.context,
+a.managePortletsFallback {
   @include button();
 }
 
