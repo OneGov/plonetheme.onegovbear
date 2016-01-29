@@ -36,7 +36,3 @@ input[type="reset"][disabled],
 button[disabled] {
   @include button-disabled();
 }
-
-.managePortletsLink > a {
-  @include button();
-}
