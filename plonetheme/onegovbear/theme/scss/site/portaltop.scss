@@ -7,13 +7,7 @@
   max-width: $max-width-page;
   margin: 0 auto;
   .actionMenuHeader > a {
-    @include auto-text-color($color-secondary);
-    &:hover {
-      @include auto-text-color($color-secondary);
-    }
-  }
-  #anon-personalbar > a {
-    @include auto-text-color($color-secondary);
+    @include auto-link-color($color-secondary);
   }
 }
 
@@ -24,10 +18,10 @@
   }
 }
 
-#service-navigation {
-  float: right;
-  > ul {
-    @include list-horizontal();
+#anon-personalbar {
+  > a {
+    @include no-link();
+    @include auto-link-color();
   }
 }
 
