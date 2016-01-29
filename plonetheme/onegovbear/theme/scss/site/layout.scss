@@ -51,34 +51,24 @@ body {
 
 #breadcrumbs-wrapper {
   @include clearfix();
-  margin: $margin-vertical 0;
-}
-
-#portal-breadcrumbs {
   @include cell();
   @include gridposition(0);
   @include gridwidth(16);
-  @include clearfix();
-  > .row {
-    @include row();
-  }
-}
-
-#breadcrumbs-wrapper {
-  @include clearfix();
-  margin: $margin-vertical 0;
+  margin-top: $margin-vertical;
+  margin-bottom: $margin-vertical;
 }
 
 #portal-breadcrumbs {
-  @include cell();
-  @include gridposition(0);
-  @include gridwidth(16);
+  @include clearfix();
 }
 
 #column-content {
   @include cell();
   @include gridposition(0);
   @include gridwidth(16);
+  > .row {
+    @include row();
+  }
 }
 
 #column-sidebar {
