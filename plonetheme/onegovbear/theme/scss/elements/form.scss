@@ -1,6 +1,5 @@
 input[type="text"],
-input[type="password"],
-textarea {
+input[type="password"] {
   @include input();
 }
 
