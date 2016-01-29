@@ -11,6 +11,19 @@ body {
   color: $color-text;
 }
 
+.portaltype-plone-site {
+  #breadcrumbs-wrapper {
+    display: none;
+  }
+  #columns {
+    padding-top: $margin-vertical;
+  }
+  #edit-bar {
+    margin-top: -$margin-vertical;
+    margin-bottom: $margin-vertical;
+  }
+}
+
 #container {
   width: 100%;
   float: left;
@@ -49,6 +62,17 @@ body {
   > .row {
     @include row();
   }
+}
+
+#breadcrumbs-wrapper {
+  @include clearfix();
+  margin: $margin-vertical 0;
+}
+
+#portal-breadcrumbs {
+  @include cell();
+  @include gridposition(0);
+  @include gridwidth(16);
 }
 
 #column-content {
