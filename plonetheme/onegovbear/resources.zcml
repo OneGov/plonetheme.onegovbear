@@ -27,7 +27,6 @@
         <theme:scss file="theme/scss/startpage.scss" />
         <theme:scss file="theme/scss/contacts.scss" />
         <theme:scss file="theme/scss/content.scss" />
-        <theme:scss file="theme/scss/pathbar.scss" />
         <theme:scss file="theme/scss/portlets.scss" />
         <theme:scss file="theme/scss/navigation.scss" />
         <theme:scss file="theme/scss/portlet-calendar.scss" />
