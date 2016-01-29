@@ -9,8 +9,8 @@ $color-page-background: $color-gray-light !default;
 $color-content-background: $color-white !default;
 
 @include declare-variables(
-  $font-family-primary,
-  $font-family-heading,
-  $font-family-code,
-  $color-page-background,
-  $color-content-background);
+  font-family-primary,
+  font-family-heading,
+  font-family-code,
+  color-page-background,
+  color-content-background);
