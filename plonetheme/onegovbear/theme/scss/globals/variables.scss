@@ -1,9 +1,9 @@
 /*
   Fonts
  */
-$font-family-primary: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-heading: $font-family-primary;
-$font-family-code: "Courier New", Courier, monospace;
+$font-family-primary: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-family-heading: $font-family-primary !default;
+$font-family-code: "Courier New", Courier, monospace !default;
 
 $color-page-background: $color-gray-light !default;
 $color-content-background: $color-white !default;
