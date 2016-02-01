@@ -1,6 +1,6 @@
-$portalmessage-info-color: lighten($context-color, 40%) !default;
-$portalmessage-warning-color: lighten($warning-color, 30%) !default;
-$portalmessage-error-color: lighten($danger-color, 20%) !default;
+$portalmessage-info-color: $color-default !default;
+$portalmessage-warning-color: $color-warning !default;
+$portalmessage-error-color: $color-danger !default;
 $portalmessage-undefined-color: #eee !default;
 $portalmessage-message-color: #fafafa !default;
 $portalmessage-border-color: #ccc !default;
@@ -19,22 +19,20 @@ $portalmessage-border-color: #ccc !default;
   &.#{$typeclass} dt {
     background-color: $portalmessage-dt-color;
     border: 1px solid darken($portalmessage-dt-color, 15%);
-    color: contrast($portalmessage-dt-color,
-                    lighten($portalmessage-dt-color, 50%),
-                    darken($portalmessage-dt-color, 50%),
-                    $lightness:63%);
+    @include auto-text-color($portalmessage-dt-color);
   }
 }
 
 dl.portalMessage, #content dl.portalMessage {
   display: block;
-  margin: 1em 0;
+  margin: $margin-vertical 0;
 
   dt {
-    padding: 0.4em 1em;
+    padding: $padding-vertical / 2 $padding-horizontal / 2;
     display: table-cell;
     font-weight: normal;
-    @include borderradius($border-radius 0 0 $border-radius);
+    border-top-left-radius: $border-radius-primary;
+    border-bottom-left-radius: $border-radius-primary;
     white-space: nowrap;
   }
 
@@ -44,13 +42,14 @@ dl.portalMessage, #content dl.portalMessage {
   @include portal-message-dt($portalmessage-error-color, error);
 
   dd {
-    padding: 0.4em 1em;
+    padding: $padding-vertical / 2 $padding-horizontal / 2;
     display: table-cell;
     width: 100%;
     background-color: $portalmessage-message-color;
     border: 1px solid $portalmessage-border-color;
     border-left-width: 0;
-    @include borderradius(0 $border-radius $border-radius 0);
+    border-top-right-radius: $border-radius-primary;
+    border-bottom-right-radius: $border-radius-primary;
   }
 
 }

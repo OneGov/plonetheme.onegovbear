@@ -1,4 +1,4 @@
-$portlet-column-bg-color: $gray-lighter !default;
+$portlet-column-bg-color: transparent !default;
 
 @include declare-variables(
   portlet-column-bg-color);
@@ -60,14 +60,21 @@ $portlet-column-bg-color: $gray-lighter !default;
 
 
 .managedPortlet {
-  border: 1px solid $gray-light;
-  background-color: $gray-lighter;
+  border: 1px solid $color-gray-light;
+  background-color: $color-gray-light;
   @include borderradius();
   margin: 1em 0;
   overflow: hidden;
 
   .portlet-action
   {
+
+    button {
+      @include auto-text-color($color-content-background);
+      margin: 0;
+      padding: 0;
+    }
+
     float: left;
     padding: 0.5em;
     text-decoration: none;
@@ -81,7 +88,7 @@ $portlet-column-bg-color: $gray-lighter !default;
     clear: both;
     text-decoration: none;
     padding: 0.5em;
-    background-color: $content-bg-color;
+    background-color: $color-content-background;
     &:hover {
       text-decoration: none;
     }

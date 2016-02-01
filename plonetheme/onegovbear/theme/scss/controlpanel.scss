@@ -21,7 +21,7 @@
 body.template-theming-controlpanel {
   #visual-portal-wrapper {
     @include clearfix();
-    width: $page-wrapper-width;
+    width: $max-width-page;
     margin: 0 auto;
     background: #FFF;
   }

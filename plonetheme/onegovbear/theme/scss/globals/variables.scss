@@ -1,0 +1,16 @@
+/*
+  Fonts
+ */
+$font-family-primary: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-heading: $font-family-primary;
+$font-family-code: "Courier New", Courier, monospace;
+
+$color-page-background: $color-gray-light !default;
+$color-content-background: $color-white !default;
+
+@include declare-variables(
+  font-family-primary,
+  font-family-heading,
+  font-family-code,
+  color-page-background,
+  color-content-background);

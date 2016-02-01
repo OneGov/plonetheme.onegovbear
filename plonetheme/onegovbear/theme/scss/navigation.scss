@@ -1,6 +1,6 @@
-$portlet-navigation-bg-color: $content-bg-color !default;
-$portlet-navigation-hover-color: lighten($gray-base, 97.5%) !default;
-$portlet-navigation-active-color: lighten($gray-base, 95.5%) !default;
+$portlet-navigation-bg-color: $color-content-background !default;
+$portlet-navigation-hover-color: lighten($color-gray-dark, 97.5%) !default;
+$portlet-navigation-active-color: lighten($color-gray-dark, 95.5%) !default;
 
 @include declare-variables(
   portlet-navigation-bg-color,
@@ -19,8 +19,8 @@ $portlet-navigation-active-color: lighten($gray-base, 95.5%) !default;
 .portlet.portletNavigationTree {
   @include dl(plain);
 
-  border-top: 1px solid $gray-lighter;
-  border-bottom: 1px solid $gray-lighter;
+  border-top: 1px solid $color-gray-light;
+  border-bottom: 1px solid $color-gray-light;
 }
 
 
@@ -46,7 +46,7 @@ ul.navTree {
 
   a.navTreeCurrentItem, li.navTreeCurrentItem > a {
     font-weight: bold;
-    color: $gray-darker;
+    color: $color-gray-dark;
     @include navigationitem($portlet-navigation-active-color);
   }
 
@@ -61,7 +61,7 @@ ul.navTree {
   }
 
   li.navTreeTopNode {
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $color-gray-light;
     padding-left: 0;
   }
 

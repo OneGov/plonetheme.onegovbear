@@ -1,24 +1,24 @@
-$toolbar-bg-color: $gray-dark;
-$action-bg-color: $gray-dark;
-$action-bg-color-hover: $gray-light;
+$toolbar-bg-color: $color-gray-dark;
+$action-bg-color: $color-gray-dark;
+$action-bg-color-hover: $color-gray-light;
 
-$column-bg-color: $gray-light;
+$column-bg-color: $color-gray-light;
 
-$block-placeholder-bg-color: $gray;
+$block-placeholder-bg-color: $color-gray-dark;
 
 $layout-placeholder-bg-color: $block-placeholder-bg-color;
 $layout-placeholder-border-size: 1px;
 $layout-placeholder-border-style: dotted;
-$layout-placeholder-border-color: $gray-dark;
+$layout-placeholder-border-color: $color-gray-dark;
 
 $simplelayout-gutter-width: $gutter-width !default;
 $simplelayout-columns: $columns !default;
 
-$simplelayout-block-glow-color: transparentize($primary-color, .6);
+$simplelayout-block-glow-color: transparentize($color-primary, .6);
 
 ul[class^="sl-toolbar"] {
   background-color: $toolbar-bg-color;
-  border-radius: $border-radius;
+  border-radius: $border-radius-primary;
   @include transition(opacity .3s ease-out);
   z-index: 100;
 }

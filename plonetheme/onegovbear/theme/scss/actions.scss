@@ -30,18 +30,3 @@
     @include linklist;
   }
 }
-
-
-#bottom-actions {
-  width: $page-wrapper-width;
-  margin: 0 auto;
-  #portal-siteactions {
-    @include ul(plain);
-    @include linklist;
-    margin-bottom: 1em;
-
-    a {
-      color: $gray;
-    }
-  }
-}

@@ -1,8 +1,8 @@
-$plone-datepicker-bg-color: $menu-bg-color !default;
+$plone-datepicker-bg-color: $color-white !default;
 $plone-datepicker-heading-bg-color: darken($plone-datepicker-bg-color, 5%) !default;
 $plone-datepicker-hover-bg-color: darken($plone-datepicker-bg-color, 10%) !default;
-$plone-datepicker-border-color: $menu-border-color !default;
-$plone-datepicker-border-radius: $menu-border-radius !default;
+$plone-datepicker-border-color: $color-gray-light !default;
+$plone-datepicker-border-radius: $border-radius-primary !default;
 
 @include declare-variables(
   plone-datepicker-bg-color,
@@ -115,13 +115,13 @@ html body .calendar {
         }
 
         &.wn, &.name {
-          color: transparentize($text-color, .5);
+          color: transparentize($color-text, .5);
           cursor: default;
           font-size: 80%;
           &:hover {
             background-color: transparent !important;
             @include boxshadow(none);
-            color: transparentize($text-color, .4);
+            color: transparentize($color-text, .4);
           }
         }
 
@@ -148,7 +148,7 @@ html body .calendar {
         /* top-right corner */
         td:last-child {
           @include borderradius(0 $plone-datepicker-border-radius - 1px 0 0);
-          color: $danger-color;
+          color: $color-danger;
           font-weight: bold;
           cursor: pointer;
         }

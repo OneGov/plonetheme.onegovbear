@@ -38,14 +38,16 @@
     <after theme-children="/html/head" css:content="#portal-top style"/>
 
     <!-- JAVASCRIPT:
+         - Raven Integration JS always at top
          - JS always after CSS
          - external JS before embedded JS
          - Move #portal-top script tags to the head
     -->
+    <after content="/html/head/script[contains(text(), 'var raven_config')]" theme-children="/html/head" />
     <after content="/html/head/script[@src]" theme-children="/html/head" />
-    <after theme-children="/html/head" css:content="#portal-top script[src]"/>
-    <after content="/html/head/script[not(@src)]" theme-children="/html/head" />
-    <after theme-children="/html/head" css:content="#portal-top script:not([src])"/>
+    <after css:content="#portal-top script[src]" theme-children="/html/head" />
+    <after content="/html/head/script[not(@src) and not(contains(text(), 'var raven_config'))]" theme-children="/html/head" />
+    <after css:content="#portal-top script:not([src])" theme-children="/html/head" />
 
     <!-- Copy html lang -->
     <copy attributes="lang" content="/html" theme="/html" />

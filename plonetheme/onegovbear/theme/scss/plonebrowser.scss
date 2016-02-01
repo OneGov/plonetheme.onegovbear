@@ -117,7 +117,7 @@
     img {
       display: none;
     }
-    color: $text-color;
+    color: $color-text;
   }
   #search-btn {
     margin-top: 8px;
@@ -125,13 +125,13 @@
     img {
       display: none;
     }
-    color: $text-color;
+    color: $color-text;
   }
   #shortcutsicon {
     img {
       display: none;
     }
-    color: $text-color;
+    color: $color-text;
   }
   #shortcutsview {
     padding: 10px 0;
@@ -140,7 +140,7 @@
         display: none;
       }
       a {
-        color: $text-color;
+        color: $color-text;
       }
     }
   }
@@ -197,7 +197,7 @@
       #internalpath {
         display: table-cell;
         padding-top: 1px;
-        border-left: 1px solid $gray-light;
+        border-left: 1px solid $color-gray-light;
 
         &:empty {
           display: none;
@@ -209,7 +209,7 @@
         > a,
         span {
           padding: 0 5px 0 5px;
-          border: 1px solid $gray-light;
+          border: 1px solid $color-gray-light;
           border-left: none;
           border-left-width: 0;
           position: relative;
@@ -223,7 +223,7 @@
             height: 0;
             border-style: solid;
             border-width: 14px 0 13px 20px;
-            border-color: transparent transparent transparent $gray-light;
+            border-color: transparent transparent transparent $color-gray-light;
             position: absolute;
             right: -20px;
             top: -1px;
@@ -261,22 +261,22 @@
   }
   #linktype {
     @include clearfix();
-    border-bottom: 1px solid $gray-light;
+    border-bottom: 1px solid $color-gray-light;
     div {
       padding: 0;
       margin: 0;
-      @include borderradius($border-radius);
+      @include borderradius($border-radius-primary);
       border-bottom-width: 0;
       background-color: #fff;
       float: left;
       &.current {
-        border: 1px solid $gray-light;
+        border: 1px solid $color-gray-light;
         border-bottom: none;
         a {
           font-weight: normal;
           &:hover {
             text-decoration: none;
-            color: $link-color;
+            color: $color-link;
           }
         }
       }
@@ -289,7 +289,7 @@
         margin-bottom: -1px;
         &:hover {
           text-decoration: none;
-          color: $link-hover-color;
+          color: $color-link-hover;
         }
       }
     }
@@ -300,7 +300,7 @@
     width: 100%;
     padding-top: 10px;
     margin-top: 10px;
-    border-top: 1px solid $gray-light;
+    border-top: 1px solid $color-gray-light;
 
     .mceBottom .mceCenter {
       background-color: transparent;

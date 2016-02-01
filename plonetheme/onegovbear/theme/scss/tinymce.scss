@@ -1,7 +1,7 @@
 table.mceLayout {
   td.mceIframeContainer {
     border: none;
-    @include inputfield;
+    @include input();
     padding: 0;
     width: 100%;
   }
@@ -35,14 +35,14 @@ body.mceContentBody {
   padding: 0.5em;
 
   a {
-    color: $link-color !important;
-    font-weight: $link-font-weight;
-    text-decoration: $link-decoration !important;
+    color: $color-link !important;
+    font-weight: $font-weight-link;
+    text-decoration: $text-decoration-link !important;
     border-bottom: none !important;
 
     &:hover {
-      color: $link-hover-color;
-      text-decoration: $link-hover-decoration;
+      color: $color-link-hover;
+      text-decoration: $text-decoration-link-hover;
     }
   }
 }

@@ -1,8 +1,8 @@
 $searchbox-liveresults-bg-color: #fff !default;
-$searchbox-liveresults-hover-bg-color: darken($menu-bg-color, 5%) !default;
-$searchbox-liveresults-border-color: darken($menu-bg-color, 20%) !default;
+$searchbox-liveresults-hover-bg-color: darken($color-white, 5%) !default;
+$searchbox-liveresults-border-color: darken($color-white, 20%) !default;
 $searchbox-liveresults-border-radius: 5px !default;
-$search-highlight-bg-color: change-color($secondary-color, $lightness:70%, $saturation:90%) !default;
+$search-highlight-bg-color: change-color($color-secondary, $lightness:70%, $saturation:90%) !default;
 $searchbox-width: 295px;
 
 @include declare-variables(
@@ -16,13 +16,7 @@ $searchbox-width: 295px;
 .portal-searchbox-wrapper{
 
   width: $searchbox-width;
-  box-sizing: border-box;
   display: none;
-  z-index: 1;
-  right: 0;
-  height: 52px;
-  position: absolute;
-  top: -70px;
 
   @include screen-large {
     display: block;
@@ -50,29 +44,6 @@ $searchbox-width: 295px;
 
     & #searchGadget {
       width: 100%;
-      padding: 9px 35px 9px 10px;
-      float: right;
-      box-sizing: border-box;
-    }
-
-    .LSBox {
-      @include clearfix();
-      position: relative;
-      &:before {
-          font-family: FontAwesome;
-          content: "\f002";
-          position: absolute;
-          z-index: 3;
-          right: 12px;
-          top: 12px;
-          font-size: 14px;
-          background-color: transparent;
-          visibility: visible;
-      }
-      input[type="text"] {
-        line-height: 22px;
-        height: 40px;
-      }
     }
 
     #LSResult {
@@ -118,7 +89,7 @@ $searchbox-width: 295px;
 
           > .LSDescr {
             padding-left: 1.5em;
-            color: $light-text-color;
+            color: $color-text-light;
           }
         }
       }

@@ -10,7 +10,7 @@
   }
 
   a {
-    @include button($button-standalone-color);
+    @include button();
   }
   a, span {
     line-height: normal;

@@ -1,0 +1,31 @@
+.masthead {
+  @include clearfix();
+  background-color: $color-primary;
+}
+
+#portal-top {
+  max-width: $max-width-page;
+  margin: 0 auto;
+  .actionMenuHeader > a {
+    @include auto-link-color($color-secondary);
+  }
+}
+
+#portal-personaltools-wrapper {
+  float: right;
+  > ul {
+    @include list-horizontal();
+  }
+}
+
+#anon-personalbar {
+  > a {
+    @include no-link();
+    @include auto-link-color();
+  }
+}
+
+#user-name {
+  @extend .fa-icon;
+  @extend .fa-user;
+}
