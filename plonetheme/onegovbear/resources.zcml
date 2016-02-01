@@ -32,6 +32,7 @@
         <theme:scss file="theme/scss/form.scss" />
         <theme:scss file="theme/scss/tinymce.scss" />
         <theme:scss file="theme/scss/plone-datepicker.scss" />
+        <theme:scss file="theme/scss/plone-legacy.scss" />
         <theme:scss file="theme/scss/formwidget-contenttree.scss" />
         <theme:scss file="theme/scss/search.scss" />
         <theme:scss file="theme/scss/overlays.scss" />
