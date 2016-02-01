@@ -5,8 +5,11 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Add missing visualClear css class.
+  [elioschmutz]
+
 - Add missing !default to font family definitions.
-  [mathias.leimgruber] 
+  [mathias.leimgruber]
 
 - Fix init apply of onegovbear profile. Check commit desc for details.
   [mathias.leimgruber]
