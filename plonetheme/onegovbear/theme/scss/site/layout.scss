@@ -37,6 +37,7 @@ body {
 
 #columns {
   @include clearfix();
+  border-radius: $border-radius-primary;
   max-width: $max-width-page;
   margin-left: auto;
   margin-right: auto;
