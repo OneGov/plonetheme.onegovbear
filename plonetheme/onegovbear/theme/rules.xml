@@ -142,6 +142,15 @@
 
     <replace css:content="#portal-siteactions" css:theme="#portal-siteactions" />
 
+    <!-- Wrap p tag around the text inside of the documentDescription -->
+    <replace content="//div[@id='content']/div[contains(@class, 'documentDescription')]">
+        <div class="documentDescription description">
+            <p>
+                <xsl:apply-templates select="//div[@id='content']/div[contains(@class, 'documentDescription')]/text()" mode="raw"/>
+            </p>
+        </div>
+    </replace>
+
     <!-- Insert analytics js -->
     <after content="//*[@id='portal-footer-wrapper']/div/script" css:theme="#container" />
     <after content="//*[@id='portal-footer-wrapper']/div/noscript" css:theme="#container" />

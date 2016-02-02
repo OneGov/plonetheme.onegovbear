@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+1.0.0a5 (unreleased)
+--------------------
+
+- Wrap Paragraph-Tag arround text in div with documentDescription css class.
+  [mathias.leimgruber]
+
+
 1.0.0a4 (2015-12-09)
 --------------------
 
