@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Wrap Paragraph-Tag arround text in div with documentDescription css class.
+  [mathias.leimgruber]
+
 - Define styling for portlets and overlay  based on ftw.theming.
   [Kevin Bieri]
 
