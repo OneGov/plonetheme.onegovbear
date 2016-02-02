@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Add missing clearfix for the Simplelayout portlet.
+  [mathias.leimgruber]
+
 - Add missing visualClear css class.
   [elioschmutz]
 

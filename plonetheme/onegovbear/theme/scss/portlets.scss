@@ -37,6 +37,7 @@ $portlet-column-bg-color: transparent !default;
   &.SimplelayoutPortlet {
     background-color: transparent;
     padding: 0;
+    @include clearfix;
   }
 
   .block-placeholder {
