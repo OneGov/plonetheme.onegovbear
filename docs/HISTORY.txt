@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Define styling for portlets and overlay  based on ftw.theming.
+  [Kevin Bieri]
+
 - Add missing clearfix for the Simplelayout portlet.
   [mathias.leimgruber]
 

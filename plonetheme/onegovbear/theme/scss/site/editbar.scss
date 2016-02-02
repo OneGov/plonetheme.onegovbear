@@ -1,6 +1,8 @@
 #edit-bar {
   @include clearfix();
-  background-color: $color-secondary;
+  background-color: $color-edit;
+  border-top-left-radius: $border-radius-primary + 2;
+  border-top-right-radius: $border-radius-primary;
 }
 
 .contentActions {
@@ -19,4 +21,7 @@
 #content-views {
   @include tab-list();
   float: left;
+  li:first-child a {
+    border-top-left-radius: $border-radius-primary;
+  }
 }

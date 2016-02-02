@@ -1,124 +1,27 @@
 $portlet-column-bg-color: transparent !default;
 
-@include declare-variables(
-  portlet-column-bg-color);
-
-
-.template-folder_contents.has-sidebar-column #column-sidebar {
-  display: none;
+.portletWrapper {
+  margin-bottom: $margin-vertical;
+  padding-bottom: $padding-vertical;
+  border-bottom: 1px solid $color-gray-dark;
 }
 
+.portlet {
+  @include reset-definition-list();
+}
 
-#column-navigation, #column-sidebar {
+.portletHeader {
+  font-size: $font-size-h2;
+  margin-bottom: $margin-heading-vertical;
+}
 
-  .portletWrapper {
-    margin-bottom:2em;
-    .portlet {
-      .portletHeader {
-        font-size: $font-size-h2;
-        font-weight: bold;
-        a.tile {
-          padding:0.4em 0;
-          display: block;
-        }
-      }
-    }
+.portletItem {
+  margin-bottom: $margin-vertical * 2;
+  &.lastItem {
+    margin-bottom: 0;
   }
 }
 
-
-#column-sidebar .portlet {
-  @include dl(plain);
-  background-color: $portlet-column-bg-color;
-  @include borderradius();
-  padding: 1em;
-  margin-bottom: 1em;
-
-  &.SimplelayoutPortlet {
-    background-color: transparent;
-    padding: 0;
-    @include clearfix;
-  }
-
-  .block-placeholder {
-    float: none;
-  }
-
-  & .portletHeader {
-    margin-bottom: 0.75em;
-  }
-  .sl-column > .sl-block {
-    margin-bottom: 2em;
-    padding: 1em;
-    background-color: $portlet-column-bg-color;
-    box-sizing: border-box;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-
-.managedPortlet {
-  border: 1px solid $color-gray-light;
-  background-color: $color-gray-light;
-  @include borderradius();
-  margin: 1em 0;
-  overflow: hidden;
-
-  .portlet-action
-  {
-
-    button {
-      @include auto-text-color($color-content-background);
-      margin: 0;
-      padding: 0;
-    }
-
-    float: left;
-    padding: 0.5em;
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .portletHeader > a {
-    display: block;
-    clear: both;
-    text-decoration: none;
-    padding: 0.5em;
-    background-color: $color-content-background;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .portlet-action button {
-    border: none;
-    background: transparent;
-  }
-
-  .portlet-action.delete {
-    float: right;
-  }
-
-  .managedPortletActions a {
-    font-size: $font-size-base;
-  }
-  .managedPortletActions > a.delete {
-    float: right;
-  }
-  .managedPortletActions > a.delete,
-  .portlet-action.delete button {
-    color: #F00;
-  }
-
-}
-
-.portletArchiveListing {
-  ul {
-    @include ul(plain);
-  }
+.portletFooter {
+  margin: $margin-vertical 0;
 }
