@@ -1,55 +1,29 @@
-$overlay-close-width: 20px !default;
-$overlay-close-color: #333 !default;
-$overlay-close-bg-color: #eee !default;
-$overlay-close-hover-color: #fff !default;
-$overlay-close-hover-bg-color: #333 !default;
-$overlay-close-mask-color: transparentize($color-gray-light, .2) !default;
-
-@include declare-variables(
-  overlay-close-width,
-  overlay-close-color,
-  overlay-close-bg-color,
-  overlay-close-hover-color,
-  overlay-close-hover-bg-color,
-  overlay-close-mask-color);
-
-.overlay-open {
-  body { overflow: hidden; };
-}
-
+#exposeMask,
 #cboxOverlay,
 #exposeMask,
 .contenttreeWindowBlocker {
-  background: $overlay-close-mask-color !important;
-  opacity: 1 !important;
-  z-index: 999 !important;
   position: fixed !important;
-  width: auto !important;
-  height: auto !important;
   top: 0 !important;
-  left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
+  left: 0 !important;
+  opacity: .8 !important;
+  height: auto !important;
+  width: auto !important;
+  z-index: 999 !important;
+  background: #485563; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #485563 , #29323c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #485563 , #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.overlay, .contenttreeWindow {
-  display: none;
-  background-color: $color-content-background;
-  padding: 0.3em;
-  @include boxsizing(border-box);
-  @include boxshadow(0.1em 0.1em 1em 0 $color-gray-dark);
-  @include borderradius(10px);
-  padding-bottom: 60px;
-  z-index: 1000 !important;
+.overlay-open {
+  body {
+    overflow: hidden;
+  };
+}
 
-  position: fixed !important;
-  width: auto !important;
-  height: auto !important;
-  top: 20px !important;
-  bottom: 100px !important;
-  right: 0 !important;
-  left: 0 !important;
-
+.overlay,
+.contenttreeWindow {
   @include screen-small {
     right: 5% !important;
     left: 5% !important;
@@ -65,89 +39,60 @@ $overlay-close-mask-color: transparentize($color-gray-light, .2) !default;
     left: 20% !important;
   }
 
-  &.contenttreeWindow {
-    padding: 2em;
-    top: 30px !important;
-    bottom: 40px !important;
-    right: 20% !important;
-    left: 20% !important;
-  }
+  z-index: 1000 !important;
+  position: fixed !important;
+  width: auto !important;
+  height: auto !important;
+  top: $margin-vertical * 5 !important;
+  right: 0 !important;
+  bottom: $margin-vertical * 5 !important;
+  left: 0 !important;
+  display: none;
+  background-color: $color-content-background;
+  padding: $padding-vertical $padding-horizontal;
+  border-radius: $border-radius-primary;
+  box-shadow: $box-shadow-secondary;
 
-  .pb-ajax {
-    @include boxsizing(border-box);
-    overflow: auto;
-    padding: 1em;
-    padding-bottom: 0;
-    height: 100%;
-    width: 100%;
+  .close {
+    @extend .fa-icon;
+    @extend .fa-close;
+    @include link();
+    @include auto-text-color($color-link);
+    position: absolute;
+    right: - 1.5 * $padding-vertical;
+    top: - 1.5 * $padding-vertical;
+    background: $color-link;
+    border-radius: 50%;
+    &:hover {
+      @include auto-text-color($color-link-hover);
+      background-color: $color-link-hover;
+    }
+    &:before {
+      min-width: 0 !important;
+      margin: 0 !important;
+      width: $font-size-base;
+      height: $font-size-base;
+      line-height: $font-size-base;
+      padding: $padding-vertical;
+    }
   }
 
   .formControls {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 0 20px 10px 20px;
+    padding: $padding-vertical $padding-horizontal;
     box-sizing: border-box;
-    background-color: #fff;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background-color: $color-content-background;
+    border-bottom-right-radius: $border-radius-primary;
+    border-bottom-left-radius: $border-radius-primary;
     right: 0;
     > input {
       // http://blog.getpostman.com/2015/01/23/ui-repaint-issue-on-chrome/
       -webkit-transform: translate3d(0, 0, 0)
     }
   }
-
-  div.close {
-    position: absolute;
-    right: #{$overlay-close-width * -0.6};
-    top: #{$overlay-close-width * -0.6};
-    cursor: pointer;
-    height: $overlay-close-width;
-    width: $overlay-close-width;
-
-    >span {
-      display: none;
-    }
-
-    &:before {
-      position: absolute;
-      content: '';
-      background-color: $overlay-close-bg-color;
-      display: block;
-      height: 100%;
-      width: 100%;
-      border-radius: 100%;
-      @include boxshadow(0 0 #{$overlay-close-width * 0.1} 0 darken($overlay-close-color, 20%),
-                         inset 0 0 #{$overlay-close-width * 0.1} 0 darken($overlay-close-bg-color, 10%));
-    }
-
-    &:after {
-      position: absolute;
-      content: 'x';
-      color: $overlay-close-color;
-      font-family: Verdana;
-      height: 100%;
-      width: 100%;
-      font-size: $overlay-close-width;
-      margin: 0;
-      padding-left: #{$overlay-close-width * 0.23};
-      margin-top: #{$overlay-close-width * -0.33};
-    }
-
-    &:hover {
-      &:before {
-        background-color: $overlay-close-hover-bg-color;
-        @include boxshadow(0 0 #{$overlay-close-width * 0.1} 0 $overlay-close-color,
-                           inset 0 0 #{$overlay-close-width * 0.1} 0 darken($overlay-close-hover-bg-color, 10%));
-      }
-      &:after {
-        color: $overlay-close-hover-color;
-      }
-    }
-  }
 }
-
 
 #exposeMask + .contenttreeWindow {
   z-index: 1001 !important;
@@ -157,20 +102,10 @@ $overlay-close-mask-color: transparentize($color-gray-light, .2) !default;
   z-index: 1000 !important;
 }
 
-.overlay-login {
-  width: 600px !important;
-  height: 320px !important;
-  left: 50% !important;
-  margin-left: -300px;
-  top: 50% !important;
-  margin-top: -280px;
-}
-
-.overlay-delete {
-  width: 600px !important;
-  height: 320px !important;
-  left: 50% !important;
-  margin-left: -300px;
-  top: 50% !important;
-  margin-top: -280px;
+.pb-ajax {
+  @include boxsizing(border-box);
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  padding-bottom: $padding-vertical * 4 + $margin-vertical + 1em;
 }
