@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Define styling for plone.app.multilingual based on ftw.theming.
+  [Kevin Bieri]
+
 - Extend menues/mobile scss by header/section tags to support menues without definition lists.
   [mathias.leimgruber]
 
