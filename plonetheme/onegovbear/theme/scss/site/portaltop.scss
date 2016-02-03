@@ -29,3 +29,12 @@
   @extend .fa-icon;
   @extend .fa-user;
 }
+
+#portal-languageselector {
+  @include tab-list();
+  .currentLanguage {
+    a {
+      @include tab-select();
+    }
+  }
+}
