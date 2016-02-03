@@ -38,139 +38,30 @@ class Variable(TextLine):
 
 
 class IDefaultDesignVariablesSchema(form.Schema):
-    primary_color = Variable(
-        '$primary-color',
-        description=_('label_primary_color', default=u'The default color used if no other color has been defined.')
+    color_primary = Variable(
+        '$color-primary',
+        description=_('label_color_primary', default=u'This color is the main color of the page. It appears the most on the page. Should be the main color of the CI/CD. This color is also used for links, buttons and tabs.')
     )
-    secondary_color = Variable(
-        '$secondary-color',
-        description=_('label_secondary_color', default=u'Used for the background color of the edit bar, the link color of the language selector and service navigation.')
+    color_secondary = Variable(
+        '$color-secondary',
+        description=_('label_color_secondary', default=u'This color is used widley in the page but less than the primary color. Should be the one of the main colors of the CI/CD. This color is also used for links and buttons.')
     )
-    globalnav_bg_color = Variable(
-        '$globalnav-bg-color',
-        description=_('label_globalnav_bg_color', default=u'The color used for the background of the global navigation.')
+    color_edit = Variable(
+        '$color-edit',
+        description=_('label_color_edit', default=u'This color is only visible in the logged in state. It is used to indicate edit sections e.q. Simplelayout or the portal top navigation')
     )
-    globalnav_bg_color_hover = Variable(
-        '$globalnav-bg-color-hover',
-        description=_('label_globalnav_bg_color_hover', default=u'The color the background of the global navigation changes to when the mouse is moved over it.')
+    color_link = Variable(
+        '$color-link',
+        description=_('label_color_link', default=u'This color is used for the default state of links. The default color is $color-primary')
     )
-    globalnav_link_color = Variable(
-        '$globalnav-link-color',
-        description=_('label_globalnav_link_color', default=u'The color of the text of the global navigation items.')
-    )
-    globalnav_link_color_hover = Variable(
-        '$globalnav-link-color-hover',
-        description=_('label_globalnav_link_color_hover', default=u'The color the text of the global navigation items changes to when the mouse is moved over it.')
-    )
-    globalnav_separator_color = Variable(
-        '$globalnav-separator-color',
-        description=_('label_globalnav_separator_color', default=u'The color of the separator of the global navigation items.')
-    )
-    button_standalone_color = Variable(
-        '$button-standalone-color',
-        description=_('label_button_standalone_color', default=u'Color of the standalone button, e.g. "cancel" buttons.')
-    )
-    button_context_color = Variable(
-        '$button-context-color',
-        description=_('label_button_context_color', default=u'Color of button related to the current context.')
-    )
-    button_destructive_color = Variable(
-        '$button-destructive-color',
-        description=_('label_button_destructive_color', default=u'Color of buttons causing a destructive action, e.g. deleting content.')
-    )
-    button_success_color = Variable(
-        '$button-success-color',
-        description=_('label_button_success_color', default=u'Color of buttons conveying a successful action.')
-    )
-    button_warning_color = Variable(
-        '$button-warning-color',
-        description=_('label_button_warning_color', default=u'Color of buttons causing an action the user should be warned about.')
-    )
-    button_danger_color = Variable(
-        '$button-danger-color',
-        description=_('label_button_danger_color', default=u'Color of buttons causing a dangerous action.')
-    )
-    button_disabled_color = Variable(
-        '$button-disabled-color',
-        description=_('label_button_disabled_color', default=u'Color of disabled buttons i.e. not causing an action.')
-    )
-    button_text_light_color = Variable(
-        '$button-text-light-color',
-        description=_('label_button_text_light_color', default=u'A light color for buttons with dark colors (applied automatically for maximum contrast).')
-    )
-    button_text_dark_color = Variable(
-        '$button-text-dark-color',
-        description=_('label_button_text_dark_color', default=u'A dark color for buttons with light colors (applied automatically for maximum contrast).')
-    )
-    footer_background_color = Variable(
-        '$footer-background-color',
-        description=_('label_footer_background_color', default=u'Background color of the footer.')
-    )
-    footer_font_color = Variable(
-        '$footer-font-color',
-        description=_('label_footer_font_color', default=u'The color used for elements inside the footer, e.g. text.')
-    )
-    footer_link_color = Variable(
-        '$footer-link-color',
-        description=_('label_footer_link_color', default=u'The color of the links inside the footer.')
-    )
-    footer_link_color_hover = Variable(
-        '$footer-link-color-hover',
-        description=_('label_footer_link_color_hover', default=u'The color the links inside the footer change to when the mouse is moved over them.')
-    )
-    font_family_base = Variable(
-        '$font-family-base',
-        description=_('label_font_family_base', default=u'Base font family.')
-    )
-    line_height_base = Variable(
-        '$line-height-base',
-        description=_('label_line_height_base', default=u'Base line height.')
+    color_link_hover = Variable(
+        '$color-link-hover',
+        description=_('label_color_link_hover', default=u'This color is used for the hover state of links. The default color is $color-secondary.')
     )
     font_size_base = Variable(
         '$font-size-base',
         description=_('label_font_size_base', default=u'Base font size.')
     )
-    font_size_h1 = Variable(
-        '$font-size-h1',
-        description=_('label_font_size_h1', default=u'Font size of the largest heading (H1).')
-    )
-    font_size_h2 = Variable(
-        '$font-size-h2',
-        description=_('label_font_size_h2', default=u'Font size of the second level heading (H2).')
-    )
-    font_size_h3 = Variable(
-        '$font-size-h3',
-        description=_('label_font_size_h3', default=u'Font size of the third level heading (H3).')
-    )
-    page_bg_color = Variable(
-        '$page-bg-color',
-        description=_('label_page_bg_color', default=u'Background color of the page.')
-    )
-    gray_base = Variable(
-        '$gray-base',
-        description=_('label_gray_base', default=u'The base gray. Other shades of gray are derived from this color.')
-    )
-    gray_darker = Variable(
-        '$gray-darker',
-        description=_('label_gray_darker', default=u'A gray which is lighter than $gray-base.')
-    )
-    gray_dark = Variable(
-        '$gray-dark',
-        description=_('label_gray_dark', default=u'A gray which is lighter than $gray-darker.')
-    )
-    gray = Variable(
-        '$gray',
-        description=_('label_gray', default=u'A gray which is lighter than $gray-dark.')
-    )
-    gray_light = Variable(
-        '$gray-light',
-        description=_('label_gray_light', default=u'A gray which is lighter than $gray.')
-    )
-    gray_lighter = Variable(
-        '$gray-lighter',
-        description=_('label_gray_lighter', default=u'A gray which is lighter than $gray-light.')
-    )
-
 
 @adapter(INavigationRoot, Interface)
 @implementer(ICustomDesignVariablesSchema)
