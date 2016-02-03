@@ -5,6 +5,10 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Add a hidden h2 to the logo markup. Without this separation the logo belongs
+  semantically to the service navigation. This confuses users with screenreaders.
+  [mathias.leimgruber]
+
 - Define styling for plone.app.multilingual based on ftw.theming.
   [Kevin Bieri]
 
