@@ -10,9 +10,20 @@ $portlet-navigation-active-color: lighten($color-gray-dark, 95.5%) !default;
 
 
 @mixin navigationitem($color) {
+  @include borderradius();
   background-color: $color;
   border: 1px solid $color;
-  @include borderradius();
+  display: table;
+  &:hover {
+    text-decoration: none;
+  }
+  &:before {
+    display: table-cell !important;
+  }
+  > span {
+    display: table-cell;
+    padding-left: $padding-vertical;
+  }
 }
 
 
@@ -45,9 +56,11 @@ ul.navTree {
   }
 
   a.navTreeCurrentItem, li.navTreeCurrentItem > a {
-    font-weight: bold;
-    color: $color-gray-dark;
     @include navigationitem($portlet-navigation-active-color);
+    font-weight: bold;
+    &:before {
+      font-weight: normal;
+    }
   }
 
   @for $i from 1 through 10 {
