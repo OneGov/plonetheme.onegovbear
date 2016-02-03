@@ -13,7 +13,7 @@
   @include list-horizontal($direction: rtl);
 
   .actionMenuHeader a {
-    @include auto-text-color($color-secondary);
+    @include auto-text-color($color-edit);
   }
 
 }
