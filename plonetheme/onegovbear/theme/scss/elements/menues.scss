@@ -29,8 +29,10 @@
 }
 
 
+#column-content section.actionMenu header,
 #column-content dl.actionMenu dt,
-dl.actionMenu dt {
+dl.actionMenu dt,
+section.actionMenu header {
   font-weight: normal;
 }
 
