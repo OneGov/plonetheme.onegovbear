@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Extend menues/mobile scss by header/section tags to support menues without definition lists.
+  [mathias.leimgruber]
+
 - Wrap Paragraph-Tag arround text in div with documentDescription css class.
   [mathias.leimgruber]
 
