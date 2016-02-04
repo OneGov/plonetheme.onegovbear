@@ -1,33 +1,33 @@
 <div id="portal-breadcrumbs"
-     i18n:domain="plone"
-     tal:define="breadcrumbs view/breadcrumbs;
-                 is_rtl view/is_rtl">
+       i18n:domain="plone"
+       tal:define="breadcrumbs view/breadcrumbs;
+                   is_rtl view/is_rtl">
 
-    <h2 class="hiddenStructure" i18n:domain="plonetheme.onegovbear" i18n:translate="">
-        Pathbar
+    <h2 class="hiddenStructure" i18n:domain="plonetheme.onegovbear" i18n:translate="you_are_here">
+        You are here:
     </h2>
 
-    <span id="breadcrumbs-you-are-here" i18n:translate="you_are_here">You are here:</span>
-  <span id="breadcrumbs-home">
-    <a i18n:translate="tabs_home"
-       tal:attributes="href view/navigation_root_url">Home</a>
-    <span tal:condition="breadcrumbs" class="breadcrumbSeparator"></span>
-  </span>
-  <tal:breadcrumbs tal:repeat="crumb breadcrumbs">
-    <span tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
-                          id string:breadcrumbs-${repeat/crumb/number}"
-          tal:condition="not: repeat/crumb/end">
-      <tal:item tal:define="url crumb/absolute_url;
-                            title crumb/Title">
-        <a href="#"
-           tal:omit-tag="not: url"
-           tal:attributes="href url"
-           tal:content="title">
-          crumb
-        </a>
-        <span class="breadcrumbSeparator"></span>
-      </tal:item>
-    </span>
-  </tal:breadcrumbs>
-
+    <ul>
+        <li id="breadcrumbs-home">
+          <a i18n:translate="tabs_home"
+             tal:attributes="href view/navigation_root_url">Home</a>
+          <span tal:condition="breadcrumbs" class="breadcrumbSeparator"></span>
+        </li>
+        <li tal:repeat="crumb breadcrumbs">
+          <span tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
+                                id string:breadcrumbs-${repeat/crumb/number}"
+                tal:condition="not: repeat/crumb/end">
+            <tal:item tal:define="url crumb/absolute_url;
+                                  title crumb/Title">
+              <a href="#"
+                 tal:omit-tag="not: url"
+                 tal:attributes="href url"
+                 tal:content="title">
+                crumb
+              </a>
+              <span class="breadcrumbSeparator"></span>
+            </tal:item>
+          </span>
+        </li>
+    <ul>
 </div>
