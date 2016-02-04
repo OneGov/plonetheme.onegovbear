@@ -12,7 +12,7 @@ $portlet-column-bg-color: $gray-lighter !default;
 #column-navigation, #column-sidebar {
 
   .portletWrapper {
-    margin-bottom:2em;
+    margin-bottom:1em;
     .portlet {
       .portletHeader {
         font-size: $font-size-h2;
@@ -37,6 +37,7 @@ $portlet-column-bg-color: $gray-lighter !default;
   &.SimplelayoutPortlet {
     background-color: transparent;
     padding: 0;
+    @include clearfix;
   }
 
   .block-placeholder {
