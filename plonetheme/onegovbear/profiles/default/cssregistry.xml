@@ -8,25 +8,4 @@
      /-->
     <stylesheet id="member.css" enabled="False" />
 
-
-    <stylesheet id="reset.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="print.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="authoring.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="columns.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="public.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="controlpanel.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="forms.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="base.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="portlets.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="mobile.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="IEFixes.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="++resource++plone.app.discussion.stylesheets/discussion.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="deprecated.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="navtree.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="invisibles.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="ploneCustom.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="++resource++plone.app.jquerytools.overlays.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="++resource++plone.formwidget.contenttree/contenttree.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-    <stylesheet id="++resource++tinymce.stylesheets/tinymce.css" expression="not:request/HTTP_X_FTW_THEMING|nothing" />
-
 </object>

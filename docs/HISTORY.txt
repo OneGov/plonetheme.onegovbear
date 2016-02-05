@@ -5,6 +5,8 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Implement uninstall profile. [jone]
+
 - Add a hidden h2 to the logo markup. Without this separation the logo belongs
   semantically to the service navigation. This confuses users with screenreaders.
   [mathias.leimgruber]

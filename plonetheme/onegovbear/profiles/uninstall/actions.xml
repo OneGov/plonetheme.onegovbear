@@ -1,0 +1,9 @@
+<object meta_type="Plone Actions Tool"
+        name="portal_actions"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+    <object name="site_actions" meta_type="CMF Action Category">
+        <object name="customize_design" meta_type="CMF Action" remove="True" />
+    </object>
+
+</object>

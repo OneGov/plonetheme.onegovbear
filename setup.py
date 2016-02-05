@@ -6,6 +6,7 @@ version = '1.0.0a5.dev0'
 tests_require = [
     'ftw.builder',
     'ftw.testbrowser',
+    'ftw.testing',
     'plone.app.testing',
     'unittest2',
     ]
@@ -37,11 +38,12 @@ setup(name='plonetheme.onegovbear',
       zip_safe=False,
 
       install_requires=[
+          'ftw.profilehook',
           'ftw.theming',
           'ftw.upgrade',
-          'plone.directives.form',
           'plone.api',
           'plone.app.theming',
+          'plone.directives.form',
           'setuptools',
           'z3c.jbot',
       ],

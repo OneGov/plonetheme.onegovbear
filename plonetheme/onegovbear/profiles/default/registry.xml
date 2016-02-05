@@ -3,7 +3,7 @@
   plone app theming interfaces IThemeSettings parameterExpressions
   <record name="plone.app.theming.interfaces.IThemeSettings.parameterExpressions">
     <value purge="False">
-        <element key="pathbar_full_width">python: True</element>
+        <element key="pathbar_full_width">python:True</element>
     </value>
   </record>
 </registry>
