@@ -60,6 +60,7 @@
     <rules if-content="//*[@id='additional-logo']">
         <after css:content="#additional-logo" css:theme="#portal-logo" />
     </rules>
+    <drop css:content="#portal-logo" attributes="accesskey" />
 
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
     <!-- Move hidden h2 of global section too -->
