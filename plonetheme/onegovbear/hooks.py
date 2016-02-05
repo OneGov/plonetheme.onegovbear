@@ -4,6 +4,31 @@ from Products.CMFCore.utils import getToolByName
 from zope.component import getUtility
 
 
+DISABLE_CSS_EXPRESSION = 'not:request/HTTP_X_FTW_THEMING|nothing'
+DISABLE_CSS_FILES = (
+    # Ignore theese Plone standard CSS files with an expression:
+    "reset.css",
+    "print.css",
+    "authoring.css",
+    "columns.css",
+    "public.css",
+    "controlpanel.css",
+    "forms.css",
+    "base.css",
+    "portlets.css",
+    "mobile.css",
+    "IEFixes.css",
+    "++resource++plone.app.discussion.stylesheets/discussion.css",
+    "deprecated.css",
+    "navtree.css",
+    "invisibles.css",
+    "ploneCustom.css",
+    "++resource++plone.app.jquerytools.overlays.css",
+    "++resource++plone.formwidget.contenttree/contenttree.css",
+    "++resource++tinymce.stylesheets/tinymce.css",
+)
+
+
 def installed(site):
     add_css_conditions(site)
 
@@ -19,14 +44,15 @@ def add_css_conditions(site):
             # See cssregistry.xml
             continue
 
-        resource.setExpression('not:request/HTTP_X_FTW_THEMING|nothing')
+        if resource.getId() in DISABLE_CSS_FILES:
+            resource.setExpression(DISABLE_CSS_EXPRESSION)
 
 
 def remove_css_conditions(site):
     portal_css = getToolByName(site, 'portal_css')
     for resource in portal_css.getResources():
-        if resource.getExpression() == (
-                'not:request/HTTP_X_FTW_THEMING|nothing'):
+        if resource.getId() in DISABLE_CSS_FILES and \
+           resource.getExpression() == DISABLE_CSS_EXPRESSION:
             resource.setExpression('')
 
 
