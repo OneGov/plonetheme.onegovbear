@@ -62,6 +62,9 @@
     </rules>
     <drop css:content="#portal-logo" attributes="accesskey" />
 
+    <!-- Drop emtpy aria-describedby attributes - currently produced by -->
+    <drop css:content="[aria-describedby='']" attributes="aria-describedby" />
+
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
     <!-- Move hidden h2 of global section too -->
     <before css:content="#portal-header > h2.hiddenStructure" css:theme="#portal-globalnav"/>
