@@ -31,11 +31,11 @@
          - Make sure link / style tags are before script tags (parallel downloading)
          - Move #portal-top link / style tags to the head before script tags
     -->
-    <after theme-children="/html/head" css:content="html > head > style.top"  />
-    <after theme-children="/html/head" css:content="#portal-top style.top"/>
-    <after content="/html/head/link | /html/head/style" theme-children="/html/head" />
-    <after theme-children="/html/head" css:content="#portal-top link"/>
-    <after theme-children="/html/head" css:content="#portal-top style"/>
+    <after css:content="html > head > style.top" theme-children="/html/head"  />
+    <after css:content="#portal-top style.top" theme-children="/html/head" />
+    <after css:content="html > head > link, html > head > style:not(.top)" theme-children="/html/head" />
+    <after css:content="#portal-top link" theme-children="/html/head" />
+    <after css:content="#portal-top style:not(.top)" theme-children="/html/head" />
 
     <!-- JAVASCRIPT:
          - JS always after CSS
