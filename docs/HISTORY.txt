@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Fix http-equiv="X-UA-Compatible" header.
+  [mathias.leimgruber]
+
 - Remove duplicate accesskey 1 on portal-logo.
   [mathias.leimgruber]
 
