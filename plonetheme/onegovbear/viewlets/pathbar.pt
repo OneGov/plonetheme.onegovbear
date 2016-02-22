@@ -11,23 +11,24 @@
         <li id="breadcrumbs-home">
           <a i18n:translate="tabs_home"
              tal:attributes="href view/navigation_root_url">Home</a>
-          <span tal:condition="breadcrumbs" class="breadcrumbSeparator"></span>
+          <span tal:condition="breadcrumbs" class="breadcrumbSeparator">/</span>
         </li>
-        <li tal:repeat="crumb breadcrumbs">
-          <span tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
-                                id string:breadcrumbs-${repeat/crumb/number}"
-                tal:condition="not: repeat/crumb/end">
-            <tal:item tal:define="url crumb/absolute_url;
-                                  title crumb/Title">
-              <a href="#"
-                 tal:omit-tag="not: url"
-                 tal:attributes="href url"
-                 tal:content="title">
-                crumb
-              </a>
-              <span class="breadcrumbSeparator"></span>
-            </tal:item>
-          </span>
-        </li>
+        <tal:breadcrumb tal:repeat="crumb breadcrumbs">
+          <li tal:condition="not: repeat/crumb/end">
+            <span tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
+                                  id string:breadcrumbs-${repeat/crumb/number}">
+              <tal:item tal:define="url crumb/absolute_url;
+                                    title crumb/Title">
+                <a href="#"
+                   tal:omit-tag="not: url"
+                   tal:attributes="href url"
+                   tal:content="title">
+                  crumb
+                </a>
+                <span class="breadcrumbSeparator">/</span>
+              </tal:item>
+            </span>
+          </li>
+        </tal:breadcrumb>
     </ul>
 </div>
