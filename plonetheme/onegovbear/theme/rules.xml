@@ -70,7 +70,8 @@
 
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
     <!-- Move hidden h2 of global section too -->
-    <before css:content="#portal-header > h2.hiddenStructure" css:theme="#portal-globalnav"/>
+    <before css:content="#globalnav-selected" css:theme="#portal-globalnav"/>
+    <before css:content="#globalnav-heading" css:theme="#portal-globalnav-wrapper"/>
 
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
