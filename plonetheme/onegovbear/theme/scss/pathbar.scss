@@ -74,6 +74,10 @@ body.portaltype-ftw-subsite-subsite {
         height: 31px;
         background-image: url("++theme++plonetheme.onegovbear/images/pathbar_separator.svg");
         background-repeat: no-repeat;
+        color: $pathbar-bg-color;
+        font-size: 1.4em;
+        padding-top: 7px;
+        box-sizing: border-box;
       }
     }
   }
