@@ -110,8 +110,20 @@ $portlet-column-bg-color: $gray-lighter !default;
 
 }
 
-.portletArchiveListing {
+.archive-portlet {
+  .year {
+    color: $text-color;
+    text-decoration: none;
+    .count {
+      box-sizing: border-box;
+    }
+  }
   ul {
     @include ul(plain);
+    ul {
+      padding-left: 2em;
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
   }
 }

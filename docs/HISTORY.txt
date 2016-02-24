@@ -5,6 +5,9 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Adapt styling for accessible archive portlet
+  [Kevin Bieri]
+
 - Fix http-equiv="X-UA-Compatible" header.
   [mathias.leimgruber]
 
