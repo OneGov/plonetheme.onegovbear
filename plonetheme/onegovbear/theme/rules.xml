@@ -70,7 +70,8 @@
 
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
     <!-- Move hidden h2 of global section too -->
-    <before css:content="#portal-header > h2.hiddenStructure" css:theme="#portal-globalnav"/>
+    <before css:content="#globalnav-selected" css:theme="#portal-globalnav"/>
+    <before css:content="#globalnav-heading" css:theme="#portal-globalnav-wrapper"/>
 
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
@@ -101,11 +102,6 @@
     <replace css:theme="#accesskeys" css:content="#accesskeys" />
 
     <!-- Move hidden titles from accesskeys viewlet to place, where they belong -->
-    <drop css:content="#hidden_content_navigation_title" />
-    <before css:theme="#column-navigation">
-        <xsl:copy-of css:select="#hidden_content_navigation_title"/>
-    </before>
-
     <drop css:content="#hidden_further_infos_title" />
     <before css:theme="#column-sidebar">
         <xsl:copy-of css:select="#hidden_further_infos_title"/>
