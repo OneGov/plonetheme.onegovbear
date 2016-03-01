@@ -5,6 +5,8 @@ Changelog
 1.0.0a5 (unreleased)
 --------------------
 
+- Add empty alt attributes to img tags. [jone]
+
 - Fix http-equiv="X-UA-Compatible" header.
   [mathias.leimgruber]
 

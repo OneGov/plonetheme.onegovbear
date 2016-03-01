@@ -4,6 +4,15 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+  <!-- All image tags must have an alt attribute -->
+  <xsl:template match="img[not(@alt)]">
+    <xsl:copy>
+      <xsl:attribute name="alt"></xsl:attribute>
+      <xsl:copy-of select="@*" />
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Rules applying to standard Plone pages -->
   <rules css:if-content="#visual-portal-wrapper">
 
@@ -158,8 +167,7 @@
     <after content="//*[@id='portal-footer-wrapper']/div/script" css:theme="#container" />
     <after content="//*[@id='portal-footer-wrapper']/div/noscript" css:theme="#container" />
 
-    <!-- Drop empty attributes on the logo image tag -->
-    <drop attributes="alt" content="//a[@id='portal-logo']/img[@alt='']" />
+    <!-- Drop empty title attribute on the logo image tag -->
     <drop attributes="title" content="//a[@id='portal-logo']/img[@title='']" />
 
   </rules>
