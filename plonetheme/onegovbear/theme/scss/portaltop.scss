@@ -18,3 +18,43 @@ $portal-top-bg-color: $page-bg-color !default;
     background-color: $portal-top-bg-color;
   }
 }
+
+.zoom-buttons {
+  @include list-horizontal();
+  float: left;
+  margin-left: 2em;
+
+  > li {
+    display: inline-block;
+    float: none;
+    > a {
+      padding: 0;
+      padding-right: .2em;
+    }
+  }
+}
+
+.zoom-button {
+  color: $text-color;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "A";
+  }
+}
+
+#zoom-small {
+  font-size: 1em;
+}
+
+#zoom-medium {
+  font-size: 1.2em;
+}
+
+#zoom-large {
+  font-size: 1.4em;
+}
