@@ -21,8 +21,13 @@ $portal-top-bg-color: $page-bg-color !default;
 
 .zoom-buttons {
   @include list-horizontal();
+  @include screen-large() {
+    display: block;
+  }
+
   float: left;
   margin-left: 2em;
+  display: none;
 
   > li {
     display: inline-block;

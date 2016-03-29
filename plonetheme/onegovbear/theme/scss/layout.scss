@@ -38,8 +38,10 @@ body {
   }
 
   .logoRow {
+    @include screen-small() {
+      padding: 30px 0;
+    }
     box-sizing: border-box;
-    padding: 30px 0;
     @include clearfix;
     > .cell {
       display: table;
@@ -47,9 +49,21 @@ body {
   }
 
   #portal-logo {
+    display: none;
+    position: absolute;
+    top: -45px;
+    left: 10px;
+
+    @include screen-small() {
+      display: inline-block;
+      position: static;
+      background-color: rgba(255, 255, 255, .5);
+      padding: 10px;
+    }
+
     img {
       float: left;
-      max-height: 75px;
+      max-height: 38px;
       width: auto;
       @include screen-small {
         max-height: none;
@@ -61,8 +75,11 @@ body {
 #columns {
   background-color: $content-bg-color;
   @include borderradius($border-radius);
-  padding-top: 2em;
   margin-top: 0;
+  padding-top: 2em;
+  @include screen-small() {
+    padding-top: 1em;
+  }
   @include screen-large {
     padding-top: 0;
     margin-top: 1.4em;
