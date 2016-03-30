@@ -11,7 +11,15 @@ $portal-top-bg-color: $page-bg-color !default;
   position: relative;
   font-size: $font-size-small;
   background-color: $primary-color;
+  background-image: url("#{$portal_url}/++theme++plonetheme.onegovbear/images/mobile_logo.png");
+  background-size: 95px;
+  background-repeat: no-repeat;
+  background-position: 5px;
   @include clearfix();
+
+  @include screen-small {
+    background-image: none;
+  }
 
   @include screen-large {
     padding: 7px 0;
