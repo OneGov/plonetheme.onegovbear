@@ -13,13 +13,14 @@ $language-selector-link-color: $secondary-color !default;
       width: auto;
   }
 
+  section#portal-languageselector,
   dl#portal-languageselector {
     float: left;
     width: 100%;
     margin-left: 0;
     @include dl(plain);
 
-    dt {
+    dt, header {
       &.actionMenuHeader {
           border: 1px solid $language-selector-link-color;
           padding-left: 0.5em;
@@ -40,7 +41,7 @@ $language-selector-link-color: $secondary-color !default;
       }
     }
 
-    dd {
+    .actionMenuContent {
       top: 0;
       @include ul(plain);
       margin-left:0;
@@ -48,11 +49,11 @@ $language-selector-link-color: $secondary-color !default;
 
     @include screen-large {
       width: auto;
-      dl {
+      dl, section {
         margin-left: 0.5em;
       }
 
-      dd {
+      .actionMenuContent {
         top: auto;
       }
     }

@@ -12,7 +12,7 @@ $page-wrapper-width: 1200px !default;
 
 body {
   background: $page-bg-color;
-  font-family: $font-family-base, $font-family-fallback;
+  font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-color;
@@ -38,17 +38,32 @@ body {
   }
 
   .logoRow {
+    @include screen-small() {
+      padding: 30px 0;
+    }
     box-sizing: border-box;
-    padding: 30px 0;
+    @include clearfix;
     > .cell {
       display: table;
     }
   }
 
   #portal-logo {
+    display: none;
+    position: absolute;
+    top: -45px;
+    left: 10px;
+
+    @include screen-small() {
+      display: inline-block;
+      position: static;
+      background-color: rgba(255, 255, 255, .5);
+      padding: 10px;
+    }
+
     img {
       float: left;
-      max-height: 75px;
+      max-height: 38px;
       width: auto;
       @include screen-small {
         max-height: none;
@@ -60,10 +75,8 @@ body {
 #columns {
   background-color: $content-bg-color;
   @include borderradius($border-radius);
-  padding-top: 2em;
   margin-top: 0;
   @include screen-large {
-    padding-top: 0;
     margin-top: 1.4em;
   }
 }

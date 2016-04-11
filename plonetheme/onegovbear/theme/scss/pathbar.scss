@@ -3,13 +3,10 @@ $pathbar-arrow-color: #fff !default;
 $pathbar-text-color: $text-color !default;
 $pathbar-font-weight: normal !default;
 
-@include declare-variables(
-  pathbar-bg-color,
-  pathbar-arrow-color,
-  pathbar-text-color);
+@include declare-variables(pathbar-bg-color, pathbar-arrow-color, pathbar-text-color);
 
 .template-startpage #breadcrumbs-wrapper,
-body.portaltype-ftw-subsite-subsite #breadcrumbs-wrapper{
+body.portaltype-ftw-subsite-subsite #breadcrumbs-wrapper {
   margin-top: 2em;
 }
 
@@ -17,16 +14,22 @@ body.portaltype-plone-site,
 body.portaltype-ftw-subsite-subsite {
   #breadcrumbs-wrapper {
     margin-bottom: 0;
+
     #portal-breadcrumbs {
-      display:none;
+      display: none;
     }
   }
 }
 
 #breadcrumbs-wrapper {
-  margin-top: 1em;
+  @include screen-small() {
+    margin-top: 1em;
+    @include gridposition(0);
+    @include gridwidth(16);
+  }
   margin-bottom: 2em;
-  display:none;
+  margin-left: -100%;
+  width: 100%;
 
   #breadcrumbs-you-are-here {
     visibility: hidden;
@@ -37,20 +40,28 @@ body.portaltype-ftw-subsite-subsite {
   #portal-breadcrumbs {
     width: 100%;
     background-color: $pathbar-bg-color;
-    @include clearfix();
-    > span {
-      float: left;
-      > a {
+
+    @include clearfix;
+
+    ul {
+      @include ul(inline);
+    }
+
+    li {
+      a {
         display: block;
         color: $pathbar-text-color;
         padding: 6px;
         font-weight: $pathbar-font-weight;
-        font-size: $font-size-small;
         float: left;
+        font-size: 14px;
+        line-height: 19px;
+
         &:hover {
           color: $link-hover-color;
         }
       }
+
       // White separator between pathbar lines
       &:before {
         content: "";
@@ -61,13 +72,37 @@ body.portaltype-ftw-subsite-subsite {
         height: 2px;
         margin-top: -1px;
       }
-      > .breadcrumbSeparator {
+
+      .breadcrumbSeparator {
         display: block;
         float: left;
         width: 18px;
         height: 31px;
         background-image: url("++theme++plonetheme.onegovbear/images/pathbar_separator.svg");
         background-repeat: no-repeat;
+        color: $pathbar-bg-color;
+        font-size: 1.4em;
+        padding-top: 7px;
+        box-sizing: border-box;
+      }
+    }
+
+    #breadcrumbs-home > a {
+      @extend .fa-icon;
+      @extend .fa-home;
+      font-size: 0;
+
+      &:before {
+        font-size: 14px;
+        float: left;
+      }
+
+      @include screen-small() {
+        font-size: 14px;
+
+        &:before {
+          font-size: 0;
+        }
       }
     }
   }
@@ -76,4 +111,3 @@ body.portaltype-ftw-subsite-subsite {
     display: block;
   }
 }
-

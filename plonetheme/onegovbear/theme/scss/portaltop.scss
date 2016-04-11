@@ -11,10 +11,63 @@ $portal-top-bg-color: $page-bg-color !default;
   position: relative;
   font-size: $font-size-small;
   background-color: $primary-color;
+  background-image: url("#{$portal_url}/++theme++plonetheme.onegovbear/images/mobile_logo.png");
+  background-size: 90px;
+  background-repeat: no-repeat;
+  background-position: 5px;
   @include clearfix();
+
+  @include screen-small {
+    background-image: none;
+  }
 
   @include screen-large {
     padding: 7px 0;
     background-color: $portal-top-bg-color;
   }
+}
+
+.zoom-buttons {
+  @include list-horizontal();
+  @include screen-large() {
+    display: block;
+  }
+
+  float: left;
+  margin-left: 2em;
+  display: none;
+
+  > li {
+    display: inline-block;
+    float: none;
+    > a {
+      padding: 0;
+      padding-right: .2em;
+    }
+  }
+}
+
+.zoom-button {
+  color: $text-color;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "A";
+  }
+}
+
+#zoom-small {
+  font-size: 1em;
+}
+
+#zoom-medium {
+  font-size: 1.2em;
+}
+
+#zoom-large {
+  font-size: 1.4em;
 }

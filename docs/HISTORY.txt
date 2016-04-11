@@ -2,6 +2,28 @@ Changelog
 =========
 
 
+1.0.0a5 (unreleased)
+--------------------
+
+- Add empty alt attributes to img tags. [jone]
+
+- Fix http-equiv="X-UA-Compatible" header.
+  [mathias.leimgruber]
+
+- Remove duplicate accesskey 1 on portal-logo.
+  [mathias.leimgruber]
+
+- Add a hidden h2 to the logo markup. Without this separation the logo belongs
+  semantically to the service navigation. This confuses users with screenreaders.
+  [mathias.leimgruber]
+
+- Extend menues/mobile scss by header/section tags to support menues without definition lists.
+  [mathias.leimgruber]
+
+- Wrap Paragraph-Tag arround text in div with documentDescription css class.
+  [mathias.leimgruber]
+
+
 1.0.0a4 (2015-12-09)
 --------------------
 

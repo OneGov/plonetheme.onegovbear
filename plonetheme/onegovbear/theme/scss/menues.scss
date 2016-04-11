@@ -15,7 +15,7 @@ $menu-border-radius: 5px !default;
 
 
 
-dl.actionMenu {
+.actionMenu {
   white-space: nowrap;
   position: relative;
   margin-left: 0.5em;
@@ -24,7 +24,7 @@ dl.actionMenu {
     text-decoration: none;
   }
 
-  dd.actionMenuContent {
+  .actionMenuContent {
     cursor: default;
     background-color: $menu-bg-color;
     border: 1px solid $menu-border-color;
@@ -68,7 +68,7 @@ dl.actionMenu {
     }
   }
 
-  &.activated > dd.actionMenuContent {
+  &.activated > .actionMenuContent {
     z-index: 5;
     right: -3px;
     position: absolute;
@@ -76,14 +76,16 @@ dl.actionMenu {
     min-width: 100%;
   }
 
-  &.deactivated > dd.actionMenuContent {
+  &.deactivated > .actionMenuContent {
     display: none;
   }
 }
 
 
 #column-content dl.actionMenu dt,
-dl.actionMenu dt {
+#column-content section.actionMenu header
+dl.actionMenu dt,
+section.actionMenu header {
   font-weight: normal;
 }
 
@@ -91,7 +93,7 @@ dl.actionMenu dt {
   position: absolute;
   right: 0;
   left: 0;
-  top: 34px;
+  top: 54px;
   z-index: 5;
   margin: auto;
   cursor: default;

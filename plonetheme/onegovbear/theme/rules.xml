@@ -4,6 +4,15 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+  <!-- All image tags must have an alt attribute -->
+  <xsl:template match="img[not(@alt)]">
+    <xsl:copy>
+      <xsl:attribute name="alt"></xsl:attribute>
+      <xsl:copy-of select="@*" />
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Rules applying to standard Plone pages -->
   <rules css:if-content="#visual-portal-wrapper">
 
@@ -31,21 +40,24 @@
          - Make sure link / style tags are before script tags (parallel downloading)
          - Move #portal-top link / style tags to the head before script tags
     -->
-    <after theme-children="/html/head" css:content="html > head > style.top"  />
-    <after theme-children="/html/head" css:content="#portal-top style.top"/>
-    <after content="/html/head/link | /html/head/style" theme-children="/html/head" />
-    <after theme-children="/html/head" css:content="#portal-top link"/>
-    <after theme-children="/html/head" css:content="#portal-top style"/>
+    <after css:content="html > head > style.top" theme-children="/html/head"  />
+    <after css:content="#portal-top style.top" theme-children="/html/head" />
+    <after css:content="html > head > link, html > head > style:not(.top)" theme-children="/html/head" />
+    <after css:content="#portal-top link" theme-children="/html/head" />
+    <after css:content="#portal-top style:not(.top)" theme-children="/html/head" />
 
     <!-- JAVASCRIPT:
+         - Raven Integration JS always at top
          - JS always after CSS
          - external JS before embedded JS
          - Move #portal-top script tags to the head
     -->
+    <after content="/html/head/script[contains(text(), 'var raven_config')]" theme-children="/html/head" />
     <after content="/html/head/script[@src]" theme-children="/html/head" />
-    <after theme-children="/html/head" css:content="#portal-top script[src]"/>
-    <after content="/html/head/script[not(@src)]" theme-children="/html/head" />
-    <after theme-children="/html/head" css:content="#portal-top script:not([src])"/>
+    <after css:content="#portal-top script[src]" theme-children="/html/head" />
+    <after content="/html/head/script[not(@src) and not(contains(text(), 'var raven_config'))]" theme-children="/html/head" />
+    <after css:content="#portal-top script:not([src])" theme-children="/html/head" />
+
 
     <!-- Copy html lang -->
     <copy attributes="lang" content="/html" theme="/html" />
@@ -60,10 +72,15 @@
     <rules if-content="//*[@id='additional-logo']">
         <after css:content="#additional-logo" css:theme="#portal-logo" />
     </rules>
+    <drop css:content="#portal-logo" attributes="accesskey" />
+
+    <!-- Drop emtpy aria-describedby attributes - currently produced by -->
+    <drop css:content="[aria-describedby='']" attributes="aria-describedby" />
 
     <replace css:content="#portal-globalnav" css:theme="#portal-globalnav" />
     <!-- Move hidden h2 of global section too -->
-    <before css:content="#portal-header > h2.hiddenStructure" css:theme="#portal-globalnav"/>
+    <before css:content="#globalnav-selected" css:theme="#portal-globalnav"/>
+    <before css:content="#globalnav-heading" css:theme="#portal-globalnav-wrapper"/>
 
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
@@ -94,11 +111,6 @@
     <replace css:theme="#accesskeys" css:content="#accesskeys" />
 
     <!-- Move hidden titles from accesskeys viewlet to place, where they belong -->
-    <drop css:content="#hidden_content_navigation_title" />
-    <before css:theme="#column-navigation">
-        <xsl:copy-of css:select="#hidden_content_navigation_title"/>
-    </before>
-
     <drop css:content="#hidden_further_infos_title" />
     <before css:theme="#column-sidebar">
         <xsl:copy-of css:select="#hidden_further_infos_title"/>
@@ -142,12 +154,20 @@
 
     <replace css:content="#portal-siteactions" css:theme="#portal-siteactions" />
 
+    <!-- Wrap p tag around the text inside of the documentDescription -->
+    <replace content="//div[@id='content']/div[contains(@class, 'documentDescription')]">
+        <div class="documentDescription description">
+            <p>
+                <xsl:apply-templates select="//div[@id='content']/div[contains(@class, 'documentDescription')]/text()" mode="raw"/>
+            </p>
+        </div>
+    </replace>
+
     <!-- Insert analytics js -->
     <after content="//*[@id='portal-footer-wrapper']/div/script" css:theme="#container" />
     <after content="//*[@id='portal-footer-wrapper']/div/noscript" css:theme="#container" />
 
-    <!-- Drop empty attributes on the logo image tag -->
-    <drop attributes="alt" content="//a[@id='portal-logo']/img[@alt='']" />
+    <!-- Drop empty title attribute on the logo image tag -->
     <drop attributes="title" content="//a[@id='portal-logo']/img[@title='']" />
 
   </rules>
