@@ -5,7 +5,9 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix side effect with hiding search button (livesearch/detailsearch).
+  Accidentally the searchButton of the contenttree widget was hidden by the last bern.web 2.0 release.
+  [mathias.leimgruber]
 
 
 1.1.0 (2016-04-11)
