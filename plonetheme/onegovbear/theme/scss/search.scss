@@ -41,7 +41,7 @@ $searchbox-width: 295px;
     }
 
     & input.searchButton {
-      display: none;
+      @include hidden-structure();
     }
 
     & #searchGadget {
@@ -98,7 +98,8 @@ $searchbox-width: 295px;
   }
 }
 
-.searchButton {
+
+#searchform .searchButton {
   @include hidden-structure();
 }
 
