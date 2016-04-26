@@ -80,6 +80,7 @@ ul[class^="sl-toolbar"] {
     -moz-box-shadow: 0 0 5px 1px #000;
     -webkit-box-shadow: 0 0 5px 1px #000;
     box-shadow: 0 0 5px 1px #000;
+    box-sizing: border-box;
   }
   .sl-block {
     @include transition(box-shadow .3s ease-out);
