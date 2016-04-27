@@ -5,7 +5,9 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Adjust simplelayout layout fix in 1.1.2 to fix layout if you drag
+  a block into a column.
+  [elioschmutz]
 
 
 1.1.2 (2016-04-27)
