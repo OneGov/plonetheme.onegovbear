@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Support the new html structure of the "current folder" item in the autocompletewidget.
+  [mathias.leimgruber]
+
 - Replace globalnav-selected with menu-selected id in rules.xml.
   [mathias.leimgruber]
 

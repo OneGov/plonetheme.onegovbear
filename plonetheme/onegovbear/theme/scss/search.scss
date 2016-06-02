@@ -81,7 +81,7 @@ $searchbox-width: 295px;
       max-width: 500px;
     }
 
-    > li > a {
+    > li > a, > li > span:not(.group) {
       border-color: $gray-light;
 
       &.ui-state-focus, &:hover, &:visited:hover {
