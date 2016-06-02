@@ -83,6 +83,11 @@
     <before css:content="#globalnav-heading" css:theme="#portal-globalnav-wrapper"/>
 
     <replace css:content="#portal-searchbox" css:theme="#portal-searchbox" />
+    <replace css:content="#portal-sitesearch" css:theme="#portal-sitesearch" />
+    <rules if-content="not(//*[@id='portal-sitesearch']/*)">
+        <drop css:theme="#portal-sitesearch" />
+    </rules>
+
     <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper" />
 
     <rules if-content="not(//*[@id='portal-languageselector-wrapper'])">
