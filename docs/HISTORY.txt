@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Replace globalnav-selected with menu-selected id in rules.xml.
+  [mathias.leimgruber]
+
 - Add support for googles sitelinks searchbox.
   [mathias.leimgruber]
 
