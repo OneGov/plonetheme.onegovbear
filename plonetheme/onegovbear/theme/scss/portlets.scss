@@ -40,17 +40,13 @@ $portlet-column-bg-color: $gray-lighter !default;
     @include clearfix;
   }
 
-  .block-placeholder {
-    float: none;
-  }
-
   & .portletHeader {
     margin-bottom: 0.75em;
   }
   .sl-column > .sl-block {
     margin-bottom: 2em;
     padding: 1em;
-    background-color: $portlet-column-bg-color;
+    background-color: $portlet-column-bg-color !important;
     box-sizing: border-box;
 
     &:last-child {
