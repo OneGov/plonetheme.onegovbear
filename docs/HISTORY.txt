@@ -5,6 +5,12 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Implement moble logo viewlet.
+  [mathias.leimgruber]
+
+- Support a mobile logo.
+  [mathias.leimgruber]
+
 - Support the new html structure of the "current folder" item in the autocompletewidget.
   [mathias.leimgruber]
 
