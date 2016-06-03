@@ -74,6 +74,11 @@
     </rules>
     <drop css:content="#portal-logo" attributes="accesskey" />
 
+    <replace css:content="#mobile-logo" css:theme="#mobile-logo" />
+    <rules if-content="not(//*[@id='mobile-logo']/*)">
+        <drop css:theme="#mobile-logo" />
+    </rules>
+
     <!-- Drop emtpy aria-describedby attributes - currently produced by -->
     <drop css:content="[aria-describedby='']" attributes="aria-describedby" />
 
