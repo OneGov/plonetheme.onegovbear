@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Improve simplelayout styles (Dragging new layout + Simplelayout Porlet).
+  [mathias.leimgruber]
+
 - Implement moble logo viewlet.
   [mathias.leimgruber]
 

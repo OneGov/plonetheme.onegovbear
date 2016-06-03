@@ -74,8 +74,21 @@ ul[class^="sl-toolbar"] {
     }
 }
 
+.sl-layout-dragging {
+  .sl-simplelayout {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+.SimplelayoutPortlet {
+    .sl-column:empty {
+      border: none;
+    }
+  }
+}
+
 // If user is permitted to edit the simplelayout page
-.documentEditable {
+.documentEditable,  .SimplelayoutPortlet{
   .sl-column:empty {
     -moz-box-shadow: 0 0 5px 1px #000;
     -webkit-box-shadow: 0 0 5px 1px #000;
