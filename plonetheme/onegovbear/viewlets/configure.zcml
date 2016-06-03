@@ -19,4 +19,12 @@
         layer="plonetheme.onegovbear.interfaces.IOneGovBearLayer"
         />
 
+    <browser:viewlet
+        name="mobile.logo"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".mobile_logo.MobileLogo"
+        permission="zope2.View"
+        layer="plonetheme.onegovbear.interfaces.IOneGovBearLayer"
+        />
+
 </configure>
