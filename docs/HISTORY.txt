@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Remove horizontal scrollbar in IE.
+  [Kevin Bieri]
+
 - Improve simplelayout styles (Dragging new layout + Simplelayout Porlet).
   [mathias.leimgruber]
 
