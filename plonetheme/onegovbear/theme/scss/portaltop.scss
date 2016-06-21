@@ -28,6 +28,7 @@ $portal-top-bg-color: $page-bg-color !default;
   float: left;
   margin-left: 2em;
   display: none;
+  height: 0;
 
   > li {
     display: inline-block;
@@ -35,21 +36,26 @@ $portal-top-bg-color: $page-bg-color !default;
     > a {
       padding: 0;
       padding-right: .2em;
+      width: 0.7em;
+      display: block;
+      height: 0
     }
   }
 }
 
 .zoom-button {
-  color: $text-color;
-
-  &:hover {
-    color: $text-color;
-    text-decoration: none;
-  }
+  color: transparent;
 
   &:before {
     content: "A";
+    color: $text-color;
   }
+
+  &:hover {
+    color: transparent;
+    text-decoration: none;
+  }
+
 }
 
 #zoom-small {

@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Add text to zoom buttons, since wcag 2.0 doesn't allow empty links.
+  [mathias.leimgruber]
+
 - Remove horizontal scrollbar in IE.
   [Kevin Bieri]
 
