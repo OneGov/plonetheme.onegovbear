@@ -5,5 +5,6 @@
                    title view/navigation_root_title"
    i18n:domain="plone"
    i18n:attributes="title">
-    <img tal:attributes="src string:${view/navigation_root_url}/mobile_logo.png">
+    <img tal:attributes="src string:${view/navigation_root_url}/mobile_logo.png;
+                         alt python:here.portal_url.getPortalObject().getProperty('logo_alt_text', '')">
 </a>
