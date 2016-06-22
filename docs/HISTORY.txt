@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Show subsite title in pathbar instead of Home on subsites.
+  [mathias.leimgruber]
+
 - Add text to zoom buttons, since wcag 2.0 doesn't allow empty links.
   [mathias.leimgruber]
 

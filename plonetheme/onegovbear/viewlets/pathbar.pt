@@ -8,9 +8,14 @@
     </h2>
 
     <ul>
-        <li id="breadcrumbs-home">
-          <a i18n:translate="tabs_home"
+        <li id="breadcrumbs-home" tal:define="subsite view/get_subsite">
+          <a i18n:translate="tabs_home" tal:condition="not: subsite"
              tal:attributes="href view/navigation_root_url">Home</a>
+
+          <a tal:condition="subsite"
+             tal:attributes="href subsite/url"
+             tal:content="subsite/title">Subsite title</a>
+
           <span tal:condition="breadcrumbs" class="breadcrumbSeparator">/</span>
         </li>
         <tal:breadcrumb tal:repeat="crumb breadcrumbs">
