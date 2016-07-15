@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-28 10:50+0000\n"
+"POT-Creation-Date: 2016-07-15 09:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
+#: ./plonetheme/onegovbear/configure.zcml:30
+msgid "A OneGov Plone Theme."
+msgstr ""
+
 #: ./plonetheme/onegovbear/browser/forms.py:272
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -21,10 +25,6 @@ msgstr "Abbrechen"
 #: ./plonetheme/onegovbear/browser/forms.py:269
 msgid "Changes saved"
 msgstr "Änderungen gespeichert"
-
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:10
-msgid "Content navigation"
-msgstr "Inhalts Navigation"
 
 #: ./plonetheme/onegovbear/profiles/default/actions.xml
 msgid "Customize design"
@@ -34,21 +34,17 @@ msgstr "Design anpassen"
 msgid "Edit cancelled"
 msgstr "Bearbeiten abgebrochen"
 
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:18
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:14
 msgid "Footer"
 msgstr "Fusszeile"
 
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:14
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:10
 msgid "Further informations"
 msgstr "Weitere Informationen."
 
 #: ./plonetheme/onegovbear/viewlets/accesskeys.pt:7
 msgid "Navigation on ${title}"
 msgstr "Navigieren auf ${title}"
-
-#: ./plonetheme/onegovbear/viewlets/pathbar.pt:6
-msgid "Pathbar"
-msgstr "Pfadleiste"
 
 #: ./plonetheme/onegovbear/browser/forms.py:254
 msgid "Save"
@@ -224,24 +220,28 @@ msgid "label_secondary_color"
 msgstr "Wird für die Hintergrundfarbe der Edit-Leiste, die Farbe der Links im Sprachumschalter und der Links der Servicenavigation verwendet."
 
 #. Default: "Contact"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:41
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:37
 msgid "label_skiptocontact"
 msgstr "Kontakt"
 
 #. Default: "Content"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:36
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:32
 msgid "label_skiptocontent"
 msgstr "Inhalt"
 
 #. Default: "Homepage"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:26
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:22
 msgid "label_skiptohomepage"
 msgstr "Startseite"
 
 #. Default: "Navigation"
-#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:31
+#: ./plonetheme/onegovbear/viewlets/accesskeys.pt:27
 msgid "label_skiptonavigation"
 msgstr "Navigation"
+
+#: ./plonetheme/onegovbear/configure.zcml:30
+msgid "plonetheme.onegovbear"
+msgstr ""
 
 #. Default: "This form can be used to customize a selection of the design variable defined in this theme."
 #: ./plonetheme/onegovbear/browser/forms.py:226
@@ -258,4 +258,8 @@ msgstr "Variablen werden von den übergeordneten Inhalten geerbet, falls sie dor
 msgid "variables_form_label"
 msgstr "Design-Variablen überschreiben (SCSS)"
 
+#. Default: "You are here:"
+#: ./plonetheme/onegovbear/viewlets/pathbar.pt:6
+msgid "you_are_here"
+msgstr "Sie befinden sich hier:"
 

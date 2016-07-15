@@ -260,5 +260,5 @@ msgstr ""
 #. Default: "You are here:"
 #: ./plonetheme/onegovbear/viewlets/pathbar.pt:6
 msgid "you_are_here"
-msgstr ""
+msgstr "Vous êtes ici:"
 
