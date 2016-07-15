@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Hide navigation column in tablet view on customer request
+  [Kevin Bieri]
+
 - Use same styling for heading 3 as for strong
   [Kevin Bieri]
 
