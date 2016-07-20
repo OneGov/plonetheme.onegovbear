@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Use same styling for heading 3 as for strong
+  [Kevin Bieri]
+
 - Show subsite title in pathbar instead of Home on subsites.
   [mathias.leimgruber]
 
