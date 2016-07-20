@@ -165,19 +165,10 @@ body {
 // Responsive styles if only the navigation column is available
 body.has-nav-column:not(.has-sidebar-column) {
   #column-content {
-    @include screen-small {
-      @include gridposition(0);
-
-      @include gridwidth(16);
-    }
-
-
-    @include screen-medium {
+    @include screen-large {
       @include gridposition(4);
-
       @include gridwidth(12);
     }
-
   }
 
   #column-navigation {
@@ -185,12 +176,10 @@ body.has-nav-column:not(.has-sidebar-column) {
 
     @include cell;
 
-    @include screen-medium {
-      display: block;
-
+    @include screen-large {
       @include gridposition(0);
-
       @include gridwidth(4);
+      display: block;
     }
 
   }
