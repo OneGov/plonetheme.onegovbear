@@ -17,6 +17,9 @@ $portlet-column-bg-color: $gray-lighter !default;
       .portletHeader {
         font-size: $font-size-h2;
         font-weight: bold;
+        > h2 {
+          font-size: 1em;
+        }
         a.tile {
           padding:0.4em 0;
           display: block;

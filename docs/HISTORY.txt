@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Fix styles for h-tags inside of header tags in portlet row.
+  [mathias.leimgruber]
+
 - Add translation for pathbar for en, it, fr and de
   [Kevin Bieri]
 
