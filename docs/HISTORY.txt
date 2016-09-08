@@ -5,6 +5,9 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 
+- Point to plone root always on mobile logo.
+  [mathias.leimgruber]
+
 - Fix styles for h-tags inside of header tags in portlet row.
   [mathias.leimgruber]
 
