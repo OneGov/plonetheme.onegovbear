@@ -103,7 +103,7 @@
     </rules>
 
     <replace css:content="#service-navigation" css:theme="#service-navigation" />
-    <replace css:content="ul.mobileButtons" css:theme="ul.mobileButtons" />
+    <replace css:content="#ftw-mobile-wrapper" css:theme="#ftw-mobile-wrapper" />
 
     <replace css:content-children="#edit-bar" css:theme-children="#edit-bar" />
     <rules if-content="not(//*[@id='edit-bar']/*)">
