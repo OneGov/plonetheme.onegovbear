@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.4 (unreleased)
+1.2.0 (2016-10-11)
 ------------------
 
 - Point to plone root always on mobile logo.
