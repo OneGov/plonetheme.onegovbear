@@ -55,6 +55,28 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
     left: 5% !important;
   }
 
+  &.refbrowser {
+    @include screen-small {
+      right: 10% !important;
+      left: 10% !important;
+    }
+
+    .pathbar {
+      min-width: auto;
+      max-width: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .search {
+      .searchButton {
+        @extend .context;
+      }
+      .searchField {
+        padding: 0.7em;
+      }
+    }
+  }
+
   &.contenttreeWindow {
     padding: 2em;
     top: 30px !important;
