@@ -55,14 +55,26 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
     left: 5% !important;
   }
 
-  @include screen-medium {
-    right: 15% !important;
-    left: 15% !important;
-  }
+  &.refbrowser {
+    @include screen-small {
+      right: 10% !important;
+      left: 10% !important;
+    }
 
-  @include screen-large {
-    right: 20% !important;
-    left: 20% !important;
+    .pathbar {
+      min-width: auto;
+      max-width: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .search {
+      .searchButton {
+        @extend .context;
+      }
+      .searchField {
+        padding: 0.7em;
+      }
+    }
   }
 
   &.contenttreeWindow {
@@ -173,4 +185,13 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
   margin-left: -300px;
   top: 50% !important;
   margin-top: -280px;
+}
+
+.ajax-loading {
+  body {
+    @include spinner();
+    > * {
+      @include filter(blur(2px) grayscale(60%));
+    }
+  }
 }

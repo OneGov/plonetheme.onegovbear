@@ -5,7 +5,17 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix margin bottom of open in overlay indicator (ftw.simplelayout).
+  [mathias.leimgruber]
+
+- Add spinner support for ajax request (ftw.simplelayout).
+  [mathias.leimgruber]
+
+- Style referencebrowser overlay.
+  [mathias.leimgruber]
+
+- Reduce general spacing right/left for overlays. This means more space for the overlay content.
+  [mathias.leimgruber]
 
 
 1.2.0 (2016-10-11)
