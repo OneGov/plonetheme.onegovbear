@@ -186,3 +186,12 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
   top: 50% !important;
   margin-top: -280px;
 }
+
+.ajax-loading {
+  body {
+    @include spinner();
+    > * {
+      @include filter(blur(2px) grayscale(60%));
+    }
+  }
+}

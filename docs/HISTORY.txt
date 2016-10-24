@@ -5,6 +5,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Add spinner support for ajax request (ftw.simplelayout).
+  [mathias.leimgruber]
+
 - Style referencebrowser overlay.
   [mathias.leimgruber]
 
