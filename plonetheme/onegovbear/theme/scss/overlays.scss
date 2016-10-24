@@ -55,16 +55,6 @@ $overlay-close-mask-color: transparentize($gray-light, .2) !default;
     left: 5% !important;
   }
 
-  @include screen-medium {
-    right: 15% !important;
-    left: 15% !important;
-  }
-
-  @include screen-large {
-    right: 20% !important;
-    left: 20% !important;
-  }
-
   &.contenttreeWindow {
     padding: 2em;
     top: 30px !important;
