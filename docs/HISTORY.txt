@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.1 (unreleased)
+1.2.1 (2016-11-07)
 ------------------
 
 - Fix margin bottom of open in overlay indicator (ftw.simplelayout).
