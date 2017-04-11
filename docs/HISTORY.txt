@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.3.2 (unreleased)
+1.3.2 (2017-04-11)
 ------------------
 
 - Move buttons of content tree widget so they no longer hide
