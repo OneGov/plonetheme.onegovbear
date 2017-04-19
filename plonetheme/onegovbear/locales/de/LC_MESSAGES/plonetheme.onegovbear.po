@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-07-15 09:58+0000\n"
+"POT-Creation-Date: 2017-04-18 13:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,7 +127,7 @@ msgstr "Schriftgrösse der dritten Überschrift (H3)."
 #. Default: "Background color of the footer."
 #: ./plonetheme/onegovbear/browser/forms.py:107
 msgid "label_footer_background_color"
-msgstr "Hintergrundfarbe der Links im Footer"
+msgstr "Hintergrundfarbe des Footers"
 
 #. Default: "The color used for elements inside the footer, e.g. text."
 #: ./plonetheme/onegovbear/browser/forms.py:111
