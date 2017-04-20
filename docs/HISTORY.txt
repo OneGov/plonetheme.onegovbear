@@ -5,6 +5,9 @@ Changelog
 1.3.3 (unreleased)
 ------------------
 
+- Hide the additional logo if the class ".hide" is present (only for mobile
+  screens). [mbaechtold]
+
 - Fix label of form field used to set the footer background
   color. [mbaechtold]
 
