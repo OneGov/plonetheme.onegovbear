@@ -2,6 +2,13 @@
 
   float: right;
 
+  &.hide {
+    visibility: hidden;
+    @include screen-small {
+      visibility: visible;
+    }
+  }
+
   img {
     max-height: 50px;
     width: auto;
