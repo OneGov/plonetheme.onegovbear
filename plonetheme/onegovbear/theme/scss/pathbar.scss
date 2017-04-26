@@ -7,7 +7,9 @@ $pathbar-font-weight: normal !default;
 
 .template-startpage #breadcrumbs-wrapper,
 body.portaltype-ftw-subsite-subsite #breadcrumbs-wrapper {
-  margin-top: 2em;
+  @include screen-small {
+    margin-top: 2em;
+  }
 }
 
 body.portaltype-plone-site,
