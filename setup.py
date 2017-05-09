@@ -39,6 +39,7 @@ setup(name='plonetheme.onegovbear',
       install_requires=[
           'ftw.theming',
           'ftw.upgrade',
+          'ftw.subsite',  # required because of pathbar viewlet
           'plone.directives.form',
           'plone.api',
           'plone.app.theming',
