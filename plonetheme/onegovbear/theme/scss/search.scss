@@ -30,7 +30,7 @@ $searchbox-width: 295px;
 
   &.open {
     display: block;
-    position: absolute;
+    position: fixed;
     margin-left: 0;
   }
 

@@ -5,6 +5,8 @@ Changelog
 1.3.3 (unreleased)
 ------------------
 
+- Fix poitioning issues with the mobile search. [mathias.leimgruber]
+
 - Fix xhtml error in overriden plonebrowser.htm.pt [mathias.leimgruber]
 
 - Add dependency for ftw.subsite because the pathbar viewlet doesn't work
