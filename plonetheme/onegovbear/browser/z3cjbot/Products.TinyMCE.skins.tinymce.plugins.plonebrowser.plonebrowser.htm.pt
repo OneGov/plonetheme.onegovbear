@@ -26,7 +26,7 @@
                 </div>
                 <div id="external_link">
                     <img src="img/external_link.png" />
-                    <a href="#external"re i18n:translate="" i18n:domain="plone.tinymce">External</a>
+                    <a href="#external" i18n:translate="" i18n:domain="plone.tinymce">External</a>
                 </div>
                 <div id="email_link">
                     <img src="img/email_link.png" />
