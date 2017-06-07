@@ -3,6 +3,11 @@ $portal-top-bg-color: $page-bg-color !default;
 @include declare-variables(
   portal-top-bg-color);
 
+#portal-top-wrapper {
+  @include screen-large {
+    background-color: white;
+  }
+}
 
 #portal-top {
   background-color: $primary-color;
@@ -14,8 +19,8 @@ $portal-top-bg-color: $page-bg-color !default;
   @include clearfix();
 
   @include screen-large {
+    background-color: white;
     padding: 7px 0;
-    background-color: $portal-top-bg-color;
   }
 }
 
