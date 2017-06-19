@@ -25,6 +25,7 @@
         </li>
         <li>
             <a accesskey="1"
+               id="accesskey-navigation"
                tal:attributes="href string:${url}#portal-globalnav"
                i18n:translate="label_skiptonavigation">Navigation</a>
         </li>
