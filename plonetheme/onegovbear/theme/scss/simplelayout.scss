@@ -105,7 +105,6 @@ ul[class^="sl-toolbar"] {
 .sl-column {
   $gutter-width: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
   float: left;
-  min-height: 100px;
   box-sizing: border-box;
   @for $i from 1 through $simplelayout-columns {
     &.sl-col-#{$i} {
