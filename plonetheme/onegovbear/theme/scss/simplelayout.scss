@@ -170,8 +170,21 @@ ul[class^="sl-toolbar"] {
   }
 }
 
-.icons-on .sl-image .colorboxLink:before{
-  margin-bottom: 1em;
+.icons-on .sl-simplelayout .sl-block-content .colorboxLink {
+  pointer-events: none;
+
+  @include screen-medium() {
+    pointer-events: auto;
+  }
+
+  &:before{
+    margin-bottom: 1em;
+    display: none;
+
+    @include screen-medium() {
+      display: block;
+    }
+  }
 }
 
 .sl-image .imageContainer > a {

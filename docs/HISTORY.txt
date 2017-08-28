@@ -5,6 +5,8 @@ Changelog
 1.3.4 (unreleased)
 ------------------
 
+- No longer open overlay on mobile devices (phone). [mathias.leimgruber]
+
 - Remove superfluous margin of textblock. [mbaechtold]
 
 - Remove min-height on sl-column. the simplelayout.scss already does this for us. [mathias.leimgruber]
