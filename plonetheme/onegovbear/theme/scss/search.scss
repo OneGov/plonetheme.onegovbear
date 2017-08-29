@@ -8,7 +8,7 @@ $searchbox-width: 295px;
   $searchbox-width);
 
 
-.portal-searchbox-wrapper{
+.portal-searchbox-wrapper {
 
   float: left;
   width: $searchbox-width;
@@ -19,6 +19,13 @@ $searchbox-width: 295px;
   z-index: 1;
   right: 0;
   height: 52px;
+  top: 54px;
+
+  @include screen-small {
+    &.open {
+      top: -166px;
+    }
+  }
 
   @include screen-large {
     display: block;
@@ -30,7 +37,7 @@ $searchbox-width: 295px;
 
   &.open {
     display: block;
-    position: fixed;
+    position: absolute;
     margin-left: 0;
   }
 
