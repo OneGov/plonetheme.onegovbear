@@ -301,3 +301,9 @@ ul[class^="sl-toolbar"] {
 .sl-image .imageContainer > a {
   max-width: 100%;
 }
+
+
+/* Small adjustments for ftw.simplelayout cropper feature */
+.overlay-open body .imageCropperWrapper .imageCropperControls .sl-toolbar-image-cropper a {
+  line-height: 3em;
+}
