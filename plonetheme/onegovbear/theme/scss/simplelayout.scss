@@ -102,8 +102,103 @@ ul[class^="sl-toolbar"] {
   }
 }
 
+.golden-ratio {
+  $golden-ratio: 61.803398875%;
+  $large-part: $golden-ratio - ($gutter-width-relative / 2);
+  $small-part: 100 - $golden-ratio - ($gutter-width-relative / 2);
+
+  width: 100%;
+
+  @media #{$screen-XXS} {
+    .sl-column {
+      &:nth-child(1) {
+        width: $large-part;
+        margin-right: $gutter-width-relative;
+      }
+
+      &:nth-child(2) {
+        width: $small-part;
+      }
+    }
+
+    &.layout-reverse .sl-column {
+
+      &:nth-child(1) {
+        width: $small-part;
+      }
+
+      &:nth-child(2) {
+        width: $large-part;
+      }
+    }
+  }
+}
+
+.layout13 {
+  $large-part: (25% - $gutter-width-relative + ($gutter-width-relative / 4)) * 3 + ($gutter-width-relative * 2);
+  $small-part: 25% - $gutter-width-relative + ($gutter-width-relative / 4);
+
+  .sl-column {
+    @media #{$screen-XXS} {
+      &:nth-child(1) {
+        width: $large-part;
+      }
+
+      &:nth-child(2) {
+        width: $small-part;
+      }
+    }
+  }
+
+  &.layout-reverse .sl-column {
+
+    &:nth-child(1) {
+      width: $small-part;
+    }
+
+    &:nth-child(2) {
+      width: $large-part;
+    }
+  }
+}
+
+.layout112 {
+  .sl-column {
+    &:nth-child(1) {
+      @include floatgrid(4);
+    }
+
+    &:nth-child(2) {
+      @include floatgrid(4);
+    }
+
+    &:nth-child(3) {
+      @include floatgrid(2, $offset: 1);
+    }
+  }
+
+  &.layout-reverse .sl-column {
+    @include floatgrid(4, $offset: 3);
+
+    &:nth-child(1) {
+      @include floatgrid(2);
+    }
+
+    // floatgrid is no yet (flex)ible enough :-)
+    @media #{$screen-XXS} {
+      &:nth-child(2){
+        margin-right: $gutter-width-relative;
+      }
+      &:nth-child(3){
+        margin-right: 0;
+      }
+
+    }
+
+  }
+}
+
 .sl-column {
-  $gutter-width: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
   float: left;
   box-sizing: border-box;
   @for $i from 1 through $simplelayout-columns {
@@ -166,6 +261,16 @@ ul[class^="sl-toolbar"] {
           margin-right: 0 !important;
         }
       }
+    }
+  }
+}
+
+.layout121 {
+  .sl-column {
+    @include floatgrid(4, $offset: 0);
+
+    &:nth-child(2) {
+      @include floatgrid(2, $offset: 1);
     }
   }
 }
