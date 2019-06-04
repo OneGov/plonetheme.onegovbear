@@ -104,6 +104,7 @@ ul[class^="sl-toolbar"] {
 
 .golden-ratio {
   $golden-ratio: 61.803398875%;
+  $gutter-width-relative: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
   $large-part: $golden-ratio - ($gutter-width-relative / 2);
   $small-part: 100 - $golden-ratio - ($gutter-width-relative / 2);
 
@@ -135,6 +136,7 @@ ul[class^="sl-toolbar"] {
 }
 
 .layout13 {
+  $gutter-width-relative: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
   $large-part: (25% - $gutter-width-relative + ($gutter-width-relative / 4)) * 3 + ($gutter-width-relative * 2);
   $small-part: 25% - $gutter-width-relative + ($gutter-width-relative / 4);
 
@@ -163,6 +165,8 @@ ul[class^="sl-toolbar"] {
 }
 
 .layout112 {
+  $gutter-width-relative: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
+  $gutter-width: $simplelayout-gutter-width * 2;
   .sl-column {
     &:nth-child(1) {
       @include floatgrid(4);
@@ -199,6 +203,7 @@ ul[class^="sl-toolbar"] {
 }
 
 .sl-column {
+  $gutter-width: 100% / $gridsystem-width * $simplelayout-gutter-width * 2;
   float: left;
   box-sizing: border-box;
   @for $i from 1 through $simplelayout-columns {
@@ -266,6 +271,7 @@ ul[class^="sl-toolbar"] {
 }
 
 .layout121 {
+  $gutter-width: $simplelayout-gutter-width * 2;
   .sl-column {
     @include floatgrid(4, $offset: 0);
 
