@@ -114,9 +114,6 @@
     <replace css:content-children="#portal-breadcrumbs" css:theme-children="#portal-breadcrumbs" />
     <drop css:content="#portal-breadcrumbs" />
 
-    <replace css:content-children="div.documentActions" css:theme-children="#document-actions" />
-    <drop css:content="div.documentActions" />
-
     <!-- copy missing accesskeys -->
     <replace css:theme="#accesskeys" css:content="#accesskeys" />
 
