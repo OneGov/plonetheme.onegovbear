@@ -5,6 +5,8 @@ Changelog
 1.3.5 (unreleased)
 ------------------
 
+- Remove customization of actions. [busykoala]
+
 - Support new SL async layouts. [mathias.leimgruber]
 
 
