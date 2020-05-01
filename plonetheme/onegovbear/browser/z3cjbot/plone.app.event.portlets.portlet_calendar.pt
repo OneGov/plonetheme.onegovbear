@@ -10,6 +10,9 @@
 
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
+
+      <div class="title" i18n:domain="plone" i18n:translate="summary_calendar">Calendar</div>
+
       <a href="#" rel="nofollow"
            class="calendarPrevious"
            title="Previous month"
