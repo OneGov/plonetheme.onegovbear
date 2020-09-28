@@ -24,59 +24,6 @@ $portal-top-bg-color: $page-bg-color !default;
   }
 }
 
-.zoom-buttons {
-  @include list-horizontal();
-  @include screen-large() {
-    display: block;
-  }
-
-  float: left;
-  margin-left: 2em;
-  display: none;
-  height: 0;
-
-  > li {
-    display: inline-block;
-    vertical-align: text-top;
-    float: none;
-    > a {
-      padding: 0;
-      padding-right: .2em;
-      width: 0.7em;
-      display: block;
-      height: 0;
-    }
-  }
-}
-
-.zoom-button {
-  color: transparent;
-
-  &:before {
-    content: "A";
-    color: $text-color;
-  }
-
-  &:hover {
-    color: transparent;
-    text-decoration: none;
-  }
-
-}
-
-#zoom-small {
-  font-size: 1em;
-}
-
-#zoom-medium {
-  font-size: 1.2em;
-}
-
-#zoom-large {
-  font-size: 1.4em;
-}
-
-
 #mobile-logo {
   display: block;
   position: absolute;
