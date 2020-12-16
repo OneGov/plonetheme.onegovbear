@@ -23,7 +23,7 @@ $searchbox-width: 295px;
 
   @include screen-small {
     &.open {
-      top: -166px;
+      top: $mobile-menu-height;
     }
   }
 
@@ -37,7 +37,7 @@ $searchbox-width: 295px;
 
   &.open {
     display: block;
-    position: absolute;
+    position: fixed;
     margin-left: 0;
   }
 
